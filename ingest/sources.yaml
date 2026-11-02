@@ -1,0 +1,703 @@
+# Scheme sources for Sahayi ingestion.
+#
+# Schema per entry:
+#   id            snake_case, unique; becomes the prefix of doc_id / chunk_id
+#   scheme        human-readable scheme name
+#   department    owning department / agency (used for the abstain contact)
+#   level         state | central
+#   lang          ml | en | both   (language(s) of the source documents)
+#   urls          list of PDF or HTML page URLs: a plain string, or a mapping with
+#                   url        (required)
+#                   verify     true -> URL not confirmed to work / to be the right doc
+#                   render     js -> render with headless Chromium (ingest/render.py)
+#                   click      CSS selector clicked after load (ASP.NET postbacks)
+#                   expect     text that must appear (inside `select`) after rendering
+#                   select     CSS selector: keep only this element
+#                   manual     true -> host unreachable from the build network; drop the
+#                              file in data/raw/manual/{id}/ with {filename}.url.txt
+#                   force_ocr  true -> OCR every page even if the PDF has a text layer
+#   notes         free text
+#   follow_links  optional, default true: for HTML pages, also download linked PDFs
+#   render        optional entry-level default for `render`
+#
+# All URLs were taken from the official sites (myscheme slugs from myscheme's own
+# search/state listings) and probed on 2026-10-12. `verify: true` marks the rest.
+# myscheme.gov.in pages are rendered (render: js) and split into labelled sections:
+# details / benefits / eligibility / exclusions / how_to_apply / documents / faq.
+
+sources:
+  # =================================================================== central
+  # ---------------------------------------------------------- agriculture
+  - id: pm_kisan
+    scheme: Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)
+    department: Department of Agriculture & Farmers Welfare, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pm-kisan, render: js}
+      - https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines(English).pdf
+      - url: https://pmkisan.gov.in/Documents/RevisedFAQ.pdf
+        force_ocr: true
+    notes: >-
+      RevisedFAQ.pdf is a scan with a poor embedded OCR layer, so it is re-OCR'd.
+      pmkisan.gov.in serves an incomplete TLS chain (tls_verified=false).
+
+  - id: pm_kmy
+    scheme: Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)
+    department: Department of Agriculture & Farmers Welfare, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmkmdy, render: js}
+
+  - id: pmfby
+    scheme: Pradhan Mantri Fasal Bima Yojana (PMFBY)
+    department: Department of Agriculture & Farmers Welfare, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmfby, render: js}
+
+  - id: kcc
+    scheme: Kisan Credit Card (KCC)
+    department: Department of Agriculture & Farmers Welfare, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/kcc, render: js}
+
+  # ---------------------------------------------------------- fisheries
+  - id: pmmsy
+    scheme: Pradhan Mantri Matsya Sampada Yojana (PMMSY)
+    department: Department of Fisheries, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmmsy, render: js}
+      - {url: https://pmmsy.dof.gov.in/, render: js, verify: true}
+
+  # ---------------------------------------------------------- housing
+  - id: pmay_g
+    scheme: Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)
+    department: Ministry of Rural Development, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmay-g, render: js}
+      - url: https://pmayg.nic.in/netiay/Uploaded/English_Book_Final.pdf
+        manual: true
+        mirrors:
+          - https://pmayg.dord.gov.in/netiayHome/Uploaded/Guidelines-English_Book_Final.pdf
+        expect: Pradhan Mantri Awaas Yojana
+        pages: "6-9,16-18,25-43"
+    notes: >-
+      pmayg.nic.in is NXDOMAIN on public DNS too (retired); the Framework for
+      Implementation (2022) is fetched from the successor host pmayg.dord.gov.in by
+      ingest/recover.py. Only citizen-facing chapters are ingested: executive summary
+      (pdf 6-9), key features (16-18), identification and selection of beneficiaries,
+      construction and unit assistance, beneficiary support incl. bank loans (25-43).
+      In Kerala PMAY-G houses are delivered through LIFE Mission.
+
+  - id: pmay_u
+    scheme: Pradhan Mantri Awas Yojana - Urban (PMAY-U)
+    department: Ministry of Housing & Urban Affairs, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmay-u, render: js}
+
+  # ---------------------------------------------------------- health / women & child
+  - id: pm_jay
+    scheme: Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (AB PM-JAY)
+    department: National Health Authority, Government of India
+    level: central
+    lang: en
+    covered_by: [kasp]
+    urls:
+      - url: https://pmjay.gov.in/about/pmjay
+        manual: true
+        verify: true
+        expect: Jan Arogya
+    notes: >-
+      PM-JAY implemented in Kerala as KASP. No usable source on 2026-10-12: not listed
+      on myscheme; pmjay.gov.in resolves (DoH) but times out, also in a browser;
+      nha.gov.in/PM-JAY renders an empty body; Wayback blocks this network and its
+      2025-01-19 snapshot of the page is itself a WAF "request rejected" page.
+      ingest/recover.py retries on every run.
+
+  - id: jsy
+    scheme: Janani Suraksha Yojana (JSY)
+    department: Ministry of Health & Family Welfare, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/jsy1, render: js}
+
+  - id: pmmvy
+    scheme: Pradhan Mantri Matru Vandana Yojana (PMMVY)
+    department: Ministry of Women & Child Development, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmmvy, render: js}
+
+  # ---------------------------------------------------------- pensions
+  - id: nsap
+    scheme: National Social Assistance Programme (NSAP) guidelines
+    department: Ministry of Rural Development, Government of India
+    level: central
+    lang: en
+    urls:
+      - url: https://nsap.nic.in/Guidelines/nsap_guidelines_oct2014.pdf
+        manual: true
+        mirrors:
+          - https://nsap.dord.gov.in/Guidelines/nsap_guidelines_oct2014.pdf
+        expect: Schemes of NSAP
+        pages: "10-21,24-26"
+    notes: >-
+      nsap.nic.in is NXDOMAIN on public DNS too (retired); the October 2014 guidelines
+      are fetched from the successor host nsap.dord.gov.in (same path) by
+      ingest/recover.py. Ingested: salient features, eligibility and scale of
+      assistance, selection, sanction, appeal (pdf 10-21) and disbursement (24-26).
+
+  - id: nsap_ignoaps
+    scheme: Indira Gandhi National Old Age Pension Scheme (IGNOAPS)
+    department: Ministry of Rural Development, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/nsap-ignoaps, render: js}
+
+  - id: nsap_ignwps
+    scheme: Indira Gandhi National Widow Pension Scheme (IGNWPS)
+    department: Ministry of Rural Development, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/ignwps, render: js}
+
+  - id: nsap_igndps
+    scheme: Indira Gandhi National Disability Pension Scheme (IGNDPS)
+    department: Ministry of Rural Development, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/igndps, render: js}
+
+  - id: nsap_nfbs
+    scheme: National Family Benefit Scheme (NFBS)
+    department: Ministry of Rural Development, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/nfbs, render: js}
+
+  - id: apy
+    scheme: Atal Pension Yojana (APY)
+    department: Ministry of Finance, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/apy, render: js}
+
+  # ---------------------------------------------------------- scholarships
+  # Not included: myscheme 'pmsscstb' (first listed as the central PMS-SC) is Bihar's
+  # scheme; 'pmssc' / 'apmsscs' are Punjab / Puducherry. Kerala delivers SC post-matric
+  # scholarships through e-Grantz - see sc_scholarships.
+
+  - id: pre_matric_minorities
+    scheme: Pre-Matric Scholarship for Students belonging to National Minorities
+    department: Ministry of Minority Affairs, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmsfsbtnm, render: js}
+
+  - id: pm_yasasvi_prematric
+    scheme: "PM-YASASVI: Pre-Matric Scholarship for OBC, EBC and DNT Students"
+    department: Ministry of Social Justice & Empowerment, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmyasasvipmsobcebcdnts, render: js}
+
+  - id: scholarship_disabilities
+    scheme: Pre- and Post-Matric Scholarships for Students with Disabilities
+    department: Department of Empowerment of Persons with Disabilities, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pre-dis, render: js}
+      - {url: https://www.myscheme.gov.in/schemes/post-dis, render: js}
+
+  # ---------------------------------------------------------- MSME / self-employment
+  - id: pmegp
+    scheme: Prime Minister's Employment Generation Programme (PMEGP)
+    department: Ministry of MSME, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmegp, render: js}
+
+  - id: pmmy
+    scheme: Pradhan Mantri MUDRA Yojana (PMMY)
+    department: Department of Financial Services, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmmy, render: js}
+
+  - id: pm_svanidhi
+    scheme: PM Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)
+    department: Ministry of Housing & Urban Affairs, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pm-svanidhi, render: js}
+
+  - id: pm_vishwakarma
+    scheme: PM Vishwakarma
+    department: Ministry of MSME, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmv, render: js}
+
+  # ---------------------------------------------------------- employment / LPG
+  - id: mgnrega
+    scheme: Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)
+    department: Ministry of Rural Development, Government of India
+    level: central
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/mgnrega, render: js}
+
+  - id: pmuy
+    scheme: Pradhan Mantri Ujjwala Yojana (PMUY)
+    department: Ministry of Petroleum & Natural Gas, Government of India
+    level: central
+    lang: en
+    follow_links: false
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/pmuy, render: js}
+      - https://pmuy.gov.in/about.html
+      - https://pmuy.gov.in/ujjwala2.html
+    notes: pmuy.gov.in pages link ~50 KYC/declaration forms; links not followed.
+
+  # =================================================================== Kerala
+  # ---------------------------------------------------------- housing
+  - id: life_mission
+    scheme: LIFE Mission (Livelihood, Inclusion and Financial Empowerment) housing
+    department: LIFE Mission, Local Self Government Department, Kerala
+    level: state
+    lang: ml
+    follow_links: false
+    urls:
+      - https://lifemission.kerala.gov.in/ml/life-project
+      - https://lifemission.kerala.gov.in/ml/life-third-phase
+      - https://lifemission.kerala.gov.in/ml/ems-housing-project
+      - http://lifemission.kerala.gov.in/ml/article/518
+
+  # ---------------------------------------------------------- welfare pensions
+  # The norms table on FAQs.aspx opens each pension's criteria / documents through
+  # ASP.NET postbacks. The site's row->panel wiring is inconsistent and changes between
+  # sessions (several rows open the same panel; no disability criteria panel exists), so
+  # render.py clicks each criteria/documents link in turn and keeps the first panel
+  # that contains the `expect` text for that pension.
+  - id: kerala_welfare_pensions
+    scheme: Kerala Social Security Pensions (Sevana Pension) - overview and amounts
+    department: Local Self Government Department, Kerala
+    level: state
+    lang: ml
+    urls:
+      - https://welfarepension.lsgkerala.gov.in/Schemes.aspx
+      - https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+
+  - id: kerala_pension_agri_labourers
+    scheme: Agricultural Labourers' Pension (Kerala)
+    department: Local Self Government Department, Kerala
+    level: state
+    lang: ml
+    render: js
+    urls:
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkcriteria']"
+        select: "#ctl00_ContentPlaceHolder1_divcriteria"
+        expect: "തൊഴിലാളി"
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkattachment']"
+        select: "#ctl00_ContentPlaceHolder1_divattachment"
+        expect: "തൊഴിലാളി"
+
+  - id: kerala_pension_old_age
+    scheme: Indira Gandhi National Old Age Pension (Kerala implementation, incl. 75+)
+    department: Local Self Government Department, Kerala
+    level: state
+    lang: ml
+    render: js
+    urls:
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkcriteria']"
+        select: "#ctl00_ContentPlaceHolder1_divcriteria"
+        expect: "ദ്ധക്യകാല"
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkattachment']"
+        select: "#ctl00_ContentPlaceHolder1_divattachment"
+        expect: "ദ്ധക്യകാല"
+
+  - id: kerala_pension_disability
+    scheme: Indira Gandhi National Disability Pension (Kerala implementation)
+    department: Local Self Government Department, Kerala
+    level: state
+    lang: ml
+    render: js
+    urls:
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkattachment']"
+        select: "#ctl00_ContentPlaceHolder1_divattachment"
+        expect: "ഡിസബിലിറ്റി"
+    notes: The site offers no criteria panel for this pension (documents list only).
+
+  - id: kerala_pension_unmarried_women
+    scheme: Pension for Unmarried Women above 50 (Kerala)
+    department: Local Self Government Department, Kerala
+    level: state
+    lang: ml
+    render: js
+    urls:
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkcriteria']"
+        select: "#ctl00_ContentPlaceHolder1_divcriteria"
+        expect: "അവിവാഹിതരായ"
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkattachment']"
+        select: "#ctl00_ContentPlaceHolder1_divattachment"
+        expect: "അവിവാഹിതരായ"
+
+  - id: kerala_pension_widow
+    scheme: Indira Gandhi National Widow Pension (Kerala implementation)
+    department: Local Self Government Department, Kerala
+    level: state
+    lang: ml
+    render: js
+    urls:
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkcriteria']"
+        select: "#ctl00_ContentPlaceHolder1_divcriteria"
+        expect: "വിധവ"
+      - url: https://welfarepension.lsgkerala.gov.in/FAQs.aspx
+        click: "a[id$='_lnkattachment']"
+        select: "#ctl00_ContentPlaceHolder1_divattachment"
+        expect: "വിധവ"
+
+  # ---------------------------------------------------------- health
+  - id: kasp
+    scheme: Karunya Arogya Suraksha Padhathi (KASP) - Kerala's implementation of AB PM-JAY
+    department: State Health Agency, Kerala
+    level: state
+    lang: ml
+    urls:
+      - https://sha.kerala.gov.in/?page_id=1077
+
+  - id: kerala_sruthitharangam
+    scheme: Sruthitharangam (cochlear implantation for children)
+    department: State Health Agency / Kerala Social Security Mission
+    level: state
+    lang: both
+    urls:
+      - https://sha.kerala.gov.in/?page_id=8718
+      - {url: https://www.myscheme.gov.in/schemes/scis, render: js}
+
+  - id: kerala_arogyakiranam
+    scheme: Arogyakiranam (free treatment for children below 18)
+    department: State Health Agency, Kerala
+    level: state
+    lang: ml
+    urls:
+      - https://sha.kerala.gov.in/?page_id=8713
+
+  - id: kerala_cancer_suraksha
+    scheme: Cancer Suraksha Scheme (free cancer treatment for children)
+    department: Kerala Social Security Mission
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/css, render: js}
+
+  # ---------------------------------------------------------- agriculture / fisheries
+  - id: kerala_fisheries_welfare
+    scheme: Fishermen welfare schemes (Fisheries Department / Matsyafed)
+    department: Fisheries Department, Kerala; Matsyafed
+    level: state
+    lang: ml
+    urls:
+      - {url: https://fisheries.kerala.gov.in/, verify: true}
+      - https://matsyafed.in/index.php/schemes-projects
+    notes: fisheries.kerala.gov.in is suspended ("temporarily unavailable") as of 2026-10-12.
+
+  - id: kerala_farmers_welfare_fund
+    scheme: Kerala Farmers' Welfare Fund Board pension (Karshaka pension)
+    department: Kerala Farmers' Welfare Fund Board / Department of Agriculture, Kerala
+    level: state
+    lang: both
+    follow_links: false
+    urls:
+      - https://keralaagriculture.gov.in/en/karshakapension/
+      - https://www.kfwfb.kerala.gov.in/docs/Registrationinstructions_KFWFB.pdf
+
+  - id: kerala_agri_crop_insurance
+    scheme: State crop insurance and natural-calamity relief for farmers
+    department: Department of Agriculture Development & Farmers' Welfare, Kerala
+    level: state
+    lang: en
+    follow_links: false
+    urls:
+      - https://keralaagriculture.gov.in/en/crop-insurance-schemes/
+      - https://keralaagriculture.gov.in/2021/09/13/natural-calamity-scheme/
+
+  - id: kerala_agri_schemes
+    scheme: Agriculture department schemes (Kerala) - overview
+    department: Department of Agriculture Development & Farmers' Welfare, Kerala
+    level: state
+    lang: both
+    follow_links: false
+    urls:
+      - https://keralaagriculture.gov.in/schemes-mal/
+      - https://keralaagriculture.gov.in/en/schemes/
+    # Not included: keralaagriculture.gov.in/wp-content/uploads/2021/03/Manual-Published-min.pdf
+    # is the department's 545-page office-procedure manual (IFMS, service rules), not a
+    # citizen-facing scheme document; it made up 83% of chunks in the first run.
+
+  # ---------------------------------------------------------- SC / ST / OBC / OEC
+  - id: sc_scholarships
+    scheme: Scheduled Caste education schemes and scholarships (incl. Unnathi overseas, Lakshya)
+    department: Scheduled Castes Development Department, Kerala
+    level: state
+    lang: ml
+    follow_links: false
+    urls:
+      - https://scdd.kerala.gov.in/index.php/2016-06-17-06-37-09
+      - https://scdd.kerala.gov.in/index.php/2016-06-17-06-35-08/2016-06-27-10-37-10
+      - https://scdd.kerala.gov.in/images/UNNATHI_SCHOLARSHIP.pdf
+      - https://scdd.kerala.gov.in/images/pdf/pdf2025/Lakshya.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/aab67494a9a85ace892a8b5d79f29dd6.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/ceccddf2b8e49fea025ce19655e86834.pdf
+      - https://egrantz.kerala.gov.in/502009.pdf
+      - https://egrantz.kerala.gov.in/goakshaya.pdf
+      - https://scdd.kerala.gov.in/images/pdf/pdf2025/Lap_Top_Order_New-12.pdf
+      - https://scdd.kerala.gov.in/images/pdf/pdf2025/MRSadmission.pdf
+      - https://scdd.kerala.gov.in/images/pdf/pdf2025/Traceproject.pdf
+    notes: >-
+      scdd needs legacy TLS. egrantz PDFs (titles from link text on egrantz.kerala.gov.in):
+      aab67494 = revised SC/ST post-matric scholarship conditions (Kerala's delivery of
+      the post-matric scholarship for SC/ST students); ceccddf2 = SC/ST
+      post-matric scholarship rates; 502009.pdf = e-Grantz GO 50/2009; goakshaya.pdf =
+      applying for e-Grantz through Akshaya centres. scdd PDFs: laptop scheme order,
+      model residential school admission, TRACE project (titles from link text).
+
+  - id: st_scholarships
+    scheme: Scheduled Tribe development schemes (education, housing, Janani Janmaraksha, treatment, inter-caste marriage)
+    department: Scheduled Tribes Development Department, Kerala
+    level: state
+    lang: ml
+    urls:
+      - https://www.stdd.kerala.gov.in/images/pdf/orders/Unnathi%20Overseas%20Scholarship.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/e793f3e7f25b8e36be8d856bf09e34fa.pdf
+      - https://www.stdd.kerala.gov.in/images/Application_forms/1%20housing_0.pdf
+      - https://www.stdd.kerala.gov.in/images/Application_forms/2%20Inter_cast_marriage_0.pdf
+      - https://www.stdd.kerala.gov.in/images/Application_forms/3%20janani_janmaraksha_0.pdf
+      - https://www.stdd.kerala.gov.in/images/Application_forms/4%20treatment_0.pdf
+    notes: >-
+      egrantz PDF is the ST laptop scholarship notice (title from link text); the
+      Application_forms PDFs are STDD application forms linked from stdd.kerala.gov.in.
+
+  - id: obc_oec_scholarships
+    scheme: OBC / OEC scholarships (PM-YASASVI pre-matric, Kedavilakku, OEC pre/post-matric)
+    department: Backward Classes Development Department, Kerala
+    level: state
+    lang: ml
+    urls:
+      - https://egrantz.kerala.gov.in/egrantz_uploads/adeaef4a8e3bfded17e941ffe02458c4.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/a4c9d0a2e4df570475d8a4c448d1cd28.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/45241434689234814487bbb91f0d787c.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/2d4bff24b8b04383d5fe06f7bb9eb1a9.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/f59aba44a607c1de32ef3c3f4a35d309.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/b1452989d1bacb205915c20bb0f847fd.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/32706ab4b4816187c27cc8fff2e2a9da.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/1e3f703c08743afb687bde0ebfc5695a.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/c44bb338b9b84821311c7eb0c71b1b50.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/a0b77c26ce26536a5338e55ca12edfd6.pdf
+      - https://egrantz.kerala.gov.in/OEC_pre2022-23.pdf
+      - {url: https://www.myscheme.gov.in/schemes/oecp-mea, render: js}
+    notes: >-
+      egrantz titles from link text: adeaef4a PM-YASASVI guidelines; a4c9d0a2 Kedavilakku;
+      45241434 OEC post-matric; 2d4bff24 OEC pre-matric circular; f59aba44 OEC/OBC(H)
+      post-matric (in state); b1452989 OEC post-matric (outside state); 32706ab4
+      post-matric benefits for backward classes; 1e3f703c PM-YASASVI applications;
+      c44bb338 Kedavilakku applications; a0b77c26 OEC/OBC(H)/SEBC students in national
+      institutions outside Kerala; OEC_pre2022-23 OEC pre-matric assistance.
+
+  - id: kerala_obc_girls_special_scholarship
+    scheme: Special scholarship for OBC/SEBC girls in medical and paramedical courses
+    department: Backward Classes Development Department, Kerala
+    level: state
+    lang: ml
+    urls:
+      - https://egrantz.kerala.gov.in/egrantz_uploads/1b3a6ba1aca338f112eb1447a078f96d.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/5feee394ade51f51720ddb27a266a50e.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/b3a448a7e3abdde6fd612e0ac9a391eb.pdf
+      - https://egrantz.kerala.gov.in/specialobcgirlsnotification.pdf
+
+  - id: kerala_eep
+    scheme: Employability Enhancement Programme and skill assistance for OBC students (BCDD)
+    department: Backward Classes Development Department, Kerala
+    level: state
+    lang: ml
+    urls:
+      - https://egrantz.kerala.gov.in/egrantz_uploads/d9a8193968014bdbdeed87f9a0a481f2.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/78c91c9e626f1623d6692496c55738af.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/ddf0ce20b64d1d3c765295c753723c11.pdf
+      - https://egrantz.kerala.gov.in/BCDIR4982022-A1.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/ceccdb87abb9537c7277a3722e4a880b.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/974baae8688e4a87f0c2585d517fbe9a.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/10bd0a1089690a213810f75fc0149bb0.pdf
+    notes: >-
+      Titles from egrantz link text: d9a81939 EEP 2024-25 applications; ceccdb87
+      competitive-exam coaching assistance; 974baae8 communicative English course
+      assistance; 10bd0a10 assistance for OBC B.Sc nursing graduates; 78c91c9e medical /
+      engineering entrance coaching; BCDIR4982022-A1 EEP 2022-23; ddf0ce20 further EEP
+      coaching notice. Not included (named beneficiary shortlists): 752b22be (69 of 71
+      pages), 21f752b0 (13 of 16 pages). Not included:
+      01d60b00 (a shortlist of named beneficiaries with marks and amounts).
+
+  - id: kerala_overseas_scholarship_obc
+    scheme: Overseas scholarship and education-loan interest subsidy for backward classes
+    department: Backward Classes Development Department, Kerala
+    level: state
+    lang: ml
+    urls:
+      - https://egrantz.kerala.gov.in/egrantz_uploads/overseas%20notification%2026-27.pdf
+      - https://egrantz.kerala.gov.in/egrantz_uploads/6414a810f9b0865071c5a1f46aac408b.pdf
+
+  - id: kerala_advocate_grant
+    scheme: Advocate Grant (financial assistance to young advocates)
+    department: Backward Classes Development Department, Kerala
+    level: state
+    lang: both
+    urls:
+      - url: https://egrantz.kerala.gov.in/egrantz_uploads/7f13ea25ed7d4bb95a6ee0b1557c382d.pdf
+        pages: "1-4"  # page 5 is the named shortlist
+      - {url: https://www.myscheme.gov.in/schemes/ag, render: js}
+
+  # ---------------------------------------------------------- minorities
+  - id: kerala_minority_scholarships
+    scheme: Minority community scholarships (C H Muhammedkoya, Mother Teresa, ...)
+    department: Minority Welfare Department, Kerala
+    level: state
+    lang: both
+    urls:
+      - {url: https://minoritywelfare.kerala.gov.in/, verify: true}
+      - {url: https://www.myscheme.gov.in/schemes/chms, render: js}
+      - {url: https://www.myscheme.gov.in/schemes/mtskrl, render: js}
+    notes: minoritywelfare.kerala.gov.in returned 403 "under maintenance" on 2026-10-12.
+
+  - id: kerala_minority_women_selfemployment
+    scheme: Self-employment loan for minority widows, divorcees and abandoned women
+    department: Minority Welfare Department, Kerala
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/seloanwomen, render: js}
+
+  # ---------------------------------------------------------- Kudumbashree
+  - id: kudumbashree
+    scheme: Kudumbashree (micro finance, micro enterprises, farm livelihoods)
+    department: Kudumbashree State Poverty Eradication Mission, Kerala
+    level: state
+    lang: en
+    follow_links: false
+    urls:
+      - https://www.kudumbashree.org/pages/5
+      - https://www.kudumbashree.org/pages/142
+      - https://www.kudumbashree.org/pages/368
+
+  # ---------------------------------------------------------- KSSM / social justice
+  - id: kssm_aswasakiranam
+    scheme: Aswasakiranam (assistance to caregivers of bedridden persons)
+    department: Kerala Social Security Mission
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/ak, render: js}
+
+  - id: kssm_snehapoorvam
+    scheme: Snehapoorvam (assistance to orphaned children's education)
+    department: Kerala Social Security Mission
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/ss-kerala, render: js}
+
+  - id: kssm_snehasanthwanam
+    scheme: Snehasanthwanam (assistance to endosulfan victims)
+    department: Kerala Social Security Mission
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/skerala, render: js}
+
+  - id: kssm_thalolam
+    scheme: Thalolam (free treatment for children with chronic illness)
+    department: Kerala Social Security Mission
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/ts-kerala, render: js}
+
+  - id: sjd_disability_scholarship
+    scheme: Scholarship for Differently Abled Students (Kerala)
+    department: Social Justice Department, Kerala
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/sdas, render: js}
+
+  - id: sjd_assistive_devices
+    scheme: Scheme for Providing Assistive Devices to Differently Abled Persons
+    department: Social Justice Department, Kerala
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/spaddap, render: js}
+
+  - id: sjd_parinayam
+    scheme: Parinayam I & II (marriage assistance for differently abled women / daughters)
+    department: Social Justice Department, Kerala
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/maddapp-i, render: js}
+      - {url: https://www.myscheme.gov.in/schemes/madawp-ii, render: js}
+
+  # ---------------------------------------------------------- labour welfare boards
+  - id: kerala_tailoring_workers_welfare
+    scheme: Kerala Tailoring Workers' Welfare Fund Board benefits
+    department: Kerala Tailoring Workers' Welfare Fund Board
+    level: state
+    lang: ml
+    follow_links: false
+    urls:
+      - https://tailorwelfare.in/benefits
+      - https://tailorwelfare.in/acts-schemes
+    notes: Linked from lc.kerala.gov.in welfare-fund-boards list.
+
+  - id: kerala_viswakarma_pension
+    scheme: Viswakarma Pension Scheme (Kerala)
+    department: Backward Classes Development Department, Kerala
+    level: state
+    lang: en
+    urls:
+      - {url: https://www.myscheme.gov.in/schemes/vps, render: js}
+    notes: >-
+      Other boards on lc.kerala.gov.in/ml/node/232 (agriworkersfund.org, kmtwwfb.org,
+      peedika) were unreachable, blocked or had no scheme text on 2026-10-12.

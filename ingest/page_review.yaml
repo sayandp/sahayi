@@ -1,0 +1,49 @@
+# Manual review of OCR pages with confidence < 60 (data/processed/low_conf/).
+# Each page was rendered and inspected on 2026-10-12.
+#
+#   class: table      -> kept; chunks get section "table"; preprocessed OCR retry
+#          bad_prose  -> kept; preprocessed OCR retry (deskew, adaptive threshold, psm 4/6)
+#          blank      -> excluded from chunks
+#          stamp      -> excluded from chunks (stamp / signature / letterhead only)
+
+pages:
+  - doc_id: kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb
+    page: 13
+    class: blank
+    note: Empty page at the end of the EEP 2024-25 notice.
+
+  - doc_id: kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea
+    page: 8
+    class: table
+    note: Bordered two-column table, rows 59-96, of eligible OBC communities (English).
+
+  - doc_id: kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea
+    page: 18
+    class: table
+    note: Table of foreign universities in the 251-300 world-ranking band with country.
+
+  - doc_id: obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2
+    page: 14
+    class: table
+    note: >-
+      PM-YASASVI annexure - bordered Malayalam table, serial 177-205, listing community
+      names (e.g. കോമരൻ, ക്ഷത്രിയ, നായർ, പിള്ള, ചെട്ടിയാർ).
+
+  - doc_id: obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2
+    page: 16
+    class: table
+    note: >-
+      PM-YASASVI annexure - bordered Malayalam table, serial 235-263, listing community
+      names (e.g. സാമന്ത, ബ്രാഹ്മണൻ, നമ്പൂതിരി, പോറ്റി, ഭട്ടതിരി).
+
+  - doc_id: obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2
+    page: 17
+    class: table
+    note: >-
+      PM-YASASVI annexure - continuation of the same community table, serial 264-292
+      (e.g. വർമ്മ, മണിയൻ, വെള്ളാള, വൈശ്യൻ, നമ്പ്യാതിരി).
+
+  - doc_id: st_scholarships--4-treatment-0-ab11d8
+    page: 3
+    class: blank
+    note: Empty last page of the STDD treatment-assistance application form.

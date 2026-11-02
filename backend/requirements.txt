@@ -1,0 +1,36 @@
+# Phase 1: corpus + ingestion
+pymupdf==1.28.2
+numpy==2.4.6
+pytesseract==0.3.13
+requests==2.34.2
+httpx==0.28.1
+pyyaml==6.0.3
+pydantic==2.14.1
+pydantic-settings==2.15.0
+python-dotenv==1.2.4
+playwright==1.63.0
+tqdm==4.70.1
+ftfy==6.3.1
+regex==2026.9.29
+
+# Phase 2/2b: retrieval + eval (CPU only).
+# Install torch from the CPU index first:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# Do not add `optimum`: it pins transformers 4.x and breaks sentence-transformers 6.
+torch==2.14.1
+transformers==5.19.0
+sentence-transformers==6.1.0
+huggingface-hub==1.33.0
+qdrant-client==1.19.1
+rank-bm25==0.2.2
+onnxruntime==1.31.0
+psutil==7.2.2
+
+# Phase 3: API
+fastapi==0.150.0
+uvicorn[standard]==0.54.0
+
+# dev
+pytest==9.1.1
+ruff==0.17.0
+black==26.10.1
