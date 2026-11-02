@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+:root {
+  --page: #f1f6f3;
+  --sheet: #ffffff;
+  --ink: #12322b;
+  --muted: #4d6a62;
+  --line: #cfdfd8;
+  --green: #0b5d4c;
+  --green-soft: #dcefe8;
+  --on-green: #ffffff;
+  --gold: #b8860b;
+  --gold-bright: #d9a520;
+  --yes: #0a6b3d;
+  --no: #b3261e;
+  --unknown: #8a5a00;
+  --notice: #fff4d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0d1f1b;
+    --sheet: #15302a;
+    --ink: #e6f2ee;
+    --muted: #a3bfb7;
+    --line: #2b4a42;
+    --green: #5fd0b0;
+    --green-soft: #1d4238;
+    --on-green: #06241d;
+    --gold: #e3b341;
+    --gold-bright: #e3b341;
+    --yes: #63d69b;
+    --no: #ff8f86;
+    --unknown: #f0c05a;
+    --notice: #3a2f10;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0d1f1b;
+  --sheet: #15302a;
+  --ink: #e6f2ee;
+  --muted: #a3bfb7;
+  --line: #2b4a42;
+  --green: #5fd0b0;
+  --green-soft: #1d4238;
+  --on-green: #06241d;
+  --gold: #e3b341;
+  --gold-bright: #e3b341;
+  --yes: #63d69b;
+  --no: #ff8f86;
+  --unknown: #f0c05a;
+  --notice: #3a2f10;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Noto Sans Malayalam", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+/* Malayalam's stacked conjuncts need more room than Latin text */
+[lang="ml"] {
+  line-height: 1.85;
+}
+[lang="en"] {
+  line-height: 1.55;
+}
+.display {
+  font-family: "Baloo Chettan 2", "Noto Sans Malayalam", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+[lang="ml"].display,
+[lang="ml"] .display {
+  line-height: 1.4;
+}
+
+/* the kasavu border: the one decorative element */
+.kasavu {
+  height: 7px;
+  background: linear-gradient(
+    to bottom,
+    var(--gold) 0 2px,
+    transparent 2px 3px,
+    var(--gold-bright) 3px 5px,
+    transparent 5px 6px,
+    var(--gold) 6px 7px
+  );
+}
+
+/* rubber-stamp verdict */
+.stamp {
+  display: inline-block;
+  border: 2.5px solid currentColor;
+  border-radius: 6px;
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+  margin: 3px;
+  padding: 1px 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transform: rotate(-3deg);
+  white-space: nowrap;
+}
+.stamp-yes {
+  color: var(--yes);
+}
+.stamp-no {
+  color: var(--no);
+}
+.stamp-unknown {
+  color: var(--unknown);
+}
+
+.cite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  margin: 0 2px;
+  padding: 0 6px;
+  border-radius: 13px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.cite:hover {
+  border-color: var(--green);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold-bright);
+  outline-offset: 2px;
+}
+
+.drawer {
+  animation: slide-in 180ms ease-out;
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+.pop-in {
+  animation: pop-in 220ms ease-out;
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .pop-in {
+    animation: none;
+  }
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
