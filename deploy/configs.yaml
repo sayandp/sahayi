@@ -1,0 +1,41 @@
+# Retrieval configs for the deploy image: the eval default, with the bge-m3 query encoder and
+# the Jina reranker as int8 ONNX files baked into the image (no torch, no downloads).
+
+deploy_local:
+  mode: hybrid
+  strategy: section_aware
+  index_context: true
+  embed_onnx_file: "bge-m3-query/model_int8.onnx"
+  rewrite: true
+  overlap_rewrite: true
+  rewrite_deadline_s: 2.0
+  skip_rewrite_kinds: [ml]
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "jina-reranker-v2/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 6
+  rerank_with: original
+  abstain_threshold: -2.0084
+
+# Hosted Jina with a 1.5 s deadline; any error or missing key falls back to the local file.
+deploy_hosted:
+  mode: hybrid
+  strategy: section_aware
+  index_context: true
+  embed_onnx_file: "bge-m3-query/model_int8.onnx"
+  rewrite: true
+  overlap_rewrite: true
+  rewrite_deadline_s: 2.0
+  skip_rewrite_kinds: [ml]
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: api
+  rerank_provider: jina
+  rerank_timeout_s: 1.5
+  rerank_fallback_onnx_file: "jina-reranker-v2/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 6
+  rerank_with: original
+  abstain_threshold: -2.0084

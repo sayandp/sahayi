@@ -1,0 +1,16 @@
+# Deploy image: no torch and no sentence-transformers; both models run on onnxruntime.
+fastapi==0.150.0
+uvicorn[standard]==0.54.0
+numpy==2.4.6
+onnxruntime==1.31.0
+transformers==5.19.0  # same as the eval environment
+qdrant-client==1.19.1
+rank-bm25==0.2.2
+httpx==0.28.1
+pyyaml==6.0.3
+pydantic==2.14.1
+pydantic-settings==2.15.0
+python-dotenv==1.2.4
+regex==2026.9.29
+ftfy==6.3.1
+psutil==7.2.2
