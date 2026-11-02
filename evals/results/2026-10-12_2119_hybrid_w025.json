@@ -1,0 +1,2321 @@
+{
+ "config": {
+  "name": "hybrid_w025",
+  "strategy": "section_aware",
+  "mode": "hybrid",
+  "rerank": false,
+  "embed_model": "BAAI/bge-m3",
+  "rerank_model": "BAAI/bge-reranker-v2-m3",
+  "k_retrieve": 20,
+  "k_final": 10,
+  "rerank_pool": 20,
+  "rrf_k": 60,
+  "bm25_weight": 0.25,
+  "bm25_stem": true
+ },
+ "summary": {
+  "all": {
+   "n": 126,
+   "hit@1": 0.619,
+   "hit@5": 0.817,
+   "hit@10": 0.873,
+   "mrr@10": 0.707
+  },
+  "en": {
+   "n": 53,
+   "hit@1": 0.755,
+   "hit@5": 0.849,
+   "hit@10": 0.887,
+   "mrr@10": 0.792
+  },
+  "ml": {
+   "n": 46,
+   "hit@1": 0.565,
+   "hit@5": 0.913,
+   "hit@10": 0.978,
+   "mrr@10": 0.72
+  },
+  "manglish": {
+   "n": 27,
+   "hit@1": 0.444,
+   "hit@5": 0.593,
+   "hit@10": 0.667,
+   "mrr@10": 0.518
+  },
+  "latency_ms": {
+   "p50": 181.9,
+   "p95": 207.4
+  },
+  "top_score_median": {
+   "answerable": 0.0204,
+   "no_answer": 0.0192
+  }
+ },
+ "questions": [
+  {
+   "id": "q001",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02022739291380222,
+   "top": [
+    "pm_kisan--pm-kisan-488a46:1",
+    "pm_kisan--revisedfaq-666f07:1",
+    "pm_kisan--revisedfaq-666f07:2",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 210.6
+  },
+  {
+   "id": "q002",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 3,
+   "top_score": 0.018631368631368633,
+   "top": [
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "kasp--page-id-1077-3490f3:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pm_kisan--revisedfaq-666f07:2",
+    "pm_kisan--revisedfaq-666f07:1"
+   ],
+   "latency_ms": 180.2
+  },
+  {
+   "id": "q003",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 5,
+   "top_score": 0.02029969262295082,
+   "top": [
+    "pm_kisan--revisedfaq-666f07:1",
+    "pm_kisan--revisedfaq-666f07:1",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:3",
+    "pm_kisan--revisedfaq-666f07:4",
+    "pm_kisan--pm-kisan-488a46:1"
+   ],
+   "latency_ms": 172.8
+  },
+  {
+   "id": "q004",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "pm_kisan--revisedfaq-666f07:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:2",
+    "pm_kisan--revisedfaq-666f07:2",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:3"
+   ],
+   "latency_ms": 182.5
+  },
+  {
+   "id": "q005",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "apy--apy-234e9e:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 177.9
+  },
+  {
+   "id": "q006",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.018525011687704533,
+   "top": [
+    "sc_scholarships--lakshya-615625:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 182.2
+  },
+  {
+   "id": "q007",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pm_kisan--pm-kisan-488a46:1"
+   ],
+   "latency_ms": 215.4
+  },
+  {
+   "id": "q008",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_agri_schemes--schemes-103621:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "pmfby--pmfby-04a0dd:1",
+    "jsy--jsy1-79905a:1"
+   ],
+   "latency_ms": 191.1
+  },
+  {
+   "id": "q009",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "pm_kisan--revisedfaq-666f07:1",
+    "kcc--kcc-0c0281:1"
+   ],
+   "latency_ms": 163.0
+  },
+  {
+   "id": "q010",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.0173218185427834,
+   "top": [
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1"
+   ],
+   "latency_ms": 183.1
+  },
+  {
+   "id": "q011",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmmsy--pmmsy-57d921:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pmmy--pmmy-761c21:1",
+    "pmmvy--pmmvy-268b91:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 187.5
+  },
+  {
+   "id": "q012",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1",
+    "kudumbashree--5-396fc7:1",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:20"
+   ],
+   "latency_ms": 193.3
+  },
+  {
+   "id": "q013",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmay_g--english-book-final-51e2f6:16",
+    "pmay_g--english-book-final-51e2f6:31",
+    "pmay_g--pmay-g-c98964:1",
+    "pmay_g--english-book-final-51e2f6:17",
+    "pmay_g--pmay-g-c98964:1"
+   ],
+   "latency_ms": 187.0
+  },
+  {
+   "id": "q014",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.019971376528753578,
+   "top": [
+    "pmay_g--pmay-g-c98964:1",
+    "pmay_g--pmay-g-c98964:1",
+    "pmay_g--english-book-final-51e2f6:7",
+    "pmay_g--english-book-final-51e2f6:25",
+    "pmay_g--english-book-final-51e2f6:30"
+   ],
+   "latency_ms": 177.5
+  },
+  {
+   "id": "q015",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.01639344262295082,
+   "top": [
+    "pmay_g--english-book-final-51e2f6:42",
+    "pmay_g--english-book-final-51e2f6:43",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_g--english-book-final-51e2f6:32",
+    "pmay_g--english-book-final-51e2f6:17"
+   ],
+   "latency_ms": 189.0
+  },
+  {
+   "id": "q016",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02022739291380222,
+   "top": [
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_g--english-book-final-51e2f6:30",
+    "pmegp--pmegp-7e1c48:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1"
+   ],
+   "latency_ms": 179.5
+  },
+  {
+   "id": "q017",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_g--english-book-final-51e2f6:30",
+    "pmay_g--pmay-g-c98964:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_g--english-book-final-51e2f6:16"
+   ],
+   "latency_ms": 181.0
+  },
+  {
+   "id": "q018",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1"
+   ],
+   "latency_ms": 195.6
+  },
+  {
+   "id": "q019",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 3,
+   "top_score": 0.02022739291380222,
+   "top": [
+    "st_scholarships--3-janani-janmaraksha-0-d17ade:1",
+    "kasp--page-id-1077-3490f3:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1"
+   ],
+   "latency_ms": 194.6
+  },
+  {
+   "id": "q020",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmmvy--pmmvy-268b91:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pmmy--pmmy-761c21:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pmuy--pmuy-6c9914:1"
+   ],
+   "latency_ms": 180.7
+  },
+  {
+   "id": "q021",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmmvy--pmmvy-268b91:1",
+    "pmmy--pmmy-761c21:1",
+    "pmmsy--pmmsy-57d921:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmuy--pmuy-6c9914:1"
+   ],
+   "latency_ms": 179.1
+  },
+  {
+   "id": "q022",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_igndps--igndps-f97cb2:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 182.0
+  },
+  {
+   "id": "q023",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 179.0
+  },
+  {
+   "id": "q024",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 8,
+   "top_score": 0.019860375541646606,
+   "top": [
+    "kerala_pension_old_age--faqs-948590:1",
+    "kerala_pension_widow--faqs-948590:1",
+    "kerala_welfare_pensions--faqs-652205:1",
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1"
+   ],
+   "latency_ms": 186.8
+  },
+  {
+   "id": "q025",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020035282258064516,
+   "top": [
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:13",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 186.9
+  },
+  {
+   "id": "q026",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.01639344262295082,
+   "top": [
+    "kerala_agri_schemes--schemes-103621:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:8",
+    "obc_oec_scholarships--oec-pre2022-23-b1cb9f:7",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kerala_cancer_suraksha--css-62511c:1"
+   ],
+   "latency_ms": 191.2
+  },
+  {
+   "id": "q027",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "pmmsy--pmmsy-57d921:1"
+   ],
+   "latency_ms": 173.9
+  },
+  {
+   "id": "q028",
+   "lang": "en",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:14",
+    "nsap--nsap-guidelines-oct2014-9deea1:18"
+   ],
+   "latency_ms": 172.3
+  },
+  {
+   "id": "q029",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12"
+   ],
+   "latency_ms": 187.1
+  },
+  {
+   "id": "q030",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 6,
+   "top_score": 0.018957631198844485,
+   "top": [
+    "kerala_pension_old_age--faqs-948590:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_widow--faqs-948590:1",
+    "kerala_pension_agri_labourers--faqs-948590:1"
+   ],
+   "latency_ms": 180.6
+  },
+  {
+   "id": "q031",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "obc_oec_scholarships--oecp-mea-5b6755:1"
+   ],
+   "latency_ms": 174.1
+  },
+  {
+   "id": "q032",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "kerala_minority_scholarships--mtskrl-27cf80:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1"
+   ],
+   "latency_ms": 178.9
+  },
+  {
+   "id": "q033",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1"
+   ],
+   "latency_ms": 180.5
+  },
+  {
+   "id": "q034",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 3,
+   "top_score": 0.01980550284629981,
+   "top": [
+    "obc_oec_scholarships--1e3f703c08743afb687bde0ebfc5695a-0691db:2",
+    "obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2:3",
+    "obc_oec_scholarships--1e3f703c08743afb687bde0ebfc5695a-0691db:1",
+    "obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1"
+   ],
+   "latency_ms": 200.5
+  },
+  {
+   "id": "q035",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 3,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1"
+   ],
+   "latency_ms": 188.1
+  },
+  {
+   "id": "q036",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.017796990792724007,
+   "top": [
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "kerala_minority_scholarships--mtskrl-27cf80:1",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:2",
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:4"
+   ],
+   "latency_ms": 179.4
+  },
+  {
+   "id": "q037",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmegp--pmegp-7e1c48:1",
+    "pmegp--pmegp-7e1c48:1",
+    "pmegp--pmegp-7e1c48:1",
+    "pmegp--pmegp-7e1c48:1",
+    "pmegp--pmegp-7e1c48:1"
+   ],
+   "latency_ms": 183.4
+  },
+  {
+   "id": "q038",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.017375100725221596,
+   "top": [
+    "sc_scholarships--lakshya-615625:1",
+    "pmegp--pmegp-7e1c48:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pmegp--pmegp-7e1c48:1",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:1"
+   ],
+   "latency_ms": 195.6
+  },
+  {
+   "id": "q039",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "pmegp--pmegp-7e1c48:1"
+   ],
+   "latency_ms": 185.2
+  },
+  {
+   "id": "q040",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pmmy--pmmy-761c21:1"
+   ],
+   "latency_ms": 194.2
+  },
+  {
+   "id": "q041",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_kisan--revisedfaq-666f07:1"
+   ],
+   "latency_ms": 188.1
+  },
+  {
+   "id": "q042",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.016718356270595078,
+   "top": [
+    "kerala_eep--bcdir4982022-a1-3fdf9f:2",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pmmy--pmmy-761c21:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1"
+   ],
+   "latency_ms": 190.3
+  },
+  {
+   "id": "q043",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pmegp--pmegp-7e1c48:1"
+   ],
+   "latency_ms": 173.5
+  },
+  {
+   "id": "q044",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1"
+   ],
+   "latency_ms": 177.6
+  },
+  {
+   "id": "q045",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "mgnrega--mgnrega-608fc2:1",
+    "mgnrega--mgnrega-608fc2:1",
+    "mgnrega--mgnrega-608fc2:1",
+    "pmay_g--pmay-g-c98964:1",
+    "mgnrega--mgnrega-608fc2:1"
+   ],
+   "latency_ms": 180.9
+  },
+  {
+   "id": "q046",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 5,
+   "top_score": 0.018914473684210526,
+   "top": [
+    "sc_scholarships--2016-06-27-10-37-10-b7b476:1",
+    "life_mission--life-project-5ef49f:1",
+    "kerala_pension_agri_labourers--faqs-948590:1",
+    "sc_scholarships--2016-06-17-06-37-09-c6484c:1",
+    "mgnrega--mgnrega-608fc2:1"
+   ],
+   "latency_ms": 187.1
+  },
+  {
+   "id": "q047",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--about-b2e352:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1"
+   ],
+   "latency_ms": 179.3
+  },
+  {
+   "id": "q048",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--about-b2e352:1",
+    "pmuy--pmuy-6c9914:1"
+   ],
+   "latency_ms": 181.3
+  },
+  {
+   "id": "q049",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 4,
+   "top_score": 0.018882858435097242,
+   "top": [
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pmuy--about-b2e352:1",
+    "pmuy--ujjwala2-70400f:1",
+    "pmuy--pmuy-6c9914:1"
+   ],
+   "latency_ms": 182.4
+  },
+  {
+   "id": "q050",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_pension_widow--faqs-948590:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:2",
+    "kerala_pension_old_age--faqs-948590:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:1"
+   ],
+   "latency_ms": 187.4
+  },
+  {
+   "id": "q051",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_pension_widow--faqs-70561d:1",
+    "kerala_pension_unmarried_women--faqs-70561d:1",
+    "kerala_pension_old_age--faqs-70561d:1",
+    "kerala_pension_disability--faqs-70561d:1",
+    "kerala_pension_agri_labourers--faqs-70561d:1"
+   ],
+   "latency_ms": 178.9
+  },
+  {
+   "id": "q052",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.02012478590653291,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "nsap_igndps--igndps-f97cb2:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 185.9
+  },
+  {
+   "id": "q053",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 5,
+   "top_score": 0.020239596469104667,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "kerala_pension_widow--faqs-948590:1"
+   ],
+   "latency_ms": 186.6
+  },
+  {
+   "id": "q054",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.0199145693835142,
+   "top": [
+    "kerala_pension_old_age--faqs-948590:1",
+    "kerala_welfare_pensions--faqs-652205:1",
+    "kerala_pension_old_age--faqs-70561d:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_widow--faqs-948590:1"
+   ],
+   "latency_ms": 177.3
+  },
+  {
+   "id": "q055",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.02012478590653291,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignwps--ignwps-0932bc:1"
+   ],
+   "latency_ms": 192.4
+  },
+  {
+   "id": "q056",
+   "lang": "en",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.020161290322580645,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1"
+   ],
+   "latency_ms": 187.7
+  },
+  {
+   "id": "q057",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_pension_agri_labourers--faqs-948590:1",
+    "kerala_pension_agri_labourers--faqs-70561d:1",
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "kerala_welfare_pensions--faqs-652205:1",
+    "kerala_welfare_pensions--schemes-54856b:1"
+   ],
+   "latency_ms": 187.5
+  },
+  {
+   "id": "q058",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.020161290322580645,
+   "top": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pm_kisan--revisedfaq-666f07:2"
+   ],
+   "latency_ms": 185.5
+  },
+  {
+   "id": "q059",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_unmarried_women--faqs-70561d:1",
+    "kerala_welfare_pensions--faqs-652205:1",
+    "kerala_pension_widow--faqs-948590:1",
+    "kerala_pension_widow--faqs-70561d:1"
+   ],
+   "latency_ms": 177.8
+  },
+  {
+   "id": "q060",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 7,
+   "top_score": 0.01935634328358209,
+   "top": [
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 175.5
+  },
+  {
+   "id": "q061",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.019971376528753578,
+   "top": [
+    "kerala_welfare_pensions--faqs-652205:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_welfare_pensions--schemes-54856b:1"
+   ],
+   "latency_ms": 183.7
+  },
+  {
+   "id": "q062",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_welfare_pensions--schemes-54856b:1",
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_welfare_pensions--faqs-652205:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1"
+   ],
+   "latency_ms": 182.8
+  },
+  {
+   "id": "q063",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.02012478590653291,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "apy--apy-234e9e:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 179.9
+  },
+  {
+   "id": "q064",
+   "lang": "en",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.020035282258064516,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1"
+   ],
+   "latency_ms": 179.9
+  },
+  {
+   "id": "q065",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kasp--page-id-1077-3490f3:1",
+    "kerala_arogyakiranam--page-id-8713-256ed5:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 206.5
+  },
+  {
+   "id": "q066",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.017617753623188407,
+   "top": [
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kasp--page-id-1077-3490f3:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kerala_agri_schemes--schemes-103621:1"
+   ],
+   "latency_ms": 198.7
+  },
+  {
+   "id": "q067",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.0176048801369863,
+   "top": [
+    "pm_vishwakarma--pmv-378966:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:8",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:7",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:9"
+   ],
+   "latency_ms": 203.7
+  },
+  {
+   "id": "q068",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_arogyakiranam--page-id-8713-256ed5:1",
+    "kasp--page-id-1077-3490f3:1",
+    "kerala_sruthitharangam--page-id-8718-4daea8:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_sruthitharangam--scis-be274f:1"
+   ],
+   "latency_ms": 168.4
+  },
+  {
+   "id": "q069",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 9,
+   "top_score": 0.020161290322580645,
+   "top": [
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1"
+   ],
+   "latency_ms": 186.5
+  },
+  {
+   "id": "q070",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_sruthitharangam--page-id-8718-4daea8:1",
+    "kasp--page-id-1077-3490f3:1",
+    "life_mission--life-project-5ef49f:1",
+    "kerala_eep--ceccdb87abb9537c7277a3722e4a880b-eb1fff:2",
+    "kerala_arogyakiranam--page-id-8713-256ed5:1"
+   ],
+   "latency_ms": 166.5
+  },
+  {
+   "id": "q071",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kerala_sruthitharangam--scis-be274f:1"
+   ],
+   "latency_ms": 190.2
+  },
+  {
+   "id": "q072",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 177.7
+  },
+  {
+   "id": "q073",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 181.6
+  },
+  {
+   "id": "q074",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 172.5
+  },
+  {
+   "id": "q075",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.017664092664092662,
+   "top": [
+    "sc_scholarships--lakshya-615625:2",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:3"
+   ],
+   "latency_ms": 181.4
+  },
+  {
+   "id": "q076",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1"
+   ],
+   "latency_ms": 180.3
+  },
+  {
+   "id": "q077",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.01639344262295082,
+   "top": [
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:8",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:9",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:14",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:22",
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:4"
+   ],
+   "latency_ms": 184.0
+  },
+  {
+   "id": "q078",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1"
+   ],
+   "latency_ms": 187.4
+  },
+  {
+   "id": "q079",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 7,
+   "top_score": 0.01939414263357925,
+   "top": [
+    "kasp--page-id-1077-3490f3:1",
+    "kerala_sruthitharangam--page-id-8718-4daea8:1",
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:1",
+    "kerala_arogyakiranam--page-id-8713-256ed5:1",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:1"
+   ],
+   "latency_ms": 179.6
+  },
+  {
+   "id": "q080",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 193.0
+  },
+  {
+   "id": "q081",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "kerala_minority_scholarships--mtskrl-27cf80:1"
+   ],
+   "latency_ms": 171.9
+  },
+  {
+   "id": "q082",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.019905273937532,
+   "top": [
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:10",
+    "pm_vishwakarma--pmv-378966:1"
+   ],
+   "latency_ms": 181.8
+  },
+  {
+   "id": "q083",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1"
+   ],
+   "latency_ms": 186.2
+  },
+  {
+   "id": "q084",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 4,
+   "top_score": 0.017239583333333336,
+   "top": [
+    "st_scholarships--2-inter-cast-marriage-0-fcaba9:1",
+    "sc_scholarships--2016-06-27-10-37-10-b7b476:1",
+    "sc_scholarships--2016-06-17-06-37-09-c6484c:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--maddapp-i-224a77:1"
+   ],
+   "latency_ms": 194.7
+  },
+  {
+   "id": "q085",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1"
+   ],
+   "latency_ms": 180.5
+  },
+  {
+   "id": "q086",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "kerala_welfare_pensions--schemes-54856b:1",
+    "kerala_welfare_pensions--faqs-652205:1",
+    "kerala_pension_agri_labourers--faqs-948590:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 180.6
+  },
+  {
+   "id": "q087",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.020161290322580645,
+   "top": [
+    "kerala_pension_agri_labourers--faqs-70561d:1",
+    "kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1",
+    "pm_vishwakarma--pmv-378966:1"
+   ],
+   "latency_ms": 185.0
+  },
+  {
+   "id": "q088",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.020035282258064516,
+   "top": [
+    "kerala_minority_scholarships--mtskrl-27cf80:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_scholarships--chms-dbe7e6:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "pmfby--pmfby-04a0dd:1"
+   ],
+   "latency_ms": 202.1
+  },
+  {
+   "id": "q089",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kerala_agri_schemes--schemes-mal-e8d3f1:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pm_kisan--pm-kisan-488a46:1"
+   ],
+   "latency_ms": 196.3
+  },
+  {
+   "id": "q090",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02012478590653291,
+   "top": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1"
+   ],
+   "latency_ms": 179.5
+  },
+  {
+   "id": "q091",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_agri_crop_insurance--natural-calamity-scheme-9e5a13:1",
+    "kerala_agri_schemes--schemes-103621:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1"
+   ],
+   "latency_ms": 190.3
+  },
+  {
+   "id": "q092",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020161290322580645,
+   "top": [
+    "kerala_agri_schemes--schemes-mal-e8d3f1:1",
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "sc_scholarships--mrsadmission-cd28e6:1",
+    "kerala_agri_schemes--schemes-103621:1",
+    "kerala_agri_schemes--schemes-103621:1"
+   ],
+   "latency_ms": 186.2
+  },
+  {
+   "id": "q093",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_fisheries_welfare--schemes-projects-ef358c:1",
+    "kerala_agri_schemes--schemes-mal-e8d3f1:1",
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1"
+   ],
+   "latency_ms": 222.9
+  },
+  {
+   "id": "q094",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_welfare_pensions--faqs-652205:1",
+    "kerala_pension_agri_labourers--faqs-948590:1"
+   ],
+   "latency_ms": 207.4
+  },
+  {
+   "id": "q095",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.01953125,
+   "top": [
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "sc_scholarships--unnathi-scholarship-3ea21d:7",
+    "sc_scholarships--unnathi-scholarship-3ea21d:10",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:8"
+   ],
+   "latency_ms": 207.4
+  },
+  {
+   "id": "q096",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1"
+   ],
+   "latency_ms": 180.4
+  },
+  {
+   "id": "q097",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "kudumbashree--5-396fc7:1",
+    "kudumbashree--142-71bd05:1",
+    "kudumbashree--368-7ede12:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "kudumbashree--5-396fc7:1"
+   ],
+   "latency_ms": 181.1
+  },
+  {
+   "id": "q098",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "life_mission--life-project-5ef49f:1",
+    "life_mission--518-9bc49f:1",
+    "life_mission--ems-housing-project-866ef2:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1"
+   ],
+   "latency_ms": 180.7
+  },
+  {
+   "id": "q099",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 8,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "life_mission--518-9bc49f:1",
+    "life_mission--life-third-phase-c35686:1",
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:23",
+    "kerala_sruthitharangam--scis-be274f:1"
+   ],
+   "latency_ms": 180.5
+  },
+  {
+   "id": "q100",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "life_mission--ems-housing-project-866ef2:1",
+    "sc_scholarships--2016-06-27-10-37-10-b7b476:1",
+    "sc_scholarships--2016-06-17-06-37-09-c6484c:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1"
+   ],
+   "latency_ms": 188.7
+  },
+  {
+   "id": "q101",
+   "lang": "en",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.020069913211186115,
+   "top": [
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_g--pmay-g-c98964:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_g--english-book-final-51e2f6:6",
+    "pmay_g--english-book-final-51e2f6:7"
+   ],
+   "latency_ms": 171.7
+  },
+  {
+   "id": "q102",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:1",
+    "sc_scholarships--ceccddf2b8e49fea025ce19655e86834-20908f:1",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:2",
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:1",
+    "sc_scholarships--lap-top-order-new-12-c5648c:1"
+   ],
+   "latency_ms": 191.7
+  },
+  {
+   "id": "q103",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:8",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:6",
+    "sc_scholarships--unnathi-scholarship-3ea21d:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1"
+   ],
+   "latency_ms": 205.1
+  },
+  {
+   "id": "q104",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.01939414263357925,
+   "top": [
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:1",
+    "sc_scholarships--unnathi-scholarship-3ea21d:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:11",
+    "sc_scholarships--ceccddf2b8e49fea025ce19655e86834-20908f:1"
+   ],
+   "latency_ms": 178.3
+  },
+  {
+   "id": "q105",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.02029969262295082,
+   "top": [
+    "sc_scholarships--lakshya-615625:2",
+    "sc_scholarships--lakshya-615625:1",
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:2",
+    "sc_scholarships--lap-top-order-new-12-c5648c:2",
+    "sc_scholarships--lakshya-615625:1"
+   ],
+   "latency_ms": 174.6
+  },
+  {
+   "id": "q106",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020069913211186115,
+   "top": [
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:1",
+    "sc_scholarships--lap-top-order-new-12-c5648c:1",
+    "sc_scholarships--lap-top-order-new-12-c5648c:2",
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:2",
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:1"
+   ],
+   "latency_ms": 181.0
+  },
+  {
+   "id": "q107",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.019593253968253968,
+   "top": [
+    "obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2:5",
+    "sc_scholarships--mrsadmission-cd28e6:1",
+    "obc_oec_scholarships--c44bb338b9b84821311c7eb0c71b1b50-dbac8e:4",
+    "obc_oec_scholarships--1e3f703c08743afb687bde0ebfc5695a-0691db:4",
+    "obc_oec_scholarships--a4c9d0a2e4df570475d8a4c448d1cd28-fe4b92:4"
+   ],
+   "latency_ms": 181.3
+  },
+  {
+   "id": "q108",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "sc_scholarships--2016-06-27-10-37-10-b7b476:1",
+    "sc_scholarships--2016-06-17-06-37-09-c6484c:1",
+    "sc_scholarships--lakshya-615625:1",
+    "sc_scholarships--mrsadmission-cd28e6:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:3"
+   ],
+   "latency_ms": 179.5
+  },
+  {
+   "id": "q109",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.020035282258064516,
+   "top": [
+    "sc_scholarships--ceccddf2b8e49fea025ce19655e86834-20908f:4",
+    "sc_scholarships--2016-06-17-06-37-09-c6484c:1",
+    "sc_scholarships--2016-06-27-10-37-10-b7b476:1",
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1",
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:1"
+   ],
+   "latency_ms": 173.2
+  },
+  {
+   "id": "q110",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 9,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1"
+   ],
+   "latency_ms": 190.0
+  },
+  {
+   "id": "q111",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "st_scholarships--2-inter-cast-marriage-0-fcaba9:1",
+    "sc_scholarships--2016-06-17-06-37-09-c6484c:1",
+    "sc_scholarships--2016-06-27-10-37-10-b7b476:1",
+    "sc_scholarships--lap-top-order-new-12-c5648c:1",
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:1"
+   ],
+   "latency_ms": 185.3
+  },
+  {
+   "id": "q112",
+   "lang": "en",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.02018132141082961,
+   "top": [
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:1",
+    "sc_scholarships--unnathi-scholarship-3ea21d:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:2"
+   ],
+   "latency_ms": 178.9
+  },
+  {
+   "id": "q113",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "obc_oec_scholarships--c44bb338b9b84821311c7eb0c71b1b50-dbac8e:2",
+    "obc_oec_scholarships--a4c9d0a2e4df570475d8a4c448d1cd28-fe4b92:2",
+    "obc_oec_scholarships--c44bb338b9b84821311c7eb0c71b1b50-dbac8e:1",
+    "obc_oec_scholarships--a4c9d0a2e4df570475d8a4c448d1cd28-fe4b92:1",
+    "obc_oec_scholarships--a4c9d0a2e4df570475d8a4c448d1cd28-fe4b92:3"
+   ],
+   "latency_ms": 175.4
+  },
+  {
+   "id": "q114",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.02042570068746695,
+   "top": [
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "obc_oec_scholarships--b1452989d1bacb205915c20bb0f847fd-5c339f:7",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "obc_oec_scholarships--a0b77c26ce26536a5338e55ca12edfd6-af181c:7"
+   ],
+   "latency_ms": 180.7
+  },
+  {
+   "id": "q115",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "obc_oec_scholarships--45241434689234814487bbb91f0d787c-fd5f56:1",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:1",
+    "obc_oec_scholarships--32706ab4b4816187c27cc8fff2e2a9da-a9fb5a:1",
+    "obc_oec_scholarships--a0b77c26ce26536a5338e55ca12edfd6-af181c:1",
+    "obc_oec_scholarships--32706ab4b4816187c27cc8fff2e2a9da-a9fb5a:2"
+   ],
+   "latency_ms": 214.6
+  },
+  {
+   "id": "q116",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.019301470588235295,
+   "top": [
+    "obc_oec_scholarships--a0b77c26ce26536a5338e55ca12edfd6-af181c:5",
+    "obc_oec_scholarships--b1452989d1bacb205915c20bb0f847fd-5c339f:5",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:5",
+    "sc_scholarships--lakshya-615625:1"
+   ],
+   "latency_ms": 202.8
+  },
+  {
+   "id": "q117",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.019723360655737706,
+   "top": [
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:1",
+    "kerala_obc_girls_special_scholarship--b3a448a7e3abdde6fd612e0ac9a391eb-f66f70:1",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:1",
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:1",
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:2"
+   ],
+   "latency_ms": 192.8
+  },
+  {
+   "id": "q118",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:13",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:14",
+    "obc_oec_scholarships--oecp-mea-5b6755:1"
+   ],
+   "latency_ms": 176.1
+  },
+  {
+   "id": "q119",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.019971376528753578,
+   "top": [
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:1",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:2",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:2",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:1",
+    "kerala_eep--ceccdb87abb9537c7277a3722e4a880b-eb1fff:1"
+   ],
+   "latency_ms": 218.7
+  },
+  {
+   "id": "q120",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 4,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_eep--ceccdb87abb9537c7277a3722e4a880b-eb1fff:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:21",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:22",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:2",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:1"
+   ],
+   "latency_ms": 203.7
+  },
+  {
+   "id": "q121",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 2,
+   "top_score": 0.02029969262295082,
+   "top": [
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:1",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:2",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:1",
+    "kerala_eep--ceccdb87abb9537c7277a3722e4a880b-eb1fff:1",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:1"
+   ],
+   "latency_ms": 226.7
+  },
+  {
+   "id": "q122",
+   "lang": "ml",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:1",
+    "obc_oec_scholarships--a4c9d0a2e4df570475d8a4c448d1cd28-fe4b92:8",
+    "kerala_overseas_scholarship_obc--6414a810f9b0865071c5a1f46aac408b-c6f238:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:2",
+    "obc_oec_scholarships--a4c9d0a2e4df570475d8a4c448d1cd28-fe4b92:1"
+   ],
+   "latency_ms": 192.1
+  },
+  {
+   "id": "q123",
+   "lang": "en",
+   "type": "answerable",
+   "rank": null,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "sc_scholarships--unnathi-scholarship-3ea21d:2"
+   ],
+   "latency_ms": 193.3
+  },
+  {
+   "id": "q124",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "sc_scholarships--2016-06-17-06-37-09-c6484c:1"
+   ],
+   "latency_ms": 193.3
+  },
+  {
+   "id": "q125",
+   "lang": "en",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "kerala_minority_scholarships--chms-dbe7e6:1",
+    "kerala_minority_scholarships--chms-dbe7e6:1",
+    "kerala_minority_scholarships--chms-dbe7e6:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1"
+   ],
+   "latency_ms": 173.0
+  },
+  {
+   "id": "q126",
+   "lang": "manglish",
+   "type": "answerable",
+   "rank": 1,
+   "top_score": 0.019023733790066062,
+   "top": [
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pmmy--pmmy-761c21:1"
+   ],
+   "latency_ms": 194.9
+  },
+  {
+   "id": "n001",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.017178362573099414,
+   "top": [
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pmuy--about-b2e352:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 182.3
+  },
+  {
+   "id": "n002",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.0191624895572264,
+   "top": [
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "apy--apy-234e9e:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1"
+   ],
+   "latency_ms": 170.0
+  },
+  {
+   "id": "n003",
+   "lang": "ml",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.01639344262295082,
+   "top": [
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:7",
+    "sc_scholarships--unnathi-scholarship-3ea21d:7",
+    "pm_kisan--revisedfaq-666f07:5"
+   ],
+   "latency_ms": 171.7
+  },
+  {
+   "id": "n004",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.02018132141082961,
+   "top": [
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pmmy--pmmy-761c21:1",
+    "pmay_g--pmay-g-c98964:1",
+    "kcc--kcc-0c0281:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 183.2
+  },
+  {
+   "id": "n005",
+   "lang": "manglish",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.017871132001566786,
+   "top": [
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "sc_scholarships--lakshya-615625:4",
+    "kerala_advocate_grant--7f13ea25ed7d4bb95a6ee0b1557c382d-cff460:1",
+    "kudumbashree--5-396fc7:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:1"
+   ],
+   "latency_ms": 176.4
+  },
+  {
+   "id": "n006",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.017857142857142856,
+   "top": [
+    "kerala_minority_scholarships--mtskrl-27cf80:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kerala_minority_scholarships--mtskrl-27cf80:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1"
+   ],
+   "latency_ms": 173.6
+  },
+  {
+   "id": "n007",
+   "lang": "ml",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.019593253968253968,
+   "top": [
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:2",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:3",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:4",
+    "sc_scholarships--traceproject-a568f0:3",
+    "sc_scholarships--lakshya-615625:4"
+   ],
+   "latency_ms": 171.4
+  },
+  {
+   "id": "n008",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.019057765151515152,
+   "top": [
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 179.6
+  },
+  {
+   "id": "n009",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.02018132141082961,
+   "top": [
+    "pmmvy--pmmvy-268b91:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "jsy--jsy1-79905a:1",
+    "pmmvy--pmmvy-268b91:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1"
+   ],
+   "latency_ms": 180.4
+  },
+  {
+   "id": "n010",
+   "lang": "manglish",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.018871753246753248,
+   "top": [
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "sc_scholarships--unnathi-scholarship-3ea21d:2",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1"
+   ],
+   "latency_ms": 181.9
+  },
+  {
+   "id": "n011",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.019975186104218362,
+   "top": [
+    "nsap_igndps--igndps-f97cb2:1",
+    "pm_kisan--revisedfaq-666f07:5",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:11",
+    "pmmvy--pmmvy-268b91:1",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:2"
+   ],
+   "latency_ms": 173.0
+  },
+  {
+   "id": "n012",
+   "lang": "ml",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.01951844262295082,
+   "top": [
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:2",
+    "sc_scholarships--lakshya-615625:4",
+    "kerala_eep--ceccdb87abb9537c7277a3722e4a880b-eb1fff:1",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:5",
+    "obc_oec_scholarships--1e3f703c08743afb687bde0ebfc5695a-0691db:5"
+   ],
+   "latency_ms": 159.3
+  },
+  {
+   "id": "n013",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.019496204278812972,
+   "top": [
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pm_kisan--revisedfaq-666f07:1",
+    "kerala_agri_schemes--schemes-103621:1",
+    "pmay_g--english-book-final-51e2f6:17",
+    "pmay_g--pmay-g-c98964:1"
+   ],
+   "latency_ms": 177.2
+  },
+  {
+   "id": "n014",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.019598570828079025,
+   "top": [
+    "pmay_u--pmay-u-5f7b25:1",
+    "apy--apy-234e9e:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 178.3
+  },
+  {
+   "id": "n015",
+   "lang": "manglish",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.020239596469104667,
+   "top": [
+    "kerala_agri_schemes--schemes-103621:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1"
+   ],
+   "latency_ms": 165.2
+  },
+  {
+   "id": "n016",
+   "lang": "ml",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.019230769230769232,
+   "top": [
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:8",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:9",
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 182.8
+  },
+  {
+   "id": "n017",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.019916911045943304,
+   "top": [
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "kudumbashree--5-396fc7:1",
+    "pmmy--pmmy-761c21:1",
+    "kcc--kcc-0c0281:1"
+   ],
+   "latency_ms": 171.6
+  },
+  {
+   "id": "n018",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.018227009113504555,
+   "top": [
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "mgnrega--mgnrega-608fc2:1"
+   ],
+   "latency_ms": 178.8
+  },
+  {
+   "id": "n019",
+   "lang": "manglish",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.020491803278688527,
+   "top": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1"
+   ],
+   "latency_ms": 175.3
+  },
+  {
+   "id": "n020",
+   "lang": "ml",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.01639344262295082,
+   "top": [
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:24",
+    "pmuy--about-b2e352:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 217.3
+  },
+  {
+   "id": "n021",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.017826086956521738,
+   "top": [
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "sjd_assistive_devices--spaddap-c1206b:1"
+   ],
+   "latency_ms": 201.8
+  },
+  {
+   "id": "n022",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.01639344262295082,
+   "top": [
+    "sc_scholarships--traceproject-a568f0:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:1",
+    "kerala_minority_scholarships--mtskrl-27cf80:1",
+    "sc_scholarships--traceproject-a568f0:3"
+   ],
+   "latency_ms": 178.4
+  },
+  {
+   "id": "n023",
+   "lang": "manglish",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.017964975845410628,
+   "top": [
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:9",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:11",
+    "obc_oec_scholarships--a0b77c26ce26536a5338e55ca12edfd6-af181c:3",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6",
+    "kerala_sruthitharangam--scis-be274f:1"
+   ],
+   "latency_ms": 180.4
+  },
+  {
+   "id": "n024",
+   "lang": "ml",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.02036169659120479,
+   "top": [
+    "kerala_obc_girls_special_scholarship--b3a448a7e3abdde6fd612e0ac9a391eb-f66f70:6",
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:6",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:6",
+    "obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2:19",
+    "obc_oec_scholarships--2d4bff24b8b04383d5fe06f7bb9eb1a9-49fc6e:3"
+   ],
+   "latency_ms": 210.1
+  },
+  {
+   "id": "n025",
+   "lang": "en",
+   "type": "no_answer",
+   "rank": null,
+   "top_score": 0.019375785504817764,
+   "top": [
+    "apy--apy-234e9e:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "pmay_g--english-book-final-51e2f6:8",
+    "sc_scholarships--unnathi-scholarship-3ea21d:6",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:7"
+   ],
+   "latency_ms": 181.1
+  }
+ ]
+}

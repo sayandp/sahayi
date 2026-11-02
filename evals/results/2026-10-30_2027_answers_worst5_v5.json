@@ -1,0 +1,857 @@
+{
+ "model": "qwen/qwen3.8-27b",
+ "judge": "openai/gpt-oss-20b",
+ "config": "default",
+ "answer_prompt": "v5",
+ "judge_prompt": "v2",
+ "stopped": null,
+ "retry_after_s": null,
+ "tokens_used": {
+  "qwen/qwen3.8-27b": {
+   "in": 16485,
+   "out": 2471,
+   "calls": 5
+  },
+  "openai/gpt-oss-20b": {
+   "in": 8651,
+   "out": 2314,
+   "calls": 5
+  }
+ },
+ "summary": {
+  "excluded_provider_failures": 0,
+  "gate2": {
+   "answerable_gold_n": 5,
+   "counts": false,
+   "faithfulness": 0.85,
+   "citation_accuracy": 0.793,
+   "pass": false
+  },
+  "by_slice": {
+   "all": {
+    "n": 5,
+    "answered": 5,
+    "faithfulness": 0.85,
+    "faithfulness_micro": 0.793,
+    "citation_accuracy": 0.793,
+    "answer_relevancy": 0.64,
+    "statements": 29,
+    "answerable_answered": 1.0,
+    "context_hit@5": 0.8,
+    "language_match": 1.0
+   },
+   "lang:en": {
+    "n": 3,
+    "answered": 3,
+    "faithfulness": 1.0,
+    "faithfulness_micro": 1.0,
+    "citation_accuracy": 1.0,
+    "answer_relevancy": 0.667,
+    "statements": 15,
+    "answerable_answered": 1.0,
+    "context_hit@5": 0.667,
+    "language_match": 1.0
+   },
+   "lang:ml": {
+    "n": 1,
+    "answered": 1,
+    "faithfulness": 0.25,
+    "faithfulness_micro": 0.25,
+    "citation_accuracy": 0.25,
+    "answer_relevancy": 0.4,
+    "statements": 8,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "lang:manglish": {
+    "n": 1,
+    "answered": 1,
+    "faithfulness": 1.0,
+    "faithfulness_micro": 1.0,
+    "citation_accuracy": 1.0,
+    "answer_relevancy": 0.8,
+    "statements": 6,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "slice:main": {
+    "n": 2,
+    "answered": 2,
+    "faithfulness": 1.0,
+    "faithfulness_micro": 1.0,
+    "citation_accuracy": 1.0,
+    "answer_relevancy": 0.8,
+    "statements": 6,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "slice:heldout": {
+    "n": 3,
+    "answered": 3,
+    "faithfulness": 0.75,
+    "faithfulness_micro": 0.739,
+    "citation_accuracy": 0.739,
+    "answer_relevancy": 0.533,
+    "statements": 23,
+    "answerable_answered": 1.0,
+    "context_hit@5": 0.667,
+    "language_match": 1.0
+   },
+   "slice:eligibility": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   },
+   "slice:no_answer": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   }
+  },
+  "abstention": {
+   "no_answer_n": 0,
+   "recall": null,
+   "precision": null,
+   "false_abstain_rate": 0.0
+  },
+  "eligibility": {
+   "n": 0,
+   "accuracy": null,
+   "card_found": null
+  },
+  "validation": {
+   "items_with_drops": 0,
+   "dropped_by_reason": {},
+   "abstain_reason": {
+    "model": 0,
+    "validation": 0,
+    "error": 0
+   },
+   "json_retry": 0
+  },
+  "latency_ms": {
+   "n_live": 0,
+   "ttfc_p50": null,
+   "ttfc_p95": null,
+   "ttft_p50": null,
+   "ttft_p95": null,
+   "full_p50": null,
+   "full_p95": null,
+   "throttled_items": 0,
+   "ttft_p95_unthrottled": null
+  },
+  "cost_inr": {
+   "mean": 0.445,
+   "p95": 0.6818
+  },
+  "tokens": {
+   "in_mean": 3297.0,
+   "out_mean": 494.2
+  }
+ },
+ "items": [
+  {
+   "id": "q078",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "main",
+   "question": "How much does Snehapoorvam give per month to a child studying in class 8?",
+   "model": "qwen/qwen3.8-27b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Snehapoorvam provides ₹500/- per month to children studying in Class VI to Class X. [kssm_snehapoorvam--ss-kerala-f8b7f6:1:1] Since Class 8 falls within this range, the assistance amount is ₹500/- per month. [kssm_snehapoorvam--ss-kerala-f8b7f6:1:1]",
+   "schemes": [
+    {
+     "scheme_id": "kssm_snehapoorvam",
+     "name": "Snehapoorvam (assistance to orphaned children's education)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": "₹500/- per month for Class VI to Class X [kssm_snehapoorvam--ss-kerala-f8b7f6:1:1]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kssm_snehapoorvam--ss-kerala-f8b7f6:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1:1"
+   ],
+   "context": [
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1:5",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1:5",
+    "sjd_disability_scholarship--sdas-6a3a34:1:1"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\n  \"answer\": \"Snehapoorvam provides ₹500/- per month to children studying in Class VI to Class X [C1]. Since Class 8 falls within this range, the assistance amount is ₹500/- per month [C1].\",\n  \"abstained\": false,\n  \"follow_up_question\": null,\n  \"schemes\": [\n    {\n      \"scheme_id\": \"kssm_snehapoorvam\",\n      \"name\": \"Snehapoorvam (assistance to orphaned children's education)\",\n      \"eligible\": null,\n      \"reasons\": [],\n      \"benefit\": \"₹500/- per month for Class VI to Class X [C1]\",\n      \"how_to_apply\": null,\n      \"documents\": [],\n      \"citations\": [\n        \"C1\"\n      ]\n    }\n  ]\n}",
+   "lang_match": true,
+   "prompt": "v5",
+   "ttfc_ms": 309,
+   "ttft_ms": 1030,
+   "latency_ms": 1625,
+   "latency": {
+    "retrieval_ms": 308.9,
+    "gen_first_delta_ms": 620.3,
+    "throttled_ms": 0.0,
+    "generate_ms": 1283.7,
+    "validate_ms": 0.9,
+    "ttfc_ms": 308.9,
+    "ttft_ms": 1029.9,
+    "total_ms": 1624.9,
+    "retrieval_stages": {
+     "rewrite_ms": 0.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 3.4,
+     "dense_ms": 190.3,
+     "spec_rerank_ms": 0.0,
+     "rerank_ms": 114.8
+    }
+   },
+   "live": false,
+   "tokens_in": 2510,
+   "tokens_out": 201,
+   "cost_inr": 0.2714,
+   "judge": {
+    "statements": [
+     {
+      "text": "Snehapoorvam provides ₹500/- per month to children studying in Class VI to Class X.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Since Class 8 falls within this range, the assistance amount is ₹500/- per month.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Snehapoorvam (assistance to orphaned children's education): ₹500/- per month for Class VI to Class X",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 724
+   }
+  },
+  {
+   "id": "h017",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "How long will it take to get my pension after I submit the application?",
+   "model": "qwen/qwen3.8-27b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "The provided excerpts do not specify the processing time for receiving a pension after submitting an application for the Indira Gandhi National Disability Pension Scheme, Indira Gandhi National Old Age Pension Scheme, or Indira Gandhi National Widow Pension Scheme. [nsap_igndps--igndps-f97cb2:1:3] [nsap_ignoaps--nsap-ignoaps-9c99d4:1:3] [nsap_ignwps--ignwps-0932bc:1:4] [nsap_igndps--igndps-f97cb2:1:5] For Atal Pension Yojana, the pension starts at the age of 60 years. [apy--apy-234e9e:1:6]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_igndps",
+     "name": "Indira Gandhi National Disability Pension Scheme (IGNDPS)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": "One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \"Apply Online\", fill basic details, choose payment mode, upload photo, and click on \"Submit\". [nsap_igndps--igndps-f97cb2:1:3]",
+     "documents": [
+      "Photo [nsap_igndps--igndps-f97cb2:1:3]"
+     ],
+     "citations": [
+      "nsap_igndps--igndps-f97cb2:1:3",
+      "nsap_igndps--igndps-f97cb2:1:5"
+     ]
+    },
+    {
+     "scheme_id": "nsap_ignoaps",
+     "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": "One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \"Apply Online\", fill basic details, choose payment mode, upload photo, and click on \"Submit\". [nsap_ignoaps--nsap-ignoaps-9c99d4:1:3]",
+     "documents": [
+      "Photo [nsap_ignoaps--nsap-ignoaps-9c99d4:1:3]"
+     ],
+     "citations": [
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:3"
+     ]
+    },
+    {
+     "scheme_id": "nsap_ignwps",
+     "name": "Indira Gandhi National Widow Pension Scheme (IGNWPS)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": "One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \"Apply Online\", fill basic details, choose payment mode, upload photo, and click on \"Submit\". [nsap_ignwps--ignwps-0932bc:1:4]",
+     "documents": [
+      "Photo [nsap_ignwps--ignwps-0932bc:1:4]"
+     ],
+     "citations": [
+      "nsap_ignwps--ignwps-0932bc:1:4"
+     ]
+    },
+    {
+     "scheme_id": "apy",
+     "name": "Atal Pension Yojana (APY)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": "Pension starts at the age of 60 years. [apy--apy-234e9e:1:6]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "apy--apy-234e9e:1:6"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_igndps--igndps-f97cb2:1:3",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:3",
+    "nsap_ignwps--ignwps-0932bc:1:4",
+    "nsap_igndps--igndps-f97cb2:1:5",
+    "apy--apy-234e9e:1:6"
+   ],
+   "context": [
+    "nsap_igndps--igndps-f97cb2:1:3",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:3",
+    "nsap_ignwps--ignwps-0932bc:1:4",
+    "apy--apy-234e9e:1:6",
+    "nsap_igndps--igndps-f97cb2:1:5"
+   ],
+   "context_hit": false,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\n  \"answer\": \"The provided excerpts do not specify the processing time for receiving a pension after submitting an application for the Indira Gandhi National Disability Pension Scheme, Indira Gandhi National Old Age Pension Scheme, or Indira Gandhi National Widow Pension Scheme [C1][C2][C3][C5]. For Atal Pension Yojana, the pension starts at the age of 60 years [C4].\",\n  \"abstained\": false,\n  \"follow_up_question\": null,\n  \"schemes\": [\n    {\n      \"scheme_id\": \"nsap_igndps\",\n      \"name\": \"Indira Gandhi National Disability Pension Scheme (IGNDPS)\",\n      \"eligible\": null,\n      \"reasons\": [],\n      \"benefit\": null,\n      \"how_to_apply\": \"One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \\\"Apply Online\\\", fill basic details, choose payment mode, upload photo, and click on \\\"Submit\\\" [C1].\",\n      \"documents\": [\n        \"Photo [C1]\"\n      ],\n      \"citations\": [\n        \"C1\",\n        \"C5\"\n      ]\n    },\n    {\n      \"scheme_id\": \"nsap_ignoaps\",\n      \"name\": \"Indira Gandhi National Old Age Pension Scheme (IGNOAPS)\",\n      \"eligible\": null,\n      \"reasons\": [],\n      \"benefit\": null,\n      \"how_to_apply\": \"One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \\\"Apply Online\\\", fill basic details, choose payment mode, upload photo, and click on \\\"Submit\\\" [C2].\",\n      \"documents\": [\n        \"Photo [C2]\"\n      ],\n      \"citations\": [\n        \"C2\"\n      ]\n    },\n    {\n      \"scheme_id\": \"nsap_ignwps\",\n      \"name\": \"Indira Gandhi National Widow Pension Scheme (IGNWPS)\",\n      \"eligible\": null,\n      \"reasons\": [],\n      \"benefit\": null,\n      \"how_to_apply\": \"One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \\\"Apply Online\\\", fill basic details, choose payment mode, upload photo, and click on \\\"Submit\\\" [C3].\",\n      \"documents\": [\n        \"Photo [C3]\"\n      ],\n      \"citations\": [\n        \"C3\"\n      ]\n    },\n    {\n      \"scheme_id\": \"apy\",\n      \"name\": \"Atal Pension Yojana (APY)\",\n      \"eligible\": null,\n      \"reasons\": [],\n      \"benefit\": \"Pension starts at the age of 60 years [C4].\",\n      \"how_to_apply\": null,\n      \"documents\": [],\n      \"citations\": [\n        \"C4\"\n      ]\n    }\n  ]\n}",
+   "lang_match": true,
+   "prompt": "v5",
+   "ttfc_ms": 195,
+   "ttft_ms": 987,
+   "latency_ms": 2250,
+   "latency": {
+    "retrieval_ms": 195.3,
+    "gen_first_delta_ms": 657.1,
+    "throttled_ms": 0.0,
+    "generate_ms": 2044.5,
+    "validate_ms": 10.0,
+    "ttfc_ms": 195.4,
+    "ttft_ms": 987.3,
+    "total_ms": 2250.0,
+    "retrieval_stages": {
+     "rewrite_ms": 0.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 3.5,
+     "dense_ms": 191.5,
+     "spec_rerank_ms": 0.0,
+     "rerank_ms": 0.1
+    }
+   },
+   "live": false,
+   "tokens_in": 2289,
+   "tokens_out": 707,
+   "cost_inr": 0.4496,
+   "judge": {
+    "statements": [
+     {
+      "text": "The provided excerpts do not specify the processing time for receiving a pension after submitting an application for the Indira Gandhi National Disability Pension Scheme, Indira Gandhi National Old Age Pension Scheme, or Indira Gandhi National Widow Pension Scheme.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "For Atal Pension Yojana, the pension starts at the age of 60 years.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \"Apply Online\", fill basic details, choose payment mode, upload photo, and click on \"Submit\".",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Photo",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \"Apply Online\", fill basic details, choose payment mode, upload photo, and click on \"Submit\".",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Photo",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): One can download UMANG App or visit website https://web.umang.gov.in/web_new/home, login using mobile number and OTP, search for NSAP, click on \"Apply Online\", fill basic details, choose payment mode, upload photo, and click on \"Submit\".",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Photo",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Pension starts at the age of 60 years.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 2.0,
+    "tokens": 2619
+   }
+  },
+  {
+   "id": "q118",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "main",
+   "question": "Is my caste counted as backward in Kerala? Where is the list?",
+   "model": "qwen/qwen3.8-27b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "The Kerala OBC list is annexed as part 1, schedule 1(c) of the Kerala State and Subordinate Service Rules, 1958. [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0] [kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0] This list is based on GO(P).No.81/2009/SCSTDD dated 26/09/2009. [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0] [kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0] The list is used for employment purposes in Kerala. [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0] [kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_eep",
+     "name": "Employability Enhancement Programme and skill assistance for OBC students (BCDD)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0",
+      "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0"
+     ]
+    }
+   ],
+   "follow_up_question": "What is your caste?",
+   "citations": [
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0"
+   ],
+   "context": [
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:8:0",
+    "jsy--jsy1-79905a:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "```json\n{\n  \"answer\": \"The Kerala OBC list is annexed as part 1, schedule 1(c) of the Kerala State and Subordinate Service Rules, 1958 [C2][C3]. This list is based on GO(P).No.81/2009/SCSTDD dated 26/09/2009 [C2][C3]. The list is used for employment purposes in Kerala [C2][C3].\",\n  \"abstained\": false,\n  \"follow_up_question\": \"What is your caste?\",\n  \"schemes\": [\n    {\n      \"scheme_id\": \"kerala_eep\",\n      \"name\": \"Employability Enhancement Programme and skill assistance for OBC students (BCDD)\",\n      \"eligible\": null,\n      \"reasons\": [],\n      \"benefit\": null,\n      \"how_to_apply\": null,\n      \"documents\": [],\n      \"citations\": [\n        \"C2\",\n        \"C3\"\n      ]\n    }\n  ]\n}\n```",
+   "lang_match": true,
+   "prompt": "v5",
+   "ttfc_ms": 215,
+   "ttft_ms": 930,
+   "latency_ms": 1300,
+   "latency": {
+    "retrieval_ms": 214.9,
+    "gen_first_delta_ms": 617.6,
+    "throttled_ms": 0.0,
+    "generate_ms": 1079.7,
+    "validate_ms": 4.7,
+    "ttfc_ms": 214.9,
+    "ttft_ms": 930.2,
+    "total_ms": 1299.6,
+    "retrieval_stages": {
+     "rewrite_ms": 0.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 3.3,
+     "dense_ms": 211.3,
+     "spec_rerank_ms": 0.0,
+     "rerank_ms": 0.1
+    }
+   },
+   "live": false,
+   "tokens_in": 2911,
+   "tokens_out": 242,
+   "cost_inr": 0.3181,
+   "judge": {
+    "statements": [
+     {
+      "text": "The Kerala OBC list is annexed as part 1, schedule 1(c) of the Kerala State and Subordinate Service Rules, 1958.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "This list is based on GO(P).No.81/2009/SCSTDD dated 26/09/2009.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "The list is used for employment purposes in Kerala.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 3.0,
+    "tokens": 1387
+   }
+  },
+  {
+   "id": "h009",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "Ente family income 4 lakh aan, PMAY-U il house size evide varum?",
+   "model": "qwen/qwen3.8-27b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "നിങ്ങളുടെ വാർഷിക വരുമാനം 4 ലക്ഷം രൂപയായതിനാൽ, നിങ്ങൾക്ക് PMAY-U-യിൽ Low Income Group (LIG) വിഭാഗത്തിൽ അർഹതയുണ്ട്. [pmay_u--pmay-u-5f7b25:1:2] PMAY-U-യിൽ വീടുകളുടെ നിർമ്മാണ സ്റ്റാൻഡേർഡുകൾ National Building Code (NBC) ഉം Bureau of Indian Standards (BIS) ഉം അനുസരിച്ചായിരിക്കണം. [pmay_u--pmay-u-5f7b25:1:5] PMAY-G-യിലെ വീടുകളുടെ ഏറ്റവും കുറഞ്ഞ വലിപ്പം 25 ചതുരശ്ര മീറ്ററാണ്. [pmay_g--pmay-g-c98964:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "pmay_u",
+     "name": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+     "eligible": true,
+     "reasons": [
+      "വാർഷിക വരുമാനം ₹ 3,00,001 മുതൽ ₹ 6,00,000 വരെ ആയ കുടുംബങ്ങൾക്ക് Low Income Group (LIG) വിഭാഗത്തിൽ അർഹതയുണ്ട്. [pmay_u--pmay-u-5f7b25:1:2]"
+     ],
+     "benefit": "എല്ലാ അർഹതയുള്ള നഗര കുടുംബങ്ങൾക്കും 2022-ഓടെ ഒരു പൂർണ്ണമായ (pucca) വീട് ഉറപ്പുവരുത്തുക. [pmay_u--pmay-u-5f7b25:1:0]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pmay_u--pmay-u-5f7b25:1:2",
+      "pmay_u--pmay-u-5f7b25:1:0",
+      "pmay_u--pmay-u-5f7b25:1:5"
+     ]
+    },
+    {
+     "scheme_id": "pmay_g",
+     "name": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": "ഏറ്റവും കുറഞ്ഞ വലിപ്പം 25 ചതുരശ്ര മീറ്റർ ഉള്ള ഒരു പൂർണ്ണമായ (pucca) വീട്, അടിസ്ഥാന സൗകര്യങ്ങളോടെ. [pmay_g--pmay-g-c98964:1:0]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pmay_g--pmay-g-c98964:1:0",
+      "pmay_g--english-book-final-51e2f6:16:0"
+     ]
+    }
+   ],
+   "follow_up_question": "നിങ്ങൾ നഗരപ്രദേശത്തോ (urban) ഗ്രാമപ്രദേശത്തോ (rural) ആണോ താമസിക്കുന്നത്?",
+   "citations": [
+    "pmay_u--pmay-u-5f7b25:1:2",
+    "pmay_u--pmay-u-5f7b25:1:5",
+    "pmay_g--pmay-g-c98964:1:0",
+    "pmay_u--pmay-u-5f7b25:1:0",
+    "pmay_g--english-book-final-51e2f6:16:0"
+   ],
+   "context": [
+    "pmay_u--pmay-u-5f7b25:1:2",
+    "pmay_u--pmay-u-5f7b25:1:0",
+    "pmay_g--pmay-g-c98964:1:0",
+    "pmay_u--pmay-u-5f7b25:1:5",
+    "pmay_g--english-book-final-51e2f6:16:0"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\": \"നിങ്ങളുടെ വാർഷിക വരുമാനം 4 ലക്ഷം രൂപയായതിനാൽ, നിങ്ങൾക്ക് PMAY-U-യിൽ Low Income Group (LIG) വിഭാഗത്തിൽ അർഹതയുണ്ട് [C1]. PMAY-U-യിൽ വീടുകളുടെ നിർമ്മാണ സ്റ്റാൻഡേർഡുകൾ National Building Code (NBC) ഉം Bureau of Indian Standards (BIS) ഉം അനുസരിച്ചായിരിക്കണം [C4]. PMAY-G-യിലെ വീടുകളുടെ ഏറ്റവും കുറഞ്ഞ വലിപ്പം 25 ചതുരശ്ര മീറ്ററാണ് [C3].\", \"abstained\": false, \"follow_up_question\": null, \"schemes\": [{\"scheme_id\": \"pmay_u\", \"name\": \"Pradhan Mantri Awas Yojana - Urban (PMAY-U)\", \"eligible\": true, \"reasons\": [\"വാർഷിക വരുമാനം ₹ 3,00,001 മുതൽ ₹ 6,00,000 വരെ ആയ കുടുംബങ്ങൾക്ക് Low Income Group (LIG) വിഭാഗത്തിൽ അർഹതയുണ്ട് [C1].\"], \"benefit\": \"എല്ലാ അർഹതയുള്ള നഗര കുടുംബങ്ങൾക്കും 2022-ഓടെ ഒരു പൂർണ്ണമായ (pucca) വീട് ഉറപ്പുവരുത്തുക [C2].\", \"how_to_apply\": null, \"documents\": [], \"citations\": [\"C1\", \"C2\", \"C4\"]}, {\"scheme_id\": \"pmay_g\", \"name\": \"Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)\", \"eligible\": null, \"reasons\": [], \"benefit\": \"ഏറ്റവും കുറഞ്ഞ വലിപ്പം 25 ചതുരശ്ര മീറ്റർ ഉള്ള ഒരു പൂർണ്ണമായ (pucca) വീട്, അടിസ്ഥാന സൗകര്യങ്ങളോടെ [C3].\", \"how_to_apply\": null, \"documents\": [], \"citations\": [\"C3\", \"C5\"]}], \"follow_up_question\": \"നിങ്ങൾ നഗരപ്രദേശത്തോ (urban) ഗ്രാമപ്രദേശത്തോ (rural) ആണോ താമസിക്കുന്നത്?\"}",
+   "lang_match": true,
+   "prompt": "v5",
+   "ttfc_ms": 2258,
+   "ttft_ms": 3336,
+   "latency_ms": 4394,
+   "latency": {
+    "retrieval_ms": 2258.2,
+    "gen_first_delta_ms": 936.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 2126.4,
+    "validate_ms": 8.5,
+    "ttfc_ms": 2258.3,
+    "ttft_ms": 3336.2,
+    "total_ms": 4393.9,
+    "retrieval_stages": {
+     "rewrite_ms": 1.8,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 20.3,
+     "dense_ms": 2236.4,
+     "spec_rerank_ms": 0.2,
+     "rerank_ms": 0.1
+    }
+   },
+   "live": false,
+   "tokens_in": 3788,
+   "tokens_out": 552,
+   "cost_inr": 0.5055,
+   "judge": {
+    "statements": [
+     {
+      "text": "നിങ്ങളുടെ വാർഷിക വരുമാനം 4 ലക്ഷം രൂപയായതിനാൽ, നിങ്ങൾക്ക് PMAY-U-യിൽ Low Income Group (LIG) വിഭാഗത്തിൽ അർഹതയുണ്ട്.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "PMAY-U-യിൽ വീടുകളുടെ നിർമ്മാണ സ്റ്റാൻഡേർഡുകൾ National Building Code (NBC) ഉം Bureau of Indian Standards (BIS) ഉം അനുസരിച്ചായിരിക്കണം.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "PMAY-G-യിലെ വീടുകളുടെ ഏറ്റവും കുറഞ്ഞ വലിപ്പം 25 ചതുരശ്ര മീറ്ററാണ്.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Awas Yojana - Urban (PMAY-U): വാർഷിക വരുമാനം ₹ 3,00,001 മുതൽ ₹ 6,00,000 വരെ ആയ കുടുംബങ്ങൾക്ക് Low Income Group (LIG) വിഭാഗത്തിൽ അർഹതയുണ്ട്.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Awas Yojana - Urban (PMAY-U): എല്ലാ അർഹതയുള്ള നഗര കുടുംബങ്ങൾക്കും 2022-ഓടെ ഒരു പൂർണ്ണമായ (pucca) വീട് ഉറപ്പുവരുത്തുക.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Awaas Yojana - Gramin (PMAY-G): ഏറ്റവും കുറഞ്ഞ വലിപ്പം 25 ചതുരശ്ര മീറ്റർ ഉള്ള ഒരു പൂർണ്ണമായ (pucca) വീട്, അടിസ്ഥാന സൗകര്യങ്ങളോടെ.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 4.0,
+    "tokens": 2793
+   }
+  },
+  {
+   "id": "h015",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "എന്റെ കുടുംബത്തിന്റെ വാർഷിക വരുമാനം 1 ലക്ഷം രൂപക്ക് താഴെയാണെങ്കിൽ, ഞങ്ങളുടെ മകളുടെ വിവാഹ സഹായം ലഭിക്കുമോ?",
+   "model": "qwen/qwen3.8-27b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "നിങ്ങളുടെ കുടുംബ വാർഷിക വരുമാനം 1 ലക്ഷം രൂപയ്ക്ക് താഴെയായതിനാൽ, പരിണയം പദ്ധതിയുടെ വരുമാന നിബന്ധന പാലിക്കപ്പെടുന്നു. [sjd_parinayam--maddapp-i-224a77:1:2] എന്നാൽ ഈ പദ്ധതി വികലാംഗരായ മാതാപിതാക്കളുടെ മകന്മാർക്ക് മാത്രമേ ലഭ്യമാകുന്നുള്ളൂ. [sjd_parinayam--maddapp-i-224a77:1:2] നിങ്ങളുടെ മകൾ വികലാംഗയാണോ എന്ന് വ്യക്തമല്ല. [sjd_parinayam--maddapp-i-224a77:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "sjd_parinayam",
+     "name": "Parinayam I & II (marriage assistance for differently abled women / daughters)",
+     "eligible": null,
+     "reasons": [
+      "കുടുംബ വാർഷിക വരുമാനം ₹1,00,000/- കവിയരുത് എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നു [sjd_parinayam--maddapp-i-224a77:1:2]",
+      "വികലാംഗരായ മാതാപിതാക്കളുടെ മകന്മാർക്ക് മാത്രമേ അപേക്ഷിക്കാൻ സാധിക്കൂ എന്ന നിബന്ധന പരിശോധിക്കാൻ വിവരം ഇല്ല [sjd_parinayam--maddapp-i-224a77:1:2]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "sjd_parinayam--maddapp-i-224a77:1:2"
+     ]
+    },
+    {
+     "scheme_id": "kerala_pension_old_age",
+     "name": "Indira Gandhi National Old Age Pension (Kerala implementation, incl. 75+)",
+     "eligible": false,
+     "reasons": [
+      "അപേക്ഷകൻ 60 വയസോ അതിനു മുകളിലോ ആയിരിക്കണം എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നില്ല, കാരണം ചോദ്യം മകളുടെ വിവാഹ സഹായത്തെക്കുറിച്ചാണ് [kerala_pension_old_age--faqs-948590:1:0]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kerala_pension_old_age--faqs-948590:1:0"
+     ]
+    },
+    {
+     "scheme_id": "kerala_pension_unmarried_women",
+     "name": "Pension for Unmarried Women above 50 (Kerala)",
+     "eligible": false,
+     "reasons": [
+      "അപേക്ഷകയുടെ വയസ് 50 വയസ്സ് പൂർത്തി ആയിരിക്കണം എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നില്ല, കാരണം ചോദ്യം മകളുടെ വിവാഹ സഹായത്തെക്കുറിച്ചാണ് [kerala_pension_unmarried_women--faqs-948590:1:0]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kerala_pension_unmarried_women--faqs-948590:1:0"
+     ]
+    },
+    {
+     "scheme_id": "st_scholarships",
+     "name": "Scheduled Tribe development schemes (education, housing, Janani Janmaraksha, treatment, inter-caste marriage)",
+     "eligible": null,
+     "reasons": [
+      "പട്ടികവർഗ്ഗ ദമ്പതികൾക്ക് മാത്രമേ ഈ സഹായം ലഭ്യമാകുന്നുള്ളൂ എന്ന നിബന്ധന പരിശോധിക്കാൻ വിവരം ഇല്ല [st_scholarships--2-inter-cast-marriage-0-fcaba9:1:0]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "st_scholarships--2-inter-cast-marriage-0-fcaba9:1:0"
+     ]
+    }
+   ],
+   "follow_up_question": "നിങ്ങളുടെ മകൾ വികലാംഗയാണോ?",
+   "citations": [
+    "sjd_parinayam--maddapp-i-224a77:1:2",
+    "kerala_pension_old_age--faqs-948590:1:0",
+    "kerala_pension_unmarried_women--faqs-948590:1:0",
+    "st_scholarships--2-inter-cast-marriage-0-fcaba9:1:0"
+   ],
+   "context": [
+    "sjd_parinayam--maddapp-i-224a77:1:2",
+    "sjd_parinayam--madawp-ii-6b2a94:1:2",
+    "kerala_pension_old_age--faqs-948590:1:0",
+    "kerala_pension_unmarried_women--faqs-948590:1:0",
+    "st_scholarships--2-inter-cast-marriage-0-fcaba9:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\": \"നിങ്ങളുടെ കുടുംബ വാർഷിക വരുമാനം 1 ലക്ഷം രൂപയ്ക്ക് താഴെയായതിനാൽ, പരിണയം പദ്ധതിയുടെ വരുമാന നിബന്ധന പാലിക്കപ്പെടുന്നു [C1]. എന്നാൽ ഈ പദ്ധതി വികലാംഗരായ മാതാപിതാക്കളുടെ മകന്മാർക്ക് മാത്രമേ ലഭ്യമാകുന്നുള്ളൂ [C1]. നിങ്ങളുടെ മകൾ വികലാംഗയാണോ എന്ന് വ്യക്തമല്ല [C1].\", \"abstained\": false, \"follow_up_question\": \"നിങ്ങളുടെ മകൾ വികലാംഗയാണോ?\", \"schemes\": [{\"scheme_id\": \"sjd_parinayam\", \"name\": \"Parinayam I & II (marriage assistance for differently abled women / daughters)\", \"eligible\": null, \"reasons\": [\"കുടുംബ വാർഷിക വരുമാനം ₹1,00,000/- കവിയരുത് എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നു [C1]\", \"വികലാംഗരായ മാതാപിതാക്കളുടെ മകന്മാർക്ക് മാത്രമേ അപേക്ഷിക്കാൻ സാധിക്കൂ എന്ന നിബന്ധന പരിശോധിക്കാൻ വിവരം ഇല്ല [C1]\"], \"benefit\": null, \"how_to_apply\": null, \"documents\": [], \"citations\": [\"C1\"]}, {\"scheme_id\": \"kerala_pension_old_age\", \"name\": \"Indira Gandhi National Old Age Pension (Kerala implementation, incl. 75+)\", \"eligible\": false, \"reasons\": [\"അപേക്ഷകൻ 60 വയസോ അതിനു മുകളിലോ ആയിരിക്കണം എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നില്ല, കാരണം ചോദ്യം മകളുടെ വിവാഹ സഹായത്തെക്കുറിച്ചാണ് [C3]\"], \"benefit\": null, \"how_to_apply\": null, \"documents\": [], \"citations\": [\"C3\"]}, {\"scheme_id\": \"kerala_pension_unmarried_women\", \"name\": \"Pension for Unmarried Women above 50 (Kerala)\", \"eligible\": false, \"reasons\": [\"അപേക്ഷകയുടെ വയസ് 50 വയസ്സ് പൂർത്തി ആയിരിക്കണം എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നില്ല, കാരണം ചോദ്യം മകളുടെ വിവാഹ സഹായത്തെക്കുറിച്ചാണ് [C4]\"], \"benefit\": null, \"how_to_apply\": null, \"documents\": [], \"citations\": [\"C4\"]}, {\"scheme_id\": \"st_scholarships\", \"name\": \"Scheduled Tribe development schemes (education, housing, Janani Janmaraksha, treatment, inter-caste marriage)\", \"eligible\": null, \"reasons\": [\"പട്ടികവർഗ്ഗ ദമ്പതികൾക്ക് മാത്രമേ ഈ സഹായം ലഭ്യമാകുന്നുള്ളൂ എന്ന നിബന്ധന പരിശോധിക്കാൻ വിവരം ഇല്ല [C5]\"], \"benefit\": null, \"how_to_apply\": null, \"documents\": [], \"citations\": [\"C5\"]}]}",
+   "lang_match": true,
+   "prompt": "v5",
+   "ttfc_ms": 510,
+   "ttft_ms": 1782,
+   "latency_ms": 3200,
+   "latency": {
+    "retrieval_ms": 510.0,
+    "gen_first_delta_ms": 1133.8,
+    "throttled_ms": 0.0,
+    "generate_ms": 2681.3,
+    "validate_ms": 8.3,
+    "ttfc_ms": 510.0,
+    "ttft_ms": 1782.3,
+    "total_ms": 3199.9,
+    "retrieval_stages": {
+     "rewrite_ms": 0.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 5.0,
+     "dense_ms": 504.8,
+     "spec_rerank_ms": 0.0,
+     "rerank_ms": 0.1
+    }
+   },
+   "live": false,
+   "tokens_in": 4987,
+   "tokens_out": 769,
+   "cost_inr": 0.6818,
+   "judge": {
+    "statements": [
+     {
+      "text": "നിങ്ങളുടെ കുടുംബ വാർഷിക വരുമാനം 1 ലക്ഷം രൂപയ്ക്ക് താഴെയായതിനാൽ, പരിണയം പദ്ധതിയുടെ വരുമാന നിബന്ധന പാലിക്കപ്പെടുന്നു.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "എന്നാൽ ഈ പദ്ധതി വികലാംഗരായ മാതാപിതാക്കളുടെ മകന്മാർക്ക് മാത്രമേ ലഭ്യമാകുന്നുള്ളൂ.",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "നിങ്ങളുടെ മകൾ വികലാംഗയാണോ എന്ന് വ്യക്തമല്ല.",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Parinayam I & II (marriage assistance for differently abled women / daughters): കുടുംബ വാർഷിക വരുമാനം ₹1,00,000/- കവിയരുത് എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നു",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Parinayam I & II (marriage assistance for differently abled women / daughters): വികലാംഗരായ മാതാപിതാക്കളുടെ മകന്മാർക്ക് മാത്രമേ അപേക്ഷിക്കാൻ സാധിക്കൂ എന്ന നിബന്ധന പരിശോധിക്കാൻ വിവരം ഇല്ല",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension (Kerala implementation, incl. 75+): അപേക്ഷകൻ 60 വയസോ അതിനു മുകളിലോ ആയിരിക്കണം എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നില്ല, കാരണം ചോദ്യം മകളുടെ വിവാഹ സഹായത്തെക്കുറിച്ചാണ്",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): അപേക്ഷകയുടെ വയസ് 50 വയസ്സ് പൂർത്തി ആയിരിക്കണം എന്ന നിബന്ധന പാലിക്കപ്പെടുന്നില്ല, കാരണം ചോദ്യം മകളുടെ വിവാഹ സഹായത്തെക്കുറിച്ചാണ്",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Scheduled Tribe development schemes (education, housing, Janani Janmaraksha, treatment, inter-caste marriage): പട്ടികവർഗ്ഗ ദമ്പതികൾക്ക് മാത്രമേ ഈ സഹായം ലഭ്യമാകുന്നുള്ളൂ എന്ന നിബന്ധന പരിശോധിക്കാൻ വിവരം ഇല്ല",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 2.0,
+    "tokens": 3442
+   }
+  }
+ ]
+}

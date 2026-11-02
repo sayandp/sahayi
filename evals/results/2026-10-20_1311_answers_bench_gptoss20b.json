@@ -1,0 +1,3691 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "judge": "openai/gpt-oss-120b",
+ "config": "default",
+ "live": true,
+ "answer_prompt": "v3",
+ "judge_prompt": "v1",
+ "stopped": null,
+ "summary": {
+  "excluded_provider_failures": 0,
+  "by_slice": {
+   "all": {
+    "n": 37,
+    "answered": 22,
+    "faithfulness": 0.921,
+    "faithfulness_micro": 0.906,
+    "citation_accuracy": 0.889,
+    "answer_relevancy": 0.955,
+    "statements": 117,
+    "answerable_answered": 0.71,
+    "context_hit@5": 0.935,
+    "language_match": 0.955
+   },
+   "lang:en": {
+    "n": 20,
+    "answered": 11,
+    "faithfulness": 0.929,
+    "faithfulness_micro": 0.915,
+    "citation_accuracy": 0.915,
+    "answer_relevancy": 0.964,
+    "statements": 59,
+    "answerable_answered": 0.647,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "lang:ml": {
+    "n": 10,
+    "answered": 6,
+    "faithfulness": 0.881,
+    "faithfulness_micro": 0.857,
+    "citation_accuracy": 0.8,
+    "answer_relevancy": 1.0,
+    "statements": 35,
+    "answerable_answered": 0.857,
+    "context_hit@5": 0.857,
+    "language_match": 1.0
+   },
+   "lang:manglish": {
+    "n": 7,
+    "answered": 5,
+    "faithfulness": 0.95,
+    "faithfulness_micro": 0.957,
+    "citation_accuracy": 0.957,
+    "answer_relevancy": 0.88,
+    "statements": 23,
+    "answerable_answered": 0.714,
+    "context_hit@5": 0.857,
+    "language_match": 0.8
+   },
+   "slice:main": {
+    "n": 7,
+    "answered": 7,
+    "faithfulness": 0.924,
+    "faithfulness_micro": 0.917,
+    "citation_accuracy": 0.917,
+    "answer_relevancy": 0.943,
+    "statements": 36,
+    "answerable_answered": 1.0,
+    "context_hit@5": 0.857,
+    "language_match": 1.0
+   },
+   "slice:heldout": {
+    "n": 9,
+    "answered": 7,
+    "faithfulness": 0.923,
+    "faithfulness_micro": 0.903,
+    "citation_accuracy": 0.903,
+    "answer_relevancy": 0.914,
+    "statements": 31,
+    "answerable_answered": 0.778,
+    "context_hit@5": 1.0,
+    "language_match": 0.857
+   },
+   "slice:eligibility": {
+    "n": 15,
+    "answered": 8,
+    "faithfulness": 0.915,
+    "faithfulness_micro": 0.9,
+    "citation_accuracy": 0.86,
+    "answer_relevancy": 1.0,
+    "statements": 50,
+    "answerable_answered": 0.533,
+    "context_hit@5": 0.933,
+    "language_match": 1.0
+   },
+   "slice:no_answer": {
+    "n": 6,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   }
+  },
+  "abstention": {
+   "no_answer_n": 6,
+   "recall": 1.0,
+   "precision": 0.4,
+   "false_abstain_rate": 0.29
+  },
+  "eligibility": {
+   "n": 15,
+   "accuracy": 0.467,
+   "card_found": 0.533
+  },
+  "validation": {
+   "items_with_drops": 16,
+   "dropped_by_reason": {
+    "no_citation": 22,
+    "number_mismatch": 5
+   },
+   "abstain_reason": {
+    "model": 7,
+    "validation": 8,
+    "error": 0
+   },
+   "json_retry": 0
+  },
+  "latency_ms": {
+   "n_live": 37,
+   "ttft_p50": 2973,
+   "ttft_p95": 3619,
+   "full_p50": 2993,
+   "full_p95": 3620,
+   "throttled_items": 0,
+   "ttft_p95_unthrottled": 3619
+  },
+  "cost_inr": {
+   "mean": 0.106,
+   "p95": 0.1371
+  },
+  "tokens": {
+   "in_mean": 2837.568,
+   "out_mean": 374.973
+  }
+ },
+ "items": [
+  {
+   "id": "h020",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "When do I need to email my complaint about the scheme?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "You must email your complaint by 12.06.2025 to the relevant Backward Classes Development Department office. [kerala_advocate_grant--7f13ea25ed7d4bb95a6ee0b1557c382d-cff460:2:0]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_advocate_grant",
+     "name": "Advocate Grant",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kerala_advocate_grant--7f13ea25ed7d4bb95a6ee0b1557c382d-cff460:2:0"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kerala_advocate_grant--7f13ea25ed7d4bb95a6ee0b1557c382d-cff460:2:0"
+   ],
+   "context": [
+    "kerala_advocate_grant--7f13ea25ed7d4bb95a6ee0b1557c382d-cff460:2:0",
+    "sjd_assistive_devices--spaddap-c1206b:1:4",
+    "kerala_welfare_pensions--schemes-54856b:1:0",
+    "nsap--nsap-guidelines-oct2014-9deea1:18:0",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:6:0"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You must email your complaint by 12.06.2025 to the relevant Backward Classes Development Department office [C1].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"kerala_advocate_grant\",\"name\":\"Advocate Grant\",\"eligible\":null,\"reasons\":[],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2973,
+   "latency_ms": 2974,
+   "latency": {
+    "retrieval_ms": 1929.9,
+    "gen_first_delta_ms": 913.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 1040.7,
+    "validate_ms": 0.9,
+    "ttft_ms": 2973.0,
+    "total_ms": 2973.9,
+    "retrieval_stages": {
+     "rewrite_ms": 1015.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 7.7,
+     "dense_ms": 609.6,
+     "spec_rerank_ms": 799.8,
+     "rerank_ms": 511.5
+    }
+   },
+   "live": true,
+   "tokens_in": 3337,
+   "tokens_out": 266,
+   "cost_inr": 0.0926,
+   "judge": {
+    "statements": [
+     {
+      "text": "You must email your complaint by 12.06.2025 to the relevant Backward Classes Development Department office.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2634
+   }
+  },
+  {
+   "id": "h022",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "Ente kudumbathinte cheriya kshetrathil 1.5 ha land und, 35 vayassullavan aanu, PM‑KMY il join cheyyan kazhiyumo?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "validation",
+   "answer": "എന്റെ പക്കലുള്ള ഔദ്യോഗിക പദ്ധതി രേഖകളിൽ ഇതിനുള്ള ഉത്തരം കണ്ടെത്താനായില്ല, അതിനാൽ ഊഹിച്ചു പറയുന്നില്ല. ദയവായി Department of Agriculture & Farmers Welfare, Government of India (https://www.myscheme.gov.in) അല്ലെങ്കിൽ അടുത്തുള്ള അക്ഷയ കേന്ദ്രം അല്ലെങ്കിൽ വില്ലേജ് / പഞ്ചായത്ത് ഓഫീസ് എന്നിവരുമായി ബന്ധപ്പെടുക.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "pm_kmy--pmkmdy-44b6ea:1:6",
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:2",
+    "pm_kmy--pmkmdy-44b6ea:1:1",
+    "pm_kisan--pm-kisan-488a46:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "PM‑KMY-ൽ ചേർക്കാൻ നിങ്ങൾക്ക് യോഗ്യതയുണ്ടോ എന്ന് നിശ്ചയിക്കാൻ കൂടുതൽ വിവരങ്ങൾ ആവശ്യമാണ്.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "scheme_dropped_no_citation:pm_kmy"
+   ],
+   "raw_generation": "{\"answer\":\"PM‑KMY-ൽ ചേർക്കാൻ നിങ്ങൾക്ക് യോഗ്യതയുണ്ടോ എന്ന് നിശ്ചയിക്കാൻ കൂടുതൽ വിവരങ്ങൾ ആവശ്യമാണ്.\",\"abstained\":false,\"follow_up_question\":\"നിങ്ങളുടെ ഭൂമിയുടെ കൃത്യമായ വിസ്തീർണ്ണം, ആധാർ കാർഡ് ഉണ്ടോ, ബാങ്ക് അക്കൗണ്ട് ഉണ്ടോ എന്ന് പറയാമോ?\",\"schemes\":[{\"scheme_id\":\"pm_kmy\",\"name\":\"Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)\",\"eligible\":null,\"reasons\":[],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[]}]}",
+   "lang_match": true,
+   "ttft_ms": 3228,
+   "latency_ms": 3228,
+   "latency": {
+    "retrieval_ms": 2208.1,
+    "gen_first_delta_ms": 832.2,
+    "throttled_ms": 0.0,
+    "generate_ms": 979.0,
+    "validate_ms": 40.4,
+    "ttft_ms": 3228.0,
+    "total_ms": 3228.0,
+    "retrieval_stages": {
+     "rewrite_ms": 1401.1,
+     "rewrite_wait_ms": 212.3,
+     "bm25_ms": 11.0,
+     "dense_ms": 871.0,
+     "spec_rerank_ms": 753.1,
+     "rerank_ms": 359.2
+    }
+   },
+   "live": true,
+   "tokens_in": 2896,
+   "tokens_out": 376,
+   "cost_inr": 0.1142
+  },
+  {
+   "id": "h013",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "എന്റെ കുടുംബത്തിൽ NREGA ജോബ് കാർഡ് അപേക്ഷിക്കാൻ എന്തെല്ലാം രേഖകൾ വേണം?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "NREGA ജോബ് കാർഡ് അപേക്ഷിക്കാൻ ആവശ്യമായ രേഖകൾ: അപേക്ഷകന്റെ ഫോട്ടോ, പേര്, വയസ്, ലിംഗം, ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക്, ഐഡി തെളിവ് (റേഷൻ കാർഡ്, വോട്ടർ ഐഡി, ആധാർ, പി.എൻ.), SC/ST/IAY/LR ബിനിഫിഷ്യറി ആണോ എന്ന്, സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ. [mgnrega--mgnrega-608fc2:1:5]",
+   "schemes": [
+    {
+     "scheme_id": "mgnrega",
+     "name": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)",
+     "eligible": null,
+     "reasons": [
+      "അപേക്ഷകന്റെ ഫോട്ടോ, പേര്, വയസ്, ലിംഗം, ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക്, ഐഡി തെളിവ്, SC/ST/IAY/LR ബിനിഫിഷ്യറി സ്ഥിതി, സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ ആവശ്യമാണ് [mgnrega--mgnrega-608fc2:1:5]"
+     ],
+     "benefit": null,
+     "how_to_apply": "ഓഫ്‌ലൈൻ: ഗ്രാമപഞ്ചായത്ത് ഓഫീസിൽ അപേക്ഷ സമർപ്പിക്കുക. ഓൺലൈൻ: CSC വഴി അപേക്ഷിക്കുക. അപേക്ഷയിൽ മുതിർന്ന അംഗങ്ങളുടെ വിവരങ്ങൾ, SC/ST സ്ഥിതി, Aadhar, BPL, ബാങ്ക് അക്കൗണ്ട് നമ്പർ എന്നിവ ഉൾപ്പെടുത്തണം. ഗ്രാമപഞ്ചായത്ത് പരിശോധനയ്ക്ക് ശേഷം യോഗ്യതയുള്ളവർക്ക് ജോബ് കാർഡ് നൽകും [mgnrega--mgnrega-608fc2:1:4]",
+     "documents": [
+      "ഫോട്ടോ [mgnrega--mgnrega-608fc2:1:5]",
+      "പേര്, വയസ്, ലിംഗം [mgnrega--mgnrega-608fc2:1:5]",
+      "ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക് [mgnrega--mgnrega-608fc2:1:5]",
+      "ഐഡി തെളിവ് [mgnrega--mgnrega-608fc2:1:5]",
+      "SC/ST/IAY/LR ബിനിഫിഷ്യറി സ്ഥിതി [mgnrega--mgnrega-608fc2:1:5]",
+      "സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ [mgnrega--mgnrega-608fc2:1:5]"
+     ],
+     "citations": [
+      "mgnrega--mgnrega-608fc2:1:5",
+      "mgnrega--mgnrega-608fc2:1:4"
+     ]
+    }
+   ],
+   "follow_up_question": "കുടുംബത്തിലെ മുതിർന്ന അംഗങ്ങളുടെ എണ്ണം, അവരുടെ വയസ്, ലിംഗം, SC/ST സ്ഥിതി, ബാങ്ക് അക്കൗണ്ട് ഉണ്ടോ എന്ന് പറയാമോ?",
+   "citations": [
+    "mgnrega--mgnrega-608fc2:1:5",
+    "mgnrega--mgnrega-608fc2:1:4"
+   ],
+   "context": [
+    "mgnrega--mgnrega-608fc2:1:5",
+    "pmfby--pmfby-04a0dd:1:5",
+    "mgnrega--mgnrega-608fc2:1:4",
+    "nsap_nfbs--nfbs-1b0f63:1:4",
+    "pm_vishwakarma--pmv-378966:1:5"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"NREGA ജോബ് കാർഡ് അപേക്ഷിക്കാൻ ആവശ്യമായ രേഖകൾ: അപേക്ഷകന്റെ ഫോട്ടോ, പേര്, വയസ്, ലിംഗം, ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക്, ഐഡി തെളിവ് (റേഷൻ കാർഡ്, വോട്ടർ ഐഡി, ആധാർ, പി.എൻ.) , SC/ST/IAY/LR ബിനിഫിഷ്യറി ആണോ എന്ന്, സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ [C1].\",\"abstained\":false,\"follow_up_question\":\"കുടുംബത്തിലെ മുതിർന്ന അംഗങ്ങളുടെ എണ്ണം, അവരുടെ വയസ്, ലിംഗം, SC/ST സ്ഥിതി, ബാങ്ക് അക്കൗണ്ട് ഉണ്ടോ എന്ന് പറയാമോ?\",\"schemes\":[{\"scheme_id\":\"mgnrega\",\"name\":\"Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)\",\"eligible\":null,\"reasons\":[\"അപേക്ഷകന്റെ ഫോട്ടോ, പേര്, വയസ്, ലിംഗം, ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക്, ഐഡി തെളിവ്, SC/ST/IAY/LR ബിനിഫിഷ്യറി സ്ഥിതി, സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ ആവശ്യമാണ് [C1]\"],\"benefit\":null,\"how_to_apply\":\"ഓഫ്‌ലൈൻ: ഗ്രാമപഞ്ചായത്ത് ഓഫീസിൽ അപേക്ഷ സമർപ്പിക്കുക. ഓൺലൈൻ: CSC വഴി അപേക്ഷിക്കുക. അപേക്ഷയിൽ മുതിർന്ന അംഗങ്ങളുടെ വിവരങ്ങൾ, SC/ST സ്ഥിതി, Aadhar, BPL, ബാങ്ക് അക്കൗണ്ട് നമ്പർ എന്നിവ ഉൾപ്പെടുത്തണം. ഗ്രാമപഞ്ചായത്ത് പരിശോധനയ്ക്ക് ശേഷം യോഗ്യതയുള്ളവർക്ക് ജോബ് കാർഡ് നൽകും [C3]\",\"documents\":[\"ഫോട്ടോ [C1]\",\"പേര്, വയസ്, ലിംഗം [C1]\",\"ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക് [C1]\",\"ഐഡി തെളിവ് [C1]\",\"SC/ST/IAY/LR ബിനിഫിഷ്യറി സ്ഥിതി [C1]\",\"സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ [C1]\"],\"citations\":[\"C1\",\"C3\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3375,
+   "latency_ms": 3379,
+   "latency": {
+    "retrieval_ms": 1909.6,
+    "gen_first_delta_ms": 922.0,
+    "throttled_ms": 0.0,
+    "generate_ms": 1465.0,
+    "validate_ms": 4.3,
+    "ttft_ms": 3374.9,
+    "total_ms": 3379.2,
+    "retrieval_stages": {
+     "rewrite_ms": 776.9,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 7.0,
+     "dense_ms": 643.3,
+     "spec_rerank_ms": 760.8,
+     "rerank_ms": 497.2
+    }
+   },
+   "live": true,
+   "tokens_in": 2290,
+   "tokens_out": 667,
+   "cost_inr": 0.1023,
+   "judge": {
+    "statements": [
+     {
+      "text": "NREGA ജോബ് കാർഡ് അപേക്ഷിക്കാൻ ആവശ്യമായ രേഖകൾ: അപേക്ഷകന്റെ ഫോട്ടോ, പേര്, വയസ്, ലിംഗം, ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക്, ഐഡി തെളിവ് (റേഷൻ കാർഡ്, വോട്ടർ ഐഡി, ആധാർ, പി.എൻ.), SC/ST/IAY/LR ബിനിഫിഷ്യറി ആണോ എന്ന്, സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA): അപേക്ഷകന്റെ ഫോട്ടോ, പേര്, വയസ്, ലിംഗം, ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക്, ഐഡി തെളിവ്, SC/ST/IAY/LR ബിനിഫിഷ്യറി സ്ഥിതി, സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ ആവശ്യമാണ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA): ഓഫ്‌ലൈൻ: ഗ്രാമപഞ്ചായത്ത് ഓഫീസിൽ അപേക്ഷ സമർപ്പിക്കുക. ഓൺലൈൻ: CSC വഴി അപേക്ഷിക്കുക. അപേക്ഷയിൽ മുതിർന്ന അംഗങ്ങളുടെ വിവരങ്ങൾ, SC/ST സ്ഥിതി, Aadhar, BPL, ബാങ്ക് അക്കൗണ്ട് നമ്പർ എന്നിവ ഉൾപ്പെടുത്തണം. ഗ്രാമപഞ്ചായത്ത് പരിശോധനയ്ക്ക് ശേഷം യോഗ്യതയുള്ളവർക്ക് ജോബ് കാർഡ് നൽകും",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA): ഫോട്ടോ",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA): പേര്, വയസ്, ലിംഗം",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA): ഗ്രാമം, ഗ്രാമപഞ്ചായത്ത്, ബ്ലോക്ക്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA): ഐഡി തെളിവ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA): SC/ST/IAY/LR ബിനിഫിഷ്യറി സ്ഥിതി",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA): സിഗ്നേച്ചർ/തുമ്പ് ഇംപ്രഷൻ",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2203
+   }
+  },
+  {
+   "id": "q078",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "main",
+   "question": "How much does Snehapoorvam give per month to a child studying in class 8?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Snehapoorvam gives ₹500/- per month to a child studying in class 8. [kssm_snehapoorvam--ss-kerala-f8b7f6:1:1]",
+   "schemes": [
+    {
+     "scheme_id": "kssm_snehapoorvam",
+     "name": "Snehapoorvam (assistance to orphaned children's education)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": "₹500/- per month for Class VI to Class X [kssm_snehapoorvam--ss-kerala-f8b7f6:1:1]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kssm_snehapoorvam--ss-kerala-f8b7f6:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1:1"
+   ],
+   "context": [
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1:5",
+    "sjd_disability_scholarship--sdas-6a3a34:1:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1:1"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"Snehapoorvam gives ₹500/- per month to a child studying in class 8 [C1].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"kssm_snehapoorvam\",\"name\":\"Snehapoorvam (assistance to orphaned children's education)\",\"eligible\":null,\"reasons\":[],\"benefit\":\"₹500/- per month for Class VI to Class X [C1]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2725,
+   "latency_ms": 2726,
+   "latency": {
+    "retrieval_ms": 1665.1,
+    "gen_first_delta_ms": 935.6,
+    "throttled_ms": 0.0,
+    "generate_ms": 1059.5,
+    "validate_ms": 0.6,
+    "ttft_ms": 2725.1,
+    "total_ms": 2725.8,
+    "retrieval_stages": {
+     "rewrite_ms": 730.5,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 7.5,
+     "dense_ms": 749.1,
+     "spec_rerank_ms": 759.7,
+     "rerank_ms": 147.4
+    }
+   },
+   "live": true,
+   "tokens_in": 2252,
+   "tokens_out": 299,
+   "cost_inr": 0.0909,
+   "judge": {
+    "statements": [
+     {
+      "text": "Snehapoorvam gives ₹500/- per month to a child studying in class 8.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Snehapoorvam (assistance to orphaned children's education): ₹500/- per month for Class VI to Class X",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1618
+   }
+  },
+  {
+   "id": "q058",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "main",
+   "question": "karshaka thozhilali pensionu kshemanidhi board il ninnu enthu certificate venam?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "കർഷക തൊഴിലാളി പെൻഷൻ ലഭിക്കാൻ അപേക്ഷിക്കുമ്പോൾ ആവശ്യമായ സർട്ടിഫിക്കറ്റുകൾ: ആധാർ, വയസ്സ് തെളിയിക്കുന്ന രേഖ, വാർഷിക വരുമാന സർട്ടിഫിക്കറ്റ്, കർഷകന്റെ സത്യപ്രസ്ഥാവന, കൃഷി അനുബന്ധ ഉദ്യോഗസ്ഥന്റെ സാക്ഷ്യപത്രം, ബാങ്ക് പാസ് ബുക്ക് പകർപ്പ്, ഭൂമി നികുതി രസീത്/ഭൂമി രേഖ, പാസ്റ്റ് പോർട്ട് സൈസ് ഫോട്ടോ [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_farmers_welfare_fund",
+     "name": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [
+      "ആധാർ [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]",
+      "വയസ്സ് തെളിയിക്കുന്ന രേഖ [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]",
+      "വാർഷിക വരുമാന സർട്ടിഫിക്കറ്റ് [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]",
+      "കർഷകന്റെ സത്യപ്രസ്ഥാവന [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]",
+      "കൃഷി അനുബന്ധ ഉദ്യോഗസ്ഥന്റെ സാക്ഷ്യപത്രം [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]",
+      "ബാങ്ക് പാസ് ബുക്ക് പകർപ്പ് [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]",
+      "ഭൂമി നികുതി രസീത്/ഭൂമി രേഖ [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]",
+      "പാസ്റ്റ് പോർട്ട് സൈസ് ഫോട്ടോ [kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0]"
+     ],
+     "citations": [
+      "kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0"
+   ],
+   "context": [
+    "kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1:0",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1:4",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1:5",
+    "nsap_igndps--igndps-f97cb2:1:4",
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1:1"
+   ],
+   "context_hit": false,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"കർഷക തൊഴിലാളി പെൻഷൻ ലഭിക്കാൻ അപേക്ഷിക്കുമ്പോൾ ആവശ്യമായ സർട്ടിഫിക്കറ്റുകൾ: ആധാർ, വയസ്സ് തെളിയിക്കുന്ന രേഖ, വാർഷിക വരുമാന സർട്ടിഫിക്കറ്റ്, കർഷകന്റെ സത്യപ്രസ്ഥാവന, കൃഷി അനുബന്ധ ഉദ്യോഗസ്ഥന്റെ സാക്ഷ്യപത്രം, ബാങ്ക് പാസ് ബുക്ക് പകർപ്പ്, ഭൂമി നികുതി രസീത്/ഭൂമി രേഖ, പാസ്റ്റ് പോർട്ട് സൈസ് ഫോട്ടോ [C1]\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"kerala_farmers_welfare_fund\",\"name\":\"Kerala Farmers' Welfare Fund Board pension (Karshaka pension)\",\"eligible\":null,\"reasons\":[],\"benefit\":null,\"how_to_apply\":null,\"documents\":[\"ആധാർ\",\"വയസ്സ് തെളിയിക്കുന്ന രേഖ\",\"വാർഷിക വരുമാന സർട്ടിഫിക്കറ്റ്\",\"കർഷകന്റെ സത്യപ്രസ്ഥാവന\",\"കൃഷി അനുബന്ധ ഉദ്യോഗസ്ഥന്റെ സാക്ഷ്യപത്രം\",\"ബാങ്ക് പാസ് ബുക്ക് പകർപ്പ്\",\"ഭൂമി നികുതി രസീത്/ഭൂമി രേഖ\",\"പാസ്റ്റ് പോർട്ട് സൈസ് ഫോട്ടോ\"],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2801,
+   "latency_ms": 2804,
+   "latency": {
+    "retrieval_ms": 1812.3,
+    "gen_first_delta_ms": 660.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 988.3,
+    "validate_ms": 3.2,
+    "ttft_ms": 2801.1,
+    "total_ms": 2804.3,
+    "retrieval_stages": {
+     "rewrite_ms": 952.2,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 8.7,
+     "dense_ms": 784.5,
+     "spec_rerank_ms": 774.6,
+     "rerank_ms": 242.9
+    }
+   },
+   "live": true,
+   "tokens_in": 2937,
+   "tokens_out": 473,
+   "cost_inr": 0.1095,
+   "judge": {
+    "statements": [
+     {
+      "text": "കർഷക തൊഴിലാളി പെൻഷൻ ലഭിക്കാൻ അപേക്ഷിക്കുമ്പോൾ ആവശ്യമായ സർട്ടിഫിക്കറ്റുകൾ: ആധാർ, വയസ്സ് തെളിയിക്കുന്ന രേഖ, വാർഷിക വരുമാന സർട്ടിഫിക്കറ്റ്, കർഷകന്റെ സത്യപ്രസ്ഥാവന, കൃഷി അനുബന്ധ ഉദ്യോഗസ്ഥന്റെ സാക്ഷ്യപത്രം, ബാങ്ക് പാസ് ബുക്ക് പകർപ്പ്, ഭൂമി നികുതി രസീത്/ഭൂമി രേഖ, പാസ്റ്റ് പോർട്ട് സൈസ് ഫോട്ടോ",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension): ആധാർ",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension): വയസ്സ് തെളിയിക്കുന്ന രേഖ",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension): വാർഷിക വരുമാന സർട്ടിഫിക്കറ്റ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension): കർഷകന്റെ സത്യപ്രസ്ഥാവന",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension): കൃഷി അനുബന്ധ ഉദ്യോഗസ്ഥന്റെ സാക്ഷ്യപത്രം",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension): ബാങ്ക് പാസ് ബുക്ക് പകർപ്പ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension): ഭൂമി നികുതി രസീത്/ഭൂമി രേഖ",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension): പാസ്റ്റ് പോർട്ട് സൈസ് ഫോട്ടോ",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2471
+   }
+  },
+  {
+   "id": "q062",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "main",
+   "question": "അമ്മയ്ക്ക് പെൻഷൻ വേണം. അപേക്ഷ എവിടെയാണ് കൊടുക്കേണ്ടത്?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "അമ്മയ്ക്ക് പെൻഷൻ ലഭിക്കാൻ അപേക്ഷിക്കേണ്ടത് തദ്ദേശസ്വയംഭരണ സ്ഥാപനത്തിന്റെ (ഗ്രാമ പഞ്ചായത്ത്/മുനിസിപ്പാലിറ്റി/കോർപ്പറേഷൻ) സെക്രട്ടറിക്കാണ് സമർപ്പിക്കേണ്ടത് [kerala_welfare_pensions--schemes-54856b:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_pension_unmarried_women",
+     "name": "Pension for Unmarried Women above 50 (Kerala)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": "അപേക്ഷ തദ്ദേശസ്വയംഭരണ സ്ഥാപനത്തിന്റെ സെക്രട്ടറിക്കാണ് സമർപ്പിക്കേണ്ടത് [kerala_welfare_pensions--schemes-54856b:1:0]",
+     "documents": [
+      "വിവാഹിതയല്ല എന്നു തെളിയിക്കുന്നതിനുള്ള സർട്ടിഫിക്കറ്റ് [kerala_pension_unmarried_women--faqs-70561d:1:0]",
+      "വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [kerala_pension_unmarried_women--faqs-70561d:1:0]",
+      "പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [kerala_pension_unmarried_women--faqs-70561d:1:0]",
+      "ആധാർ കാർഡ് [kerala_pension_unmarried_women--faqs-70561d:1:0]",
+      "ഇലക്ട്രൽ കാർഡ് [kerala_pension_unmarried_women--faqs-70561d:1:0]",
+      "റേഷൻ കാർഡ് [kerala_pension_unmarried_women--faqs-70561d:1:0]",
+      "ബാങ്ക് പാസ്സ് ബുക്ക് (പെൻഷൻ കൈപ്പറ്റുന്നതിനു തിരഞ്ഞെടുക്കുന്ന തരം ബാങ്ക് ആണെങ്കിൽ മാത്രം ബാധകം) [kerala_pension_unmarried_women--faqs-70561d:1:0]",
+      "ഇ പി എഫ് പാസ്ബുക്ക്/അനുബന്ധ രേഖ (4000 രൂപയിൽ താഴെ ഇ പി എഫ് പെൻഷൻ വാങ്ങുന്നവർക്ക് മാത്രം ബാധകം) [kerala_pension_unmarried_women--faqs-70561d:1:0]"
+     ],
+     "citations": [
+      "kerala_pension_unmarried_women--faqs-70561d:1:0",
+      "kerala_welfare_pensions--schemes-54856b:1:0"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kerala_welfare_pensions--schemes-54856b:1:0",
+    "kerala_pension_unmarried_women--faqs-70561d:1:0"
+   ],
+   "context": [
+    "kerala_pension_unmarried_women--faqs-948590:1:0",
+    "kerala_pension_unmarried_women--faqs-70561d:1:0",
+    "apy--apy-234e9e:1:4",
+    "kerala_welfare_pensions--schemes-54856b:1:0",
+    "nsap_igndps--igndps-f97cb2:1:5"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"അമ്മയ്ക്ക് പെൻഷൻ ലഭിക്കാൻ അപേക്ഷിക്കേണ്ടത് തദ്ദേശസ്വയംഭരണ സ്ഥാപനത്തിന്റെ (ഗ്രാമ പഞ്ചായത്ത്/മുനിസിപ്പാലിറ്റി/കോർപ്പറേഷൻ) സെക്രട്ടറിക്കാണ് സമർപ്പിക്കേണ്ടത് [C4]\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"kerala_pension_unmarried_women\",\"name\":\"Pension for Unmarried Women above 50 (Kerala)\",\"eligible\":null,\"reasons\":[],\"benefit\":null,\"how_to_apply\":\"അപേക്ഷ തദ്ദേശസ്വയംഭരണ സ്ഥാപനത്തിന്റെ സെക്രട്ടറിക്കാണ് സമർപ്പിക്കേണ്ടത് [C4]\",\"documents\":[\"വിവാഹിതയല്ല എന്നു തെളിയിക്കുന്നതിനുള്ള സർട്ടിഫിക്കറ്റ് [C2]\",\"വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [C2]\",\"പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [C2]\",\"ആധാർ കാർഡ് [C2]\",\"ഇലക്ട്രൽ കാർഡ് [C2]\",\"റേഷൻ കാർഡ് [C2]\",\"ബാങ്ക് പാസ്സ് ബുക്ക് (പെൻഷൻ കൈപ്പറ്റുന്നതിനു തിരഞ്ഞെടുക്കുന്ന തരം ബാങ്ക് ആണെങ്കിൽ മാത്രം ബാധകം) [C2]\",\"ഇ പി എഫ് പാസ്ബുക്ക്/അനുബന്ധ രേഖ (4000 രൂപയിൽ താഴെ ഇ പി എഫ് പെൻഷൻ വാങ്ങുന്നവർക്ക് മാത്രം ബാധകം) [C2]\"],\"citations\":[\"C4\",\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3066,
+   "latency_ms": 3070,
+   "latency": {
+    "retrieval_ms": 1723.9,
+    "gen_first_delta_ms": 1004.2,
+    "throttled_ms": 0.0,
+    "generate_ms": 1341.5,
+    "validate_ms": 4.1,
+    "ttft_ms": 3065.7,
+    "total_ms": 3069.8,
+    "retrieval_stages": {
+     "rewrite_ms": 905.6,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 5.3,
+     "dense_ms": 578.0,
+     "spec_rerank_ms": 755.7,
+     "rerank_ms": 383.7
+    }
+   },
+   "live": true,
+   "tokens_in": 3133,
+   "tokens_out": 485,
+   "cost_inr": 0.0983,
+   "judge": {
+    "statements": [
+     {
+      "text": "അമ്മയ്ക്ക് പെൻഷൻ ലഭിക്കാൻ അപേക്ഷിക്കേണ്ടത് തദ്ദേശസ്വയംഭരണ സ്ഥാപനത്തിന്റെ (ഗ്രാമ പഞ്ചായത്ത്/മുനിസിപ്പാലിറ്റി/കോർപ്പറേഷൻ) സെക്രട്ടറിക്കാണ് സമർപ്പിക്കേണ്ടത്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): അപേക്ഷ തദ്ദേശസ്വയംഭരണ സ്ഥാപനത്തിന്റെ സെക്രട്ടറിക്കാണ് സമർപ്പിക്കേണ്ടത്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): വിവാഹിതയല്ല എന്നു തെളിയിക്കുന്നതിനുള്ള സർട്ടിഫിക്കറ്റ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): ആധാർ കാർഡ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): ഇലക്ട്രൽ കാർഡ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): റേഷൻ കാർഡ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): ബാങ്ക് പാസ്സ് ബുക്ക് (പെൻഷൻ കൈപ്പറ്റുന്നതിനു തിരഞ്ഞെടുക്കുന്ന തരം ബാങ്ക് ആണെങ്കിൽ മാത്രം ബാധകം)",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pension for Unmarried Women above 50 (Kerala): ഇ പി എഫ് പാസ്ബുക്ക്/അനുബന്ധ രേഖ (4000 രൂപയിൽ താഴെ ഇ പി എഫ് പെൻഷൻ വാങ്ങുന്നവർക്ക് മാത്രം ബാധകം)",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2898
+   }
+  },
+  {
+   "id": "h017",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "How long will it take to get my pension after I submit the application?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "validation",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Ministry of Rural Development, Government of India (https://www.myscheme.gov.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:3",
+    "kerala_welfare_pensions--schemes-54856b:1:0",
+    "apy--apy-234e9e:1:6",
+    "nsap_igndps--igndps-f97cb2:1:5",
+    "nsap--nsap-guidelines-oct2014-9deea1:18:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "It takes 15 days for verification after you submit the application, 20 days for Gram Sabha/Ward, 15 days for Gram Panchayat/Municipality, and 10 days for sanction of the pension.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "In total, the pension can be approved within about 60 days from the date of submission.[C5]",
+     "reason": "number_mismatch",
+     "detail": "60"
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"It takes 15 days for verification after you submit the application, 20 days for Gram Sabha/Ward, 15 days for Gram Panchayat/Municipality, and 10 days for sanction of the pension. In total, the pension can be approved within about 60 days from the date of submission.[C5]\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap\",\"name\":\"National Social Assistance Programme (NSAP)\",\"eligible\":null,\"reasons\":[],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2651,
+   "latency_ms": 2651,
+   "latency": {
+    "retrieval_ms": 1712.6,
+    "gen_first_delta_ms": 787.1,
+    "throttled_ms": 0.0,
+    "generate_ms": 937.1,
+    "validate_ms": 1.2,
+    "ttft_ms": 2651.1,
+    "total_ms": 2651.1,
+    "retrieval_stages": {
+     "rewrite_ms": 1093.9,
+     "rewrite_wait_ms": 96.9,
+     "bm25_ms": 5.9,
+     "dense_ms": 479.0,
+     "spec_rerank_ms": 767.6,
+     "rerank_ms": 362.0
+    }
+   },
+   "live": true,
+   "tokens_in": 2680,
+   "tokens_out": 300,
+   "cost_inr": 0.0916
+  },
+  {
+   "id": "h026",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "njan kerala resident aayi, disability 40% kooduthal ulla student aanu, family income 30k aanu, scholarship kittumo?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "നിങ്ങൾക്ക് Scholarship for Differently Abled Students (Kerala) ലഭ്യമാണ്. [sjd_disability_scholarship--sdas-6a3a34:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "sjd_disability_scholarship",
+     "name": "Scholarship for Differently Abled Students (Kerala)",
+     "eligible": true,
+     "reasons": [
+      "നിങ്ങൾ കേരളത്തിലെ സ്ഥിരതാമസക്കാരനാണ് [sjd_disability_scholarship--sdas-6a3a34:1:2]",
+      "നിങ്ങൾ 40 % അല്ലെങ്കിൽ അതിലധികം വൈകല്യമുള്ള വിദ്യാർത്ഥിയാണ് [sjd_disability_scholarship--sdas-6a3a34:1:2]",
+      "നിങ്ങളുടെ വാർഷിക കുടുംബ വരുമാനം ₹36,000-ൽ താഴെയാണ് [sjd_disability_scholarship--sdas-6a3a34:1:2]",
+      "നിങ്ങൾ വിദ്യാർത്ഥിയാണ് [sjd_disability_scholarship--sdas-6a3a34:1:2]"
+     ],
+     "benefit": "വൈകല്യ ശതമാനം 40 % അല്ലെങ്കിൽ അതിലധികം ഉള്ള വിദ്യാർത്ഥികൾക്ക് ₹300/- മുതൽ ₹1500/- വരെ മാസാന്തം സ്കോളർഷിപ്പ് ലഭിക്കും [sjd_disability_scholarship--sdas-6a3a34:1:1]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "sjd_disability_scholarship--sdas-6a3a34:1:2",
+      "sjd_disability_scholarship--sdas-6a3a34:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "sjd_disability_scholarship--sdas-6a3a34:1:2",
+    "sjd_disability_scholarship--sdas-6a3a34:1:1"
+   ],
+   "context": [
+    "sjd_disability_scholarship--sdas-6a3a34:1:2",
+    "sjd_disability_scholarship--sdas-6a3a34:1:1",
+    "sjd_assistive_devices--spaddap-c1206b:1:2",
+    "sjd_disability_scholarship--sdas-6a3a34:1:6",
+    "scholarship_disabilities--post-dis-9c5dfa:1:2"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"നിങ്ങൾക്ക് Scholarship for Differently Abled Students (Kerala) ലഭ്യമാണ് [C1].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"sjd_disability_scholarship\",\"name\":\"Scholarship for Differently Abled Students (Kerala)\",\"eligible\":true,\"reasons\":[\"നിങ്ങൾ കേരളത്തിലെ സ്ഥിരതാമസക്കാരനാണ് [C1]\",\"നിങ്ങൾ 40 % അല്ലെങ്കിൽ അതിലധികം വൈകല്യമുള്ള വിദ്യാർത്ഥിയാണ് [C1]\",\"നിങ്ങളുടെ വാർഷിക കുടുംബ വരുമാനം ₹36,000-ൽ താഴെയാണ് [C1]\",\"നിങ്ങൾ വിദ്യാർത്ഥിയാണ് [C1]\"],\"benefit\":\"വൈകല്യ ശതമാനം 40 % അല്ലെങ്കിൽ അതിലധികം ഉള്ള വിദ്യാർത്ഥികൾക്ക് ₹300/- മുതൽ ₹1500/- വരെ മാസാന്തം സ്കോളർഷിപ്പ് ലഭിക്കും [C2]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\",\"C2\"]}]}",
+   "lang_match": false,
+   "ttft_ms": 3279,
+   "latency_ms": 3282,
+   "latency": {
+    "retrieval_ms": 2040.1,
+    "gen_first_delta_ms": 967.2,
+    "throttled_ms": 0.0,
+    "generate_ms": 1238.5,
+    "validate_ms": 3.0,
+    "ttft_ms": 3278.8,
+    "total_ms": 3281.9,
+    "retrieval_stages": {
+     "rewrite_ms": 895.5,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 11.6,
+     "dense_ms": 1006.3,
+     "spec_rerank_ms": 775.0,
+     "rerank_ms": 245.9
+    }
+   },
+   "live": true,
+   "tokens_in": 2417,
+   "tokens_out": 479,
+   "cost_inr": 0.1192,
+   "judge": {
+    "statements": [
+     {
+      "text": "നിങ്ങൾക്ക് Scholarship for Differently Abled Students (Kerala) ലഭ്യമാണ്.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Scholarship for Differently Abled Students (Kerala): നിങ്ങൾ കേരളത്തിലെ സ്ഥിരതാമസക്കാരനാണ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Scholarship for Differently Abled Students (Kerala): നിങ്ങൾ 40 % അല്ലെങ്കിൽ അതിലധികം വൈകല്യമുള്ള വിദ്യാർത്ഥിയാണ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Scholarship for Differently Abled Students (Kerala): നിങ്ങളുടെ വാർഷിക കുടുംബ വരുമാനം ₹36,000-ൽ താഴെയാണ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Scholarship for Differently Abled Students (Kerala): നിങ്ങൾ വിദ്യാർത്ഥിയാണ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Scholarship for Differently Abled Students (Kerala): വൈകല്യ ശതമാനം 40 % അല്ലെങ്കിൽ അതിലധികം ഉള്ള വിദ്യാർത്ഥികൾക്ക് ₹300/- മുതൽ ₹1500/- വരെ മാസാന്തം സ്കോളർഷിപ്പ് ലഭിക്കും",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1994
+   }
+  },
+  {
+   "id": "h028",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "എന്റെ കുടുംബം താൽക്കാലികമായി കുടിയേറുകയോ കണ്ടെത്താനാകാത്തതോ ആണെങ്കിൽ, ഞങ്ങളുടെ പേര് PWL‑യുടെ അവസാനം വെക്കുമോ?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "PMAY‑G-ൽ താൽക്കാലികമായി കുടിയേറുന്ന കുടുംബങ്ങളെ PWL‑ന്റെ അവസാനം വെക്കാം. [pmay_g--english-book-final-51e2f6:27:0]",
+   "schemes": [
+    {
+     "scheme_id": "pmay_g",
+     "name": "Pradhan Mantri Awaas Yojana - Gramin (PMAY‑G)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pmay_g--english-book-final-51e2f6:27:0"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pmay_g--english-book-final-51e2f6:27:0"
+   ],
+   "context": [
+    "pmuy--pmuy-6c9914:1:6",
+    "pmay_g--english-book-final-51e2f6:27:0",
+    "pmay_g--english-book-final-51e2f6:28:0",
+    "nsap_ignwps--ignwps-0932bc:1:3",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1:3"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"PMAY‑G-ൽ താൽക്കാലികമായി കുടിയേറുന്ന കുടുംബങ്ങളെ PWL‑ന്റെ അവസാനം വെക്കാം [C2].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pmay_g\",\"name\":\"Pradhan Mantri Awaas Yojana - Gramin (PMAY‑G)\",\"eligible\":null,\"reasons\":[],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3054,
+   "latency_ms": 3055,
+   "latency": {
+    "retrieval_ms": 1983.9,
+    "gen_first_delta_ms": 941.1,
+    "throttled_ms": 0.0,
+    "generate_ms": 1069.5,
+    "validate_ms": 1.6,
+    "ttft_ms": 3053.7,
+    "total_ms": 3055.4,
+    "retrieval_stages": {
+     "rewrite_ms": 805.4,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 15.2,
+     "dense_ms": 966.0,
+     "spec_rerank_ms": 756.1,
+     "rerank_ms": 245.3
+    }
+   },
+   "live": true,
+   "tokens_in": 3194,
+   "tokens_out": 289,
+   "cost_inr": 0.1089,
+   "judge": {
+    "statements": [
+     {
+      "text": "PMAY‑G-ൽ താൽക്കാലികമായി കുടിയേറുന്ന കുടുംബങ്ങളെ PWL‑ന്റെ അവസാനം വെക്കാം.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2251
+   }
+  },
+  {
+   "id": "q118",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "main",
+   "question": "Is my caste counted as backward in Kerala? Where is the list?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Overseas scholarship and education‑loan interest subsidy for backward classes: Eligible families receive overseas scholarship and education‑loan interest subsidy [kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1] Employability Enhancement Programme and skill assistance for OBC students (BCDD): Skill assistance and employment opportunities for OBC students [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_overseas_scholarship_obc",
+     "name": "Overseas scholarship and education‑loan interest subsidy for backward classes",
+     "eligible": null,
+     "reasons": [
+      "Your caste must be listed in the Eligible Caste List [kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1]"
+     ],
+     "benefit": "Eligible families receive overseas scholarship and education‑loan interest subsidy [kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1]",
+     "how_to_apply": "Apply through the Backward Classes Development Department, Kerala [kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1]",
+     "documents": [
+      "Eligible Caste List [kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1]"
+     ],
+     "citations": [
+      "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1"
+     ]
+    },
+    {
+     "scheme_id": "kerala_eep",
+     "name": "Employability Enhancement Programme and skill assistance for OBC students (BCDD)",
+     "eligible": null,
+     "reasons": [
+      "Your caste must be in the Kerala OBC List or the SEBC List [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0] [kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0] [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:16:0] [kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:17:0]"
+     ],
+     "benefit": "Skill assistance and employment opportunities for OBC students [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0]",
+     "how_to_apply": "Apply through the Backward Classes Development Department, Kerala [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0]",
+     "documents": [
+      "Kerala OBC List [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0] [kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0]",
+      "SEBC List [kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:16:0] [kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:17:0]"
+     ],
+     "citations": [
+      "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0",
+      "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0",
+      "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:16:0",
+      "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:17:0"
+     ]
+    }
+   ],
+   "follow_up_question": "What is the name of your caste?",
+   "citations": [
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:16:0",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:17:0"
+   ],
+   "context": [
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9:0",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10:0",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:16:0",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:17:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "The list of backward castes in Kerala is published in the state’s OBC list and the SEBC list.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "The OBC list is annexed as part‑1 of the Kerala State and Subordinate Service Rule, 1958, and the SEBC list is published under various Government Orders (e.g., G.O.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "(P) 208/66/Edn., G.O.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "(Ms) No. 95/08/SCSTDD, etc.).",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "These lists include castes such as Chetty/Chetties, Dheevara, Ezhavas, Muslims, Latin Catholics, Anglo Indians, and many others as detailed in the excerpts.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "To find out whether your specific caste is listed, you need to provide the name of your caste.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"The list of backward castes in Kerala is published in the state’s OBC list and the SEBC list. The OBC list is annexed as part‑1 of the Kerala State and Subordinate Service Rule, 1958, and the SEBC list is published under various Government Orders (e.g., G.O. (P) 208/66/Edn., G.O. (Ms) No. 95/08/SCSTDD, etc.). These lists include castes such as Chetty/Chetties, Dheevara, Ezhavas, Muslims, Latin Catholics, Anglo Indians, and many others as detailed in the excerpts. To find out whether your specific caste is listed, you need to provide the name of your caste.\",\"abstained\":false,\"follow_up_question\":\"What is the name of your caste?\",\"schemes\":[{\"scheme_id\":\"kerala_overseas_scholarship_obc\",\"name\":\"Overseas scholarship and education‑loan interest subsidy for backward classes\",\"eligible\":null,\"reasons\":[\"Your caste must be listed in the Eligible Caste List [C1]\"],\"benefit\":\"Eligible families receive overseas scholarship and education‑loan interest subsidy [C1]\",\"how_to_apply\":\"Apply through the Backward Classes Development Department, Kerala [C1]\",\"documents\":[\"Eligible Caste List [C1]\"],\"citations\":[\"C1\"]},{\"scheme_id\":\"kerala_eep\",\"name\":\"Employability Enhancement Programme and skill assistance for OBC students (BCDD)\",\"eligible\":null,\"reasons\":[\"Your caste must be in the Kerala OBC List [C2][C3] or the SEBC List [C4][C5]\"],\"benefit\":\"Skill assistance and employment opportunities for OBC students [C2]\",\"how_to_apply\":\"Apply through the Backward Classes Development Department, Kerala [C2]\",\"documents\":[\"Kerala OBC List [C2][C3]\",\"SEBC List [C4][C5]\"],\"citations\":[\"C2\",\"C3\",\"C4\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3225,
+   "latency_ms": 3225,
+   "latency": {
+    "retrieval_ms": 1693.2,
+    "gen_first_delta_ms": 1076.4,
+    "throttled_ms": 0.0,
+    "generate_ms": 1522.2,
+    "validate_ms": 9.9,
+    "ttft_ms": 3225.5,
+    "total_ms": 3225.5,
+    "retrieval_stages": {
+     "rewrite_ms": 877.4,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 6.4,
+     "dense_ms": 526.7,
+     "spec_rerank_ms": 774.6,
+     "rerank_ms": 384.2
+    }
+   },
+   "live": true,
+   "tokens_in": 3436,
+   "tokens_out": 612,
+   "cost_inr": 0.1056,
+   "judge": {
+    "statements": [
+     {
+      "text": "Overseas scholarship and education‑loan interest subsidy for backward classes: Eligible families receive overseas scholarship and education‑loan interest subsidy Employability Enhancement Programme and skill assistance for OBC students (BCDD): Skill assistance and employment opportunities for OBC students",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Overseas scholarship and education‑loan interest subsidy for backward classes: Your caste must be listed in the Eligible Caste List",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Overseas scholarship and education‑loan interest subsidy for backward classes: Eligible families receive overseas scholarship and education‑loan interest subsidy",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Overseas scholarship and education‑loan interest subsidy for backward classes: Apply through the Backward Classes Development Department, Kerala",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Overseas scholarship and education‑loan interest subsidy for backward classes: Eligible Caste List",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Employability Enhancement Programme and skill assistance for OBC students (BCDD): Your caste must be in the Kerala OBC List or the SEBC List",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Employability Enhancement Programme and skill assistance for OBC students (BCDD): Skill assistance and employment opportunities for OBC students",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Employability Enhancement Programme and skill assistance for OBC students (BCDD): Apply through the Backward Classes Development Department, Kerala",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Employability Enhancement Programme and skill assistance for OBC students (BCDD): Kerala OBC List",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Employability Enhancement Programme and skill assistance for OBC students (BCDD): SEBC List",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 3.0,
+    "tokens": 3796
+   }
+  },
+  {
+   "id": "q063",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "main",
+   "question": "pension apeksha ethra divasathinullil theerppu kalpikkanam?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "പെൻഷൻ അപേക്ഷ ലഭിച്ചതിന് ശേഷം 45 ദിവസത്തിനകം തീരുമാനമെടുക്കണം. [kerala_welfare_pensions--schemes-54856b:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_welfare_pensions",
+     "name": "Kerala Social Security Pensions (Sevana Pension)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kerala_welfare_pensions--schemes-54856b:1:0"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kerala_welfare_pensions--schemes-54856b:1:0"
+   ],
+   "context": [
+    "kerala_welfare_pensions--schemes-54856b:1:0",
+    "kerala_welfare_pensions--faqs-652205:1:0",
+    "nsap--nsap-guidelines-oct2014-9deea1:25:0",
+    "nsap--nsap-guidelines-oct2014-9deea1:18:0",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"പെൻഷൻ അപേക്ഷ ലഭിച്ചതിന് ശേഷം 45 ദിവസത്തിനകം തീരുമാനമെടുക്കണം [C1].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"kerala_welfare_pensions\",\"name\":\"Kerala Social Security Pensions (Sevana Pension)\",\"eligible\":null,\"reasons\":[],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3619,
+   "latency_ms": 3620,
+   "latency": {
+    "retrieval_ms": 2247.9,
+    "gen_first_delta_ms": 1267.0,
+    "throttled_ms": 0.0,
+    "generate_ms": 1370.8,
+    "validate_ms": 0.8,
+    "ttft_ms": 3619.0,
+    "total_ms": 3619.8,
+    "retrieval_stages": {
+     "rewrite_ms": 661.4,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 7.7,
+     "dense_ms": 815.6,
+     "spec_rerank_ms": 795.4,
+     "rerank_ms": 627.6
+    }
+   },
+   "live": true,
+   "tokens_in": 2932,
+   "tokens_out": 255,
+   "cost_inr": 0.0897,
+   "judge": {
+    "statements": [
+     {
+      "text": "പെൻഷൻ അപേക്ഷ ലഭിച്ചതിന് ശേഷം 45 ദിവസത്തിനകം തീരുമാനമെടുക്കണം.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2038
+   }
+  },
+  {
+   "id": "q086",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "main",
+   "question": "നെൽകർഷകർക്ക് പെൻഷൻ കൊടുക്കാൻ തുടങ്ങിയത് എന്ന് മുതലാണ്?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "നെൽകർഷകർക്ക് പെൻഷൻ പദ്ധതി 2008‑09 വർഷം 31‑01‑2009‑ലെ സർക്കാർ ഉത്തരവ് (പി) നമ്പർ 22/2009/കൃഷി (പി.ബി.) പ്രകാരം ആരംഭിച്ചു. [kerala_farmers_welfare_fund--karshakapension-e99e34:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_farmers_welfare_fund",
+     "name": "Kerala Farmers' Welfare Fund Board pension (Karshaka pension)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kerala_farmers_welfare_fund--karshakapension-e99e34:1:0"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1:0"
+   ],
+   "context": [
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:3:0",
+    "kerala_welfare_pensions--schemes-54856b:1:0",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"നെൽകർഷകർക്ക് പെൻഷൻ പദ്ധതി 2008‑09 വർഷം 31‑01‑2009‑ലെ സർക്കാർ ഉത്തരവ് (പി) നമ്പർ 22/2009/കൃഷി (പി.ബി.) പ്രകാരം ആരംഭിച്ചു [C1].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"kerala_farmers_welfare_fund\",\"name\":\"Kerala Farmers' Welfare Fund Board pension (Karshaka pension)\",\"eligible\":null,\"reasons\":[],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3042,
+   "latency_ms": 3046,
+   "latency": {
+    "retrieval_ms": 2019.5,
+    "gen_first_delta_ms": 950.2,
+    "throttled_ms": 0.0,
+    "generate_ms": 1022.3,
+    "validate_ms": 4.0,
+    "ttft_ms": 3042.3,
+    "total_ms": 3046.4,
+    "retrieval_stages": {
+     "rewrite_ms": 753.4,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 4.8,
+     "dense_ms": 737.9,
+     "spec_rerank_ms": 766.3,
+     "rerank_ms": 509.3
+    }
+   },
+   "live": true,
+   "tokens_in": 3500,
+   "tokens_out": 295,
+   "cost_inr": 0.0945,
+   "judge": {
+    "statements": [
+     {
+      "text": "നെൽകർഷകർക്ക് പെൻഷൻ പദ്ധതി 2008‑09 വർഷം 31‑01‑2009‑ലെ സർക്കാർ ഉത്തരവ് (പി) നമ്പർ 22/2009/കൃഷി (പി.ബി.) പ്രകാരം ആരംഭിച്ചു.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2691
+   }
+  },
+  {
+   "id": "h019",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "If I planted ginger on 0.02 hectare and it dies after a month, how much will I be paid?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "You will receive ₹15 for the 0.02 ha of ginger that died after one month. [kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:1]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_agri_crop_insurance",
+     "name": "State crop insurance and natural-calamity relief for farmers",
+     "eligible": true,
+     "reasons": [
+      "You are a farmer and the crop (ginger) is covered for 0.02 ha from 1 month to 5 months [kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:1]"
+     ],
+     "benefit": "₹15 for 0.02 ha of ginger that died after one month [kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:1]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:1"
+   ],
+   "context": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:2",
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1:0",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:1"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You will receive ₹15 for the 0.02 ha of ginger that died after one month [C1].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"kerala_agri_crop_insurance\",\"name\":\"State crop insurance and natural-calamity relief for farmers\",\"eligible\":true,\"reasons\":[\"You are a farmer and the crop (ginger) is covered for 0.02 ha from 1 month to 5 months [C1]\"],\"benefit\":\"₹15 for 0.02 ha of ginger that died after one month [C1]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3413,
+   "latency_ms": 3422,
+   "latency": {
+    "retrieval_ms": 2076.9,
+    "gen_first_delta_ms": 1159.8,
+    "throttled_ms": 0.0,
+    "generate_ms": 1336.0,
+    "validate_ms": 8.3,
+    "ttft_ms": 3413.4,
+    "total_ms": 3421.7,
+    "retrieval_stages": {
+     "rewrite_ms": 1179.9,
+     "rewrite_wait_ms": 93.2,
+     "bm25_ms": 8.1,
+     "dense_ms": 722.5,
+     "spec_rerank_ms": 746.3,
+     "rerank_ms": 505.4
+    }
+   },
+   "live": true,
+   "tokens_in": 4167,
+   "tokens_out": 370,
+   "cost_inr": 0.1158,
+   "judge": {
+    "statements": [
+     {
+      "text": "You will receive ₹15 for the 0.02 ha of ginger that died after one month.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "State crop insurance and natural-calamity relief for farmers: You are a farmer and the crop (ginger) is covered for 0.02 ha from 1 month to 5 months",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "State crop insurance and natural-calamity relief for farmers: ₹15 for 0.02 ha of ginger that died after one month",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 3293
+   }
+  },
+  {
+   "id": "h009",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "Ente family income 4 lakh aan, PMAY-U il house size evide varum?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "കൂടുതല്‍ വിവരങ്ങള്‍ക്ക് നിങ്ങളുടെ നഗരത്തിന്റെ PMAY‑U കവറേജ് പേജ് പരിശോധിക്കുക. [pmay_u--pmay-u-5f7b25:1:2] [pmay_u--pmay-u-5f7b25:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "pmay_u",
+     "name": "Pradhan Mantri Awas Yojana - Urban (PMAY-U)",
+     "eligible": true,
+     "reasons": [
+      "നിങ്ങളുടെ കുടുംബ വരുമാനം ₹4,00,000 ആണ്, ഇത് LIG വിഭാഗത്തിന്റെ വരുമാന പരിധിയിലാണ് [pmay_u--pmay-u-5f7b25:1:2]"
+     ],
+     "benefit": null,
+     "how_to_apply": "നഗരത്തിന്റെ PMAY‑U കവറേജ് പേജ് സന്ദര്‍ശിച്ച് അപേക്ഷാ പ്രക്രിയ ആരംഭിക്കുക [pmay_u--pmay-u-5f7b25:1:5]",
+     "documents": [
+      "Aadhaar / Aadhaar Virtual ID [pmay_u--pmay-u-5f7b25:1:0]"
+     ],
+     "citations": [
+      "pmay_u--pmay-u-5f7b25:1:2",
+      "pmay_u--pmay-u-5f7b25:1:0",
+      "pmay_u--pmay-u-5f7b25:1:5"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pmay_u--pmay-u-5f7b25:1:2",
+    "pmay_u--pmay-u-5f7b25:1:0",
+    "pmay_u--pmay-u-5f7b25:1:5"
+   ],
+   "context": [
+    "pmay_u--pmay-u-5f7b25:1:2",
+    "pmay_u--pmay-u-5f7b25:1:0",
+    "pmay_g--pmay-g-c98964:1:0",
+    "pmay_u--pmay-u-5f7b25:1:5",
+    "pmay_g--english-book-final-51e2f6:16:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "നിങ്ങളുടെ കുടുംബ വരുമാനം ₹4,00,000 ആകയാല്‍ നിങ്ങള്‍ PMAY‑U യിലെ Low Income Group (LIG) വിഭാഗത്തില്‍പ്പെടുന്നു, അതിനാല്‍ നിങ്ങള്‍ക്ക് ഈ പദ്ധതിയില്‍ പങ്കെടുക്കാന്‍ അര്‍ഹതയുണ്ട്.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "LIG വിഭാഗത്തിന് ലഭ്യമായ വീടുകളുടെ വലുപ്പം പദ്ധതിയുടെ നിര്‍ദ്ദേശങ്ങളില്‍ വ്യക്തമാക്കിയിട്ടില്ല, പക്ഷേ സാധാരണയായി LIG‑ക്കായി 30‑35 ചതുരശ്ര മീറ്റര്‍ വരെയുള്ള വീടുകള്‍ നല്‍കപ്പെടുന്നു.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "LIG‑ക്കായി 30‑35 ചതുരശ്ര മീറ്റര്‍ വരെയുള്ള വീടുകള്‍ ലഭ്യമാണ് (പദ്ധതിയുടെ നിര്‍ദ്ദേശങ്ങള്‍ അനുസരിച്ച്) [C2]",
+     "reason": "number_mismatch",
+     "detail": "30, 35"
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"നിങ്ങളുടെ കുടുംബ വരുമാനം ₹4,00,000 ആകയാല്‍ നിങ്ങള്‍ PMAY‑U യിലെ Low Income Group (LIG) വിഭാഗത്തില്‍പ്പെടുന്നു, അതിനാല്‍ നിങ്ങള്‍ക്ക് ഈ പദ്ധതിയില്‍ പങ്കെടുക്കാന്‍ അര്‍ഹതയുണ്ട്. LIG വിഭാഗത്തിന് ലഭ്യമായ വീടുകളുടെ വലുപ്പം പദ്ധതിയുടെ നിര്‍ദ്ദേശങ്ങളില്‍ വ്യക്തമാക്കിയിട്ടില്ല, പക്ഷേ സാധാരണയായി LIG‑ക്കായി 30‑35 ചതുരശ്ര മീറ്റര്‍ വരെയുള്ള വീടുകള്‍ നല്‍കപ്പെടുന്നു. കൂടുതല്‍ വിവരങ്ങള്‍ക്ക് നിങ്ങളുടെ നഗരത്തിന്റെ PMAY‑U കവറേജ് പേജ് പരിശോധിക്കുക. [C1][C2]\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pmay_u\",\"name\":\"Pradhan Mantri Awas Yojana - Urban (PMAY-U)\",\"eligible\":true,\"reasons\":[\"നിങ്ങളുടെ കുടുംബ വരുമാനം ₹4,00,000 ആണ്, ഇത് LIG വിഭാഗത്തിന്റെ വരുമാന പരിധിയിലാണ് [C1]\"],\"benefit\":\"LIG‑ക്കായി 30‑35 ചതുരശ്ര മീറ്റര്‍ വരെയുള്ള വീടുകള്‍ ലഭ്യമാണ് (പദ്ധതിയുടെ നിര്‍ദ്ദേശങ്ങള്‍ അനുസരിച്ച്) [C2]\",\"how_to_apply\":\"നഗരത്തിന്റെ PMAY‑U കവറേജ് പേജ് സന്ദര്‍ശിച്ച് അപേക്ഷാ പ്രക്രിയ ആരംഭിക്കുക [C4]\",\"documents\":[\"Aadhaar / Aadhaar Virtual ID [C2]\"],\"citations\":[\"C1\",\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2986,
+   "latency_ms": 2993,
+   "latency": {
+    "retrieval_ms": 1598.4,
+    "gen_first_delta_ms": 1056.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 1387.4,
+    "validate_ms": 6.8,
+    "ttft_ms": 2986.3,
+    "total_ms": 2993.1,
+    "retrieval_stages": {
+     "rewrite_ms": 928.7,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.1,
+     "dense_ms": 668.7,
+     "spec_rerank_ms": 782.5,
+     "rerank_ms": 136.7
+    }
+   },
+   "live": true,
+   "tokens_in": 3232,
+   "tokens_out": 512,
+   "cost_inr": 0.1067,
+   "judge": {
+    "statements": [
+     {
+      "text": "കൂടുതല്‍ വിവരങ്ങള്‍ക്ക് നിങ്ങളുടെ നഗരത്തിന്റെ PMAY‑U കവറേജ് പേജ് പരിശോധിക്കുക.",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Awas Yojana - Urban (PMAY-U): നിങ്ങളുടെ കുടുംബ വരുമാനം ₹4,00,000 ആണ്, ഇത് LIG വിഭാഗത്തിന്റെ വരുമാന പരിധിയിലാണ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Awas Yojana - Urban (PMAY-U): നഗരത്തിന്റെ PMAY‑U കവറേജ് പേജ് സന്ദര്‍ശിച്ച് അപേക്ഷാ പ്രക്രിയ ആരംഭിക്കുക",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Awas Yojana - Urban (PMAY-U): Aadhaar / Aadhaar Virtual ID",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 2.0,
+    "tokens": 2714
+   }
+  },
+  {
+   "id": "h015",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "heldout",
+   "question": "എന്റെ കുടുംബത്തിന്റെ വാർഷിക വരുമാനം 1 ലക്ഷം രൂപക്ക് താഴെയാണെങ്കിൽ, ഞങ്ങളുടെ മകളുടെ വിവാഹ സഹായം ലഭിക്കുമോ?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "നിങ്ങളുടെ കുടുംബത്തിന്റെ വാർഷിക വരുമാനം ₹1,00,000/--ന് താഴെയാണെങ്കിൽ, നിങ്ങളുടെ മകളുടെ വിവാഹത്തിന് Parinayam I & II (മാറിനയം) പദ്ധതിയിൽ നിന്ന് ₹30,000/- സാമ്പത്തിക സഹായം ലഭ്യമാക്കാം. [sjd_parinayam--maddapp-i-224a77:1:2] [sjd_parinayam--maddapp-i-224a77:1:5]",
+   "schemes": [
+    {
+     "scheme_id": "sjd_parinayam",
+     "name": "Parinayam I & II (marriage assistance for differently abled women / daughters)",
+     "eligible": true,
+     "reasons": [
+      "Combined annual family income should not exceed ₹1,00,000/- [sjd_parinayam--maddapp-i-224a77:1:2]"
+     ],
+     "benefit": "₹30,000/- one‑time assistance for the marriage of up to two daughters [sjd_parinayam--maddapp-i-224a77:1:5]",
+     "how_to_apply": "Visit the Official Portal – SUNEETHI (https://suneethi.sjd.kerala.gov.in) and submit the application at least one month before the marriage date [sjd_parinayam--maddapp-i-224a77:1:5]",
+     "documents": [
+      "Permanent resident proof of Kerala [sjd_parinayam--maddapp-i-224a77:1:2] [sjd_parinayam--maddapp-i-224a77:1:5]",
+      "Identity proof of applicant and daughter [sjd_parinayam--maddapp-i-224a77:1:2] [sjd_parinayam--maddapp-i-224a77:1:5]",
+      "Proof of income (if required) [sjd_parinayam--maddapp-i-224a77:1:2] [sjd_parinayam--maddapp-i-224a77:1:5]"
+     ],
+     "citations": [
+      "sjd_parinayam--maddapp-i-224a77:1:2",
+      "sjd_parinayam--maddapp-i-224a77:1:5"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "sjd_parinayam--maddapp-i-224a77:1:2",
+    "sjd_parinayam--maddapp-i-224a77:1:5"
+   ],
+   "context": [
+    "sjd_parinayam--maddapp-i-224a77:1:2",
+    "sjd_parinayam--madawp-ii-6b2a94:1:2",
+    "sjd_parinayam--maddapp-i-224a77:1:5",
+    "nsap_nfbs--nfbs-1b0f63:1:5",
+    "sjd_parinayam--madawp-ii-6b2a94:1:5"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"നിങ്ങളുടെ കുടുംബത്തിന്റെ വാർഷിക വരുമാനം ₹1,00,000/--ന് താഴെയാണെങ്കിൽ, നിങ്ങളുടെ മകളുടെ വിവാഹത്തിന് Parinayam I & II (മാറിനയം) പദ്ധതിയിൽ നിന്ന് ₹30,000/- സാമ്പത്തിക സഹായം ലഭ്യമാക്കാം [C1][C3].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"sjd_parinayam\",\"name\":\"Parinayam I & II (marriage assistance for differently abled women / daughters)\",\"eligible\":true,\"reasons\":[\"Combined annual family income should not exceed ₹1,00,000/- [C1]\"],\"benefit\":\"₹30,000/- one‑time assistance for the marriage of up to two daughters [C3]\",\"how_to_apply\":\"Visit the Official Portal – SUNEETHI (https://suneethi.sjd.kerala.gov.in) and submit the application at least one month before the marriage date [C3]\",\"documents\":[\"Permanent resident proof of Kerala\",\"Identity proof of applicant and daughter\",\"Proof of income (if required)\"],\"citations\":[\"C1\",\"C3\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3249,
+   "latency_ms": 3264,
+   "latency": {
+    "retrieval_ms": 2066.6,
+    "gen_first_delta_ms": 897.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 1181.9,
+    "validate_ms": 14.9,
+    "ttft_ms": 3248.9,
+    "total_ms": 3263.8,
+    "retrieval_stages": {
+     "rewrite_ms": 1102.7,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.9,
+     "dense_ms": 756.9,
+     "spec_rerank_ms": 792.9,
+     "rerank_ms": 505.4
+    }
+   },
+   "live": true,
+   "tokens_in": 3188,
+   "tokens_out": 467,
+   "cost_inr": 0.1138,
+   "judge": {
+    "statements": [
+     {
+      "text": "നിങ്ങളുടെ കുടുംബത്തിന്റെ വാർഷിക വരുമാനം ₹1,00,000/--ന് താഴെയാണെങ്കിൽ, നിങ്ങളുടെ മകളുടെ വിവാഹത്തിന് Parinayam I & II (മാറിനയം) പദ്ധതിയിൽ നിന്ന് ₹30,000/- സാമ്പത്തിക സഹായം ലഭ്യമാക്കാം.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Parinayam I & II (marriage assistance for differently abled women / daughters): Combined annual family income should not exceed ₹1,00,000/-",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Parinayam I & II (marriage assistance for differently abled women / daughters): ₹30,000/- one‑time assistance for the marriage of up to two daughters",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Parinayam I & II (marriage assistance for differently abled women / daughters): Visit the Official Portal – SUNEETHI (https://suneethi.sjd.kerala.gov.in) and submit the application at least one month before the marriage date",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Parinayam I & II (marriage assistance for differently abled women / daughters): Permanent resident proof of Kerala",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Parinayam I & II (marriage assistance for differently abled women / daughters): Identity proof of applicant and daughter",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Parinayam I & II (marriage assistance for differently abled women / daughters): Proof of income (if required)",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2808
+   }
+  },
+  {
+   "id": "q090",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "main",
+   "question": "If rain fails or there is too much heat, does the state insurance pay farmers?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "The State crop insurance scheme covers losses due to rainfall failures and high temperatures, i.e. heat. [kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:3]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_agri_crop_insurance",
+     "name": "State crop insurance and natural-calamity relief for farmers",
+     "eligible": true,
+     "reasons": [
+      "The user is a farmer and the scheme covers high temperature as a peril [kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:3]"
+     ],
+     "benefit": "Compensation for crop loss caused by high temperature or rainfall failure [kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:3]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:3"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:3"
+   ],
+   "context": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:3",
+    "pmfby--pmfby-04a0dd:1:6",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:2",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1:0",
+    "pmfby--pmfby-04a0dd:1:2"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"The State crop insurance scheme covers losses due to rainfall failures and high temperatures, i.e. heat [C1].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"kerala_agri_crop_insurance\",\"name\":\"State crop insurance and natural-calamity relief for farmers\",\"eligible\":true,\"reasons\":[\"The user is a farmer and the scheme covers high temperature as a peril [C1]\"],\"benefit\":\"Compensation for crop loss caused by high temperature or rainfall failure [C1]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2618,
+   "latency_ms": 2619,
+   "latency": {
+    "retrieval_ms": 1629.6,
+    "gen_first_delta_ms": 847.6,
+    "throttled_ms": 0.0,
+    "generate_ms": 987.9,
+    "validate_ms": 1.4,
+    "ttft_ms": 2617.9,
+    "total_ms": 2619.4,
+    "retrieval_stages": {
+     "rewrite_ms": 961.8,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 7.6,
+     "dense_ms": 630.0,
+     "spec_rerank_ms": 745.4,
+     "rerank_ms": 245.1
+    }
+   },
+   "live": true,
+   "tokens_in": 3152,
+   "tokens_out": 368,
+   "cost_inr": 0.1067,
+   "judge": {
+    "statements": [
+     {
+      "text": "The State crop insurance scheme covers losses due to rainfall failures and high temperatures, i.e. heat.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "State crop insurance and natural-calamity relief for farmers: The user is a farmer and the scheme covers high temperature as a peril",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "State crop insurance and natural-calamity relief for farmers: Compensation for crop loss caused by high temperature or rainfall failure",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2357
+   }
+  },
+  {
+   "id": "n007",
+   "lang": "ml",
+   "type": "no_answer",
+   "slice": "no_answer",
+   "question": "എസ്എസ്എൽസി പരീക്ഷാ ഫലം എപ്പോൾ പ്രസിദ്ധീകരിക്കും?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "model",
+   "answer": "എന്റെ പക്കലുള്ള ഔദ്യോഗിക പദ്ധതി രേഖകളിൽ ഇതിനുള്ള ഉത്തരം കണ്ടെത്താനായില്ല, അതിനാൽ ഊഹിച്ചു പറയുന്നില്ല. ദയവായി Scheduled Tribes Development Department, Kerala (https://www.stdd.kerala.gov.in) അല്ലെങ്കിൽ അടുത്തുള്ള അക്ഷയ കേന്ദ്രം അല്ലെങ്കിൽ വില്ലേജ് / പഞ്ചായത്ത് ഓഫീസ് എന്നിവരുമായി ബന്ധപ്പെടുക.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:9:0",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:4:0",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:3:0",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:3:0",
+    "sc_scholarships--lakshya-615625:4:0"
+   ],
+   "context_hit": null,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"NO_ANSWER\",\"abstained\":true,\"follow_up_question\":null,\"schemes\":[]}",
+   "lang_match": true,
+   "ttft_ms": 2629,
+   "latency_ms": 2629,
+   "latency": {
+    "retrieval_ms": 1625.7,
+    "gen_first_delta_ms": 965.5,
+    "throttled_ms": 0.0,
+    "generate_ms": 1002.4,
+    "validate_ms": 0.1,
+    "ttft_ms": 2628.6,
+    "total_ms": 2628.6,
+    "retrieval_stages": {
+     "rewrite_ms": 727.3,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 4.6,
+     "dense_ms": 732.4,
+     "spec_rerank_ms": 752.2,
+     "rerank_ms": 135.0
+    }
+   },
+   "live": true,
+   "tokens_in": 3552,
+   "tokens_out": 163,
+   "cost_inr": 0.0887
+  },
+  {
+   "id": "n018",
+   "lang": "en",
+   "type": "no_answer",
+   "slice": "no_answer",
+   "question": "How do I register a new company with the Registrar of Companies?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "model",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Ministry of Rural Development, Government of India (https://www.myscheme.gov.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "mgnrega--mgnrega-608fc2:1:4",
+    "pm_vishwakarma--pmv-378966:1:4",
+    "sjd_assistive_devices--spaddap-c1206b:1:4",
+    "pmfby--pmfby-04a0dd:1:4",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:7:0"
+   ],
+   "context_hit": null,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"NO_ANSWER\",\"abstained\":true,\"follow_up_question\":null,\"schemes\":[]}",
+   "lang_match": true,
+   "ttft_ms": 2951,
+   "latency_ms": 2951,
+   "latency": {
+    "retrieval_ms": 1999.0,
+    "gen_first_delta_ms": 920.5,
+    "throttled_ms": 0.0,
+    "generate_ms": 951.6,
+    "validate_ms": 0.1,
+    "ttft_ms": 2951.0,
+    "total_ms": 2951.0,
+    "retrieval_stages": {
+     "rewrite_ms": 777.5,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 7.7,
+     "dense_ms": 651.7,
+     "spec_rerank_ms": 836.5,
+     "rerank_ms": 501.9
+    }
+   },
+   "live": true,
+   "tokens_in": 3274,
+   "tokens_out": 172,
+   "cost_inr": 0.0942
+  },
+  {
+   "id": "n004",
+   "lang": "en",
+   "type": "no_answer",
+   "slice": "no_answer",
+   "question": "What is the interest rate of Sukanya Samriddhi Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "model",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Ministry of Rural Development, Government of India (https://pmayg.nic.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "pmay_g--pmay-g-c98964:1:1",
+    "pm_kmy--pmkmdy-44b6ea:1:1",
+    "pmmy--pmmy-761c21:1:0",
+    "kerala_agri_schemes--schemes-103621:1:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1:1"
+   ],
+   "context_hit": null,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"NO_ANSWER\",\"abstained\":true,\"follow_up_question\":null,\"schemes\":[]}",
+   "lang_match": true,
+   "ttft_ms": 2614,
+   "latency_ms": 2614,
+   "latency": {
+    "retrieval_ms": 1662.3,
+    "gen_first_delta_ms": 862.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 951.5,
+    "validate_ms": 0.1,
+    "ttft_ms": 2614.3,
+    "total_ms": 2614.3,
+    "retrieval_stages": {
+     "rewrite_ms": 692.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 4.8,
+     "dense_ms": 656.5,
+     "spec_rerank_ms": 753.0,
+     "rerank_ms": 246.8
+    }
+   },
+   "live": true,
+   "tokens_in": 3053,
+   "tokens_out": 147,
+   "cost_inr": 0.0785
+  },
+  {
+   "id": "n014",
+   "lang": "en",
+   "type": "no_answer",
+   "slice": "no_answer",
+   "question": "How do I link my PAN card with Aadhaar?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "model",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Ministry of Housing & Urban Affairs, Government of India (https://www.myscheme.gov.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "pmay_u--pmay-u-5f7b25:1:4",
+    "pm_kisan--pm-kisan-488a46:1:4",
+    "pmfby--pmfby-04a0dd:1:5",
+    "apy--apy-234e9e:1:4",
+    "jsy--jsy1-79905a:1:3"
+   ],
+   "context_hit": null,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"NO_ANSWER\",\"abstained\":true,\"follow_up_question\":null,\"schemes\":[]}",
+   "lang_match": true,
+   "ttft_ms": 2572,
+   "latency_ms": 2572,
+   "latency": {
+    "retrieval_ms": 1476.5,
+    "gen_first_delta_ms": 1093.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 1095.5,
+    "validate_ms": 0.0,
+    "ttft_ms": 2572.4,
+    "total_ms": 2572.4,
+    "retrieval_stages": {
+     "rewrite_ms": 662.8,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 6.1,
+     "dense_ms": 603.7,
+     "spec_rerank_ms": 750.2,
+     "rerank_ms": 115.0
+    }
+   },
+   "live": true,
+   "tokens_in": 2450,
+   "tokens_out": 139,
+   "cost_inr": 0.07
+  },
+  {
+   "id": "n003",
+   "lang": "ml",
+   "type": "no_answer",
+   "slice": "no_answer",
+   "question": "കേരള ലോട്ടറി ഫലം എങ്ങനെ പരിശോധിക്കാം?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "model",
+   "answer": "എന്റെ പക്കലുള്ള ഔദ്യോഗിക പദ്ധതി രേഖകളിൽ ഇതിനുള്ള ഉത്തരം കണ്ടെത്താനായില്ല, അതിനാൽ ഊഹിച്ചു പറയുന്നില്ല. ദയവായി Backward Classes Development Department, Kerala (https://egrantz.kerala.gov.in) അല്ലെങ്കിൽ അടുത്തുള്ള അക്ഷയ കേന്ദ്രം അല്ലെങ്കിൽ വില്ലേജ് / പഞ്ചായത്ത് ഓഫീസ് എന്നിവരുമായി ബന്ധപ്പെടുക.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "kerala_eep--bcdir4982022-a1-3fdf9f:7:0",
+    "sjd_disability_scholarship--sdas-6a3a34:1:4",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:11:0",
+    "pm_kisan--pm-kisan-488a46:1:4",
+    "kerala_viswakarma_pension--vps-0d17cc:1:3"
+   ],
+   "context_hit": null,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"NO_ANSWER\",\"abstained\":true,\"follow_up_question\":null,\"schemes\":[] }",
+   "lang_match": true,
+   "ttft_ms": 3142,
+   "latency_ms": 3142,
+   "latency": {
+    "retrieval_ms": 2022.3,
+    "gen_first_delta_ms": 1118.6,
+    "throttled_ms": 0.0,
+    "generate_ms": 1119.2,
+    "validate_ms": 0.1,
+    "ttft_ms": 3142.0,
+    "total_ms": 3142.0,
+    "retrieval_stages": {
+     "rewrite_ms": 735.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 4.8,
+     "dense_ms": 627.8,
+     "spec_rerank_ms": 746.3,
+     "rerank_ms": 641.7
+    }
+   },
+   "live": true,
+   "tokens_in": 2890,
+   "tokens_out": 154,
+   "cost_inr": 0.0808
+  },
+  {
+   "id": "n012",
+   "lang": "ml",
+   "type": "no_answer",
+   "slice": "no_answer",
+   "question": "നീറ്റ് പരീക്ഷയുടെ തീയതി എപ്പോഴാണ്?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "model",
+   "answer": "എന്റെ പക്കലുള്ള ഔദ്യോഗിക പദ്ധതി രേഖകളിൽ ഇതിനുള്ള ഉത്തരം കണ്ടെത്താനായില്ല, അതിനാൽ ഊഹിച്ചു പറയുന്നില്ല. ദയവായി Backward Classes Development Department, Kerala (https://egrantz.kerala.gov.in) അല്ലെങ്കിൽ അടുത്തുള്ള അക്ഷയ കേന്ദ്രം അല്ലെങ്കിൽ വില്ലേജ് / പഞ്ചായത്ത് ഓഫീസ് എന്നിവരുമായി ബന്ധപ്പെടുക.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:1:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:2:0",
+    "sc_scholarships--lakshya-615625:4:0",
+    "sc_scholarships--lap-top-order-new-12-c5648c:1:0",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:5:0"
+   ],
+   "context_hit": null,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"NO_ANSWER\",\"abstained\":true,\"follow_up_question\":null,\"schemes\":[] }",
+   "lang_match": true,
+   "ttft_ms": 2540,
+   "latency_ms": 2540,
+   "latency": {
+    "retrieval_ms": 1535.9,
+    "gen_first_delta_ms": 978.4,
+    "throttled_ms": 0.0,
+    "generate_ms": 1003.9,
+    "validate_ms": 0.1,
+    "ttft_ms": 2540.3,
+    "total_ms": 2540.3,
+    "retrieval_stages": {
+     "rewrite_ms": 796.2,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 5.9,
+     "dense_ms": 508.3,
+     "spec_rerank_ms": 769.7,
+     "rerank_ms": 250.5
+    }
+   },
+   "live": true,
+   "tokens_in": 3771,
+   "tokens_out": 160,
+   "cost_inr": 0.0886
+  },
+  {
+   "id": "e001",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I am 35, I have a savings bank account and I have never paid income tax. Can I join Atal Pension Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Atal Pension Yojana (APY): Guaranteed minimum pension of Rs. 1000/- to Rs. 5000/- per month from age 60 until death [apy--apy-234e9e:1:1]",
+   "schemes": [
+    {
+     "scheme_id": "apy",
+     "name": "Atal Pension Yojana (APY)",
+     "eligible": true,
+     "reasons": [
+      "Your age 35 is within the 18-40 years eligibility range [apy--apy-234e9e:1:2]",
+      "You have a savings bank account which is mandatory for joining APY [apy--apy-234e9e:1:2]",
+      "You have never paid income tax, making you eligible as a non‑income‑tax‑payer [apy--apy-234e9e:1:0]"
+     ],
+     "benefit": "Guaranteed minimum pension of Rs. 1000/- to Rs. 5000/- per month from age 60 until death [apy--apy-234e9e:1:1]",
+     "how_to_apply": null,
+     "documents": [
+      "Savings bank account details [apy--apy-234e9e:1:2]"
+     ],
+     "citations": [
+      "apy--apy-234e9e:1:2",
+      "apy--apy-234e9e:1:0",
+      "apy--apy-234e9e:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "apy--apy-234e9e:1:2",
+    "apy--apy-234e9e:1:0",
+    "apy--apy-234e9e:1:1"
+   ],
+   "context": [
+    "apy--apy-234e9e:1:2",
+    "apy--apy-234e9e:1:0",
+    "apy--apy-234e9e:1:3",
+    "apy--apy-234e9e:1:6",
+    "apy--apy-234e9e:1:1"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You can join Atal Pension Yojana (APY) as you are 35 years old, have a savings bank account, and have never paid income tax.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"You can join Atal Pension Yojana (APY) as you are 35 years old, have a savings bank account, and have never paid income tax.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"apy\",\"name\":\"Atal Pension Yojana (APY)\",\"eligible\":true,\"reasons\":[\"Your age 35 is within the 18-40 years eligibility range [C1]\",\"You have a savings bank account which is mandatory for joining APY [C1]\",\"You have never paid income tax, making you eligible as a non‑income‑tax‑payer [C2]\"],\"benefit\":\"Guaranteed minimum pension of Rs. 1000/- to Rs. 5000/- per month from age 60 until death [C5]\",\"how_to_apply\":null,\"documents\":[\"Savings bank account details [C1]\"],\"citations\":[\"C1\",\"C2\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3035,
+   "latency_ms": 3035,
+   "latency": {
+    "retrieval_ms": 1623.7,
+    "gen_first_delta_ms": 1180.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 1406.5,
+    "validate_ms": 3.8,
+    "ttft_ms": 3034.7,
+    "total_ms": 3034.7,
+    "retrieval_stages": {
+     "rewrite_ms": 1034.2,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 10.4,
+     "dense_ms": 753.0,
+     "spec_rerank_ms": 769.0,
+     "rerank_ms": 89.6
+    }
+   },
+   "live": true,
+   "tokens_in": 2462,
+   "tokens_out": 490,
+   "cost_inr": 0.1208,
+   "eligibility": [
+    {
+     "scheme_id": "apy",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Atal Pension Yojana (APY): Guaranteed minimum pension of Rs. 1000/- to Rs. 5000/- per month from age 60 until death",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Your age 35 is within the 18-40 years eligibility range",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): You have a savings bank account which is mandatory for joining APY",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): You have never paid income tax, making you eligible as a non‑income‑tax‑payer",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Guaranteed minimum pension of Rs. 1000/- to Rs. 5000/- per month from age 60 until death",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Savings bank account details",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2242
+   }
+  },
+  {
+   "id": "e002",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I'm 45 years old and have a savings account. Can I still join Atal Pension Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "validation",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Ministry of Finance, Government of India (https://www.myscheme.gov.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "apy--apy-234e9e:1:2",
+    "apy--apy-234e9e:1:0",
+    "apy--apy-234e9e:1:6",
+    "apy--apy-234e9e:1:1",
+    "apy--apy-234e9e:1:3"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You are 45 years old, which is above the maximum age of 40 years for joining Atal Pension Yojana.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "Therefore, you are not eligible to join APY.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You are 45 years old, which is above the maximum age of 40 years for joining Atal Pension Yojana. Therefore, you are not eligible to join APY.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"apy\",\"name\":\"Atal Pension Yojana (APY)\",\"eligible\":false,\"reasons\":[\"Your age 45 exceeds the maximum joining age of 40 years [C1]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2839,
+   "latency_ms": 2839,
+   "latency": {
+    "retrieval_ms": 1305.1,
+    "gen_first_delta_ms": 1403.6,
+    "throttled_ms": 0.0,
+    "generate_ms": 1533.0,
+    "validate_ms": 0.7,
+    "ttft_ms": 2839.2,
+    "total_ms": 2839.2,
+    "retrieval_stages": {
+     "rewrite_ms": 984.3,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.5,
+     "dense_ms": 507.0,
+     "spec_rerank_ms": 787.2,
+     "rerank_ms": 0.0
+    }
+   },
+   "live": true,
+   "tokens_in": 2449,
+   "tokens_out": 319,
+   "cost_inr": 0.1054,
+   "eligibility": [
+    {
+     "scheme_id": "apy",
+     "expected": false,
+     "got": "missing",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "id": "e003",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "ente amma 67 vayassanu, Indian citizen aanu, BPL kudumbam aanu. Indira Gandhi old age pension kittumo?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "നിങ്ങളുടെ അമ്മ 60 വയസ്സിന് മുകളിലും BPL കുടുംബത്തിൽ പെടുന്നതുമാണ്, അതിനാൽ അർഹതയുണ്ട്. [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2] [nsap_ignoaps--nsap-ignoaps-9c99d4:1:6]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+     "eligible": true,
+     "reasons": [
+      "അമ്മ 60 വയസ്സിന് മുകളിലാണ് [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]",
+      "BPL കുടുംബത്തിൽ പെടുന്നു [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1",
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1"
+   ],
+   "context": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1",
+    "kerala_pension_old_age--faqs-70561d:1:0",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "ഇന്ദിരാ ഗാന്ധി ദേശീയ വാർദ്ധക്യകാല പെൻഷൻ (IGNOAPS) ലഭ്യമാണ്.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "മാസം ₹200 (60-79 വയസ്സ്) അല്ലെങ്കിൽ ₹500 (80 വയസ്സ് മുതലായി) [C2]",
+     "reason": "number_mismatch",
+     "detail": "60, 80"
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"ഇന്ദിരാ ഗാന്ധി ദേശീയ വാർദ്ധക്യകാല പെൻഷൻ (IGNOAPS) ലഭ്യമാണ്. നിങ്ങളുടെ അമ്മ 60 വയസ്സിന് മുകളിലും BPL കുടുംബത്തിൽ പെടുന്നതുമാണ്, അതിനാൽ അർഹതയുണ്ട്. [C1][C5]\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_ignoaps\",\"name\":\"Indira Gandhi National Old Age Pension Scheme (IGNOAPS)\",\"eligible\":true,\"reasons\":[\"അമ്മ 60 വയസ്സിന് മുകളിലാണ് [C1]\",\"BPL കുടുംബത്തിൽ പെടുന്നു [C1]\"],\"benefit\":\"മാസം ₹200 (60-79 വയസ്സ്) അല്ലെങ്കിൽ ₹500 (80 വയസ്സ് മുതലായി) [C2]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\",\"C2\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3048,
+   "latency_ms": 3050,
+   "latency": {
+    "retrieval_ms": 1917.2,
+    "gen_first_delta_ms": 911.7,
+    "throttled_ms": 0.0,
+    "generate_ms": 1130.5,
+    "validate_ms": 1.5,
+    "ttft_ms": 3048.0,
+    "total_ms": 3049.5,
+    "retrieval_stages": {
+     "rewrite_ms": 883.7,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 15.7,
+     "dense_ms": 866.1,
+     "spec_rerank_ms": 785.3,
+     "rerank_ms": 248.7
+    }
+   },
+   "live": true,
+   "tokens_in": 2282,
+   "tokens_out": 416,
+   "cost_inr": 0.1093,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "നിങ്ങളുടെ അമ്മ 60 വയസ്സിന് മുകളിലും BPL കുടുംബത്തിൽ പെടുന്നതുമാണ്, അതിനാൽ അർഹതയുണ്ട്.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): അമ്മ 60 വയസ്സിന് മുകളിലാണ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): BPL കുടുംബത്തിൽ പെടുന്നു",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1694
+   }
+  },
+  {
+   "id": "e004",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I am 55 and my family is above the poverty line. Am I eligible for the Indira Gandhi National Old Age Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Rs.200 per month for persons between 60 and 79 years, Rs.500 per month for persons 80 years and above [nsap_ignoaps--nsap-ignoaps-9c99d4:1:6]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+     "eligible": false,
+     "reasons": [
+      "Your age is 55, but the scheme requires at least 60 years of age [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2] [nsap_ignoaps--nsap-ignoaps-9c99d4:1:6]",
+      "Your income band is above the poverty line, but the scheme requires living below the poverty line [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2] [nsap_ignoaps--nsap-ignoaps-9c99d4:1:6]"
+     ],
+     "benefit": "Rs.200 per month for persons between 60 and 79 years, Rs.500 per month for persons 80 years and above [nsap_ignoaps--nsap-ignoaps-9c99d4:1:6]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+   ],
+   "context": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6",
+    "kerala_pension_old_age--faqs-948590:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You are not eligible for the Indira Gandhi National Old Age Pension Scheme (IGNOAPS).",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"You are not eligible for the Indira Gandhi National Old Age Pension Scheme (IGNOAPS).\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_ignoaps\",\"name\":\"Indira Gandhi National Old Age Pension Scheme (IGNOAPS)\",\"eligible\":false,\"reasons\":[\"Your age is 55, but the scheme requires at least 60 years of age [C1][C2]\",\"Your income band is above the poverty line, but the scheme requires living below the poverty line [C1][C2]\"],\"benefit\":\"Rs.200 per month for persons between 60 and 79 years, Rs.500 per month for persons 80 years and above [C2]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\",\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2796,
+   "latency_ms": 2796,
+   "latency": {
+    "retrieval_ms": 1706.9,
+    "gen_first_delta_ms": 902.2,
+    "throttled_ms": 0.0,
+    "generate_ms": 1085.2,
+    "validate_ms": 3.2,
+    "ttft_ms": 2795.7,
+    "total_ms": 2795.7,
+    "retrieval_stages": {
+     "rewrite_ms": 1059.8,
+     "rewrite_wait_ms": 7.0,
+     "bm25_ms": 11.0,
+     "dense_ms": 753.3,
+     "spec_rerank_ms": 763.8,
+     "rerank_ms": 170.5
+    }
+   },
+   "live": true,
+   "tokens_in": 2542,
+   "tokens_out": 411,
+   "cost_inr": 0.1143,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Rs.200 per month for persons between 60 and 79 years, Rs.500 per month for persons 80 years and above",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Your age is 55, but the scheme requires at least 60 years of age",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Your income band is above the poverty line, but the scheme requires living below the poverty line",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Rs.200 per month for persons between 60 and 79 years, Rs.500 per month for persons 80 years and above",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2159
+   }
+  },
+  {
+   "id": "e005",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "എനിക്ക് 50 വയസ്സായി, ഭർത്താവ് മരിച്ചു, ഞങ്ങൾ ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയുള്ള (BPL) കുടുംബമാണ്. ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവാ പെൻഷന് അർഹതയുണ്ടോ?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "validation",
+   "answer": "എന്റെ പക്കലുള്ള ഔദ്യോഗിക പദ്ധതി രേഖകളിൽ ഇതിനുള്ള ഉത്തരം കണ്ടെത്താനായില്ല, അതിനാൽ ഊഹിച്ചു പറയുന്നില്ല. ദയവായി Local Self Government Department, Kerala (https://welfarepension.lsgkerala.gov.in) അല്ലെങ്കിൽ അടുത്തുള്ള അക്ഷയ കേന്ദ്രം അല്ലെങ്കിൽ വില്ലേജ് / പഞ്ചായത്ത് ഓഫീസ് എന്നിവരുമായി ബന്ധപ്പെടുക.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "kerala_pension_widow--faqs-70561d:1:0",
+    "kerala_pension_widow--faqs-948590:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:5",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവ പെൻഷന് നിങ്ങൾക്ക് അർഹതയുണ്ടാകാം, പക്ഷേ പുനർ വിവാഹിതയാണോ അല്ലയോ, മറ്റ് പെൻഷനുകൾ ലഭിക്കുന്നുണ്ടോ എന്നതിനെക്കുറിച്ച് കൂടുതൽ വിവരങ്ങൾ ആവശ്യമുണ്ട്.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "വാർഷിക വരുമാനം ഒരു ലക്ഷം രൂപയിൽ കവിയരുത്, 300 രൂപ/മാസം ലഭിക്കും [C2]",
+     "reason": "number_mismatch",
+     "detail": "300"
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവ പെൻഷന് നിങ്ങൾക്ക് അർഹതയുണ്ടാകാം, പക്ഷേ പുനർ വിവാഹിതയാണോ അല്ലയോ, മറ്റ് പെൻഷനുകൾ ലഭിക്കുന്നുണ്ടോ എന്നതിനെക്കുറിച്ച് കൂടുതൽ വിവരങ്ങൾ ആവശ്യമുണ്ട്.\",\"abstained\":false,\"follow_up_question\":\"നിങ്ങൾ പുനർ വിവാഹിതയാണോ, അല്ലെങ്കിൽ മറ്റ് പെൻഷനുകൾ (ഉദാ: NPS, EPF) ലഭിക്കുന്നുണ്ടോ?\",\"schemes\":[{\"scheme_id\":\"kerala_pension_widow\",\"name\":\"Indira Gandhi National Widow Pension (Kerala implementation)\",\"eligible\":null,\"reasons\":[\"നിങ്ങൾ 50 വയസ്സുള്ള വിധവയാണ്, BPL കുടുംബത്തിൽ നിന്നുള്ളവയാണ് [C2]\"],\"benefit\":\"വാർഷിക വരുമാനം ഒരു ലക്ഷം രൂപയിൽ കവിയരുത്, 300 രൂപ/മാസം ലഭിക്കും [C2]\",\"how_to_apply\":\"അപേക്ഷ Kerala Local Self Government Department-ൽ സമർപ്പിക്കുക, 2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്, വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്, ഭർത്താവിന്റെ മരണ സർട്ടിഫിക്കറ്റ് എന്നിവ സമർപ്പിക്കുക [C1]\",\"documents\":[\"ഭർത്താവിൻറെ മരണ സർട്ടിഫിക്കറ്റ് [C1]\",\"2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [C1]\",\"വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [C1]\",\"ആധാർ കാർഡ് കോപ്പി [C1]\",\"ഇലക്ട്രൽ കാർഡ് കോപ്പി [C1]\",\"റേഷൻ കാർഡ് കോപ്പി [C1]\",\"ബാങ്ക് പാസ്സ് ബുക്ക് കോപ്പി [C1]\",\"പുനർ വിവാഹിതയല്ല എന്ന് തെളിയിക്കുന്ന സാക്ഷ്യ പത്രം [C1]\",\"പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [C1]\"],\"citations\":[\"C1\",\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3790,
+   "latency_ms": 3790,
+   "latency": {
+    "retrieval_ms": 2170.7,
+    "gen_first_delta_ms": 1117.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 1611.4,
+    "validate_ms": 7.2,
+    "ttft_ms": 3789.8,
+    "total_ms": 3789.8,
+    "retrieval_stages": {
+     "rewrite_ms": 872.4,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 11.0,
+     "dense_ms": 889.7,
+     "spec_rerank_ms": 766.8,
+     "rerank_ms": 501.6
+    }
+   },
+   "live": true,
+   "tokens_in": 3015,
+   "tokens_out": 719,
+   "cost_inr": 0.1384,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "expected": true,
+     "got": "missing",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "id": "e006",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I am a 35-year-old widow from a BPL household. Can I get the Indira Gandhi National Widow Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "validation",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Ministry of Rural Development, Government of India (https://www.myscheme.gov.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "nsap_ignwps--ignwps-0932bc:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "kerala_pension_widow--faqs-948590:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:6",
+    "kerala_pension_widow--faqs-70561d:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You are not eligible for the Indira Gandhi National Widow Pension Scheme (IGNWPS).",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You are not eligible for the Indira Gandhi National Widow Pension Scheme (IGNWPS).\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_ignwps\",\"name\":\"Indira Gandhi National Widow Pension Scheme (IGNWPS)\",\"eligible\":false,\"reasons\":[\"Your age 35 is below the required age group 40-79 years [C2]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2933,
+   "latency_ms": 2933,
+   "latency": {
+    "retrieval_ms": 1791.5,
+    "gen_first_delta_ms": 1001.2,
+    "throttled_ms": 0.0,
+    "generate_ms": 1141.0,
+    "validate_ms": 0.4,
+    "ttft_ms": 2933.3,
+    "total_ms": 2933.3,
+    "retrieval_stages": {
+     "rewrite_ms": 871.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 10.4,
+     "dense_ms": 751.5,
+     "spec_rerank_ms": 769.9,
+     "rerank_ms": 258.2
+    }
+   },
+   "live": true,
+   "tokens_in": 2490,
+   "tokens_out": 335,
+   "cost_inr": 0.1084,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "expected": false,
+     "got": "missing",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "id": "e007",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "My husband passed away last year. Can I get the Indira Gandhi National Widow Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "model",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Ministry of Rural Development, Government of India (https://www.myscheme.gov.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "nsap_ignwps--ignwps-0932bc:1:5",
+    "kerala_pension_widow--faqs-70561d:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap_ignwps--ignwps-0932bc:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"NO_ANSWER\",\"abstained\":true,\"follow_up_question\":null,\"schemes\":[]}",
+   "lang_match": true,
+   "ttft_ms": 2524,
+   "latency_ms": 2524,
+   "latency": {
+    "retrieval_ms": 1582.8,
+    "gen_first_delta_ms": 904.8,
+    "throttled_ms": 0.0,
+    "generate_ms": 940.6,
+    "validate_ms": 0.0,
+    "ttft_ms": 2523.9,
+    "total_ms": 2523.9,
+    "retrieval_stages": {
+     "rewrite_ms": 994.8,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 6.6,
+     "dense_ms": 573.2,
+     "spec_rerank_ms": 760.4,
+     "rerank_ms": 241.4
+    }
+   },
+   "live": true,
+   "tokens_in": 1824,
+   "tokens_out": 203,
+   "cost_inr": 0.0896,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "expected": null,
+     "got": "missing",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "id": "e008",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "My brother is 30, an Indian resident with 85% disability, and our family is BPL. Is he eligible for the Indira Gandhi National Disability Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Indira Gandhi National Disability Pension Scheme (IGNDPS): A pension of Rs.300/- per month for ages 18-79 [nsap_igndps--igndps-f97cb2:1:1]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_igndps",
+     "name": "Indira Gandhi National Disability Pension Scheme (IGNDPS)",
+     "eligible": true,
+     "reasons": [
+      "Age 30 is above 18 years [nsap_igndps--igndps-f97cb2:1:2]",
+      "Resident of India [nsap_igndps--igndps-f97cb2:1:2]",
+      "Disability 85% is more than 80% [nsap_igndps--igndps-f97cb2:1:2]",
+      "Family is BPL [nsap_igndps--igndps-f97cb2:1:2]"
+     ],
+     "benefit": "A pension of Rs.300/- per month for ages 18-79 [nsap_igndps--igndps-f97cb2:1:1]",
+     "how_to_apply": "Apply by submitting the required documents to the local authorities as per the scheme guidelines [nsap_igndps--igndps-f97cb2:1:0]",
+     "documents": [
+      "BPL Card [nsap_igndps--igndps-f97cb2:1:4]",
+      "Aadhaar card [nsap_igndps--igndps-f97cb2:1:4]",
+      "Age Proof (birth certificate or school certificate) [nsap_igndps--igndps-f97cb2:1:4]",
+      "Disability certificate (80% and more) issued from Chief Medical Officer, Community Health Centre or Primary Health Centre [nsap_igndps--igndps-f97cb2:1:4]",
+      "Passport Size Photographs [nsap_igndps--igndps-f97cb2:1:4]"
+     ],
+     "citations": [
+      "nsap_igndps--igndps-f97cb2:1:2",
+      "nsap_igndps--igndps-f97cb2:1:0",
+      "nsap_igndps--igndps-f97cb2:1:4",
+      "nsap_igndps--igndps-f97cb2:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_igndps--igndps-f97cb2:1:2",
+    "nsap_igndps--igndps-f97cb2:1:0",
+    "nsap_igndps--igndps-f97cb2:1:4",
+    "nsap_igndps--igndps-f97cb2:1:1"
+   ],
+   "context": [
+    "nsap_igndps--igndps-f97cb2:1:2",
+    "nsap_igndps--igndps-f97cb2:1:0",
+    "nsap_igndps--igndps-f97cb2:1:4",
+    "nsap_igndps--igndps-f97cb2:1:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "Your brother is eligible for the Indira Gandhi National Disability Pension Scheme (IGNDPS).",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"Your brother is eligible for the Indira Gandhi National Disability Pension Scheme (IGNDPS).\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_igndps\",\"name\":\"Indira Gandhi National Disability Pension Scheme (IGNDPS)\",\"eligible\":true,\"reasons\":[\"Age 30 is above 18 years [C1]\",\"Resident of India [C1]\",\"Disability 85% is more than 80% [C1]\",\"Family is BPL [C1]\"],\"benefit\":\"A pension of Rs.300/- per month for ages 18-79 [C4]\",\"how_to_apply\":\"Apply by submitting the required documents to the local authorities as per the scheme guidelines [C2]\",\"documents\":[\"BPL Card [C3]\",\"Aadhaar card [C3]\",\"Age Proof (birth certificate or school certificate) [C3]\",\"Disability certificate (80% and more) issued from Chief Medical Officer, Community Health Centre or Primary Health Centre [C3]\",\"Passport Size Photographs [C3]\"],\"citations\":[\"C1\",\"C2\",\"C3\",\"C4\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2782,
+   "latency_ms": 2782,
+   "latency": {
+    "retrieval_ms": 1710.0,
+    "gen_first_delta_ms": 784.7,
+    "throttled_ms": 0.0,
+    "generate_ms": 1068.4,
+    "validate_ms": 3.7,
+    "ttft_ms": 2782.3,
+    "total_ms": 2782.3,
+    "retrieval_stages": {
+     "rewrite_ms": 937.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 11.3,
+     "dense_ms": 808.8,
+     "spec_rerank_ms": 775.4,
+     "rerank_ms": 113.2
+    }
+   },
+   "live": true,
+   "tokens_in": 1913,
+   "tokens_out": 501,
+   "cost_inr": 0.1179,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_igndps",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): A pension of Rs.300/- per month for ages 18-79",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Age 30 is above 18 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Resident of India",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Disability 85% is more than 80%",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Family is BPL",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): A pension of Rs.300/- per month for ages 18-79",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Apply by submitting the required documents to the local authorities as per the scheme guidelines",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): BPL Card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Aadhaar card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Age Proof (birth certificate or school certificate)",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Disability certificate (80% and more) issued from Chief Medical Officer, Community Health Centre or Primary Health Centre",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Passport Size Photographs",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2061
+   }
+  },
+  {
+   "id": "e009",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "enikku 60% disability und, vayassu 40, BPL card und. Indira Gandhi disability pension kittumo?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "validation",
+   "answer": "എന്റെ പക്കലുള്ള ഔദ്യോഗിക പദ്ധതി രേഖകളിൽ ഇതിനുള്ള ഉത്തരം കണ്ടെത്താനായില്ല, അതിനാൽ ഊഹിച്ചു പറയുന്നില്ല. ദയവായി Ministry of Rural Development, Government of India (https://www.myscheme.gov.in) അല്ലെങ്കിൽ അടുത്തുള്ള അക്ഷയ കേന്ദ്രം അല്ലെങ്കിൽ വില്ലേജ് / പഞ്ചായത്ത് ഓഫീസ് എന്നിവരുമായി ബന്ധപ്പെടുക.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "nsap_igndps--igndps-f97cb2:1:4",
+    "nsap_igndps--igndps-f97cb2:1:0",
+    "nsap_igndps--igndps-f97cb2:1:2",
+    "nsap_igndps--igndps-f97cb2:1:1",
+    "kerala_pension_disability--faqs-70561d:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "ഇന്ദിരാ ഗാന്ധി ദേശീയ ഡിസബിലിറ്റി പെൻഷൻ സ്കീമിന് (IGNDPS) 60% ഭിന്നശേഷി ഉള്ളവർക്കു അർഹതയില്ല.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"ഇന്ദിരാ ഗാന്ധി ദേശീയ ഡിസബിലിറ്റി പെൻഷൻ സ്കീമിന് (IGNDPS) 60% ഭിന്നശേഷി ഉള്ളവർക്കു അർഹതയില്ല.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_igndps\",\"name\":\"Indira Gandhi National Disability Pension Scheme (IGNDPS)\",\"eligible\":false,\"reasons\":[\"Disability should be more than 80% [C3]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C3\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3680,
+   "latency_ms": 3680,
+   "latency": {
+    "retrieval_ms": 2611.4,
+    "gen_first_delta_ms": 926.4,
+    "throttled_ms": 0.0,
+    "generate_ms": 1067.7,
+    "validate_ms": 0.6,
+    "ttft_ms": 3679.9,
+    "total_ms": 3679.9,
+    "retrieval_stages": {
+     "rewrite_ms": 2167.7,
+     "rewrite_wait_ms": 1084.8,
+     "bm25_ms": 10.8,
+     "dense_ms": 639.1,
+     "spec_rerank_ms": 769.6,
+     "rerank_ms": 105.8
+    }
+   },
+   "live": true,
+   "tokens_in": 2021,
+   "tokens_out": 364,
+   "cost_inr": 0.109,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_igndps",
+     "expected": false,
+     "got": "missing",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "id": "e010",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I'm a 30-year-old small farmer with 1 hectare of cultivable land, in the land records in my name since 2015. I have Aadhaar and a savings bank account. Can I join PM Kisan Maandhan Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "You qualify for Pradhan Mantri Kisan Maandhan Yojana (PM‑KMY) as a 30‑year‑old small farmer with 1 hectare of cultivable land and Aadhaar and a savings bank account. [pm_kmy--pmkmdy-44b6ea:1:2] [pm_kmy--pmkmdy-44b6ea:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "pm_kmy",
+     "name": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)",
+     "eligible": true,
+     "reasons": [
+      "Age 30 falls between 18 and 40 years [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "Landholding 1 ha is ≤2 ha [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "Name appears in land records as on 01.08.2019 [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "Possesses Aadhaar card [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "Has savings bank account [pm_kmy--pmkmdy-44b6ea:1:2]"
+     ],
+     "benefit": "Minimum assured pension of ₹3,000 per month after age 60 and 50% family pension to spouse if farmer dies [pm_kmy--pmkmdy-44b6ea:1:0]",
+     "how_to_apply": "Visit a Common Service Centre, provide Aadhaar, savings bank account details, pay initial contribution, complete online registration and receive a Kisan Pension Account Number [pm_kmy--pmkmdy-44b6ea:1:4]",
+     "documents": [
+      "Aadhaar Card [pm_kmy--pmkmdy-44b6ea:1:5]",
+      "Savings Bank Account Number with IFSC Code (Bank Passbook or Cheque Leaf/book or copy of bank statement) [pm_kmy--pmkmdy-44b6ea:1:5]"
+     ],
+     "citations": [
+      "pm_kmy--pmkmdy-44b6ea:1:2",
+      "pm_kmy--pmkmdy-44b6ea:1:0",
+      "pm_kmy--pmkmdy-44b6ea:1:4",
+      "pm_kmy--pmkmdy-44b6ea:1:5"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pm_kmy--pmkmdy-44b6ea:1:2",
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:4",
+    "pm_kmy--pmkmdy-44b6ea:1:5"
+   ],
+   "context": [
+    "pm_kmy--pmkmdy-44b6ea:1:2",
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:6",
+    "pm_kmy--pmkmdy-44b6ea:1:4",
+    "pm_kmy--pmkmdy-44b6ea:1:5"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You qualify for Pradhan Mantri Kisan Maandhan Yojana (PM‑KMY) as a 30‑year‑old small farmer with 1 hectare of cultivable land and Aadhaar and a savings bank account. [C1][C2]\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pm_kmy\",\"name\":\"Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)\",\"eligible\":true,\"reasons\":[\"Age 30 falls between 18 and 40 years [C1]\",\"Landholding 1 ha is ≤2 ha [C1]\",\"Name appears in land records as on 01.08.2019 [C1]\",\"Possesses Aadhaar card [C1]\",\"Has savings bank account [C1]\"],\"benefit\":\"Minimum assured pension of ₹3,000 per month after age 60 and 50% family pension to spouse if farmer dies [C2]\",\"how_to_apply\":\"Visit a Common Service Centre, provide Aadhaar, savings bank account details, pay initial contribution, complete online registration and receive a Kisan Pension Account Number [C4]\",\"documents\":[\"Aadhaar Card [C5]\",\"Savings Bank Account Number with IFSC Code (Bank Passbook or Cheque Leaf/book or copy of bank statement) [C5]\"],\"citations\":[\"C1\",\"C2\",\"C4\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3188,
+   "latency_ms": 3194,
+   "latency": {
+    "retrieval_ms": 1987.5,
+    "gen_first_delta_ms": 824.7,
+    "throttled_ms": 0.0,
+    "generate_ms": 1200.2,
+    "validate_ms": 5.3,
+    "ttft_ms": 3188.2,
+    "total_ms": 3193.5,
+    "retrieval_stages": {
+     "rewrite_ms": 1012.2,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 24.3,
+     "dense_ms": 950.2,
+     "spec_rerank_ms": 760.0,
+     "rerank_ms": 251.7
+    }
+   },
+   "live": true,
+   "tokens_in": 2332,
+   "tokens_out": 636,
+   "cost_inr": 0.1435,
+   "eligibility": [
+    {
+     "scheme_id": "pm_kmy",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "You qualify for Pradhan Mantri Kisan Maandhan Yojana (PM‑KMY) as a 30‑year‑old small farmer with 1 hectare of cultivable land and Aadhaar and a savings bank account.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Age 30 falls between 18 and 40 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Landholding 1 ha is ≤2 ha",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Name appears in land records as on 01.08.2019",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Possesses Aadhaar card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Has savings bank account",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Minimum assured pension of ₹3,000 per month after age 60 and 50% family pension to spouse if farmer dies",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Visit a Common Service Centre, provide Aadhaar, savings bank account details, pay initial contribution, complete online registration and receive a Kisan Pension Account Number",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Aadhaar Card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Savings Bank Account Number with IFSC Code (Bank Passbook or Cheque Leaf/book or copy of bank statement)",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2427
+   }
+  },
+  {
+   "id": "e011",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I am a 52-year-old marginal farmer with half a hectare. Can I join the PM Kisan Maandhan pension scheme?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): ₹3,000 per month after age 60 [pm_kmy--pmkmdy-44b6ea:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "pm_kmy",
+     "name": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)",
+     "eligible": false,
+     "reasons": [
+      "Your age 52 is outside the eligible age range of 18 to 40 years [pm_kmy--pmkmdy-44b6ea:1:2]"
+     ],
+     "benefit": "₹3,000 per month after age 60 [pm_kmy--pmkmdy-44b6ea:1:0]",
+     "how_to_apply": "Enroll through Common Service Centres (CSCs) [pm_kmy--pmkmdy-44b6ea:1:6]",
+     "documents": [
+      "Aadhaar card [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "Savings bank or PM-KISAN account [pm_kmy--pmkmdy-44b6ea:1:2]"
+     ],
+     "citations": [
+      "pm_kmy--pmkmdy-44b6ea:1:0",
+      "pm_kmy--pmkmdy-44b6ea:1:6",
+      "pm_kmy--pmkmdy-44b6ea:1:2"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:6",
+    "pm_kmy--pmkmdy-44b6ea:1:2"
+   ],
+   "context": [
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:6",
+    "pm_kmy--pmkmdy-44b6ea:1:2",
+    "pm_kmy--pmkmdy-44b6ea:1:3",
+    "pm_kisan--pm-kisan-488a46:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "No, you are not eligible for the PM Kisan Maandhan Yojana.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"No, you are not eligible for the PM Kisan Maandhan Yojana.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pm_kmy\",\"name\":\"Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)\",\"eligible\":false,\"reasons\":[\"Your age 52 is outside the eligible age range of 18 to 40 years [C3]\"],\"benefit\":\"₹3,000 per month after age 60 [C1]\",\"how_to_apply\":\"Enroll through Common Service Centres (CSCs) [C2]\",\"documents\":[\"Aadhaar card [C3]\",\"Savings bank or PM-KISAN account [C3]\"],\"citations\":[\"C1\",\"C2\",\"C3\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2293,
+   "latency_ms": 2293,
+   "latency": {
+    "retrieval_ms": 1465.8,
+    "gen_first_delta_ms": 629.0,
+    "throttled_ms": 0.0,
+    "generate_ms": 823.7,
+    "validate_ms": 3.6,
+    "ttft_ms": 2293.5,
+    "total_ms": 2293.5,
+    "retrieval_stages": {
+     "rewrite_ms": 1028.6,
+     "rewrite_wait_ms": 4.1,
+     "bm25_ms": 9.9,
+     "dense_ms": 557.7,
+     "spec_rerank_ms": 758.7,
+     "rerank_ms": 134.0
+    }
+   },
+   "live": true,
+   "tokens_in": 2643,
+   "tokens_out": 390,
+   "cost_inr": 0.1177,
+   "eligibility": [
+    {
+     "scheme_id": "pm_kmy",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): ₹3,000 per month after age 60",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Your age 52 is outside the eligible age range of 18 to 40 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): ₹3,000 per month after age 60",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Enroll through Common Service Centres (CSCs)",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Aadhaar card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Savings bank or PM-KISAN account",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2393
+   }
+  },
+  {
+   "id": "e012",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "ഞാൻ 25 വയസ്സുള്ള സ്ത്രീയാണ്, ഞങ്ങളുടേത് ദരിദ്ര കുടുംബമാണ്, വീട്ടിൽ ഒരു LPG കണക്ഷനും ഇല്ല. ഉജ്ജ്വല യോജന വഴി ഗ്യാസ് കണക്ഷൻ കിട്ടുമോ?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "അർഹരായ സ്ത്രീകൾക്ക് PMUY വഴി LPG കണക്ഷൻ ലഭിക്കും. [pmuy--pmuy-6c9914:1:2] നിങ്ങളുടെ പ്രായം 25 വയസ്സ്, സ്ത്രീ, ദരിദ്ര കുടുംബം, വീട്ടിൽ LPG ഇല്ല എന്നതുകൊണ്ട് നിങ്ങൾ അർഹതാ മാനദണ്ഡം പാലിക്കുന്നു. [pmuy--pmuy-6c9914:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "pmuy",
+     "name": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+     "eligible": null,
+     "reasons": [],
+     "benefit": "LPG കണക്ഷൻ, 14.2kg അല്ലെങ്കിൽ 5kg സിലിണ്ടർ, ആദ്യ റിഫിൽ, സ്റ്റൗവ് സൗജന്യമായി ലഭിക്കും [pmuy--pmuy-6c9914:1:1]",
+     "how_to_apply": "അപേക്ഷ ഓൺലൈൻ/ഓഫ്‌ലൈൻ വഴി സമർപ്പിക്കുക, 14-പോയിന്റ് പ്രഖ്യാപനം സമർപ്പിക്കുക [pmuy--pmuy-6c9914:1:2]",
+     "documents": [
+      "Aadhaar Card [pmuy--pmuy-6c9914:1:2] [pmuy--pmuy-6c9914:1:1]",
+      "പങ്കാളിത്ത രേഖകൾ [pmuy--pmuy-6c9914:1:2] [pmuy--pmuy-6c9914:1:1]",
+      "14-പോയിന്റ് പ്രഖ്യാപനം [pmuy--pmuy-6c9914:1:2] [pmuy--pmuy-6c9914:1:1]"
+     ],
+     "citations": [
+      "pmuy--pmuy-6c9914:1:2",
+      "pmuy--pmuy-6c9914:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pmuy--pmuy-6c9914:1:2",
+    "pmuy--pmuy-6c9914:1:1"
+   ],
+   "context": [
+    "pmuy--pmuy-6c9914:1:2",
+    "pmuy--pmuy-6c9914:1:6",
+    "pmuy--pmuy-6c9914:1:0",
+    "pmuy--about-b2e352:1:0",
+    "pmuy--pmuy-6c9914:1:1"
+   ],
+   "context_hit": false,
+   "dropped": [
+    {
+     "text": "അർഹതാ മാനദണ്ഡം: പ്രായം 18+ വയസ്സ്, സ്ത്രീ, ദരിദ്ര കുടുംബം, വീട്ടിൽ LPG ഇല്ല [C1]",
+     "reason": "number_mismatch",
+     "detail": "18"
+    }
+   ],
+   "flags": [
+    "eligible_nulled_no_reason:pmuy"
+   ],
+   "raw_generation": "{\"answer\":\"അർഹരായ സ്ത്രീകൾക്ക് PMUY വഴി LPG കണക്ഷൻ ലഭിക്കും [C1]. നിങ്ങളുടെ പ്രായം 25 വയസ്സ്, സ്ത്രീ, ദരിദ്ര കുടുംബം, വീട്ടിൽ LPG ഇല്ല എന്നതുകൊണ്ട് നിങ്ങൾ അർഹതാ മാനദണ്ഡം പാലിക്കുന്നു [C1].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pmuy\",\"name\":\"Pradhan Mantri Ujjwala Yojana (PMUY)\",\"eligible\":true,\"reasons\":[\"അർഹതാ മാനദണ്ഡം: പ്രായം 18+ വയസ്സ്, സ്ത്രീ, ദരിദ്ര കുടുംബം, വീട്ടിൽ LPG ഇല്ല [C1]\"],\"benefit\":\"LPG കണക്ഷൻ, 14.2kg അല്ലെങ്കിൽ 5kg സിലിണ്ടർ, ആദ്യ റിഫിൽ, സ്റ്റൗവ് സൗജന്യമായി ലഭിക്കും [C5]\",\"how_to_apply\":\"അപേക്ഷ ഓൺലൈൻ/ഓഫ്‌ലൈൻ വഴി സമർപ്പിക്കുക, 14-പോയിന്റ് പ്രഖ്യാപനം സമർപ്പിക്കുക [C1]\",\"documents\":[\"Aadhaar Card\",\"പങ്കാളിത്ത രേഖകൾ\",\"14-പോയിന്റ് പ്രഖ്യാപനം\"],\"citations\":[\"C1\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2766,
+   "latency_ms": 3039,
+   "latency": {
+    "retrieval_ms": 1737.8,
+    "gen_first_delta_ms": 1009.7,
+    "throttled_ms": 0.0,
+    "generate_ms": 1296.5,
+    "validate_ms": 4.7,
+    "ttft_ms": 2765.5,
+    "total_ms": 3039.4,
+    "retrieval_stages": {
+     "rewrite_ms": 995.7,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 11.4,
+     "dense_ms": 733.8,
+     "spec_rerank_ms": 744.3,
+     "rerank_ms": 246.8
+    }
+   },
+   "live": true,
+   "tokens_in": 2863,
+   "tokens_out": 485,
+   "cost_inr": 0.1268,
+   "eligibility": [
+    {
+     "scheme_id": "pmuy",
+     "expected": true,
+     "got": null,
+     "correct": false
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "അർഹരായ സ്ത്രീകൾക്ക് PMUY വഴി LPG കണക്ഷൻ ലഭിക്കും.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "നിങ്ങളുടെ പ്രായം 25 വയസ്സ്, സ്ത്രീ, ദരിദ്ര കുടുംബം, വീട്ടിൽ LPG ഇല്ല എന്നതുകൊണ്ട് നിങ്ങൾ അർഹതാ മാനദണ്ഡം പാലിക്കുന്നു.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": false,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): LPG കണക്ഷൻ, 14.2kg അല്ലെങ്കിൽ 5kg സിലിണ്ടർ, ആദ്യ റിഫിൽ, സ്റ്റൗവ് സൗജന്യമായി ലഭിക്കും",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): അപേക്ഷ ഓൺലൈൻ/ഓഫ്‌ലൈൻ വഴി സമർപ്പിക്കുക, 14-പോയിന്റ് പ്രഖ്യാപനം സമർപ്പിക്കുക",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): Aadhaar Card",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): പങ്കാളിത്ത രേഖകൾ",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): 14-പോയിന്റ് പ്രഖ്യാപനം",
+      "supported": true,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2586
+   }
+  },
+  {
+   "id": "e013",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I'm a 30-year-old man from a poor family and we have no LPG connection. Can I apply for PM Ujjwala Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "No, you cannot apply for PM Ujjwala Yojana because the scheme is only for adult women. [pmuy--ujjwala2-70400f:1:1] [pmuy--about-b2e352:1:1]",
+   "schemes": [
+    {
+     "scheme_id": "pmuy",
+     "name": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+     "eligible": false,
+     "reasons": [
+      "The applicant must be a woman who has attained 18 years of age [pmuy--ujjwala2-70400f:1:1]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pmuy--ujjwala2-70400f:1:1",
+      "pmuy--about-b2e352:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pmuy--ujjwala2-70400f:1:1",
+    "pmuy--about-b2e352:1:1"
+   ],
+   "context": [
+    "pmuy--pmuy-6c9914:1:2",
+    "pmuy--ujjwala2-70400f:1:1",
+    "pmuy--about-b2e352:1:1",
+    "pmuy--about-b2e352:1:0",
+    "pmuy--pmuy-6c9914:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"No, you cannot apply for PM Ujjwala Yojana because the scheme is only for adult women [C2][C3].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pmuy\",\"name\":\"Pradhan Mantri Ujjwala Yojana (PMUY)\",\"eligible\":false,\"reasons\":[\"The applicant must be a woman who has attained 18 years of age [C2]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C2\",\"C3\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2472,
+   "latency_ms": 2473,
+   "latency": {
+    "retrieval_ms": 1715.2,
+    "gen_first_delta_ms": 605.1,
+    "throttled_ms": 0.0,
+    "generate_ms": 756.9,
+    "validate_ms": 0.9,
+    "ttft_ms": 2472.3,
+    "total_ms": 2473.3,
+    "retrieval_stages": {
+     "rewrite_ms": 949.8,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 10.4,
+     "dense_ms": 671.2,
+     "spec_rerank_ms": 786.7,
+     "rerank_ms": 245.6
+    }
+   },
+   "live": true,
+   "tokens_in": 2268,
+   "tokens_out": 352,
+   "cost_inr": 0.1138,
+   "eligibility": [
+    {
+     "scheme_id": "pmuy",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "No, you cannot apply for PM Ujjwala Yojana because the scheme is only for adult women.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): The applicant must be a woman who has attained 18 years of age",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1738
+   }
+  },
+  {
+   "id": "e014",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I'm a 32-year-old self-employed craftsperson working with hand tools, and I took a PMEGP loan two years ago. Can I register under PM Vishwakarma?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "validation",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Ministry of MSME, Government of India (https://www.myscheme.gov.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "pm_vishwakarma--pmv-378966:1:2",
+    "pm_vishwakarma--pmv-378966:1:6",
+    "pm_vishwakarma--pmv-378966:1:0",
+    "pm_vishwakarma--pmv-378966:1:4",
+    "pmegp--pmegp-7e1c48:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You are not eligible to register under PM Vishwakarma because you have already availed a PMEGP loan within the last five years.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You are not eligible to register under PM Vishwakarma because you have already availed a PMEGP loan within the last five years.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pm_vishwakarma\",\"name\":\"PM Vishwakarma\",\"eligible\":false,\"reasons\":[\"You have availed a PMEGP loan in the past 5 years, which disqualifies you from registration under PM Vishwakarma. [C1]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3091,
+   "latency_ms": 3091,
+   "latency": {
+    "retrieval_ms": 1935.8,
+    "gen_first_delta_ms": 1015.1,
+    "throttled_ms": 0.0,
+    "generate_ms": 1154.1,
+    "validate_ms": 0.9,
+    "ttft_ms": 3091.5,
+    "total_ms": 3091.5,
+    "retrieval_stages": {
+     "rewrite_ms": 908.4,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 12.2,
+     "dense_ms": 1026.9,
+     "spec_rerank_ms": 763.6,
+     "rerank_ms": 132.0
+    }
+   },
+   "live": true,
+   "tokens_in": 2907,
+   "tokens_out": 450,
+   "cost_inr": 0.1371,
+   "eligibility": [
+    {
+     "scheme_id": "pm_vishwakarma",
+     "expected": false,
+     "got": "missing",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "id": "e015",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I own farmland in my name, but I paid income tax in the last assessment year. Am I eligible for PM-KISAN?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": true,
+   "abstain_reason": "validation",
+   "answer": "I could not find this in the official scheme documents I have, so I won't guess. Please check with Department of Agriculture & Farmers Welfare, Government of India (https://pmkisan.gov.in), or your nearest Akshaya centre or the village / panchayat office.",
+   "schemes": [],
+   "follow_up_question": null,
+   "citations": [],
+   "context": [
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:3:0",
+    "pm_kisan--pm-kisan-488a46:1:6",
+    "pm_kisan--revisedfaq-666f07:4:0",
+    "pm_kisan--pm-kisan-488a46:1:3",
+    "pm_kisan--revisedfaq-666f07:2:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You are not eligible for PM‑KISAN because the scheme excludes all persons who paid income tax in the last assessment year.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You are not eligible for PM‑KISAN because the scheme excludes all persons who paid income tax in the last assessment year.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pm_kisan\",\"name\":\"Pradhan Mantri Kisan Samman Nidhi (PM‑KISAN)\",\"eligible\":false,\"reasons\":[\"Your fact that you paid income tax in the last assessment year disqualifies you from the scheme [C4]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C4\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2283,
+   "latency_ms": 2283,
+   "latency": {
+    "retrieval_ms": 1464.8,
+    "gen_first_delta_ms": 683.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 816.9,
+    "validate_ms": 1.1,
+    "ttft_ms": 2283.1,
+    "total_ms": 2283.1,
+    "retrieval_stages": {
+     "rewrite_ms": 947.9,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 10.2,
+     "dense_ms": 686.6,
+     "spec_rerank_ms": 766.7,
+     "rerank_ms": 0.0
+    }
+   },
+   "live": true,
+   "tokens_in": 3246,
+   "tokens_out": 355,
+   "cost_inr": 0.1178,
+   "eligibility": [
+    {
+     "scheme_id": "pm_kisan",
+     "expected": false,
+     "got": "missing",
+     "correct": false
+    }
+   ]
+  }
+ ]
+}

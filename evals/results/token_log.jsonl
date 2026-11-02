@@ -1,0 +1,25 @@
+{"ts": "2026-10-30T20:30:55", "file": "2026-10-30_2027_answers_worst5_v5.json", "items_total": 5, "stopped": false, "tokens": {"qwen/qwen3.8-27b": {"in": 16485, "out": 2471, "calls": 5}, "openai/gpt-oss-20b": {"in": 8651, "out": 2314, "calls": 5}}}
+{"ts": "2026-10-30T20:40:48", "file": "2026-10-30_2037_answers_worst5_v6.json", "items_total": 5, "stopped": false, "tokens": {"qwen/qwen3.8-27b": {"in": 17727, "out": 1999, "calls": 5}, "openai/gpt-oss-20b": {"in": 9295, "out": 2558, "calls": 5}}}
+{"ts": "2026-10-30T20:50:03", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 8, "stopped": true, "tokens": {"qwen/qwen3.8-27b": {"in": 31435, "out": 4850, "calls": 12}}}
+{"ts": "2026-10-30T21:03:08", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 16, "stopped": true, "tokens": {"qwen/qwen3.8-27b": {"in": 44893, "out": 5703, "calls": 17}}}
+{"ts": "2026-10-30T21:04:46", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 12, "stopped": true, "tokens": {}}
+{"ts": "2026-10-30T21:13:29", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 16, "stopped": true, "tokens": {"openai/gpt-oss-20b": {"in": 15127, "out": 4527, "calls": 8}, "qwen/qwen3.8-27b": {"in": 12391, "out": 3977, "calls": 2}}}
+{"ts": "2026-10-30T22:23:13", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 0, "stopped": false, "tokens": {}}
+{"ts": "2026-10-30T22:24:21", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 13, "stopped": true, "tokens": {"gemini-3.6-flash": {"in": 1561, "out": 325, "calls": 1}}}
+{"ts": "2026-10-30T22:33:30", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 8, "stopped": true, "tokens": {"openai/gpt-oss-20b": {"in": 23514, "out": 2138, "calls": 8}, "gemini-3.6-flash": {"in": 3489, "out": 773, "calls": 4}}}
+{"ts": "2026-10-30T22:58:51", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 13, "stopped": true, "tokens": {}}
+{"ts": "2026-10-30T23:08:09", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 8, "stopped": true, "tokens": {}}
+{"ts": "2026-10-30T23:33:29", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 13, "stopped": true, "tokens": {}}
+{"ts": "2026-10-30T23:42:47", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 8, "stopped": true, "tokens": {}}
+{"ts": "2026-10-31T00:08:05", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 13, "stopped": true, "tokens": {}}
+{"ts": "2026-10-31T00:17:23", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 8, "stopped": true, "tokens": {}}
+{"ts": "2026-10-31T00:42:42", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 13, "stopped": true, "tokens": {}}
+{"ts": "2026-10-31T00:52:02", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 8, "stopped": true, "tokens": {}}
+{"ts": "2026-10-31T01:17:22", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 13, "stopped": true, "tokens": {}}
+{"ts": "2026-10-31T01:46:53", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 25, "stopped": true, "tokens": {"openai/gpt-oss-120b": {"in": 30507, "out": 8949, "calls": 21}, "qwen/qwen3.8-27b": {"in": 64876, "out": 6775, "calls": 12}}}
+{"ts": "2026-10-31T02:08:38", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 28, "stopped": false, "tokens": {"openai/gpt-oss-120b": {"in": 23782, "out": 7444, "calls": 22}, "openai/gpt-oss-20b": {"in": 65078, "out": 4290, "calls": 20}}}
+{"ts": "2026-10-31T02:29:19", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 48, "stopped": false, "tokens": {"openai/gpt-oss-20b": {"in": 61236, "out": 5034, "calls": 20}, "openai/gpt-oss-120b": {"in": 18341, "out": 5815, "calls": 16}}}
+{"ts": "2026-10-31T02:31:50", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 26, "stopped": true, "tokens": {"qwen/qwen3.8-27b": {"in": 4664, "out": 529, "calls": 1}, "openai/gpt-oss-120b": {"in": 1192, "out": 642, "calls": 1}}}
+{"ts": "2026-11-02T18:31:16", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 46, "stopped": false, "tokens": {"qwen/qwen3.8-27b": {"in": 80355, "out": 6620, "calls": 20}, "openai/gpt-oss-120b": {"in": 21488, "out": 6002, "calls": 16}}}
+{"ts": "2026-11-02T18:52:30", "file": "2026-10-30_2223_answers_gate2_gptoss20b.json", "items_total": 81, "stopped": false, "tokens": {"openai/gpt-oss-20b": {"in": 63065, "out": 4889, "calls": 20}, "openai/gpt-oss-120b": {"in": 21411, "out": 6244, "calls": 18}}}
+{"ts": "2026-11-02T19:14:19", "file": "2026-10-30_2041_answers_gate2.json", "items_total": 66, "stopped": false, "tokens": {"qwen/qwen3.8-27b": {"in": 98696, "out": 10374, "calls": 20}, "openai/gpt-oss-120b": {"in": 32303, "out": 9043, "calls": 19}}}

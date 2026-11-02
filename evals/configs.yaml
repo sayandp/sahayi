@@ -1,0 +1,425 @@
+# Retrieval configs for evals/run_eval.py. Fields map to RetrievalConfig
+# (backend/app/retrieval/search.py). `default` is what the API will use.
+
+# Phase 2b default (2026-10-20): passes Gate 1 at live p95 < 2 s on an 8-core CPU.
+# Hybrid BM25 + bge-m3 over contextual chunk headers, Groq query rewrite (qwen) with the
+# rewrite overlapped by a speculative rerank, Jina reranker v2 int8 ONNX on the top 6
+# at 256 tokens, reranking with the user's own words.
+default:
+  mode: hybrid
+  strategy: section_aware
+  index_context: true
+  rewrite: true
+  overlap_rewrite: true
+  rewrite_deadline_s: 2.0  # Phase 3: answer without the rewrite if Groq stalls (p95 ~1.2 s)
+  # Phase 3b: Malayalam-script questions skip the rewrite (better hit@5, lower latency).
+  # English keeps it: skipping it too cost 10 points of English hit@5 (phase3_summary.md)
+  skip_rewrite_kinds: [ml]
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 6
+  rerank_with: original
+  abstain_threshold: -2.0084
+
+# Phase 3b comparison: the Phase 2b default, with every question rewritten.
+always_rewrite:
+  mode: hybrid
+  strategy: section_aware
+  index_context: true
+  rewrite: true
+  overlap_rewrite: true
+  rewrite_deadline_s: 2.0
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 6
+  rerank_with: original
+  abstain_threshold: -2.0084
+
+# Phase 3b experiment as specified: Malayalam and clean English both skip the rewrite.
+skip_rewrite:
+  mode: hybrid
+  strategy: section_aware
+  index_context: true
+  rewrite: true
+  overlap_rewrite: true
+  rewrite_deadline_s: 2.0
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 6
+  rerank_with: original
+  abstain_threshold: -2.0084
+  skip_rewrite_kinds: [ml, en]
+
+# Phase 3 deployment variant: same as default, but reranks with the hosted Jina API
+# (same model family as the local ONNX). Any API error, a missing JINA_API_KEY, or a call
+# over 1.5 s falls back to the local Jina int8 model. Offline evals keep `default`.
+deploy:
+  mode: hybrid
+  strategy: section_aware
+  index_context: true
+  rewrite: true
+  overlap_rewrite: true
+  rewrite_deadline_s: 2.0
+  skip_rewrite_kinds: [ml]
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: api
+  rerank_provider: jina
+  rerank_timeout_s: 1.5
+  rerank_fallback_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 6
+  rerank_with: original
+  abstain_threshold: -2.0084
+
+# Phase 2 default (2026-10-12): hybrid + bge-reranker-v2-m3 fp32 top-20, ~21 s/query.
+phase2_default:
+  mode: hybrid
+  rerank: true
+  strategy: section_aware
+
+bm25:
+  mode: bm25
+  rerank: false
+
+bm25_nostem:
+  mode: bm25
+  rerank: false
+  bm25_stem: false
+
+dense:
+  mode: dense
+  rerank: false
+
+hybrid:
+  mode: hybrid
+  rerank: false
+
+bm25_rerank:
+  mode: bm25
+  rerank: true
+
+dense_rerank:
+  mode: dense
+  rerank: true
+
+# Weighted RRF: BM25 list down-weighted (weights fixed before running, not tuned).
+hybrid_w05:
+  mode: hybrid
+  rerank: false
+  bm25_weight: 0.5
+
+hybrid_w025:
+  mode: hybrid
+  rerank: false
+  bm25_weight: 0.25
+
+# Smaller rerank pools: latency on this CPU is ~1 s per (query, chunk) pair.
+default_pool10:
+  mode: hybrid
+  rerank: true
+  rerank_pool: 10
+
+default_pool5:
+  mode: hybrid
+  rerank: true
+  rerank_pool: 5
+
+dense_rerank_pool10:
+  mode: dense
+  rerank: true
+  rerank_pool: 10
+
+# ------------------------------------------------------------------ Phase 2b
+# Query rewrite (qwen/qwen3.8-27b on Groq): original + Malayalam + English variants,
+# fused with RRF. Rerank options: bge fp32 (st), bge int8 (our ONNX export), jina int8
+# (ONNX shipped by Jina), hosted API (stub), and selective rerank (skip when the best
+# dense list's top-1 - top-2 cosine margin >= 0.05, fixed before running).
+dense_rw:
+  mode: dense
+  rerank: false
+  rewrite: true
+
+hybrid_rw:
+  mode: hybrid
+  rerank: false
+  rewrite: true
+
+hybrid_rw_w05:
+  mode: hybrid
+  rerank: false
+  rewrite: true
+  bm25_weight: 0.5
+
+dense_rw_jina5:
+  mode: dense
+  rewrite: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 5
+
+dense_rw_jina10_sel:
+  mode: dense
+  rewrite: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 10
+  rerank_skip_margin: 0.05
+
+hybrid_rw_jina5:
+  mode: hybrid
+  rewrite: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 5
+
+dense_rw_bge10:
+  mode: dense
+  rewrite: true
+  rerank: true
+  rerank_pool: 10
+
+dense_rw_bgeint8_10:
+  mode: dense
+  rewrite: true
+  rerank: true
+  rerank_backend: onnx
+  rerank_onnx_file: bge-reranker-v2-m3/model_int8.onnx
+  rerank_pool: 10
+
+dense_rw_api:
+  mode: dense
+  rewrite: true
+  rerank: true
+  rerank_backend: api
+  rerank_provider: cohere
+  rerank_pool: 20
+
+# Variant weighting (fixed before running): the user's own words count fully,
+# rewritten variants at 0.5 - native Malayalam questions lost hit@5 when fused 1:1:1.
+hybrid_rw_vw05:
+  mode: hybrid
+  rerank: false
+  rewrite: true
+  rewrite_weight: 0.5
+
+hybrid_rw_vw05_jina5:
+  mode: hybrid
+  rewrite: true
+  rewrite_weight: 0.5
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 5
+
+hybrid_rw_vw05_jina10_sel:
+  mode: hybrid
+  rewrite: true
+  rewrite_weight: 0.5
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 10
+  rerank_skip_margin: 0.05
+
+hybrid_rw_vw05_bge10:
+  mode: hybrid
+  rewrite: true
+  rewrite_weight: 0.5
+  rerank: true
+  rerank_pool: 10
+
+hybrid_rw_vw05_bgeint8_10:
+  mode: hybrid
+  rewrite: true
+  rewrite_weight: 0.5
+  rerank: true
+  rerank_backend: onnx
+  rerank_onnx_file: bge-reranker-v2-m3/model_int8.onnx
+  rerank_pool: 10
+
+# Contextual chunk headers ("scheme - department [section]" prepended for indexing and
+# reranking; displayed/cited text unchanged).
+hybrid_ctx:
+  mode: hybrid
+  rerank: false
+  index_context: true
+
+dense_rw_ctx:
+  mode: dense
+  rerank: false
+  rewrite: true
+  index_context: true
+
+hybrid_rw_ctx:
+  mode: hybrid
+  rerank: false
+  rewrite: true
+  index_context: true
+
+hybrid_rw_vw05_ctx:
+  mode: hybrid
+  rerank: false
+  rewrite: true
+  rewrite_weight: 0.5
+  index_context: true
+
+hybrid_rw_vw05_ctx_jina10_sel:
+  mode: hybrid
+  rewrite: true
+  rewrite_weight: 0.5
+  index_context: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 10
+  rerank_skip_margin: 0.05
+
+hybrid_rw_vw05_ctx_jina10:
+  mode: hybrid
+  rewrite: true
+  rewrite_weight: 0.5
+  index_context: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 10
+
+hybrid_rw_ctx_jina10:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 10
+
+hybrid_rw_ctx_jina10_sel:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 10
+  rerank_skip_margin: 0.05
+
+hybrid_rw_ctx_jina6:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 6
+
+hybrid_rw_ctx_jina7:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 7
+
+hybrid_rw_ctx_jina8:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_pool: 8
+
+ctx_jina6_l256_clearest:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  overlap_rewrite: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 6
+  rerank_with: clearest
+
+ctx_jina6_l256_original:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  overlap_rewrite: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 6
+  rerank_with: original
+
+ctx_jina8_l256_clearest:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  overlap_rewrite: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 8
+  rerank_with: clearest
+
+ctx_jina8_l256_original:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  overlap_rewrite: true
+  rerank: true
+  rerank_model: jinaai/jina-reranker-v2-base-multilingual
+  rerank_backend: onnx
+  rerank_onnx_file: "hub:onnx/model_int8.onnx"
+  rerank_max_length: 256
+  rerank_pool: 8
+  rerank_with: original
+
+# bge-reranker-v2-m3 references on the final index (slow on CPU; quality ceiling).
+ctx_bge10:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  rerank: true
+  rerank_pool: 10
+
+ctx_bgeint8_10:
+  mode: hybrid
+  rewrite: true
+  index_context: true
+  rerank: true
+  rerank_backend: onnx
+  rerank_onnx_file: bge-reranker-v2-m3/model_int8.onnx
+  rerank_pool: 10

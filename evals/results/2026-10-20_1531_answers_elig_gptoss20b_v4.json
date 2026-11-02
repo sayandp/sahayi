@@ -1,0 +1,2125 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "judge": "openai/gpt-oss-120b",
+ "config": "default",
+ "live": false,
+ "answer_prompt": "v4",
+ "judge_prompt": "v1",
+ "stopped": null,
+ "summary": {
+  "excluded_provider_failures": 0,
+  "by_slice": {
+   "all": {
+    "n": 15,
+    "answered": 15,
+    "faithfulness": 0.915,
+    "faithfulness_micro": 0.904,
+    "citation_accuracy": 0.904,
+    "answer_relevancy": 1.0,
+    "statements": 83,
+    "answerable_answered": 1.0,
+    "context_hit@5": 0.933,
+    "language_match": 0.933
+   },
+   "lang:en": {
+    "n": 11,
+    "answered": 11,
+    "faithfulness": 0.957,
+    "faithfulness_micro": 0.925,
+    "citation_accuracy": 0.943,
+    "answer_relevancy": 1.0,
+    "statements": 53,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "lang:ml": {
+    "n": 2,
+    "answered": 2,
+    "faithfulness": 0.974,
+    "faithfulness_micro": 0.957,
+    "citation_accuracy": 0.913,
+    "answer_relevancy": 1.0,
+    "statements": 23,
+    "answerable_answered": 1.0,
+    "context_hit@5": 0.5,
+    "language_match": 1.0
+   },
+   "lang:manglish": {
+    "n": 2,
+    "answered": 2,
+    "faithfulness": 0.625,
+    "faithfulness_micro": 0.571,
+    "citation_accuracy": 0.571,
+    "answer_relevancy": 1.0,
+    "statements": 7,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 0.5
+   },
+   "slice:main": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   },
+   "slice:heldout": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   },
+   "slice:eligibility": {
+    "n": 15,
+    "answered": 15,
+    "faithfulness": 0.915,
+    "faithfulness_micro": 0.904,
+    "citation_accuracy": 0.904,
+    "answer_relevancy": 1.0,
+    "statements": 83,
+    "answerable_answered": 1.0,
+    "context_hit@5": 0.933,
+    "language_match": 0.933
+   },
+   "slice:no_answer": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   }
+  },
+  "abstention": {
+   "no_answer_n": 0,
+   "recall": null,
+   "precision": null,
+   "false_abstain_rate": 0.0
+  },
+  "eligibility": {
+   "n": 15,
+   "accuracy": 0.933,
+   "card_found": 0.933
+  },
+  "validation": {
+   "items_with_drops": 10,
+   "dropped_by_reason": {
+    "no_citation": 14,
+    "number_mismatch": 2
+   },
+   "abstain_reason": {
+    "model": 0,
+    "validation": 0,
+    "error": 0
+   },
+   "json_retry": 0
+  },
+  "latency_ms": {
+   "n_live": 0,
+   "ttft_p50": null,
+   "ttft_p95": null,
+   "full_p50": null,
+   "full_p95": null,
+   "throttled_items": 0,
+   "ttft_p95_unthrottled": null
+  },
+  "cost_inr": {
+   "mean": 0.024,
+   "p95": 0.0303
+  },
+  "tokens": {
+   "in_mean": 2258.867,
+   "out_mean": 264.667
+  }
+ },
+ "items": [
+  {
+   "id": "e001",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I am 35, I have a savings bank account and I have never paid income tax. Can I join Atal Pension Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "You can join Atal Pension Yojana (APY) because you are 35 years old, have a savings bank account, and have never paid income tax. [apy--apy-234e9e:1:2] [apy--apy-234e9e:1:0] [apy--apy-234e9e:1:3]",
+   "schemes": [
+    {
+     "scheme_id": "apy",
+     "name": "Atal Pension Yojana (APY)",
+     "eligible": true,
+     "reasons": [
+      "You are 35 years old, which is between 18 and 40 years [apy--apy-234e9e:1:2]",
+      "You have a savings bank account, which is required for auto‑debit contributions [apy--apy-234e9e:1:2]",
+      "You have never paid income tax, making you eligible as a non‑income‑tax‑payer [apy--apy-234e9e:1:0]"
+     ],
+     "benefit": "Guaranteed minimum pension of Rs. 1000/- to Rs. 5000/- per month from age 60 until death, plus benefits for spouse and nominee [apy--apy-234e9e:1:1]",
+     "how_to_apply": "Subscribe via auto‑debit from your savings bank account; provide nomination details and necessary documents [apy--apy-234e9e:1:6]",
+     "documents": [
+      "Savings bank account details [apy--apy-234e9e:1:2] [apy--apy-234e9e:1:0] [apy--apy-234e9e:1:3] [apy--apy-234e9e:1:1]",
+      "Nomination details [apy--apy-234e9e:1:2] [apy--apy-234e9e:1:0] [apy--apy-234e9e:1:3] [apy--apy-234e9e:1:1]"
+     ],
+     "citations": [
+      "apy--apy-234e9e:1:2",
+      "apy--apy-234e9e:1:0",
+      "apy--apy-234e9e:1:3",
+      "apy--apy-234e9e:1:1",
+      "apy--apy-234e9e:1:6"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "apy--apy-234e9e:1:2",
+    "apy--apy-234e9e:1:0",
+    "apy--apy-234e9e:1:3",
+    "apy--apy-234e9e:1:1",
+    "apy--apy-234e9e:1:6"
+   ],
+   "context": [
+    "apy--apy-234e9e:1:2",
+    "apy--apy-234e9e:1:0",
+    "apy--apy-234e9e:1:3",
+    "apy--apy-234e9e:1:6",
+    "apy--apy-234e9e:1:1"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You can join Atal Pension Yojana (APY) because you are 35 years old, have a savings bank account, and have never paid income tax [C1][C2][C3].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"apy\",\"name\":\"Atal Pension Yojana (APY)\",\"eligible\":true,\"reasons\":[\"You are 35 years old, which is between 18 and 40 years [C1]\",\"You have a savings bank account, which is required for auto‑debit contributions [C1]\",\"You have never paid income tax, making you eligible as a non‑income‑tax‑payer [C2]\"],\"benefit\":\"Guaranteed minimum pension of Rs. 1000/- to Rs. 5000/- per month from age 60 until death, plus benefits for spouse and nominee [C5]\",\"how_to_apply\":\"Subscribe via auto‑debit from your savings bank account; provide nomination details and necessary documents [C4]\",\"documents\":[\"Savings bank account details\",\"Nomination details\"],\"citations\":[\"C1\",\"C2\",\"C3\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2247,
+   "latency_ms": 2499,
+   "latency": {
+    "retrieval_ms": 1154.0,
+    "gen_first_delta_ms": 1039.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 1330.6,
+    "validate_ms": 12.3,
+    "ttft_ms": 2246.8,
+    "total_ms": 2498.9,
+    "retrieval_stages": {
+     "rewrite_ms": 30.2,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.7,
+     "dense_ms": 1021.2,
+     "spec_rerank_ms": 119.3,
+     "rerank_ms": 0.1
+    }
+   },
+   "live": false,
+   "tokens_in": 2244,
+   "tokens_out": 285,
+   "cost_inr": 0.0245,
+   "eligibility": [
+    {
+     "scheme_id": "apy",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "You can join Atal Pension Yojana (APY) because you are 35 years old, have a savings bank account, and have never paid income tax.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): You are 35 years old, which is between 18 and 40 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): You have a savings bank account, which is required for auto‑debit contributions",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): You have never paid income tax, making you eligible as a non‑income‑tax‑payer",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Guaranteed minimum pension of Rs. 1000/- to Rs. 5000/- per month from age 60 until death, plus benefits for spouse and nominee",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Subscribe via auto‑debit from your savings bank account; provide nomination details and necessary documents",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Savings bank account details",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Nomination details",
+      "supported": true,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2888
+   }
+  },
+  {
+   "id": "e002",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I'm 45 years old and have a savings account. Can I still join Atal Pension Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "You cannot join Atal Pension Yojana because the maximum joining age is 40 years. [apy--apy-234e9e:1:2] [apy--apy-234e9e:1:6]",
+   "schemes": [
+    {
+     "scheme_id": "apy",
+     "name": "Atal Pension Yojana (APY)",
+     "eligible": false,
+     "reasons": [
+      "Your age 45 exceeds the maximum joining age of 40 years [apy--apy-234e9e:1:2] [apy--apy-234e9e:1:6]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "apy--apy-234e9e:1:2",
+      "apy--apy-234e9e:1:6"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "apy--apy-234e9e:1:2",
+    "apy--apy-234e9e:1:6"
+   ],
+   "context": [
+    "apy--apy-234e9e:1:2",
+    "apy--apy-234e9e:1:0",
+    "apy--apy-234e9e:1:6",
+    "apy--apy-234e9e:1:1",
+    "apy--apy-234e9e:1:3"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You cannot join Atal Pension Yojana because the maximum joining age is 40 years [C1][C3].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"apy\",\"name\":\"Atal Pension Yojana (APY)\",\"eligible\":false,\"reasons\":[\"Your age 45 exceeds the maximum joining age of 40 years [C1][C3]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\",\"C3\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2611,
+   "latency_ms": 2741,
+   "latency": {
+    "retrieval_ms": 1477.2,
+    "gen_first_delta_ms": 1089.1,
+    "throttled_ms": 0.0,
+    "generate_ms": 1259.7,
+    "validate_ms": 4.2,
+    "ttft_ms": 2610.6,
+    "total_ms": 2741.3,
+    "retrieval_stages": {
+     "rewrite_ms": 8.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 7.9,
+     "dense_ms": 736.5,
+     "spec_rerank_ms": 732.5,
+     "rerank_ms": 0.0
+    }
+   },
+   "live": false,
+   "tokens_in": 2237,
+   "tokens_out": 158,
+   "cost_inr": 0.0208,
+   "eligibility": [
+    {
+     "scheme_id": "apy",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "You cannot join Atal Pension Yojana because the maximum joining age is 40 years.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Atal Pension Yojana (APY): Your age 45 exceeds the maximum joining age of 40 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1886
+   }
+  },
+  {
+   "id": "e003",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "ente amma 67 vayassanu, Indian citizen aanu, BPL kudumbam aanu. Indira Gandhi old age pension kittumo?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "അതിനാൽ അവൾക്ക് Indira Gandhi National Old Age Pension Scheme (IGNOAPS) ൽ അർഹതയുണ്ട്. [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2] [nsap_ignoaps--nsap-ignoaps-9c99d4:1:6]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+     "eligible": true,
+     "reasons": [
+      "അമ്മയുടെ പ്രായം 60 വയസ്സിന് മുകളിലാണ് [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]",
+      "അമ്മ BPL കുടുംബത്തിൽ ആണ് [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]",
+      "അമ്മ ഇന്ത്യൻ പൗരത്വം ഉള്ളവൾ ആണ് [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1"
+   ],
+   "context": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1",
+    "kerala_pension_old_age--faqs-70561d:1:0",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "നിങ്ങളുടെ അമ്മ 67 വയസ്സുള്ളതും ഇന്ത്യൻ പൗരത്വമുള്ളതും BPL കുടുംബത്തിൽ ഉള്ളതുമാണ്.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "മാസം ₹200 (60-79 വയസ്സ്) അല്ലെങ്കിൽ ₹500 (80 വയസ്സ് മുതലുള്ളവർ) [C2]",
+     "reason": "number_mismatch",
+     "detail": "60, 80"
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"നിങ്ങളുടെ അമ്മ 67 വയസ്സുള്ളതും ഇന്ത്യൻ പൗരത്വമുള്ളതും BPL കുടുംബത്തിൽ ഉള്ളതുമാണ്. അതിനാൽ അവൾക്ക് Indira Gandhi National Old Age Pension Scheme (IGNOAPS) ൽ അർഹതയുണ്ട് [C1][C5].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_ignoaps\",\"name\":\"Indira Gandhi National Old Age Pension Scheme (IGNOAPS)\",\"eligible\":true,\"reasons\":[\"അമ്മയുടെ പ്രായം 60 വയസ്സിന് മുകളിലാണ് [C1]\",\"അമ്മ BPL കുടുംബത്തിൽ ആണ് [C1]\",\"അമ്മ ഇന്ത്യൻ പൗരത്വം ഉള്ളവൾ ആണ് [C1]\"],\"benefit\":\"മാസം ₹200 (60-79 വയസ്സ്) അല്ലെങ്കിൽ ₹500 (80 വയസ്സ് മുതലുള്ളവർ) [C2]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\",\"C2\"]}]}",
+   "lang_match": false,
+   "ttft_ms": 2355,
+   "latency_ms": 2524,
+   "latency": {
+    "retrieval_ms": 1418.3,
+    "gen_first_delta_ms": 862.8,
+    "throttled_ms": 0.0,
+    "generate_ms": 1104.0,
+    "validate_ms": 1.7,
+    "ttft_ms": 2354.9,
+    "total_ms": 2524.2,
+    "retrieval_stages": {
+     "rewrite_ms": 9.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 11.0,
+     "dense_ms": 1406.8,
+     "spec_rerank_ms": 0.1,
+     "rerank_ms": 0.1
+    }
+   },
+   "live": false,
+   "tokens_in": 2091,
+   "tokens_out": 262,
+   "cost_inr": 0.0227,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "അതിനാൽ അവൾക്ക് Indira Gandhi National Old Age Pension Scheme (IGNOAPS) ൽ അർഹതയുണ്ട്.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): അമ്മയുടെ പ്രായം 60 വയസ്സിന് മുകളിലാണ്",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): അമ്മ BPL കുടുംബത്തിൽ ആണ്",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): അമ്മ ഇന്ത്യൻ പൗരത്വം ഉള്ളവൾ ആണ്",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1932
+   }
+  },
+  {
+   "id": "e004",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I am 55 and my family is above the poverty line. Am I eligible for the Indira Gandhi National Old Age Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS) (you do not appear eligible): Your age is 55, but the scheme requires at least 60 years of age [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+     "eligible": false,
+     "reasons": [
+      "Your age is 55, but the scheme requires at least 60 years of age [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]",
+      "Your family is above the poverty line, but the scheme requires living below the poverty line [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]"
+     ],
+     "benefit": "Rs.200 per month for 60-79 years and Rs.500 per month for 80 years and above [nsap_ignoaps--nsap-ignoaps-9c99d4:1:6]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+   ],
+   "context": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6",
+    "kerala_pension_old_age--faqs-948590:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You are not eligible for the Indira Gandhi National Old Age Pension Scheme (IGNOAPS).",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"You are not eligible for the Indira Gandhi National Old Age Pension Scheme (IGNOAPS).\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_ignoaps\",\"name\":\"Indira Gandhi National Old Age Pension Scheme (IGNOAPS)\",\"eligible\":false,\"reasons\":[\"Your age is 55, but the scheme requires at least 60 years of age [C1]\",\"Your family is above the poverty line, but the scheme requires living below the poverty line [C1]\"],\"benefit\":\"Rs.200 per month for 60-79 years and Rs.500 per month for 80 years and above [C2]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\",\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3079,
+   "latency_ms": 3079,
+   "latency": {
+    "retrieval_ms": 1581.6,
+    "gen_first_delta_ms": 969.0,
+    "throttled_ms": 0.0,
+    "generate_ms": 1495.4,
+    "validate_ms": 1.4,
+    "ttft_ms": 3078.9,
+    "total_ms": 3078.9,
+    "retrieval_stages": {
+     "rewrite_ms": 10.2,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.5,
+     "dense_ms": 691.3,
+     "spec_rerank_ms": 751.1,
+     "rerank_ms": 129.4
+    }
+   },
+   "live": false,
+   "tokens_in": 2318,
+   "tokens_out": 216,
+   "cost_inr": 0.023,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS) (you do not appear eligible): Your age is 55, but the scheme requires at least 60 years of age",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Your age is 55, but the scheme requires at least 60 years of age",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Your family is above the poverty line, but the scheme requires living below the poverty line",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): Rs.200 per month for 60-79 years and Rs.500 per month for 80 years and above",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2122
+   }
+  },
+  {
+   "id": "e005",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "എനിക്ക് 50 വയസ്സായി, ഭർത്താവ് മരിച്ചു, ഞങ്ങൾ ദാരിദ്ര്യരേഖയ്ക്ക് താഴെയുള്ള (BPL) കുടുംബമാണ്. ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവാ പെൻഷന് അർഹതയുണ്ടോ?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവ പെൻഷന് അർഹതയുണ്ടാകാൻ 40‑79 വയസ്സുള്ള വിധവയായിരിക്കണം, കുടുംബ വരുമാനം ഒരു ലക്ഷം രൂപയിൽ കവിയരുത്, BPL കുടുംബത്തിൽ പെടണം, പുനർവിവാഹിതയല്ല, മറ്റ് പെൻഷനുകൾ ലഭിക്കരുത്, 2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം ഉണ്ടായിരിക്കണം [kerala_pension_widow--faqs-948590:1:0] [nsap_ignwps--ignwps-0932bc:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "kerala_pension_widow",
+     "name": "Indira Gandhi National Widow Pension (Kerala implementation)",
+     "eligible": null,
+     "reasons": [
+      "കുടുംബ വരുമാനം ഒരു ലക്ഷം രൂപയിൽ കവിയരുത് [kerala_pension_widow--faqs-948590:1:0]",
+      "BPL കുടുംബത്തിൽ പെടുന്നു [nsap_ignwps--ignwps-0932bc:1:2]",
+      "പുനർവിവാഹിതയല്ല [kerala_pension_widow--faqs-948590:1:0]",
+      "മറ്റ് പെൻഷനുകൾ ലഭിക്കരുത് [kerala_pension_widow--faqs-948590:1:0]",
+      "2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം ഉണ്ടായിരിക്കണം [kerala_pension_widow--faqs-948590:1:0]"
+     ],
+     "benefit": "മാസം 300 രൂപ (80 വയസ്സിന് ശേഷം 500 രൂപ) [nsap--nsap-guidelines-oct2014-9deea1:12:0]",
+     "how_to_apply": "അപേക്ഷ Kerala Local Self Government Department-ൽ സമർപ്പിക്കുക, ആവശ്യമായ രേഖകൾ സഹിതം [kerala_pension_widow--faqs-70561d:1:0]",
+     "documents": [
+      "മരണ സർട്ടിഫിക്കറ്റ് [kerala_pension_widow--faqs-70561d:1:0]",
+      "BPL കാർഡ് [nsap_ignwps--ignwps-0932bc:1:5]",
+      "പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [kerala_pension_widow--faqs-70561d:1:0]",
+      "വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [kerala_pension_widow--faqs-70561d:1:0]",
+      "ആധാർ കാർഡ് കോപ്പി [kerala_pension_widow--faqs-70561d:1:0]",
+      "ഇലക്ട്രൽ കാർഡ് കോപ്പി [kerala_pension_widow--faqs-70561d:1:0]",
+      "റേഷൻ കാർഡ് കോപ്പി [kerala_pension_widow--faqs-70561d:1:0]",
+      "ബാങ്ക് പാസ്സ് ബുക്ക് കോപ്പി [kerala_pension_widow--faqs-70561d:1:0]",
+      "പുനർ വിവാഹിതയല്ല എന്ന് തെളിയിക്കുന്ന സാക്ഷ്യ പത്രം [kerala_pension_widow--faqs-70561d:1:0]",
+      "ഇ പി എഫ് പാസ്ബുക്ക്/അനുബന്ധ രേഖ [kerala_pension_widow--faqs-70561d:1:0]",
+      "പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [kerala_pension_widow--faqs-70561d:1:0]"
+     ],
+     "citations": [
+      "kerala_pension_widow--faqs-70561d:1:0",
+      "kerala_pension_widow--faqs-948590:1:0",
+      "nsap_ignwps--ignwps-0932bc:1:2",
+      "nsap_ignwps--ignwps-0932bc:1:5",
+      "nsap--nsap-guidelines-oct2014-9deea1:12:0"
+     ]
+    }
+   ],
+   "follow_up_question": "നിങ്ങൾ ഇപ്പോൾ 2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം ഉണ്ടോ?",
+   "citations": [
+    "kerala_pension_widow--faqs-948590:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "kerala_pension_widow--faqs-70561d:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:5",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0"
+   ],
+   "context": [
+    "kerala_pension_widow--faqs-70561d:1:0",
+    "kerala_pension_widow--faqs-948590:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:5",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "നിങ്ങൾ 40‑79 വയസ്സുള്ള വിധവയാണ് [C2]",
+     "reason": "number_mismatch",
+     "detail": "40, 79"
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവ പെൻഷന് അർഹതയുണ്ടാകാൻ 40‑79 വയസ്സുള്ള വിധവയായിരിക്കണം, കുടുംബ വരുമാനം ഒരു ലക്ഷം രൂപയിൽ കവിയരുത്, BPL കുടുംബത്തിൽ പെടണം, പുനർവിവാഹിതയല്ല, മറ്റ് പെൻഷനുകൾ ലഭിക്കരുത്, 2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം ഉണ്ടായിരിക്കണം [C2][C4]\",\"abstained\":false,\"follow_up_question\":\"നിങ്ങൾ ഇപ്പോൾ 2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം ഉണ്ടോ?\",\"schemes\":[{\"scheme_id\":\"kerala_pension_widow\",\"name\":\"Indira Gandhi National Widow Pension (Kerala implementation)\",\"eligible\":null,\"reasons\":[\"നിങ്ങൾ 40‑79 വയസ്സുള്ള വിധവയാണ് [C2]\",\"കുടുംബ വരുമാനം ഒരു ലക്ഷം രൂപയിൽ കവിയരുത് [C2]\",\"BPL കുടുംബത്തിൽ പെടുന്നു [C4]\",\"പുനർവിവാഹിതയല്ല [C2]\",\"മറ്റ് പെൻഷനുകൾ ലഭിക്കരുത് [C2]\",\"2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം ഉണ്ടായിരിക്കണം [C2]\"],\"benefit\":\"മാസം 300 രൂപ (80 വയസ്സിന് ശേഷം 500 രൂപ) [C5]\",\"how_to_apply\":\"അപേക്ഷ Kerala Local Self Government Department-ൽ സമർപ്പിക്കുക, ആവശ്യമായ രേഖകൾ സഹിതം [C1]\",\"documents\":[\"മരണ സർട്ടിഫിക്കറ്റ് [C1]\",\"BPL കാർഡ് [C3]\",\"പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [C1]\",\"വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [C1]\",\"ആധാർ കാർഡ് കോപ്പി [C1]\",\"ഇലക്ട്രൽ കാർഡ് കോപ്പി [C1]\",\"റേഷൻ കാർഡ് കോപ്പി [C1]\",\"ബാങ്ക് പാസ്സ് ബുക്ക് കോപ്പി [C1]\",\"പുനർ വിവാഹിതയല്ല എന്ന് തെളിയിക്കുന്ന സാക്ഷ്യ പത്രം [C1]\",\"ഇ പി എഫ് പാസ്ബുക്ക്/അനുബന്ധ രേഖ [C1]\",\"പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ് [C1]\"],\"citations\":[\"C1\",\"C2\",\"C3\",\"C4\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3353,
+   "latency_ms": 3818,
+   "latency": {
+    "retrieval_ms": 2170.0,
+    "gen_first_delta_ms": 1147.7,
+    "throttled_ms": 0.0,
+    "generate_ms": 1633.7,
+    "validate_ms": 14.0,
+    "ttft_ms": 3352.6,
+    "total_ms": 3818.0,
+    "retrieval_stages": {
+     "rewrite_ms": 8.8,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 10.3,
+     "dense_ms": 953.8,
+     "spec_rerank_ms": 700.6,
+     "rerank_ms": 505.0
+    }
+   },
+   "live": false,
+   "tokens_in": 2761,
+   "tokens_out": 582,
+   "cost_inr": 0.0368,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "expected": true,
+     "got": "missing",
+     "correct": false
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവ പെൻഷന് അർഹതയുണ്ടാകാൻ 40‑79 വയസ്സുള്ള വിധവയായിരിക്കണം, കുടുംബ വരുമാനം ഒരു ലക്ഷം രൂപയിൽ കവിയരുത്, BPL കുടുംബത്തിൽ പെടണം, പുനർവിവാഹിതയല്ല, മറ്റ് പെൻഷനുകൾ ലഭിക്കരുത്, 2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം ഉണ്ടായിരിക്കണം",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): കുടുംബ വരുമാനം ഒരു ലക്ഷം രൂപയിൽ കവിയരുത്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): BPL കുടുംബത്തിൽ പെടുന്നു",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): പുനർവിവാഹിതയല്ല",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): മറ്റ് പെൻഷനുകൾ ലഭിക്കരുത്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): 2 വർഷം കേരളത്തിൽ സ്ഥിരതാമസം ഉണ്ടായിരിക്കണം",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): മാസം 300 രൂപ (80 വയസ്സിന് ശേഷം 500 രൂപ)",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): അപേക്ഷ Kerala Local Self Government Department-ൽ സമർപ്പിക്കുക, ആവശ്യമായ രേഖകൾ സഹിതം",
+      "supported": false,
+      "cited_ok": false,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): മരണ സർട്ടിഫിക്കറ്റ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): BPL കാർഡ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): ആധാർ കാർഡ് കോപ്പി",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): ഇലക്ട്രൽ കാർഡ് കോപ്പി",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): റേഷൻ കാർഡ് കോപ്പി",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): ബാങ്ക് പാസ്സ് ബുക്ക് കോപ്പി",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): പുനർ വിവാഹിതയല്ല എന്ന് തെളിയിക്കുന്ന സാക്ഷ്യ പത്രം",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): ഇ പി എഫ് പാസ്ബുക്ക്/അനുബന്ധ രേഖ",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension (Kerala implementation): പ്രായം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 3608
+   }
+  },
+  {
+   "id": "e006",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I am a 35-year-old widow from a BPL household. Can I get the Indira Gandhi National Widow Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "You are not eligible for the Indira Gandhi National Widow Pension Scheme because the scheme requires the applicant to be a widow in the age group of 40-79 years. [nsap_ignwps--ignwps-0932bc:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "name": "Indira Gandhi National Widow Pension Scheme (IGNWPS)",
+     "eligible": false,
+     "reasons": [
+      "Your age 35 does not fall within the required 40-79 years [nsap_ignwps--ignwps-0932bc:1:2]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "nsap_ignwps--ignwps-0932bc:1:2"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_ignwps--ignwps-0932bc:1:2"
+   ],
+   "context": [
+    "nsap_ignwps--ignwps-0932bc:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "kerala_pension_widow--faqs-948590:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:6",
+    "kerala_pension_widow--faqs-70561d:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You are not eligible for the Indira Gandhi National Widow Pension Scheme because the scheme requires the applicant to be a widow in the age group of 40-79 years [C2].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_ignwps\",\"name\":\"Indira Gandhi National Widow Pension Scheme (IGNWPS)\",\"eligible\":false,\"reasons\":[\"Your age 35 does not fall within the required 40-79 years [C2]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2693,
+   "latency_ms": 2840,
+   "latency": {
+    "retrieval_ms": 1691.0,
+    "gen_first_delta_ms": 922.6,
+    "throttled_ms": 0.0,
+    "generate_ms": 1147.6,
+    "validate_ms": 0.8,
+    "ttft_ms": 2692.9,
+    "total_ms": 2839.8,
+    "retrieval_stages": {
+     "rewrite_ms": 8.3,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.1,
+     "dense_ms": 714.5,
+     "spec_rerank_ms": 743.2,
+     "rerank_ms": 223.9
+    }
+   },
+   "live": false,
+   "tokens_in": 2262,
+   "tokens_out": 171,
+   "cost_inr": 0.0213,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "You are not eligible for the Indira Gandhi National Widow Pension Scheme because the scheme requires the applicant to be a widow in the age group of 40-79 years.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Your age 35 does not fall within the required 40-79 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1806
+   }
+  },
+  {
+   "id": "e007",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "My husband passed away last year. Can I get the Indira Gandhi National Widow Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Indira Gandhi National Widow Pension Scheme (IGNWPS) (more information is needed): The applicant must be a widow in the age group of 40-79 years [nsap_ignwps--ignwps-0932bc:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "name": "Indira Gandhi National Widow Pension Scheme (IGNWPS)",
+     "eligible": null,
+     "reasons": [
+      "The applicant must be a widow in the age group of 40-79 years [nsap_ignwps--ignwps-0932bc:1:2]",
+      "The applicant should belong to a household living below the poverty line according to the criteria prescribed by the Govt. of India [nsap_ignwps--ignwps-0932bc:1:2]"
+     ],
+     "benefit": "Non‑contributory pension for widows of poor families [nsap_ignwps--ignwps-0932bc:1:0]",
+     "how_to_apply": "Apply online via UMANG or submit required documents to the Pension Disbursement Authority [nsap_ignwps--ignwps-0932bc:1:6]",
+     "documents": [
+      "Death Certificate of husband – With the name of the surviving wife (widow) [nsap_ignwps--ignwps-0932bc:1:5]",
+      "BPL Card [nsap_ignwps--ignwps-0932bc:1:5]",
+      "Age Proof – birth certificate, school certificate, ration card or EPIC [nsap_ignwps--ignwps-0932bc:1:5]"
+     ],
+     "citations": [
+      "nsap_ignwps--ignwps-0932bc:1:5",
+      "nsap_ignwps--ignwps-0932bc:1:2",
+      "nsap_ignwps--ignwps-0932bc:1:0",
+      "nsap_ignwps--ignwps-0932bc:1:6"
+     ]
+    }
+   ],
+   "follow_up_question": "What is your age and are you living below the poverty line?",
+   "citations": [
+    "nsap_ignwps--ignwps-0932bc:1:5",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap_ignwps--ignwps-0932bc:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:6"
+   ],
+   "context": [
+    "nsap_ignwps--ignwps-0932bc:1:5",
+    "kerala_pension_widow--faqs-70561d:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap_ignwps--ignwps-0932bc:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You may be eligible for the Indira Gandhi National Widow Pension, but we need more information to confirm.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"You may be eligible for the Indira Gandhi National Widow Pension, but we need more information to confirm.\",\"abstained\":false,\"follow_up_question\":\"What is your age and are you living below the poverty line?\",\"schemes\":[{\"scheme_id\":\"nsap_ignwps\",\"name\":\"Indira Gandhi National Widow Pension Scheme (IGNWPS)\",\"eligible\":null,\"reasons\":[\"The applicant must be a widow in the age group of 40-79 years [C3]\",\"The applicant should belong to a household living below the poverty line according to the criteria prescribed by the Govt. of India [C3]\"],\"benefit\":\"Non‑contributory pension for widows of poor families [C4]\",\"how_to_apply\":\"Apply online via UMANG or submit required documents to the Pension Disbursement Authority [C5]\",\"documents\":[\"Death Certificate of husband – With the name of the surviving wife (widow) [C1]\",\"BPL Card [C1]\",\"Age Proof – birth certificate, school certificate, ration card or EPIC [C1]\"],\"citations\":[\"C1\",\"C3\",\"C4\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 1731,
+   "latency_ms": 1731,
+   "latency": {
+    "retrieval_ms": 494.5,
+    "gen_first_delta_ms": 914.0,
+    "throttled_ms": 0.0,
+    "generate_ms": 1233.7,
+    "validate_ms": 2.3,
+    "ttft_ms": 1730.7,
+    "total_ms": 1730.7,
+    "retrieval_stages": {
+     "rewrite_ms": 11.9,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 7.1,
+     "dense_ms": 486.9,
+     "spec_rerank_ms": 0.1,
+     "rerank_ms": 0.1
+    }
+   },
+   "live": false,
+   "tokens_in": 1618,
+   "tokens_out": 282,
+   "cost_inr": 0.0199,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "expected": null,
+     "got": null,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS) (more information is needed): The applicant must be a widow in the age group of 40-79 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): The applicant must be a widow in the age group of 40-79 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): The applicant should belong to a household living below the poverty line according to the criteria prescribed by the Govt. of India",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Non‑contributory pension for widows of poor families",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Apply online via UMANG or submit required documents to the Pension Disbursement Authority",
+      "supported": false,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Death Certificate of husband – With the name of the surviving wife (widow)",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): BPL Card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Age Proof – birth certificate, school certificate, ration card or EPIC",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1804
+   }
+  },
+  {
+   "id": "e008",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "My brother is 30, an Indian resident with 85% disability, and our family is BPL. Is he eligible for the Indira Gandhi National Disability Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Indira Gandhi National Disability Pension Scheme (IGNDPS) (you appear eligible): Age 30 is above 18 years [nsap_igndps--igndps-f97cb2:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_igndps",
+     "name": "Indira Gandhi National Disability Pension Scheme (IGNDPS)",
+     "eligible": true,
+     "reasons": [
+      "Age 30 is above 18 years [nsap_igndps--igndps-f97cb2:1:2]",
+      "Disability 85% is more than 80% [nsap_igndps--igndps-f97cb2:1:2]",
+      "BPL status is required and stated [nsap_igndps--igndps-f97cb2:1:2]",
+      "Resident of India is implied by the question [nsap_igndps--igndps-f97cb2:1:2]"
+     ],
+     "benefit": "A pension of Rs.300/- per month for ages 18-79 [nsap_igndps--igndps-f97cb2:1:1]",
+     "how_to_apply": null,
+     "documents": [
+      "BPL Card [nsap_igndps--igndps-f97cb2:1:4]",
+      "Aadhaar card [nsap_igndps--igndps-f97cb2:1:4]",
+      "Age Proof - birth certificate or school certificate [nsap_igndps--igndps-f97cb2:1:4]",
+      "Disability certificate (80% and More) issued from Chief Medical Officer, Community Health Centre or Primary Health Centre [nsap_igndps--igndps-f97cb2:1:4]",
+      "Passport Size Photographs [nsap_igndps--igndps-f97cb2:1:4]"
+     ],
+     "citations": [
+      "nsap_igndps--igndps-f97cb2:1:2",
+      "nsap_igndps--igndps-f97cb2:1:4",
+      "nsap_igndps--igndps-f97cb2:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_igndps--igndps-f97cb2:1:2",
+    "nsap_igndps--igndps-f97cb2:1:4",
+    "nsap_igndps--igndps-f97cb2:1:1"
+   ],
+   "context": [
+    "nsap_igndps--igndps-f97cb2:1:2",
+    "nsap_igndps--igndps-f97cb2:1:0",
+    "nsap_igndps--igndps-f97cb2:1:4",
+    "nsap_igndps--igndps-f97cb2:1:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "Your brother is eligible for the Indira Gandhi National Disability Pension Scheme (IGNDPS).",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"Your brother is eligible for the Indira Gandhi National Disability Pension Scheme (IGNDPS).\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_igndps\",\"name\":\"Indira Gandhi National Disability Pension Scheme (IGNDPS)\",\"eligible\":true,\"reasons\":[\"Age 30 is above 18 years [C1]\",\"Disability 85% is more than 80% [C1]\",\"BPL status is required and stated [C1]\",\"Resident of India is implied by the question [C1]\"],\"benefit\":\"A pension of Rs.300/- per month for ages 18-79 [C4]\",\"how_to_apply\":null,\"documents\":[\"BPL Card [C3]\",\"Aadhaar card [C3]\",\"Age Proof - birth certificate or school certificate [C3]\",\"Disability certificate (80% and More) issued from Chief Medical Officer, Community Health Centre or Primary Health Centre [C3]\",\"Passport Size Photographs [C3]\"],\"citations\":[\"C1\",\"C3\",\"C4\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3253,
+   "latency_ms": 3253,
+   "latency": {
+    "retrieval_ms": 1685.5,
+    "gen_first_delta_ms": 1013.2,
+    "throttled_ms": 0.0,
+    "generate_ms": 1563.4,
+    "validate_ms": 3.5,
+    "ttft_ms": 3252.7,
+    "total_ms": 3252.8,
+    "retrieval_stages": {
+     "rewrite_ms": 9.6,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.2,
+     "dense_ms": 869.6,
+     "spec_rerank_ms": 714.1,
+     "rerank_ms": 92.3
+    }
+   },
+   "live": false,
+   "tokens_in": 1687,
+   "tokens_out": 270,
+   "cost_inr": 0.02,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_igndps",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS) (you appear eligible): Age 30 is above 18 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Age 30 is above 18 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Disability 85% is more than 80%",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): BPL status is required and stated",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Resident of India is implied by the question",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): A pension of Rs.300/- per month for ages 18-79",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): BPL Card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Aadhaar card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Age Proof - birth certificate or school certificate",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Disability certificate (80% and More) issued from Chief Medical Officer, Community Health Centre or Primary Health Centre",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Passport Size Photographs",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2029
+   }
+  },
+  {
+   "id": "e009",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "enikku 60% disability und, vayassu 40, BPL card und. Indira Gandhi disability pension kittumo?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "ഇന്ദിരാ ഗാന്ധി ദേശീയ ഡിസബിലിറ്റി പെൻഷൻ സ്കീമിന് (IGNDPS) നിങ്ങൾക്ക് അർഹതയില്ല, കാരണം നിങ്ങളുടെ ഭിന്നശേഷി 80%‑ൽ കൂടുതലായിരിക്കണം [nsap_igndps--igndps-f97cb2:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_igndps",
+     "name": "Indira Gandhi National Disability Pension Scheme (IGNDPS)",
+     "eligible": false,
+     "reasons": [
+      "ഭിന്നശേഷി 80%‑ൽ കൂടുതലായിരിക്കണം [nsap_igndps--igndps-f97cb2:1:2]"
+     ],
+     "benefit": "Rs.300/- per month for 18‑79 years, Rs.500/- per month for 80+ years [nsap_igndps--igndps-f97cb2:1:1]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "nsap_igndps--igndps-f97cb2:1:2",
+      "nsap_igndps--igndps-f97cb2:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_igndps--igndps-f97cb2:1:2",
+    "nsap_igndps--igndps-f97cb2:1:1"
+   ],
+   "context": [
+    "nsap_igndps--igndps-f97cb2:1:4",
+    "nsap_igndps--igndps-f97cb2:1:0",
+    "nsap_igndps--igndps-f97cb2:1:2",
+    "nsap_igndps--igndps-f97cb2:1:1",
+    "kerala_pension_disability--faqs-70561d:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "BPL Card",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "Aadhaar card",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "Age Proof",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "Disability certificate (80% and more)",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "Passport Size Photographs",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"ഇന്ദിരാ ഗാന്ധി ദേശീയ ഡിസബിലിറ്റി പെൻഷൻ സ്കീമിന് (IGNDPS) നിങ്ങൾക്ക് അർഹതയില്ല, കാരണം നിങ്ങളുടെ ഭിന്നശേഷി 80%‑ൽ കൂടുതലായിരിക്കണം [C3]\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_igndps\",\"name\":\"Indira Gandhi National Disability Pension Scheme (IGNDPS)\",\"eligible\":false,\"reasons\":[\"ഭിന്നശേഷി 80%‑ൽ കൂടുതലായിരിക്കണം [C3]\"],\"benefit\":\"Rs.300/- per month for 18‑79 years, Rs.500/- per month for 80+ years [C4]\",\"how_to_apply\":null,\"documents\":[\"BPL Card\",\"Aadhaar card\",\"Age Proof\",\"Disability certificate (80% and more)\",\"Passport Size Photographs\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2459,
+   "latency_ms": 2637,
+   "latency": {
+    "retrieval_ms": 1460.2,
+    "gen_first_delta_ms": 914.8,
+    "throttled_ms": 0.0,
+    "generate_ms": 1175.5,
+    "validate_ms": 1.0,
+    "ttft_ms": 2458.9,
+    "total_ms": 2636.8,
+    "retrieval_stages": {
+     "rewrite_ms": 7.5,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.9,
+     "dense_ms": 643.4,
+     "spec_rerank_ms": 715.9,
+     "rerank_ms": 90.7
+    }
+   },
+   "live": false,
+   "tokens_in": 1818,
+   "tokens_out": 267,
+   "cost_inr": 0.0209,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_igndps",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "ഇന്ദിരാ ഗാന്ധി ദേശീയ ഡിസബിലിറ്റി പെൻഷൻ സ്കീമിന് (IGNDPS) നിങ്ങൾക്ക് അർഹതയില്ല, കാരണം നിങ്ങളുടെ ഭിന്നശേഷി 80%‑ൽ കൂടുതലായിരിക്കണം",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): ഭിന്നശേഷി 80%‑ൽ കൂടുതലായിരിക്കണം",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Rs.300/- per month for 18‑79 years, Rs.500/- per month for 80+ years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1407
+   }
+  },
+  {
+   "id": "e010",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I'm a 30-year-old small farmer with 1 hectare of cultivable land, in the land records in my name since 2015. I have Aadhaar and a savings bank account. Can I join PM Kisan Maandhan Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY) (you appear eligible): Your age 30 is between 18 and 40 years [pm_kmy--pmkmdy-44b6ea:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "pm_kmy",
+     "name": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)",
+     "eligible": true,
+     "reasons": [
+      "Your age 30 is between 18 and 40 years [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "Your landholding 1 hectare is up to 2 hectares [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "Your name appears in land records as on 01.08.2019 [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "You possess an Aadhaar card [pm_kmy--pmkmdy-44b6ea:1:2]",
+      "You have a savings bank account [pm_kmy--pmkmdy-44b6ea:1:2]"
+     ],
+     "benefit": "Guaranteed monthly pension of ₹3,000 after age 60, with 50% family pension for spouse if you die before pension age [pm_kmy--pmkmdy-44b6ea:1:0]",
+     "how_to_apply": "Visit a Common Service Centre, provide Aadhaar and bank details, pay initial contribution in cash, complete online registration, and receive a Kisan Pension Account Number [pm_kmy--pmkmdy-44b6ea:1:4]",
+     "documents": [
+      "Aadhaar Card [pm_kmy--pmkmdy-44b6ea:1:5]",
+      "Savings Bank Account Number with IFSC Code, Bank Passbook or cheque leaf/book or copy of bank statement [pm_kmy--pmkmdy-44b6ea:1:5]"
+     ],
+     "citations": [
+      "pm_kmy--pmkmdy-44b6ea:1:2",
+      "pm_kmy--pmkmdy-44b6ea:1:0",
+      "pm_kmy--pmkmdy-44b6ea:1:4",
+      "pm_kmy--pmkmdy-44b6ea:1:5"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pm_kmy--pmkmdy-44b6ea:1:2",
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:4",
+    "pm_kmy--pmkmdy-44b6ea:1:5"
+   ],
+   "context": [
+    "pm_kmy--pmkmdy-44b6ea:1:2",
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:6",
+    "pm_kmy--pmkmdy-44b6ea:1:4",
+    "pm_kmy--pmkmdy-44b6ea:1:5"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You are eligible to join PM‑KMY.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "The scheme offers a guaranteed monthly pension of ₹3,000 after age 60, and the government matches your contribution.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"You are eligible to join PM‑KMY. The scheme offers a guaranteed monthly pension of ₹3,000 after age 60, and the government matches your contribution.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pm_kmy\",\"name\":\"Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)\",\"eligible\":true,\"reasons\":[\"Your age 30 is between 18 and 40 years [C1]\",\"Your landholding 1 hectare is up to 2 hectares [C1]\",\"Your name appears in land records as on 01.08.2019 [C1]\",\"You possess an Aadhaar card [C1]\",\"You have a savings bank account [C1]\"],\"benefit\":\"Guaranteed monthly pension of ₹3,000 after age 60, with 50% family pension for spouse if you die before pension age [C2]\",\"how_to_apply\":\"Visit a Common Service Centre, provide Aadhaar and bank details, pay initial contribution in cash, complete online registration, and receive a Kisan Pension Account Number [C4]\",\"documents\":[\"Aadhaar Card [C5]\",\"Savings Bank Account Number with IFSC Code, Bank Passbook or cheque leaf/book or copy of bank statement [C5]\"],\"citations\":[\"C1\",\"C2\",\"C4\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3481,
+   "latency_ms": 3481,
+   "latency": {
+    "retrieval_ms": 2167.7,
+    "gen_first_delta_ms": 975.2,
+    "throttled_ms": 0.0,
+    "generate_ms": 1309.4,
+    "validate_ms": 3.9,
+    "ttft_ms": 3481.3,
+    "total_ms": 3481.3,
+    "retrieval_stages": {
+     "rewrite_ms": 92.7,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 19.0,
+     "dense_ms": 1189.2,
+     "spec_rerank_ms": 726.2,
+     "rerank_ms": 233.0
+    }
+   },
+   "live": false,
+   "tokens_in": 2080,
+   "tokens_out": 408,
+   "cost_inr": 0.0269,
+   "eligibility": [
+    {
+     "scheme_id": "pm_kmy",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY) (you appear eligible): Your age 30 is between 18 and 40 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Your age 30 is between 18 and 40 years",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Your landholding 1 hectare is up to 2 hectares",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Your name appears in land records as on 01.08.2019",
+      "supported": false,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): You possess an Aadhaar card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): You have a savings bank account",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Guaranteed monthly pension of ₹3,000 after age 60, with 50% family pension for spouse if you die before pension age",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Visit a Common Service Centre, provide Aadhaar and bank details, pay initial contribution in cash, complete online registration, and receive a Kisan Pension Account Number",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Aadhaar Card",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Savings Bank Account Number with IFSC Code, Bank Passbook or cheque leaf/book or copy of bank statement",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2435
+   }
+  },
+  {
+   "id": "e011",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I am a 52-year-old marginal farmer with half a hectare. Can I join the PM Kisan Maandhan pension scheme?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "You cannot join PM Kisan Maandhan pension scheme because the scheme is only for farmers aged 18 to 40 years. [pm_kmy--pmkmdy-44b6ea:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "pm_kmy",
+     "name": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)",
+     "eligible": false,
+     "reasons": [
+      "Your age 52 years is outside the 18-40 years eligibility range [pm_kmy--pmkmdy-44b6ea:1:2]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pm_kmy--pmkmdy-44b6ea:1:2"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pm_kmy--pmkmdy-44b6ea:1:2"
+   ],
+   "context": [
+    "pm_kmy--pmkmdy-44b6ea:1:0",
+    "pm_kmy--pmkmdy-44b6ea:1:6",
+    "pm_kmy--pmkmdy-44b6ea:1:2",
+    "pm_kmy--pmkmdy-44b6ea:1:3",
+    "pm_kisan--pm-kisan-488a46:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You cannot join PM Kisan Maandhan pension scheme because the scheme is only for farmers aged 18 to 40 years [C3].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pm_kmy\",\"name\":\"Pradhan Mantri Kisan Maandhan Yojana (PM-KMY)\",\"eligible\":false,\"reasons\":[\"Your age 52 years is outside the 18-40 years eligibility range [C3]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C3\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3990,
+   "latency_ms": 4086,
+   "latency": {
+    "retrieval_ms": 1638.8,
+    "gen_first_delta_ms": 2337.9,
+    "throttled_ms": 0.0,
+    "generate_ms": 2445.7,
+    "validate_ms": 0.8,
+    "ttft_ms": 3990.4,
+    "total_ms": 4085.6,
+    "retrieval_stages": {
+     "rewrite_ms": 8.6,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.1,
+     "dense_ms": 796.4,
+     "spec_rerank_ms": 709.9,
+     "rerank_ms": 123.0
+    }
+   },
+   "live": false,
+   "tokens_in": 2417,
+   "tokens_out": 169,
+   "cost_inr": 0.0224,
+   "eligibility": [
+    {
+     "scheme_id": "pm_kmy",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "You cannot join PM Kisan Maandhan pension scheme because the scheme is only for farmers aged 18 to 40 years.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Maandhan Yojana (PM-KMY): Your age 52 years is outside the 18-40 years eligibility range",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1907
+   }
+  },
+  {
+   "id": "e012",
+   "lang": "ml",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "ഞാൻ 25 വയസ്സുള്ള സ്ത്രീയാണ്, ഞങ്ങളുടേത് ദരിദ്ര കുടുംബമാണ്, വീട്ടിൽ ഒരു LPG കണക്ഷനും ഇല്ല. ഉജ്ജ്വല യോജന വഴി ഗ്യാസ് കണക്ഷൻ കിട്ടുമോ?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "PMUY‑ല്‍ ഒരു മുതിര്‍ന്ന സ്ത്രീ ദരിദ്ര കുടുംബത്തില്‍ നിന്നുള്ളതും, വീട്ടില്‍ LPG കണക്ഷന്‍ ഇല്ലാത്തതുമാണ് അര്‍ഹതാ മാനദണ്ഡം. [pmuy--pmuy-6c9914:1:2] അതിനാല്‍ നിങ്ങള്‍ക്ക് 14.2 kg ക്യിലിനര്‍ അല്ലെങ്കില്‍ 5 kg ക്യിലിനര്‍ ലഭിക്കും, കൂടാതെ ആദ്യ LPG റിഫില്‍ മറ്റും സ്റ്റോവും സൗജന്യമായി ലഭിക്കും. [pmuy--pmuy-6c9914:1:1]",
+   "schemes": [
+    {
+     "scheme_id": "pmuy",
+     "name": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+     "eligible": true,
+     "reasons": [
+      "നിങ്ങള്‍ 25 വയസ്സുള്ള സ്ത്രീയും, ദരിദ്ര കുടുംബത്തില്‍ നിന്നുമാണ്, വീട്ടില്‍ LPG കണക്ഷന്‍ ഇല്ലാത്തതുമൂലം PMUY‑ല്‍ അര്‍ഹതയുണ്ട് [pmuy--pmuy-6c9914:1:2]"
+     ],
+     "benefit": "14.2 kg ക്യിലിനര്‍ അല്ലെങ്കില്‍ 5 kg ക്യിലിനര്‍ ലഭിക്കും, കൂടാതെ ആദ്യ LPG റിഫില്‍ മറ്റും സ്റ്റോവും സൗജന്യമായി ലഭിക്കും [pmuy--pmuy-6c9914:1:1]",
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pmuy--pmuy-6c9914:1:2",
+      "pmuy--pmuy-6c9914:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pmuy--pmuy-6c9914:1:2",
+    "pmuy--pmuy-6c9914:1:1"
+   ],
+   "context": [
+    "pmuy--pmuy-6c9914:1:2",
+    "pmuy--pmuy-6c9914:1:6",
+    "pmuy--pmuy-6c9914:1:0",
+    "pmuy--about-b2e352:1:0",
+    "pmuy--pmuy-6c9914:1:1"
+   ],
+   "context_hit": false,
+   "dropped": [
+    {
+     "text": "നിങ്ങള്‍ 25 വയസ്സുള്ള സ്ത്രീയാണെന്നും, ദരിദ്ര കുടുംബത്തില്‍ നിന്നുമാണെന്നും, വീട്ടില്‍ LPG കണക്ഷന്‍ ഇല്ലെന്നും പറഞ്ഞതനുസരിച്ച്, Pradhan Mantri Ujjwala Yojana (PMUY)‑ല്‍ നിങ്ങള്‍ അര്‍ഹതയുള്ളവളാണ്.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"നിങ്ങള്‍ 25 വയസ്സുള്ള സ്ത്രീയാണെന്നും, ദരിദ്ര കുടുംബത്തില്‍ നിന്നുമാണെന്നും, വീട്ടില്‍ LPG കണക്ഷന്‍ ഇല്ലെന്നും പറഞ്ഞതനുസരിച്ച്, Pradhan Mantri Ujjwala Yojana (PMUY)‑ല്‍ നിങ്ങള്‍ അര്‍ഹതയുള്ളവളാണ്. PMUY‑ല്‍ ഒരു മുതിര്‍ന്ന സ്ത്രീ ദരിദ്ര കുടുംബത്തില്‍ നിന്നുള്ളതും, വീട്ടില്‍ LPG കണക്ഷന്‍ ഇല്ലാത്തതുമാണ് അര്‍ഹതാ മാനദണ്ഡം [C1]. അതിനാല്‍ നിങ്ങള്‍ക്ക് 14.2 kg ക്യിലിനര്‍ അല്ലെങ്കില്‍ 5 kg ക്യിലിനര്‍ ലഭിക്കും, കൂടാതെ ആദ്യ LPG റിഫില്‍ മറ്റും സ്റ്റോവും സൗജന്യമായി ലഭിക്കും [C5].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pmuy\",\"name\":\"Pradhan Mantri Ujjwala Yojana (PMUY)\",\"eligible\":true,\"reasons\":[\"നിങ്ങള്‍ 25 വയസ്സുള്ള സ്ത്രീയും, ദരിദ്ര കുടുംബത്തില്‍ നിന്നുമാണ്, വീട്ടില്‍ LPG കണക്ഷന്‍ ഇല്ലാത്തതുമൂലം PMUY‑ല്‍ അര്‍ഹതയുണ്ട് [C1]\"],\"benefit\":\"14.2 kg ക്യിലിനര്‍ അല്ലെങ്കില്‍ 5 kg ക്യിലിനര്‍ ലഭിക്കും, കൂടാതെ ആദ്യ LPG റിഫില്‍ മറ്റും സ്റ്റോവും സൗജന്യമായി ലഭിക്കും [C5]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2699,
+   "latency_ms": 2983,
+   "latency": {
+    "retrieval_ms": 1766.9,
+    "gen_first_delta_ms": 757.0,
+    "throttled_ms": 0.0,
+    "generate_ms": 1213.7,
+    "validate_ms": 2.0,
+    "ttft_ms": 2698.7,
+    "total_ms": 2983.0,
+    "retrieval_stages": {
+     "rewrite_ms": 8.9,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 11.6,
+     "dense_ms": 807.1,
+     "spec_rerank_ms": 729.5,
+     "rerank_ms": 218.4
+    }
+   },
+   "live": false,
+   "tokens_in": 2617,
+   "tokens_out": 392,
+   "cost_inr": 0.0303,
+   "eligibility": [
+    {
+     "scheme_id": "pmuy",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "PMUY‑ല്‍ ഒരു മുതിര്‍ന്ന സ്ത്രീ ദരിദ്ര കുടുംബത്തില്‍ നിന്നുള്ളതും, വീട്ടില്‍ LPG കണക്ഷന്‍ ഇല്ലാത്തതുമാണ് അര്‍ഹതാ മാനദണ്ഡം.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "അതിനാല്‍ നിങ്ങള്‍ക്ക് 14.2 kg ക്യിലിനര്‍ അല്ലെങ്കില്‍ 5 kg ക്യിലിനര്‍ ലഭിക്കും, കൂടാതെ ആദ്യ LPG റിഫില്‍ മറ്റും സ്റ്റോവും സൗജന്യമായി ലഭിക്കും.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): നിങ്ങള്‍ 25 വയസ്സുള്ള സ്ത്രീയും, ദരിദ്ര കുടുംബത്തില്‍ നിന്നുമാണ്, വീട്ടില്‍ LPG കണക്ഷന്‍ ഇല്ലാത്തതുമൂലം PMUY‑ല്‍ അര്‍ഹതയുണ്ട്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": false,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): 14.2 kg ക്യിലിനര്‍ അല്ലെങ്കില്‍ 5 kg ക്യിലിനര്‍ ലഭിക്കും, കൂടാതെ ആദ്യ LPG റിഫില്‍ മറ്റും സ്റ്റോവും സൗജന്യമായി ലഭിക്കും",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2473
+   }
+  },
+  {
+   "id": "e013",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I'm a 30-year-old man from a poor family and we have no LPG connection. Can I apply for PM Ujjwala Yojana?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "You cannot apply for PM Ujjwala Yojana because the scheme is only for adult women. [pmuy--ujjwala2-70400f:1:1] [pmuy--about-b2e352:1:1]",
+   "schemes": [
+    {
+     "scheme_id": "pmuy",
+     "name": "Pradhan Mantri Ujjwala Yojana (PMUY)",
+     "eligible": false,
+     "reasons": [
+      "The applicant must be a woman who has attained 18 years of age. [pmuy--ujjwala2-70400f:1:1]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pmuy--ujjwala2-70400f:1:1"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pmuy--ujjwala2-70400f:1:1",
+    "pmuy--about-b2e352:1:1"
+   ],
+   "context": [
+    "pmuy--pmuy-6c9914:1:2",
+    "pmuy--ujjwala2-70400f:1:1",
+    "pmuy--about-b2e352:1:1",
+    "pmuy--about-b2e352:1:0",
+    "pmuy--pmuy-6c9914:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"You cannot apply for PM Ujjwala Yojana because the scheme is only for adult women [C2][C3].\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pmuy\",\"name\":\"Pradhan Mantri Ujjwala Yojana (PMUY)\",\"eligible\":false,\"reasons\":[\"The applicant must be a woman who has attained 18 years of age. [C2]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C2\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2479,
+   "latency_ms": 2610,
+   "latency": {
+    "retrieval_ms": 1534.5,
+    "gen_first_delta_ms": 909.3,
+    "throttled_ms": 0.0,
+    "generate_ms": 1074.4,
+    "validate_ms": 1.2,
+    "ttft_ms": 2478.7,
+    "total_ms": 2610.3,
+    "retrieval_stages": {
+     "rewrite_ms": 10.1,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.9,
+     "dense_ms": 538.4,
+     "spec_rerank_ms": 771.9,
+     "rerank_ms": 214.0
+    }
+   },
+   "live": false,
+   "tokens_in": 2034,
+   "tokens_out": 153,
+   "cost_inr": 0.0192,
+   "eligibility": [
+    {
+     "scheme_id": "pmuy",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "You cannot apply for PM Ujjwala Yojana because the scheme is only for adult women.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Ujjwala Yojana (PMUY): The applicant must be a woman who has attained 18 years of age.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1732
+   }
+  },
+  {
+   "id": "e014",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I'm a 32-year-old self-employed craftsperson working with hand tools, and I took a PMEGP loan two years ago. Can I register under PM Vishwakarma?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "PM Vishwakarma (you do not appear eligible): You have availed a PMEGP loan in the past 5 years, which disqualifies you from the scheme [pm_vishwakarma--pmv-378966:1:2]",
+   "schemes": [
+    {
+     "scheme_id": "pm_vishwakarma",
+     "name": "PM Vishwakarma",
+     "eligible": false,
+     "reasons": [
+      "You have availed a PMEGP loan in the past 5 years, which disqualifies you from the scheme [pm_vishwakarma--pmv-378966:1:2]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pm_vishwakarma--pmv-378966:1:2"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pm_vishwakarma--pmv-378966:1:2"
+   ],
+   "context": [
+    "pm_vishwakarma--pmv-378966:1:2",
+    "pm_vishwakarma--pmv-378966:1:6",
+    "pm_vishwakarma--pmv-378966:1:0",
+    "pm_vishwakarma--pmv-378966:1:4",
+    "pmegp--pmegp-7e1c48:1:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You cannot register under PM Vishwakarma because you have already availed a PMEGP loan within the past 5 years, which disqualifies you from the scheme.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"You cannot register under PM Vishwakarma because you have already availed a PMEGP loan within the past 5 years, which disqualifies you from the scheme.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pm_vishwakarma\",\"name\":\"PM Vishwakarma\",\"eligible\":false,\"reasons\":[\"You have availed a PMEGP loan in the past 5 years, which disqualifies you from the scheme [C1]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3181,
+   "latency_ms": 3181,
+   "latency": {
+    "retrieval_ms": 1923.4,
+    "gen_first_delta_ms": 987.0,
+    "throttled_ms": 0.0,
+    "generate_ms": 1256.7,
+    "validate_ms": 0.9,
+    "ttft_ms": 3181.3,
+    "total_ms": 3181.3,
+    "retrieval_stages": {
+     "rewrite_ms": 93.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 11.2,
+     "dense_ms": 1082.0,
+     "spec_rerank_ms": 717.5,
+     "rerank_ms": 112.3
+    }
+   },
+   "live": false,
+   "tokens_in": 2670,
+   "tokens_out": 189,
+   "cost_inr": 0.0248,
+   "eligibility": [
+    {
+     "scheme_id": "pm_vishwakarma",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "PM Vishwakarma (you do not appear eligible): You have availed a PMEGP loan in the past 5 years, which disqualifies you from the scheme",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "PM Vishwakarma: You have availed a PMEGP loan in the past 5 years, which disqualifies you from the scheme",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2074
+   }
+  },
+  {
+   "id": "e015",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "I own farmland in my name, but I paid income tax in the last assessment year. Am I eligible for PM-KISAN?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Pradhan Mantri Kisan Samman Nidhi (PM‑KISAN) (you do not appear eligible): You paid income tax in the last assessment year, which excludes you from the scheme. [pm_kisan--pm-kisan-488a46:1:3]",
+   "schemes": [
+    {
+     "scheme_id": "pm_kisan",
+     "name": "Pradhan Mantri Kisan Samman Nidhi (PM‑KISAN)",
+     "eligible": false,
+     "reasons": [
+      "You paid income tax in the last assessment year, which excludes you from the scheme. [pm_kisan--pm-kisan-488a46:1:3]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "pm_kisan--pm-kisan-488a46:1:3"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "pm_kisan--pm-kisan-488a46:1:3"
+   ],
+   "context": [
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:3:0",
+    "pm_kisan--pm-kisan-488a46:1:6",
+    "pm_kisan--revisedfaq-666f07:4:0",
+    "pm_kisan--pm-kisan-488a46:1:3",
+    "pm_kisan--revisedfaq-666f07:2:0"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You are not eligible for PM‑KISAN because you paid income tax in the last assessment year, which is an exclusion criterion.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"You are not eligible for PM‑KISAN because you paid income tax in the last assessment year, which is an exclusion criterion.\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"pm_kisan\",\"name\":\"Pradhan Mantri Kisan Samman Nidhi (PM‑KISAN)\",\"eligible\":false,\"reasons\":[\"You paid income tax in the last assessment year, which excludes you from the scheme. [C4]\"],\"benefit\":null,\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C4\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 2984,
+   "latency_ms": 2984,
+   "latency": {
+    "retrieval_ms": 1309.1,
+    "gen_first_delta_ms": 1434.7,
+    "throttled_ms": 0.0,
+    "generate_ms": 1673.2,
+    "validate_ms": 0.9,
+    "ttft_ms": 2983.6,
+    "total_ms": 2983.6,
+    "retrieval_stages": {
+     "rewrite_ms": 10.5,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 9.7,
+     "dense_ms": 575.3,
+     "spec_rerank_ms": 723.9,
+     "rerank_ms": 0.0
+    }
+   },
+   "live": false,
+   "tokens_in": 3029,
+   "tokens_out": 166,
+   "cost_inr": 0.0267,
+   "eligibility": [
+    {
+     "scheme_id": "pm_kisan",
+     "expected": false,
+     "got": false,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Pradhan Mantri Kisan Samman Nidhi (PM‑KISAN) (you do not appear eligible): You paid income tax in the last assessment year, which excludes you from the scheme.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Pradhan Mantri Kisan Samman Nidhi (PM‑KISAN): You paid income tax in the last assessment year, which excludes you from the scheme.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 2215
+   }
+  }
+ ]
+}

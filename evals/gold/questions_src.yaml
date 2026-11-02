@@ -1,0 +1,1528 @@
+# Gold questions (source). `python evals/build_gold.py` resolves each question's
+# `evidence` strings to gold (doc_id, page) pairs and writes questions.jsonl.
+#
+#   id        unique
+#   lang      ml | en | manglish  (Manglish = Malayalam in Latin script)
+#   type      answerable | no_answer
+#   schemes   scheme_ids whose documents may hold the answer (limits the evidence search)
+#   evidence  verbatim snippets (case/space-insensitive) from the source pages that
+#             support the answer; every page containing ANY snippet is a gold page.
+#   answer    short reference answer (for Phase 3/4 checks), optional
+#
+# Written 2026-10-12 against the Phase 1c corpus by the same agent that built the
+# retriever: treat as a starting point and review before using results as a gate.
+
+questions:
+- id: q001
+  lang: en
+  type: answerable
+  schemes:
+  - pm_kisan
+  question: I'm a small farmer with my own land. How much will the central government put in my bank account every year, and in how many parts?
+  evidence:
+  - Rs. 6000 per annum per family payable in three equal installments
+  answer: Rs 6000 a year in three instalments of Rs 2000
+  question_orig: How much money does a farmer family get per year under PM-KISAN and in how many instalments?
+- id: q002
+  lang: ml
+  type: answerable
+  schemes:
+  - pm_kisan
+  question: പിഎം കിസാൻ പദ്ധതിയിൽ ഒരു കുടുംബത്തിന് വർഷം എത്ര രൂപ ലഭിക്കും?
+  evidence:
+  - Rs. 6000 per annum per family payable in three equal installments
+- id: q003
+  lang: en
+  type: answerable
+  schemes:
+  - pm_kisan
+  question: Who is excluded from PM-KISAN benefits?
+  evidence:
+  - The following categories of beneficiaries of higher economic status shall not be eligible
+  - All Institutional Land holders
+- id: q004
+  lang: manglish
+  type: answerable
+  schemes:
+  - pm_kisan
+  question: income tax adakkunna karshakanu PM Kisan kittumo?
+  evidence:
+  - All Persons who paid Income Tax in last assessment year
+  - paid Income Tax in last assessment year
+- id: q005
+  lang: en
+  type: answerable
+  schemes:
+  - pm_kmy
+  question: If I join the farmers' pension scheme now, how much will I get every month once I'm old?
+  evidence:
+  - minimum assured pension of ₹ 3,000/- per month after attaining the age of 60 years
+  question_orig: What pension does the PM Kisan Maandhan Yojana give after age 60?
+- id: q006
+  lang: ml
+  type: answerable
+  schemes:
+  - pm_kmy
+  question: പിഎം കിസാൻ മാൻധൻ യോജനയിൽ ചേരാനുള്ള പ്രായപരിധി എത്ര?
+  evidence:
+  - between 18 and 40 years of age at the time of entry
+- id: q007
+  lang: en
+  type: answerable
+  schemes:
+  - pmfby
+  question: Rain may ruin my rice this year. What will crop insurance cost me?
+  evidence:
+  - The maximum premium payable by the farmer will be 2% for the Kharif food and oilseed crops
+  question_orig: What is the maximum premium a farmer pays for Kharif crops under PM Fasal Bima Yojana?
+- id: q008
+  lang: manglish
+  type: answerable
+  schemes:
+  - pmfby
+  question: pattathinu krishi cheyyunna karshakarkku fasal bima yojanayil cheraan pattumo?
+  evidence:
+  - including tenant farmers and sharecroppers growing notified crops
+- id: q009
+  lang: en
+  type: answerable
+  schemes:
+  - kcc
+  question: I lease land and farm it. Can I get a farm loan card from the bank?
+  evidence:
+  - Farmers - individual/joint borrowers who are owner cultivators
+  question_orig: Who can get a Kisan Credit Card?
+- id: q010
+  lang: ml
+  type: answerable
+  schemes:
+  - kcc
+  question: കിസാൻ ക്രെഡിറ്റ് കാർഡിന്റെ കാലാവധി എത്ര വർഷമാണ്?
+  evidence:
+  - This validity period is 5 years
+- id: q011
+  lang: en
+  type: answerable
+  schemes:
+  - pmmsy
+  question: My family catches and sells fish. Does Delhi have some help for fishermen?
+  evidence:
+  - Fishers. 2. Fish Farmers. 3. Fish Workers and Fish Vendors
+  question_orig: Who is eligible for assistance under Pradhan Mantri Matsya Sampada Yojana?
+- id: q012
+  lang: manglish
+  type: answerable
+  schemes:
+  - pmmsy
+  question: matsya sampada yojanayil fishing harbour nirmikkan sahayam undo?
+  evidence:
+  - develop fishing infrastructure like fishing harbors
+- id: q013
+  lang: en
+  type: answerable
+  schemes:
+  - pmay_g
+  question: How much money will the government give me to build a house in my village?
+  evidence:
+  - ₹ 1,20,000 per unit for plain areas
+  - Unit Assistance
+  question_orig: How much assistance per house is given under PMAY-G in plain areas?
+- id: q014
+  lang: en
+  type: answerable
+  schemes:
+  - pmay_g
+  question: How do they decide who gets a rural government house first?
+  evidence:
+  - Universe of Eligible Beneficiaries
+  - Preparation of Priority Lists
+  question_orig: How are beneficiaries selected under PMAY-G?
+- id: q015
+  lang: ml
+  type: answerable
+  schemes:
+  - pmay_g
+  question: പിഎംഎവൈ-ഗ്രാമീൺ പ്രകാരം വീട് നിർമ്മിക്കാൻ ബാങ്ക് വായ്പ ലഭിക്കുമോ?
+  evidence:
+  - Facilitating loan
+  - 70,000
+- id: q016
+  lang: en
+  type: answerable
+  schemes:
+  - pmay_u
+  question: Our family earns about 2.5 lakh a year. Which category would we be in for the city housing subsidy?
+  evidence:
+  - 'Economically Weaker Section (EWS): households with annual income up to ₹ 3,00,000'
+  question_orig: What is the income limit for the EWS category under PMAY-Urban?
+- id: q017
+  lang: manglish
+  type: answerable
+  schemes:
+  - pmay_u
+  question: PMAY urban il LIG category kku varumana paridhi ethra?
+  evidence:
+  - 'Low Income Group (LIG): households with annual income between ₹ 3,00,001 and ₹ 6,00,000'
+- id: q018
+  lang: en
+  type: answerable
+  schemes:
+  - jsy
+  question: We are poor and my wife's baby is due at the PHC next month. Will we get any money?
+  evidence:
+  - 'In Low Performing States (LPS): ₹1,400/- for rural areas'
+  question_orig: How much cash does Janani Suraksha Yojana give for an institutional delivery in rural areas of low performing states?
+- id: q019
+  lang: ml
+  type: answerable
+  schemes:
+  - jsy
+  question: ജനനി സുരക്ഷാ യോജനയുടെ ആനുകൂല്യം ലഭിക്കാൻ ഏത് ആശുപത്രിയിൽ പ്രസവിക്കണം?
+  evidence:
+  - The applicant must deliver in a government health centre
+- id: q020
+  lang: en
+  type: answerable
+  schemes:
+  - pmmvy
+  question: I'm pregnant with my first baby and work as a daily wage labourer. Is there any payment for me?
+  evidence:
+  - The applicant should be of at least 19 years old and a pregnant women
+  question_orig: Who is eligible for Pradhan Mantri Matru Vandana Yojana?
+- id: q021
+  lang: manglish
+  type: answerable
+  schemes:
+  - pmmvy
+  question: matru vandana yojana randaam prasavathinu kittumo?
+  evidence:
+  - The scheme is applicable only for the first live birth
+- id: q022
+  lang: en
+  type: answerable
+  schemes:
+  - nsap_ignoaps
+  question: My father is 72 and we have a yellow ration card. What does the old people's pension pay?
+  evidence:
+  - A monthly pension of ₹ 200 up to 79 years and ₹ 500 thereafter
+  question_orig: What is the monthly pension under the Indira Gandhi National Old Age Pension Scheme?
+- id: q023
+  lang: en
+  type: answerable
+  schemes:
+  - nsap_ignwps
+  question: What is the age group for the Indira Gandhi National Widow Pension Scheme?
+  evidence:
+  - The applicant must be a widow in the age group of 40-79 years
+- id: q024
+  lang: ml
+  type: answerable
+  schemes:
+  - nsap_igndps
+  question: ഇന്ദിരാഗാന്ധി ദേശീയ ഭിന്നശേഷി പെൻഷൻ പ്രതിമാസം എത്ര രൂപ?
+  evidence:
+  - A pension of Rs.300/- per month is provided to Divyangjan between 18-79 years
+- id: q025
+  lang: en
+  type: answerable
+  schemes:
+  - nsap_nfbs
+  question: My husband died last month and he was the only one earning. Can we get lump-sum help?
+  evidence:
+  - ₹ 20000/ - will be given as a lump sum assistance
+  question_orig: How much lump sum does the National Family Benefit Scheme pay when the breadwinner dies?
+- id: q026
+  lang: manglish
+  type: answerable
+  schemes:
+  - nsap_nfbs
+  question: kudumbathile varumanam kondu varunna aal marichal kendra sahayam undo?
+  evidence:
+  - The primary breadwinner of the applicant's family must have been deceased
+- id: q027
+  lang: en
+  type: answerable
+  schemes:
+  - nsap
+  question: What are the components of the National Social Assistance Programme?
+  evidence:
+  - Components of NSAP
+- id: q028
+  lang: en
+  type: answerable
+  schemes:
+  - nsap
+  question: Under NSAP guidelines, who selects beneficiaries for old age pension?
+  evidence:
+  - Selection of Beneficiaries
+- id: q029
+  lang: en
+  type: answerable
+  schemes:
+  - apy
+  question: What is the age limit to join Atal Pension Yojana?
+  evidence:
+  - The minimum age of joining APY is 18 years and maximum is 40 years
+- id: q030
+  lang: ml
+  type: answerable
+  schemes:
+  - apy
+  question: ആദായനികുതി നൽകുന്നവർക്ക് അടൽ പെൻഷൻ യോജനയിൽ ചേരാമോ?
+  evidence:
+  - any citizen who is or has been an income tax payer, shall not be eligible to join APY
+- id: q031
+  lang: en
+  type: answerable
+  schemes:
+  - pre_matric_minorities
+  question: We are Christians. Can my son in class 6 get a scholarship?
+  evidence:
+  - National Minority community (Muslim, Sikh, Buddhist, or Christian)
+  question_orig: Which communities are eligible for the pre-matric scholarship for minorities?
+- id: q032
+  lang: manglish
+  type: answerable
+  schemes:
+  - pre_matric_minorities
+  question: minority kuttikalkku scholarship kittunnathu ethu class muthal ethu class vare aanu?
+  evidence:
+  - enrolled in Classes I to X (Pre-Matric level)
+  question_orig: minority pre matric scholarship ethu class vare kittum?
+- id: q033
+  lang: en
+  type: answerable
+  schemes:
+  - pm_yasasvi_prematric
+  - obc_oec_scholarships
+  question: My daughter is in class 9 and our family income is about 2 lakh. Can she get the central OBC scholarship?
+  evidence:
+  - does not exceed ₹2,50,000/- per annum
+  question_orig: What is the income limit for the PM-YASASVI pre-matric scholarship?
+- id: q034
+  lang: ml
+  type: answerable
+  schemes:
+  - pm_yasasvi_prematric
+  - obc_oec_scholarships
+  question: പിഎം യശസ്വി പ്രീമെട്രിക് സ്കോളർഷിപ്പ് ഏതൊക്കെ ക്ലാസുകളിലെ കുട്ടികൾക്കാണ്?
+  evidence:
+  - studying in Class IX an
+  - IX, X ക്ലാസുകളിലെ OBC, EBC വിദ്യാർത്ഥികൾക്ക്
+- id: q035
+  lang: en
+  type: answerable
+  schemes:
+  - scholarship_disabilities
+  question: What disability percentage is required for the pre-matric scholarship for students with disabilities?
+  evidence:
+  - disability percentage of 40% or above
+- id: q036
+  lang: manglish
+  type: answerable
+  schemes:
+  - scholarship_disabilities
+  question: bhinnasheshi vidyarthikalkulla scholarshipil book grant ethra?
+  evidence:
+  - 'Book Grant: ₹ 1000/- per annum'
+- id: q037
+  lang: en
+  type: answerable
+  schemes:
+  - pmegp
+  question: I want to start a small factory. Do they check my family income before giving the subsidy loan?
+  evidence:
+  - There will be no income ceiling for assistance in setting up projects under PMEGP
+  question_orig: Is there an income ceiling for getting help under PMEGP?
+- id: q038
+  lang: ml
+  type: answerable
+  schemes:
+  - pmegp
+  question: പിഎംഇജിപി പദ്ധതിയിൽ അപേക്ഷിക്കാൻ കുറഞ്ഞ പ്രായം എത്ര?
+  evidence:
+  - Any individual, above 18 years of age
+- id: q039
+  lang: en
+  type: answerable
+  schemes:
+  - pmmy
+  question: I need about 40,000 rupees to start a tailoring unit. Which small business loan fits that?
+  evidence:
+  - 'Shishu: Covering loans upto Rs.50,000/-'
+  question_orig: What is the loan limit under the Shishu category of MUDRA?
+- id: q040
+  lang: manglish
+  type: answerable
+  schemes:
+  - pmmy
+  question: mudra loan kittan bank defaulter aakan paadilla ennundo?
+  evidence:
+  - The applicant should not be a defaulter to any bank or financial institution
+- id: q041
+  lang: en
+  type: answerable
+  schemes:
+  - pm_svanidhi
+  question: I sell vegetables on the roadside. How much loan can I get without security?
+  evidence:
+  - Financial assistance of up to ₹10,000 is provided to street vendors
+  question_orig: How much loan can a street vendor get under PM SVANidhi?
+- id: q042
+  lang: ml
+  type: answerable
+  schemes:
+  - pm_svanidhi
+  question: വഴിയോരക്കച്ചവടക്കാർക്കുള്ള പിഎം സ്വനിധി വായ്പയുടെ പലിശ നിരക്ക് എത്ര?
+  evidence:
+  - low-interest rate of 7%
+- id: q043
+  lang: en
+  type: answerable
+  schemes:
+  - pm_vishwakarma
+  question: I make wooden furniture by hand. Will the government teach me new skills and pay me while I learn?
+  evidence:
+  - 5-7 days (40 hours) of Basic Training
+  question_orig: What training does PM Vishwakarma provide to artisans?
+- id: q044
+  lang: manglish
+  type: answerable
+  schemes:
+  - pm_vishwakarma
+  question: PM Vishwakarma yil aarkkokke apeksha nalkam?
+  evidence:
+  - The applicant should be an artisan or craftsperson working with hands and tools
+- id: q045
+  lang: en
+  type: answerable
+  schemes:
+  - mgnrega
+  question: I applied for job card work. How soon should the panchayat give me work?
+  evidence:
+  - guaranteed employment within 15 days from the date of application
+  question_orig: Within how many days must work be given after applying under MGNREGA?
+- id: q046
+  lang: ml
+  type: answerable
+  schemes:
+  - mgnrega
+  question: തൊഴിലുറപ്പ് പദ്ധതിയിൽ ജോലി താമസസ്ഥലത്തിന് എത്ര ദൂരത്തിനുള്ളിൽ നൽകണം?
+  evidence:
+  - Work is to be provided within a radius of 5 kilometers of the applicant's residence
+- id: q047
+  lang: en
+  type: answerable
+  schemes:
+  - pmuy
+  question: We still cook with firewood and have no gas connection. Can I get a free one?
+  evidence:
+  - An adult woman belonging to a poor household and not having an LPG connection
+  question_orig: Who is eligible for a free LPG connection under Ujjwala 2.0?
+- id: q048
+  lang: manglish
+  type: answerable
+  schemes:
+  - pmuy
+  question: puthiya gas connection edukkumbol aadyathe cylinder nirakkunnathinu panam kodukkano?
+  evidence:
+  - first LPG refill and Stove (hot plate) both free of cost
+  question_orig: ujjwala yojanayil first refill free aano?
+- id: q049
+  lang: ml
+  type: answerable
+  schemes:
+  - pmuy
+  question: ഉജ്ജ്വല യോജനയിൽ അപേക്ഷിക്കുന്ന സ്ത്രീക്ക് എത്ര വയസ്സ് വേണം?
+  evidence:
+  - The applicant must be a woman who has attained 18 years of age
+- id: q050
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_pension_widow
+  question: എന്റെ ഭർത്താവ് മരിച്ചു. വീട്ടിലെ വരുമാനം കുറവാണ്, എനിക്ക് പെൻഷൻ കിട്ടാൻ വരുമാനം എത്ര വരെ ആകാം?
+  evidence:
+  - ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവ പെൻഷൻ സ്കീം അനുവദിക്കുന്നതിനുള്ള മാനദണ്ഡങ്ങൾ
+  question_orig: വിധവ പെൻഷന് അപേക്ഷിക്കാനുള്ള കുടുംബ വാർഷിക വരുമാന പരിധി എത്ര?
+- id: q051
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_pension_widow
+  question: ഭർത്താവ് മരിച്ച സ്ത്രീക്ക് പെൻഷന് അപേക്ഷിക്കാൻ എന്തൊക്കെ കടലാസുകൾ കൊണ്ടുപോകണം?
+  evidence:
+  - ഇന്ദിരാ ഗാന്ധി ദേശീയ വിധവ പെൻഷൻ സ്കീം അനുവദിക്കാൻ സമർപ്പിക്കേണ്ട രേഖകൾ
+  question_orig: വിധവ പെൻഷന് അപേക്ഷിക്കുമ്പോൾ സമർപ്പിക്കേണ്ട രേഖകൾ ഏതൊക്കെ?
+- id: q052
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_pension_widow
+  question: punar vivaham kazhinja sthreekku vidhava pension kittumo?
+  evidence:
+  - അപേക്ഷക പുനർവിവാഹിത ആയിരിക്കരുത്
+- id: q053
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_pension_widow
+  question: In Kerala, can a woman whose husband has been missing for 7 years get the widow pension?
+  evidence:
+  - 7 വർഷത്തിലധികമായി ഭർത്താവിനെ കാണാൻ ഇല്ലാത്തതോ
+- id: q054
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_pension_old_age
+  question: വാർദ്ധക്യകാല പെൻഷന് അർഹതയ്ക്കുള്ള വ്യവസ്ഥകൾ എന്തൊക്കെ?
+  evidence:
+  - ഇന്ദിരാ ഗാന്ധി ദേശീയ വാർദ്ധക്യകാല പെൻഷൻ അനുവദിക്കുന്നതിനുള്ള മാനദണ്ഡങ്ങൾ
+- id: q055
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_pension_old_age
+  question: randu ekkaril kooduthal sthalam ullavarkku vardhakya pension kittumo?
+  evidence:
+  - രണ്ടേക്കറിൽ കൂടുതൽ വസ്തു ഉണ്ടാകരുത്
+- id: q056
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_pension_old_age
+  - kerala_pension_widow
+  - kerala_pension_unmarried_women
+  - kerala_pension_agri_labourers
+  question: Can someone who owns a car above 1000 cc get a Kerala welfare pension?
+  evidence:
+  - 1000 സി സി യിൽ കൂടുതൽ എഞ്ചിൻ കപ്പാസിറ്റിയുള്ള
+- id: q057
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_pension_agri_labourers
+  question: ഞാൻ വർഷങ്ങളായി പാടത്ത് പണിയെടുക്കുന്നു. പെൻഷൻ കിട്ടാൻ എത്ര കാലം പണി ചെയ്തിരിക്കണം?
+  evidence:
+  - 10 വർഷമോ അതിൽ കൂടുതലോ കർഷകത്തൊഴിലാളിയായി ജോലി ചെയ്തിരിക്കണം
+  question_orig: കർഷക തൊഴിലാളി പെൻഷന് എത്ര വർഷം കർഷകത്തൊഴിലാളിയായി ജോലി ചെയ്തിരിക്കണം?
+- id: q058
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_pension_agri_labourers
+  question: karshaka thozhilali pensionu kshemanidhi board il ninnu enthu certificate venam?
+  evidence:
+  - കർഷക തൊഴിലാളി ക്ഷേമനിധി ബോർഡിൽനിന്നുള്ള വിടുതൽ സാക്ഷ്യപത്രം
+- id: q059
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_pension_unmarried_women
+  question: അവിവാഹിതരായ വനിതകൾക്കുള്ള പെൻഷന് എത്ര വയസ്സ് പൂർത്തിയാകണം?
+  evidence:
+  - അപേക്ഷകയുടെ വയസ് 50 വയസ്സ് പൂർത്തി ആയിരിക്കണം
+- id: q060
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_pension_disability
+  question: What documents are needed for the disability pension in Kerala?
+  evidence:
+  - ഭിന്നശേഷി തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്
+- id: q061
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_welfare_pensions
+  question: പഞ്ചായത്തിൽ നിന്ന് കിട്ടുന്ന പെൻഷൻ മാസം എത്ര രൂപയാണ്?
+  evidence:
+  - കർഷക തൊഴിലാളി പെൻഷൻ | 2000
+  question_orig: സാമൂഹ്യസുരക്ഷാ പെൻഷൻ തുക പ്രതിമാസം എത്രയാണ്?
+- id: q062
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_welfare_pensions
+  question: അമ്മയ്ക്ക് പെൻഷൻ വേണം. അപേക്ഷ എവിടെയാണ് കൊടുക്കേണ്ടത്?
+  evidence:
+  - അപേക്ഷകൻ താമസിക്കുന്ന ഗ്രാമ പഞ്ചായത്ത്
+  question_orig: ക്ഷേമ പെൻഷൻ അപേക്ഷ ആർക്കാണ് സമർപ്പിക്കേണ്ടത്?
+- id: q063
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_welfare_pensions
+  question: pension apeksha ethra divasathinullil theerppu kalpikkanam?
+  evidence:
+  - അപേക്ഷ ലഭിച്ച് 45 ദിവസത്തിനകം
+- id: q064
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_pension_old_age
+  - kerala_pension_widow
+  - kerala_pension_unmarried_women
+  - kerala_pension_agri_labourers
+  question: Can a person getting an EPF pension also get a Kerala social security pension?
+  evidence:
+  - 4000 രൂപയിൽ താഴെ ഇ പി എഫ് പെൻഷൻ വാങ്ങുന്നവർക്ക് മാത്രം ബാധകം
+  - ഇ പി എഫ് ഉൾപ്പടെ പരമാവധി രണ്ടു പെൻഷൻ
+- id: q065
+  lang: ml
+  type: answerable
+  schemes:
+  - kasp
+  question: ആശുപത്രി ചെലവ് താങ്ങാൻ പറ്റുന്നില്ല. സർക്കാരിന്റെ കാർഡ് ഉള്ളവർക്ക് എത്ര രൂപ വരെ ചികിത്സ ഫ്രീ ആണ്?
+  evidence:
+  - പ്രതിവർഷം 5 ലക്ഷം രൂപ ചികിത്സക്കായി
+  question_orig: കാരുണ്യ ആരോഗ്യ സുരക്ഷ പദ്ധതിയിൽ ഒരു കുടുംബത്തിന് പ്രതിവർഷം എത്ര രൂപയുടെ ചികിത്സ ലഭിക്കും?
+- id: q066
+  lang: en
+  type: answerable
+  schemes:
+  - kasp
+  question: What is the Ayushman Bharat PM-JAY health cover in Kerala?
+  evidence:
+  - കാരുണ്യ ആരോഗ്യ സുരക്ഷ പദ്ധതി
+- id: q067
+  lang: manglish
+  type: answerable
+  schemes:
+  - kasp
+  question: KASP card undenkil ethra lakshathinte chikitsa free aayi kittum?
+  evidence:
+  - പ്രതിവർഷം 5 ലക്ഷം രൂപ ചികിത്സക്കായി
+- id: q068
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_arogyakiranam
+  question: ആരോഗ്യകിരണം പദ്ധതി ഏത് പ്രായത്തിലുള്ള കുട്ടികൾക്കാണ്?
+  evidence:
+  - ഒന്ന് മുതൽ 18 വയസ് വരെ പ്രായമുള്ള കുട്ടികളുടെ
+- id: q069
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_arogyakiranam
+  question: What is the family income limit for Arogyakiranam free treatment for children?
+  evidence:
+  - വാർഷിക വരുമാനം ₹3 ലക്ഷംയിൽ താഴെയുള്ള
+- id: q070
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_sruthitharangam
+  question: കേൾവിക്കുറവുള്ള കുഞ്ഞിന് സർക്കാർ ഓപ്പറേഷൻ ചെയ്തു കൊടുക്കുമോ?
+  evidence:
+  - സൗജന്യ കോക്ലിയാർ ഇംപ്ലാന്റേഷൻ ശസ്ത്രക്രിയയും
+  question_orig: ശ്രുതിതരംഗം പദ്ധതി എന്താണ്?
+- id: q071
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_sruthitharangam
+  question: Our baby can't hear anything. Is there an age limit for the free ear operation?
+  evidence:
+  - The child should be in the age group of 0-3 years
+  question_orig: What age group of children is eligible for the Sruthitharangam cochlear implant scheme?
+- id: q072
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_cancer_suraksha
+  question: My 10-year-old has leukaemia and we are poor. Is treatment free anywhere?
+  evidence:
+  - Cancer patients up to the age of 18 years in the Below Poverty Line (BPL) groups
+  question_orig: Who is eligible for free cancer treatment under the Cancer Suraksha Scheme?
+- id: q073
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_cancer_suraksha
+  question: 18 vayassu kazhinja cancer rogikku cancer suraksha padhathi kittumo?
+  evidence:
+  - Patients over 18 years old are not eligible to apply under the scheme
+- id: q074
+  lang: en
+  type: answerable
+  schemes:
+  - kssm_thalolam
+  question: My child has a heart problem and we can't afford treatment. Will the state help?
+  evidence:
+  - Kidney diseases, Cardiovascular diseases, Cerebral Palsy
+  question_orig: Which diseases are covered under the Thalolam scheme?
+- id: q075
+  lang: ml
+  type: answerable
+  schemes:
+  - kssm_thalolam
+  question: താലോലം പദ്ധതിയിൽ ആദ്യ സഹായമായി എത്ര രൂപ ലഭിക്കും?
+  evidence:
+  - initial assistance of ₹50,000/-
+- id: q076
+  lang: en
+  type: answerable
+  schemes:
+  - kssm_aswasakiranam
+  question: How much monthly assistance do caregivers get under Aswasakiranam?
+  evidence:
+  - financial assistance of Rs 600 per month is provided to those caregivers
+- id: q077
+  lang: manglish
+  type: answerable
+  schemes:
+  - kssm_aswasakiranam
+  question: kidappilaya rogiye nokkunna aalkku masam ethra roopa kittum?
+  evidence:
+  - financial assistance of Rs 600 per month is provided to those caregivers
+- id: q078
+  lang: en
+  type: answerable
+  schemes:
+  - kssm_snehapoorvam
+  question: How much does Snehapoorvam give per month to a child studying in class 8?
+  evidence:
+  - Class VI to Class X | ₹500/- per month
+- id: q079
+  lang: ml
+  type: answerable
+  schemes:
+  - kssm_snehapoorvam
+  question: മാതാപിതാക്കളിൽ ഒരാളെ നഷ്ടപ്പെട്ട കുട്ടികൾക്കുള്ള സ്നേഹപൂർവ്വം പദ്ധതിക്ക് അർഹത എന്താണ്?
+  evidence:
+  - The child who has lost either father or mother or both
+- id: q080
+  lang: en
+  type: answerable
+  schemes:
+  - kssm_snehasanthwanam
+  question: My brother in Kasaragod is bedridden because of the pesticide spraying. Does he get monthly help?
+  evidence:
+  - financial assistance of ₹2200/- is given to the bedridden Endosulfan victims
+  question_orig: What assistance do bedridden Endosulfan victims get under Snehasanthwanam?
+- id: q081
+  lang: en
+  type: answerable
+  schemes:
+  - sjd_disability_scholarship
+  question: My son is deaf and goes to school. Is there a state scholarship for him?
+  evidence:
+  - The differently abled student should have a disability of 40 % or more
+  question_orig: Who is eligible for the Kerala scholarship for differently abled students?
+- id: q082
+  lang: manglish
+  type: answerable
+  schemes:
+  - sjd_assistive_devices
+  question: bhinnasheshikkarkku wheelchair sahayam kittan varumana paridhi ethra?
+  evidence:
+  - The combined annual family income should not exceed ₹1,00,000/-
+- id: q083
+  lang: en
+  type: answerable
+  schemes:
+  - sjd_assistive_devices
+  question: I can't see. Will the state give me a phone that reads aloud?
+  evidence:
+  - Joy stick-operated Wheelchair Smart Phone with Screen Reader
+  question_orig: Which assistive devices are provided to differently-abled persons in Kerala?
+- id: q084
+  lang: ml
+  type: answerable
+  schemes:
+  - sjd_parinayam
+  question: ഭിന്നശേഷിക്കാരായ മാതാപിതാക്കളുടെ പെൺമക്കളുടെ വിവാഹത്തിന് എത്ര രൂപ സഹായം ലഭിക്കും?
+  evidence:
+  - A one-time assistance of ₹30,000/- is provided to differently-abled parents for the marriage of their daughters
+- id: q085
+  lang: en
+  type: answerable
+  schemes:
+  - sjd_parinayam
+  question: I'm disabled and want to marry off my daughter. How old must she be to get the marriage help?
+  evidence:
+  - The girl who intends to be married should have completed 18 years of age
+  question_orig: What is the minimum age of the bride for the Parinayam marriage assistance?
+- id: q086
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_farmers_welfare_fund
+  question: നെൽകർഷകർക്ക് പെൻഷൻ കൊടുക്കാൻ തുടങ്ങിയത് എന്ന് മുതലാണ്?
+  evidence:
+  - ചെറുകിട നാമമാത്ര കർഷക പെൻഷൻ പദ്ധതി
+  question_orig: കർഷക പെൻഷൻ പദ്ധതി ആരംഭിച്ചത് ഏത് ഉത്തരവ് പ്രകാരമാണ്?
+- id: q087
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_farmers_welfare_fund
+  question: കർഷക ക്ഷേമനിധി ബോർഡിൽ രജിസ്റ്റർ ചെയ്യാൻ ഏതൊക്കെ രേഖകൾ വേണം?
+  evidence:
+  - രജിസ്ട്രേഷനുള്ള നിർദേശങ്ങൾ
+- id: q088
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_farmers_welfare_fund
+  question: karshaka kshemanidhi registrationu village officeril ninnu enthu certificate venam?
+  evidence:
+  - വില്ലേജ് ഓഫീസറിൽ നിന്ന് ലഭിക്കുന്ന വാർഷിക വരുമാന സർട്ടിഫിക്കറ്റ്
+- id: q089
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_agri_crop_insurance
+  question: വെള്ളപ്പൊക്കത്തിൽ കൃഷി നശിച്ചാൽ സർക്കാർ ഇൻഷുറൻസ് കിട്ടാൻ എന്താണ് ചെയ്യേണ്ടത്?
+  evidence:
+  - സംസ്ഥാന വിള ഇൻഷ്വറൻസ് പദ്ധതി
+  question_orig: സംസ്ഥാന വിള ഇൻഷ്വറൻസ് പദ്ധതിയിൽ കർഷകർക്ക് എങ്ങനെ ചേരാം?
+- id: q090
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_agri_crop_insurance
+  question: If rain fails or there is too much heat, does the state insurance pay farmers?
+  evidence:
+  - Rainfall – Deficit Rainfall, Excess rainfall
+  question_orig: Which weather events are covered under the weather based crop insurance in Kerala?
+- id: q091
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_agri_crop_insurance
+  question: Is there emergency money for farmers when pests or floods destroy crops?
+  evidence:
+  - Contingency Programme to meet Natural Calamities and Pests and Disease Endemic
+  question_orig: How much is set aside for the contingency programme for natural calamities and pest attacks in agriculture?
+- id: q092
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_agri_schemes
+  question: കൃഷി വകുപ്പിന്റെ 2025-26 വാർഷിക പദ്ധതി അടങ്കൽ എത്ര?
+  evidence:
+  - വാർഷിക പദ്ധതി 2025-26
+  - Scheme outlay 2025-26
+- id: q093
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_fisheries_welfare
+  question: മത്സ്യഫെഡ് മത്സ്യത്തൊഴിലാളികൾക്കായി നടപ്പാക്കുന്ന പദ്ധതികൾ എന്തൊക്കെ?
+  evidence:
+  - സ്കീമുകളും പദ്ധതികളും
+- id: q094
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_tailoring_workers_welfare
+  question: ഞാൻ തയ്യൽ ജോലി ചെയ്യുന്നു. വയസ്സായാൽ ബോർഡിൽ നിന്ന് മാസം എത്ര രൂപ കിട്ടും?
+  evidence:
+  - 1600/- രൂപയാണ് പ്രതിമാസം പെൻഷൻ നൽകുന്നത്
+  question_orig: തയ്യൽ തൊഴിലാളി ക്ഷേമനിധി ബോർഡിന്റെ റിട്ടയർമെന്റ് പെൻഷൻ എത്ര?
+- id: q095
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_tailoring_workers_welfare
+  question: thayyal thozhilali kshemanidhi board ethra anukoolyangal nalkunnu?
+  evidence:
+  - പെൻഷൻ ഉൾപ്പെടെ 10 ആനുകൂല്യങ്ങളാണ്
+- id: q096
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_viswakarma_pension
+  question: My grandfather is a goldsmith over 60. Is there a monthly pension for traditional craftsmen?
+  evidence:
+  - The monthly pension amount of ₹1100/- will be given
+  question_orig: What is the monthly Viswakarma pension in Kerala and who can get it?
+- id: q097
+  lang: en
+  type: answerable
+  schemes:
+  - kudumbashree
+  question: I'm in a women's self-help group. Can it help me start a small business?
+  evidence:
+  - Micro Enterprises
+  - Enterprises
+  question_orig: What does Kudumbashree do for micro enterprises?
+- id: q098
+  lang: ml
+  type: answerable
+  schemes:
+  - life_mission
+  question: സ്വന്തമായി വീടില്ല. ലൈഫിൽ വീട് കിട്ടാൻ ആരൊക്കെയാണ് അർഹർ?
+  evidence:
+  - ഭൂമിയുള്ള ഭവനരഹിതർ, ഭൂമിയില്ലാത്ത ഭവനരഹിതർ
+  question_orig: ലൈഫ് മിഷൻ ഭവന പദ്ധതിയുടെ ഗുണഭോക്താക്കൾ ആരൊക്കെ?
+- id: q099
+  lang: manglish
+  type: answerable
+  schemes:
+  - life_mission
+  question: bhoomi illatha bhavana rahitharkku LIFE missionil veedu kittumo?
+  evidence:
+  - ഭൂമിയില്ലാത്ത ഭവനരഹിതർ
+- id: q100
+  lang: ml
+  type: answerable
+  schemes:
+  - life_mission
+  question: ആദിവാസി കുടുംബത്തിന് ഇ.എം.എസ് പദ്ധതിയിൽ വീടിന് എത്ര രൂപ കിട്ടിയിരുന്നു?
+  evidence:
+  - പട്ടിക വർഗത്തിന് 2.5 ലക്ഷം രൂപയായും
+  question_orig: ഇ.എം.എസ് ഭവന പദ്ധതിയിൽ പട്ടികവർഗക്കാർക്കുള്ള യൂണിറ്റ് കോസ്റ്റ് എത്ര?
+- id: q101
+  lang: en
+  type: answerable
+  schemes:
+  - life_mission
+  - pmay_g
+  question: Are central housing schemes like PMAY combined with LIFE Mission in Kerala?
+  evidence:
+  - ഭവനപദ്ധതികൾ സംയോജിപ്പിച്ചായിരിക്കും
+- id: q102
+  lang: ml
+  type: answerable
+  schemes:
+  - sc_scholarships
+  question: ഞാൻ എസ്.സി വിഭാഗത്തിൽ പെട്ട ഡിഗ്രി വിദ്യാർത്ഥിയാണ്. പഠനസഹായത്തിന്റെ നിയമങ്ങൾ എവിടെ നോക്കാം?
+  evidence:
+  - പോസ്റ്റ് മ്രെടിക് വിദ്യാഭ്യാസാനുകൂല്യങ്ങൾ-- അനുവദിക്കുന്നതിനുള്ള മാനദണ്ഡങ്ങൾ
+  question_orig: പട്ടികജാതി വിദ്യാർത്ഥികൾക്കുള്ള പോസ്റ്റ്മെട്രിക് വിദ്യാഭ്യാസാനുകൂല്യങ്ങളുടെ മാനദണ്ഡങ്ങൾ എവിടെ കിട്ടും?
+- id: q103
+  lang: en
+  type: answerable
+  schemes:
+  - sc_scholarships
+  - st_scholarships
+  question: What is the Unnathi scholarship for SC/ST students?
+  evidence:
+  - UNNATHI Scholarship to students belonging to Scheduled Castes and Scheduled Tribes communities for overseas studies
+- id: q104
+  lang: manglish
+  type: answerable
+  schemes:
+  - sc_scholarships
+  - st_scholarships
+  question: SC ST vidyarthikalkku videsha padanathinu scholarship undo?
+  evidence:
+  - UNNATHI Scholarship to students belonging to Scheduled Castes and Scheduled Tribes communities for overseas studies
+- id: q105
+  lang: ml
+  type: answerable
+  schemes:
+  - sc_scholarships
+  question: ലക്ഷ്യ സ്കോളർഷിപ്പ് എന്താണ്?
+  evidence:
+  - ലക്ഷ്യ സ്‌കോളർഷിപ്പിലേയ്ക്കും
+  - സിവിൽ സർവ്വീസ് പരീക്ഷാ പരിശീലനം
+- id: q106
+  lang: ml
+  type: answerable
+  schemes:
+  - sc_scholarships
+  - st_scholarships
+  question: പട്ടികജാതി കുട്ടികൾക്ക് പഠിക്കാൻ കമ്പ്യൂട്ടർ സൗജന്യമായി കിട്ടുമോ?
+  evidence:
+  - ലാപ്ടോപ്പ് വിതരണത്തിനുള്ള മാനദണ്ഡങ്ങൾ
+  question_orig: പട്ടികജാതി പട്ടികവർഗ്ഗ വിദ്യാർത്ഥികൾക്ക് ലാപ്ടോപ്പ് ലഭിക്കാനുള്ള മാനദണ്ഡങ്ങൾ എന്തൊക്കെ?
+- id: q107
+  lang: ml
+  type: answerable
+  schemes:
+  - sc_scholarships
+  question: മോഡൽ റസിഡൻഷ്യൽ സ്കൂളിൽ പ്രവേശനം ലഭിക്കാൻ എങ്ങനെ അപേക്ഷിക്കാം?
+  evidence:
+  - മോഡൽ റസിഡെൻഷ്യൽ സ്ക
+  - 9 മോഡൽ റസിഡെൻഷ്യൽ
+- id: q108
+  lang: ml
+  type: answerable
+  schemes:
+  - sc_scholarships
+  question: ഞാൻ ദളിത് യുവാവാണ്. സ്വന്തമായി ഒരു കട തുടങ്ങാൻ വകുപ്പിൽ നിന്ന് സഹായം കിട്ടുമോ?
+  evidence:
+  - സ്വയം തൊഴിൽ പദ്ധതി
+  question_orig: പട്ടികജാതി വികസന വകുപ്പിന്റെ സ്വയം തൊഴിൽ പദ്ധതിക്ക് ആർക്ക് അപേക്ഷിക്കാം?
+- id: q109
+  lang: ml
+  type: answerable
+  schemes:
+  - st_scholarships
+  question: പട്ടികവർഗ്ഗക്കാർക്ക് ചികിത്സാ സഹായത്തിന് അപേക്ഷിക്കാനുള്ള ഫോം ഏത്?
+  evidence:
+  - ചികിത്സാ സഹായും അനുവദിക്കുന്നതിലലക്കുള്ള
+- id: q110
+  lang: manglish
+  type: answerable
+  schemes:
+  - st_scholarships
+  question: ST vibhagathile garbhinikalkku janani janmaraksha padhathiyil apeksha form undo?
+  evidence:
+  - ജന്മരക്ഷ പ്രസവാനുകൂലയം
+- id: q111
+  lang: ml
+  type: answerable
+  schemes:
+  - st_scholarships
+  question: ഞാൻ ആദിവാസിയാണ്, മറ്റൊരു ജാതിയിലുള്ളയാളെ വിവാഹം കഴിച്ചു. ഞങ്ങൾക്ക് എന്തെങ്കിലും സഹായം ഉണ്ടോ?
+  evidence:
+  - മിശ്ര വിവാഹം മൂലം ക്ലേശങ്ങൾ അനുഭവിക്കുന്ന പട്ടികവൿഗ്ഗ ദമ്പതികൾക്ക്
+  question_orig: മിശ്ര വിവാഹിതരായ പട്ടികവർഗ്ഗ ദമ്പതികൾക്ക് സാമ്പത്തിക സഹായം ലഭിക്കുമോ?
+- id: q112
+  lang: en
+  type: answerable
+  schemes:
+  - st_scholarships
+  question: Is there a housing scheme application for Scheduled Tribe families in Kerala?
+  evidence:
+  - ഭവന നിൾമ്മാണ പദ്ധതിക്കുള്ള അപപക്ഷ
+- id: q113
+  lang: ml
+  type: answerable
+  schemes:
+  - obc_oec_scholarships
+  question: പിന്നാക്ക വിഭാഗത്തിലെ കുട്ടികൾക്കുള്ള പുതിയ സ്കോളർഷിപ്പിന് അപേക്ഷ എങ്ങനെ കൊടുക്കും?
+  evidence:
+  - കെടാവിളക്ക് സ്കോളർഷിപ്പ് പദ്ധതി
+  question_orig: കെടാവിളക്ക് സ്കോളർഷിപ്പിന് എങ്ങനെ അപേക്ഷിക്കാം?
+- id: q114
+  lang: en
+  type: answerable
+  schemes:
+  - obc_oec_scholarships
+  question: My son is in class 6 and we are Latin Catholics. How much yearly study help can he get?
+  evidence:
+  - V to VII | ₹630/-
+  question_orig: How much pre-matric educational assistance do OEC students in classes 5 to 7 get?
+- id: q115
+  lang: ml
+  type: answerable
+  schemes:
+  - obc_oec_scholarships
+  question: ഒ.ഇ.സി പോസ്റ്റ്മെട്രിക് വിദ്യാഭ്യാസാനുകൂല്യത്തിന് ഇ-ഗ്രാന്റ്സ് പോർട്ടൽ എപ്പോൾ തുറക്കും?
+  evidence:
+  - 2025 സെപ്റ്റംബർ 15 മുതൽ ഇ-ഗ്രാന്റ്‌സ് വെബ്- പോർട്ടൽ ഓപ്പൺ
+- id: q116
+  lang: manglish
+  type: answerable
+  schemes:
+  - obc_oec_scholarships
+  question: keralathinu purathu IIT pole deshiya sthapanangalil padikkunna OEC vidyarthikalkku anukoolyam undo?
+  evidence:
+  - സംസ്ഥാനത്തിന് പുറത്തെ ദേശീയ പ്രാധാന്യമുള്ള സ്ഥാപനങ്ങളിൽ
+- id: q117
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_obc_girls_special_scholarship
+  question: അച്ഛൻ മരിച്ചുപോയി. ഞാൻ നഴ്സിംഗിന് പഠിക്കുന്ന ഈഴവ പെൺകുട്ടിയാണ്. എനിക്ക് പ്രത്യേക സഹായം കിട്ടുമോ?
+  evidence:
+  - മാതാവിനെയോ പിതാവിനെയോ അല്ലെങ്കിൽ ഇരുവരെയുമോ
+  question_orig: മെഡിക്കൽ കോഴ്സുകൾക്ക് പഠിക്കുന്ന, മാതാപിതാക്കളെ നഷ്ടപ്പെട്ട പിന്നാക്ക വിഭാഗം പെൺകുട്ടികൾക്ക് സ്കോളർഷിപ്പ് ഉണ്ടോ?
+- id: q118
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_obc_girls_special_scholarship
+  - kerala_overseas_scholarship_obc
+  - kerala_eep
+  - obc_oec_scholarships
+  question: Is my caste counted as backward in Kerala? Where is the list?
+  evidence:
+  - Other Backward Classes in Kerala State
+  - List of castes eligible for Special scholarship
+  question_orig: Which communities are included in the Kerala State OBC list?
+- id: q119
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_eep
+  question: എംപ്ലോയബിലിറ്റി എൻഹാൻസ്മെന്റ് പ്രോഗ്രാമിൽ സിവിൽ സർവ്വീസ് പരിശീലനത്തിന് എത്ര രൂപ ധനസഹായം ലഭിക്കും?
+  evidence:
+  - ധനസഹായത്തിന്റെ നിരക്ക്
+- id: q120
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_eep
+  question: IELTS OET coaching nu pinnaka vibhaga nursing vidyarthikalkku dhanasahayam undo?
+  evidence:
+  - IELTS/TOEFL/OET/NCLEX എന്നീ കോഴ്സുകൾക്ക്
+- id: q121
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_eep
+  question: കമ്മ്യൂണിക്കേറ്റീവ് ഇംഗ്ലീഷ് കോഴ്സ് പരിശീലനത്തിന് ധനസഹായം ലഭിക്കാൻ അപേക്ഷകർ ഏത് സമുദായത്തിൽ പെട്ടവരായിരിക്കണം?
+  evidence:
+  - സംസ്ഥാനത്തെ പിന്നാക്ക സമുദായ പട്ടികയിൽ
+- id: q122
+  lang: ml
+  type: answerable
+  schemes:
+  - kerala_overseas_scholarship_obc
+  question: പിന്നാക്ക വിഭാഗത്തിൽ പെട്ട എനിക്ക് വിദേശത്ത് പഠിക്കാൻ സർക്കാർ സഹായം ഈ വർഷം കിട്ടുമോ?
+  evidence:
+  - വിദേശ പഠനങ്ങൾക്കുള്ള സ്ലോളർഷിപ്പ് പദ്ധതി വിജ്ഞാപനം 2026-27
+  question_orig: പിന്നാക്ക വിഭാഗക്കാർക്കുള്ള വിദേശ പഠന സ്കോളർഷിപ്പ് 2026-27 വിജ്ഞാപനം എന്താണ്?
+- id: q123
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_overseas_scholarship_obc
+  question: Is there an interest subsidy on education loans for studying abroad for backward class students in Kerala?
+  evidence:
+  - വിദേശ പഠന വായ്യയ്ത്ക് പലിശയിളവ്
+- id: q124
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_advocate_grant
+  question: I just became a lawyer and I'm Ezhava. Will the state pay me something while I start out?
+  evidence:
+  - The grant of ₹12000/- per year will be provided to law graduates
+  question_orig: How much is the Advocate Grant for young lawyers from backward communities and for how long?
+- id: q125
+  lang: en
+  type: answerable
+  schemes:
+  - kerala_minority_scholarships
+  question: I'm a Muslim girl starting my degree. Is there a state scholarship I can apply for?
+  evidence:
+  - The applicant should belong to the Muslim, Latin, or Converted Christian community
+  question_orig: Who can apply for the C H Muhammed Koya scholarship?
+- id: q126
+  lang: manglish
+  type: answerable
+  schemes:
+  - kerala_minority_women_selfemployment
+  question: nyuna paksha vibhagathile vidhavakalkku swayam thozhil loan subsidy ethra?
+  evidence:
+  - Financial assistance of up to ₹1,00,000/- as a government subsidy
+- id: n001
+  lang: en
+  type: no_answer
+  question: What is the eligibility for the Tamil Nadu Magalir Urimai Thogai scheme?
+- id: n002
+  lang: en
+  type: no_answer
+  question: How do I renew my Indian passport?
+- id: n003
+  lang: ml
+  type: no_answer
+  question: കേരള ലോട്ടറി ഫലം എങ്ങനെ പരിശോധിക്കാം?
+- id: n004
+  lang: en
+  type: no_answer
+  question: What is the interest rate of Sukanya Samriddhi Yojana?
+- id: n005
+  lang: manglish
+  type: no_answer
+  question: KSEB current bill online aayi engane adakkam?
+- id: n006
+  lang: en
+  type: no_answer
+  question: How do I apply for a driving licence in Kerala?
+- id: n007
+  lang: ml
+  type: no_answer
+  question: എസ്എസ്എൽസി പരീക്ഷാ ഫലം എപ്പോൾ പ്രസിദ്ധീകരിക്കും?
+- id: n008
+  lang: en
+  type: no_answer
+  question: What is the Agnipath / Agniveer recruitment age limit?
+- id: n009
+  lang: en
+  type: no_answer
+  question: How much does Ladli Behna Yojana pay women in Madhya Pradesh?
+- id: n010
+  lang: manglish
+  type: no_answer
+  question: Rythu Bandhu scheme il ethra roopa kittum?
+- id: n011
+  lang: en
+  type: no_answer
+  question: How can I check my income tax refund status?
+- id: n012
+  lang: ml
+  type: no_answer
+  question: നീറ്റ് പരീക്ഷയുടെ തീയതി എപ്പോഴാണ്?
+- id: n013
+  lang: en
+  type: no_answer
+  question: What subsidy does the PM Surya Ghar rooftop solar scheme give?
+- id: n014
+  lang: en
+  type: no_answer
+  question: How do I link my PAN card with Aadhaar?
+- id: n015
+  lang: manglish
+  type: no_answer
+  question: Kerala Startup Mission seed fund ethra kittum?
+- id: n016
+  lang: ml
+  type: no_answer
+  question: കെഎസ്ആർടിസി കൺസഷൻ കാർഡ് എങ്ങനെ എടുക്കാം?
+- id: n017
+  lang: en
+  type: no_answer
+  question: What is the Gold monetisation scheme interest rate?
+- id: n018
+  lang: en
+  type: no_answer
+  question: How do I register a new company with the Registrar of Companies?
+- id: n019
+  lang: manglish
+  type: no_answer
+  question: Norka Roots pravasi pension ethra roopa aanu?
+- id: n020
+  lang: ml
+  type: no_answer
+  question: വാഹന ഇൻഷുറൻസ് ക്ലെയിം എങ്ങനെ ഫയൽ ചെയ്യാം?
+- id: n021
+  lang: en
+  type: no_answer
+  question: What is the eligibility for the Karnataka Gruha Lakshmi scheme?
+- id: n022
+  lang: en
+  type: no_answer
+  question: When is the next Kerala PSC LDC exam?
+- id: n023
+  lang: manglish
+  type: no_answer
+  question: Vande Bharat train ticket cancel cheythal ethra refund kittum?
+- id: n024
+  lang: ml
+  type: no_answer
+  question: ആധാർ കാർഡിലെ മേൽവിലാസം എങ്ങനെ മാറ്റാം?
+- id: n025
+  lang: en
+  type: no_answer
+  question: What are the benefits of the Atal Innovation Mission tinkering labs for schools?
+- id: h001
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kerala_eep
+  question: Ente OBC list employmentinu use cheyyumo?
+  evidence:
+  - This list is used for employment purpose in Kerala.
+- id: h002
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kerala_obc_girls_special_scholarship
+  question: One time registration kazhinju email id or Aadhaar number um password um use cheyth login cheyyan patumo?
+  evidence:
+  - One Time Registration ന് ശേഷം തുടർന്ന് വരുന്ന ലോഗിൻ പേജിൽ email id/aadhaar no & password ഉപയോഗിച്ച് Sign-in ചെയ്യുക.
+- id: h003
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - pm_svanidhi
+  question: Njan already apply cheythu, pinne evideyum apply cheyyan pattumo?
+  evidence:
+  - You may apply again only after 30 days i.e. after
+- id: h004
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - obc_oec_scholarships
+  question: Ente post-matric scholarship pending undo? ente account il error undo?
+  evidence:
+  - 2023-24 വർഷം വരെയുള്ള കുടിശ്ശിക വിദ്യാഭ്യാസാനുകൂല്യങ്ങൾ മുഴുവനായും, 2024-25 വർഷത്തെ വിദ്യാഭ്യാസാനുകൂല്യങ്ങൾ ഭാഗീകമായും വിതരണം നടത്തിയിട്ടുണ്ട്.
+- id: h005
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - pmuy
+  question: Ente amma 20 vayassanu, LPG connection illa, avarude kudumbam poor aanel PMUY kittumo?
+  evidence:
+  - The applicant must be a woman who has attained 18 years of age.
+- id: h006
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kerala_pension_unmarried_women
+  question: Ente amma 55 vayassil aanu, avivaahitilla, pensioninu evide evida documents venam?
+  evidence:
+  - വിവാഹിതയല്ല എന്നു തെളിയിക്കുന്നതിനുള്ള സർട്ടിഫിക്കറ്റ് 2. വരുമാനം തെളിയിക്കുന്ന സർട്ടിഫിക്കറ്റ്
+- id: h007
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kcc
+  question: Ente kisan credit card apply cheythal bank reply 3-4 working daysil varumo?
+  evidence:
+  - If you are eligible, the bank will get back to you for the further process within 3-4 working days.
+  status: rejected
+  rejected_reason: 'judge (gpt-oss-120b): text does not mention the bank''s reply time'
+- id: h008
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - sc_scholarships
+  question: ente SC scholarshipinu managing director office evide?
+  evidence:
+  - മാനേജിംഗ് ഡയറക്ടർ, പട്ടികജാതി /പട്ടികവർഗ്ഗ വികസന കോർപ്പറേഷൻ.
+  status: rejected
+  rejected_reason: 'judge: text does not give the managing director office location'
+- id: h009
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - pmay_u
+  question: Ente family income 4 lakh aan, PMAY-U il house size evide varum?
+  evidence:
+  - 'LIG: Annual Household Income from Rs.3,00,001 to Rs.6,00,000; house sizes upto 60 sq.m'
+- id: h010
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kerala_tailoring_workers_welfare
+  question: Ente appa marichal, pension claim cheyyan 90 divasam kazhinju apply cheyyan pattumo?
+  evidence:
+  - 'അപേക്ഷ നൽകാനുള്ള കാലയളവ്: അംഗം മരണമടഞ്ഞ തീയതി മുതൽ 90 ദിവസം'
+- id: h011
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kerala_overseas_scholarship_obc
+  question: Ente scholarship apply cheyyan vendi overseas university list evide kanam?
+  evidence:
+  - University of York
+  status: rejected
+  rejected_reason: 'judge: OCR''d university table does not answer where the list is'
+- id: h012
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kerala_pension_agri_labourers
+  question: Ente appante pensioninu vendi evide evidences submit cheyyanam?
+  evidence:
+  - കർഷക തൊഴിലാളി ക്ഷേമനിധി ബോർഡിൽനിന്നുള്ള വിടുതൽ സാക്ഷ്യപത്രം
+  status: rejected
+  rejected_reason: 'judge: text lists documents but not where to submit them'
+- id: h013
+  lang: ml
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: ml_about_en
+  schemes:
+  - mgnrega
+  question: എന്റെ കുടുംബത്തിൽ NREGA ജോബ് കാർഡ് അപേക്ഷിക്കാൻ എന്തെല്ലാം രേഖകൾ വേണം?
+  evidence:
+  - 'Photograph of Applicant
+
+    Name, Age, and Gender of all NREGA Job Card Applicants from the applicant''s household
+
+    Name of Village, Gram Panchayat, Block
+
+    Proof of Identity (Ration card, Voter ID Card, Aadhaar, PAN)
+
+    Details of whether the applicant is a beneficiary of SC / ST / Indira Awaas Yojana (IAY) / Land Reform (LR)
+
+    Specimen Signature / Thumb impression'
+- id: h014
+  lang: ml
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: ml_about_en
+  schemes:
+  - nsap_nfbs
+  question: എന്റെ കുടുംബത്തിൽ പ്രധാന വരുമാനക്കാരൻ മരിച്ചാൽ, ഞങ്ങൾക്ക് എത്ര തുക സഹായമായി ലഭിക്കും?
+  evidence:
+  - ₹ 20000/ - will be given as a lump sum assistance to such surviving member of the household
+- id: h015
+  lang: ml
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: ml_about_en
+  schemes:
+  - sjd_parinayam
+  question: എന്റെ കുടുംബത്തിന്റെ വാർഷിക വരുമാനം 1 ലക്ഷം രൂപക്ക് താഴെയാണെങ്കിൽ, ഞങ്ങളുടെ മകളുടെ വിവാഹ സഹായം ലഭിക്കുമോ?
+  evidence:
+  - The combined annual family income should not exceed ₹1,00,000/-.
+- id: h017
+  lang: en
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: en_about_ml
+  schemes:
+  - kerala_welfare_pensions
+  question: How long will it take to get my pension after I submit the application?
+  evidence:
+  - അപേക്ഷ ലഭിച്ച് 45 ദിവസത്തിനകം പെൻഷൻ അപേക്ഷ തീർപ്പു കല്പിക്കേണ്ടതാണ്.
+- id: h018
+  lang: en
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: en_about_ml
+  schemes:
+  - life_mission
+  question: When was the EMS housing scheme originally supposed to be finished?
+  evidence:
+  - 2011 മാർച്ച് 31ന് പൂർത്തിയാക്കാനാണ് ലക്ഷ്യമിട്ടിരുന്നത്.
+- id: h019
+  lang: en
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: en_about_ml
+  schemes:
+  - kerala_agri_crop_insurance
+  question: If I planted ginger on 0.02 hectare and it dies after a month, how much will I be paid?
+  evidence:
+  - 0.02 ഹെക്ടർ | നട്ടു ഒരു മാസം കഴിഞ്ഞു അഞ്ചു മാസം വരെ | 0.02 ഹെക്ടറിന് ` 15 രൂപ
+- id: h020
+  lang: en
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: en_about_ml
+  schemes:
+  - kerala_advocate_grant
+  question: When do I need to email my complaint about the scheme?
+  evidence:
+  - ഇ-മെയിൽ മുഖാന്തിരം 12.06.2025 നകം പിന്നോക്ക വിഭാഗ വികസന വകുപ്പിൻഠ്റെ ബന്ധപ്പെട്ട മേഖലാ ഓഫീസുകളിൽ സമർപ്പിക്കേണ്ടതാണ്.
+- id: h021
+  lang: ml
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: ml_about_en
+  schemes:
+  - nsap_ignoaps
+  question: ഞാൻ ഇതിനകം അപേക്ഷിച്ചാൽ, വീണ്ടും അപേക്ഷിക്കാൻ എത്ര സമയം കാത്തിരിക്കണം?
+  evidence:
+  - You may apply again only after 30 days
+- id: h022
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - pm_kmy
+  question: Ente kudumbathinte cheriya kshetrathil 1.5 ha land und, 35 vayassullavan aanu, PM‑KMY il join cheyyan kazhiyumo?
+  evidence:
+  - The applicant should be between 18 and 40 years of age at the time of entry.
+- id: h023
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kerala_fisheries_welfare
+  question: Ente fishing worker-ine lēlam ninnal kittunna paisa evide?
+  evidence:
+  - മത്സ്യത്തൊഴിലാളികൾ പിടിച്ചു കൊണ്ടു വരുന്ന മത്സ്യം സംഘം നിശ്ചയിച്ച ലേലക്കാർ ലേലം ചെയ്യുകയും
+  status: rejected
+  rejected_reason: 'judge (gpt-oss-120b): text does not say where to apply / where payment is'
+- id: h024
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kudumbashree
+  question: Ente NHG loan kittan evide apply cheyyam?
+  evidence:
+  - The amount of loan and the priority of disbursement are decided by the NHG.
+  status: rejected
+  rejected_reason: 'judge (gpt-oss-120b): text does not say where to apply / where payment is'
+- id: h025
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - kerala_pension_widow
+  question: Ente bharthave marichal pension apply cheyyan evide documents venam?
+  evidence:
+  - ഭർത്താവിൻറെ മരണ സർട്ടിഫിക്കറ്റ് /കാണാതായി 7 വർഷം കഴിഞ്ഞ/ഉപേക്ഷിച്ച് പോയി എന്ന സർട്ടിഫിക്കറ്റ് (50 വയസ്സ് പൂർത്തിയായവർക്ക് മാത്രം )
+- id: h026
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - sjd_disability_scholarship
+  question: njan kerala resident aayi, disability 40% kooduthal ulla student aanu, family income 30k aanu, scholarship kittumo?
+  evidence:
+  - The applicant should be a permanent resident of Kerala.
+- id: h027
+  lang: manglish
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: manglish
+  schemes:
+  - st_scholarships
+  question: Ente brother cost accountant intermediate/final course complete cheythal scholarship kittumo?
+  evidence:
+  - കോസ്റ്റ് ആന്റ് വർക്ക്‌സ് അക്കണ്ടന്ററ് - (ഇന്റർമീഡിയറ്റ് ഫൈനൽ കോഴ്‌സ് പഠിക്കുന്നവർക്ക്
+  status: rejected
+  rejected_reason: 'judge (gpt-oss-120b): passage does not cover the course asked about'
+- id: h028
+  lang: ml
+  type: answerable
+  split: heldout
+  author: openai/gpt-oss-120b
+  kind: ml_about_en
+  schemes:
+  - pmay_g
+  question: എന്റെ കുടുംബം താൽക്കാലികമായി കുടിയേറുകയോ കണ്ടെത്താനാകാത്തതോ ആണെങ്കിൽ, ഞങ്ങളുടെ പേര് PWL‑യുടെ അവസാനം വെക്കുമോ?
+  evidence:
+  - place them at the end of the PWL, so that allotment of houses to such beneficiaries can be made later.

@@ -1,0 +1,427 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "judge": "openai/gpt-oss-120b",
+ "config": "default",
+ "live": false,
+ "answer_prompt": "v3",
+ "judge_prompt": "v1",
+ "stopped": null,
+ "summary": {
+  "by_slice": {
+   "all": {
+    "n": 2,
+    "answered": 2,
+    "faithfulness": 1.0,
+    "faithfulness_micro": 1.0,
+    "citation_accuracy": 1.0,
+    "answer_relevancy": 1.0,
+    "statements": 11,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "lang:en": {
+    "n": 1,
+    "answered": 1,
+    "faithfulness": 1.0,
+    "faithfulness_micro": 1.0,
+    "citation_accuracy": 1.0,
+    "answer_relevancy": 1.0,
+    "statements": 8,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "lang:ml": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   },
+   "lang:manglish": {
+    "n": 1,
+    "answered": 1,
+    "faithfulness": 1.0,
+    "faithfulness_micro": 1.0,
+    "citation_accuracy": 1.0,
+    "answer_relevancy": 1.0,
+    "statements": 3,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "slice:main": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   },
+   "slice:heldout": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   },
+   "slice:eligibility": {
+    "n": 2,
+    "answered": 2,
+    "faithfulness": 1.0,
+    "faithfulness_micro": 1.0,
+    "citation_accuracy": 1.0,
+    "answer_relevancy": 1.0,
+    "statements": 11,
+    "answerable_answered": 1.0,
+    "context_hit@5": 1.0,
+    "language_match": 1.0
+   },
+   "slice:no_answer": {
+    "n": 0,
+    "answered": 0,
+    "faithfulness": null,
+    "faithfulness_micro": null,
+    "citation_accuracy": null,
+    "answer_relevancy": null,
+    "statements": 0,
+    "answerable_answered": null,
+    "context_hit@5": null,
+    "language_match": null
+   }
+  },
+  "abstention": {
+   "no_answer_n": 0,
+   "recall": null,
+   "precision": null,
+   "false_abstain_rate": 0.0
+  },
+  "eligibility": {
+   "n": 2,
+   "accuracy": 1.0,
+   "card_found": 1.0
+  },
+  "validation": {
+   "items_with_drops": 2,
+   "dropped_by_reason": {
+    "no_citation": 3,
+    "number_mismatch": 1
+   },
+   "abstain_reason": {
+    "model": 0,
+    "validation": 0,
+    "error": 0
+   },
+   "json_retry": 0
+  },
+  "latency_ms": {
+   "n_live": 0,
+   "ttft_p50": null,
+   "ttft_p95": null,
+   "full_p50": null,
+   "full_p95": null
+  },
+  "cost_inr": {
+   "mean": 0.065,
+   "p95": 0.1093
+  },
+  "tokens": {
+   "in_mean": 1929.5,
+   "out_mean": 370.5
+  }
+ },
+ "items": [
+  {
+   "id": "e003",
+   "lang": "manglish",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "ente amma 67 vayassanu, Indian citizen aanu, BPL kudumbam aanu. Indira Gandhi old age pension kittumo?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "നിങ്ങളുടെ അമ്മ 60 വയസ്സിന് മുകളിലും BPL കുടുംബത്തിൽ പെടുന്നതുമാണ്, അതിനാൽ അർഹതയുണ്ട്. [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2] [nsap_ignoaps--nsap-ignoaps-9c99d4:1:6]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+     "eligible": true,
+     "reasons": [
+      "അമ്മ 60 വയസ്സിന് മുകളിലാണ് [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]",
+      "BPL കുടുംബത്തിൽ പെടുന്നു [nsap_ignoaps--nsap-ignoaps-9c99d4:1:2]"
+     ],
+     "benefit": null,
+     "how_to_apply": null,
+     "documents": [],
+     "citations": [
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1",
+      "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+     ]
+    }
+   ],
+   "follow_up_question": null,
+   "citations": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1"
+   ],
+   "context": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:2",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:1",
+    "kerala_pension_old_age--faqs-70561d:1:0",
+    "nsap--nsap-guidelines-oct2014-9deea1:12:0",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "ഇന്ദിരാ ഗാന്ധി ദേശീയ വാർദ്ധക്യകാല പെൻഷൻ (IGNOAPS) ലഭ്യമാണ്.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "മാസം ₹200 (60-79 വയസ്സ്) അല്ലെങ്കിൽ ₹500 (80 വയസ്സ് മുതലായി) [C2]",
+     "reason": "number_mismatch",
+     "detail": "60, 80"
+    }
+   ],
+   "flags": [],
+   "raw_generation": "{\"answer\":\"ഇന്ദിരാ ഗാന്ധി ദേശീയ വാർദ്ധക്യകാല പെൻഷൻ (IGNOAPS) ലഭ്യമാണ്. നിങ്ങളുടെ അമ്മ 60 വയസ്സിന് മുകളിലും BPL കുടുംബത്തിൽ പെടുന്നതുമാണ്, അതിനാൽ അർഹതയുണ്ട്. [C1][C5]\",\"abstained\":false,\"follow_up_question\":null,\"schemes\":[{\"scheme_id\":\"nsap_ignoaps\",\"name\":\"Indira Gandhi National Old Age Pension Scheme (IGNOAPS)\",\"eligible\":true,\"reasons\":[\"അമ്മ 60 വയസ്സിന് മുകളിലാണ് [C1]\",\"BPL കുടുംബത്തിൽ പെടുന്നു [C1]\"],\"benefit\":\"മാസം ₹200 (60-79 വയസ്സ്) അല്ലെങ്കിൽ ₹500 (80 വയസ്സ് മുതലായി) [C2]\",\"how_to_apply\":null,\"documents\":[],\"citations\":[\"C1\",\"C2\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 3405,
+   "latency_ms": 3407,
+   "latency": {
+    "retrieval_ms": 2283.2,
+    "gen_first_delta_ms": 909.1,
+    "throttled_ms": 0.0,
+    "generate_ms": 1119.5,
+    "validate_ms": 1.5,
+    "ttft_ms": 3405.3,
+    "total_ms": 3406.9,
+    "retrieval_stages": {
+     "rewrite_ms": 770.4,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 13.7,
+     "dense_ms": 1180.2,
+     "spec_rerank_ms": 842.2,
+     "rerank_ms": 245.9
+    }
+   },
+   "live": false,
+   "tokens_in": 2282,
+   "tokens_out": 416,
+   "cost_inr": 0.1093,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignoaps",
+     "expected": true,
+     "got": true,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "നിങ്ങളുടെ അമ്മ 60 വയസ്സിന് മുകളിലും BPL കുടുംബത്തിൽ പെടുന്നതുമാണ്, അതിനാൽ അർഹതയുണ്ട്.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): അമ്മ 60 വയസ്സിന് മുകളിലാണ്",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS): BPL കുടുംബത്തിൽ പെടുന്നു",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1694
+   }
+  },
+  {
+   "id": "e007",
+   "lang": "en",
+   "type": "answerable",
+   "slice": "eligibility",
+   "question": "My husband passed away last year. Can I get the Indira Gandhi National Widow Pension?",
+   "model": "openai/gpt-oss-20b",
+   "abstained": false,
+   "abstain_reason": null,
+   "answer": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Non‑contributory pension for widows of poor families. [nsap_ignwps--ignwps-0932bc:1:0]",
+   "schemes": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "name": "Indira Gandhi National Widow Pension Scheme (IGNWPS)",
+     "eligible": null,
+     "reasons": [
+      "The applicant must be a widow in the age group of 40-79 years. [nsap_ignwps--ignwps-0932bc:1:2]",
+      "The applicant should belong to a household living below the poverty line according to the criteria prescribed by the Govt. of India. [nsap_ignwps--ignwps-0932bc:1:2]"
+     ],
+     "benefit": "Non‑contributory pension for widows of poor families. [nsap_ignwps--ignwps-0932bc:1:0]",
+     "how_to_apply": "Apply online via UMANG or submit required documents to the local Pension Disbursement Authority. [nsap_ignwps--ignwps-0932bc:1:6]",
+     "documents": [
+      "Death Certificate of husband – With the name of the surviving wife (widow). [nsap_ignwps--ignwps-0932bc:1:5]",
+      "BPL Card. [nsap_ignwps--ignwps-0932bc:1:5]",
+      "Age Proof – birth certificate or school certificate; if absent, ration card and EPIC may be considered. [nsap_ignwps--ignwps-0932bc:1:5]"
+     ],
+     "citations": [
+      "nsap_ignwps--ignwps-0932bc:1:2",
+      "nsap_ignwps--ignwps-0932bc:1:0",
+      "nsap_ignwps--ignwps-0932bc:1:6",
+      "nsap_ignwps--ignwps-0932bc:1:5"
+     ]
+    }
+   ],
+   "follow_up_question": "What is your age and are you currently living below the poverty line?",
+   "citations": [
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap_ignwps--ignwps-0932bc:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:6",
+    "nsap_ignwps--ignwps-0932bc:1:5"
+   ],
+   "context": [
+    "nsap_ignwps--ignwps-0932bc:1:5",
+    "kerala_pension_widow--faqs-70561d:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:2",
+    "nsap_ignwps--ignwps-0932bc:1:0",
+    "nsap_ignwps--ignwps-0932bc:1:6"
+   ],
+   "context_hit": true,
+   "dropped": [
+    {
+     "text": "You may be eligible for the Indira Gandhi National Widow Pension Scheme (IGNWPS) if you meet the age and poverty‑line criteria.",
+     "reason": "no_citation",
+     "detail": ""
+    },
+    {
+     "text": "However, we need more information to confirm your eligibility.",
+     "reason": "no_citation",
+     "detail": ""
+    }
+   ],
+   "flags": [
+    "answer_from_scheme_cards"
+   ],
+   "raw_generation": "{\"answer\":\"You may be eligible for the Indira Gandhi National Widow Pension Scheme (IGNWPS) if you meet the age and poverty‑line criteria. However, we need more information to confirm your eligibility.\",\"abstained\":false,\"follow_up_question\":\"What is your age and are you currently living below the poverty line?\",\"schemes\":[{\"scheme_id\":\"nsap_ignwps\",\"name\":\"Indira Gandhi National Widow Pension Scheme (IGNWPS)\",\"eligible\":null,\"reasons\":[\"The applicant must be a widow in the age group of 40-79 years. [C3]\",\"The applicant should belong to a household living below the poverty line according to the criteria prescribed by the Govt. of India. [C3]\"],\"benefit\":\"Non‑contributory pension for widows of poor families. [C4]\",\"how_to_apply\":\"Apply online via UMANG or submit required documents to the local Pension Disbursement Authority. [C5]\",\"documents\":[\"Death Certificate of husband – With the name of the surviving wife (widow). [C1]\",\"BPL Card. [C1]\",\"Age Proof – birth certificate or school certificate; if absent, ration card and EPIC may be considered. [C1]\"],\"citations\":[\"C3\",\"C4\",\"C5\"]}]}",
+   "lang_match": true,
+   "ttft_ms": 1595,
+   "latency_ms": 1595,
+   "latency": {
+    "retrieval_ms": 394.6,
+    "gen_first_delta_ms": 906.6,
+    "throttled_ms": 0.0,
+    "generate_ms": 1198.3,
+    "validate_ms": 2.4,
+    "ttft_ms": 1595.4,
+    "total_ms": 1595.4,
+    "retrieval_stages": {
+     "rewrite_ms": 2.0,
+     "rewrite_wait_ms": 0.0,
+     "bm25_ms": 6.8,
+     "dense_ms": 386.4,
+     "spec_rerank_ms": 0.1,
+     "rerank_ms": 0.1
+    }
+   },
+   "live": false,
+   "tokens_in": 1577,
+   "tokens_out": 325,
+   "cost_inr": 0.0208,
+   "eligibility": [
+    {
+     "scheme_id": "nsap_ignwps",
+     "expected": null,
+     "got": null,
+     "correct": true
+    }
+   ],
+   "judge": {
+    "statements": [
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Non‑contributory pension for widows of poor families.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): The applicant must be a widow in the age group of 40-79 years.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): The applicant should belong to a household living below the poverty line according to the criteria prescribed by the Govt. of India.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Non‑contributory pension for widows of poor families.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Apply online via UMANG or submit required documents to the local Pension Disbursement Authority.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Death Certificate of husband – With the name of the surviving wife (widow).",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): BPL Card.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     },
+     {
+      "text": "Indira Gandhi National Widow Pension Scheme (IGNWPS): Age Proof – birth certificate or school certificate; if absent, ration card and EPIC may be considered.",
+      "supported": true,
+      "cited_ok": true,
+      "numbers_ok": true,
+      "judged": true
+     }
+    ],
+    "relevancy": 5.0,
+    "tokens": 1796
+   }
+  }
+ ]
+}

@@ -1,0 +1,257 @@
+{
+ "config": "ctx_jina6_l256_original",
+ "threads": 2,
+ "n": 20,
+ "rewrite_failures": 0,
+ "total_ms": {
+  "p50": 2294,
+  "p95": 2858,
+  "max": 2980
+ },
+ "by_lang_p95": {
+  "en": 2662,
+  "manglish": 2980,
+  "ml": 2858
+ },
+ "stages_p50": {
+  "rewrite_ms": 791,
+  "rewrite_wait_ms": 0,
+  "bm25_ms": 7,
+  "dense_ms": 598,
+  "spec_rerank_ms": 1149,
+  "rerank_ms": 562,
+  "total_ms": 2294
+ },
+ "stages_p95": {
+  "rewrite_ms": 838,
+  "rewrite_wait_ms": 0,
+  "bm25_ms": 10,
+  "dense_ms": 741,
+  "spec_rerank_ms": 1189,
+  "rerank_ms": 1131,
+  "total_ms": 2858
+ },
+ "peak_ram_gb": 3.06,
+ "rows": [
+  {
+   "lang": "en",
+   "total_ms": 2661.8208000436425,
+   "throttled": false,
+   "rewrite_ms": 666.935499990359,
+   "rewrite_wait_ms": 0.00900006853044033,
+   "bm25_ms": 4.941500024870038,
+   "dense_ms": 534.6463999012485,
+   "spec_rerank_ms": 1175.2865000162274,
+   "rerank_ms": 945.103200036101
+  },
+  {
+   "lang": "manglish",
+   "total_ms": 2416.0656000021845,
+   "throttled": false,
+   "rewrite_ms": 790.7017999095842,
+   "rewrite_wait_ms": 0.011999974958598614,
+   "bm25_ms": 8.816099958494306,
+   "dense_ms": 714.0172000508755,
+   "spec_rerank_ms": 1136.9990999810398,
+   "rerank_ms": 554.8792999470606
+  },
+  {
+   "lang": "ml",
+   "total_ms": 2720.655999961309,
+   "throttled": false,
+   "rewrite_ms": 828.7024999735877,
+   "rewrite_wait_ms": 0.010299962013959885,
+   "bm25_ms": 7.148899952881038,
+   "dense_ms": 591.9156001182273,
+   "spec_rerank_ms": 1148.8680999027565,
+   "rerank_ms": 971.2970000691712
+  },
+  {
+   "lang": "en",
+   "total_ms": 2043.827399960719,
+   "throttled": false,
+   "rewrite_ms": 808.0368000082672,
+   "rewrite_wait_ms": 0.01309998333454132,
+   "bm25_ms": 7.105900091119111,
+   "dense_ms": 576.5216000145301,
+   "spec_rerank_ms": 1273.7831000704318,
+   "rerank_ms": 185.01529993955046
+  },
+  {
+   "lang": "manglish",
+   "total_ms": 2033.7664999533445,
+   "throttled": false,
+   "rewrite_ms": 717.8292000899091,
+   "rewrite_wait_ms": 0.008699949830770493,
+   "bm25_ms": 7.693900144658983,
+   "dense_ms": 697.1686000470072,
+   "spec_rerank_ms": 1127.5886000366881,
+   "rerank_ms": 199.91869991645217
+  },
+  {
+   "lang": "ml",
+   "total_ms": 2274.7518999967724,
+   "throttled": false,
+   "rewrite_ms": 811.0359000274912,
+   "rewrite_wait_ms": 0.008599949069321156,
+   "bm25_ms": 5.331199965439737,
+   "dense_ms": 565.4820000054315,
+   "spec_rerank_ms": 1132.7635999768972,
+   "rerank_ms": 569.8080000001937
+  },
+  {
+   "lang": "en",
+   "total_ms": 2208.7185999844223,
+   "throttled": false,
+   "rewrite_ms": 838.2574999704957,
+   "rewrite_wait_ms": 0.009999959729611874,
+   "bm25_ms": 14.77320003323257,
+   "dense_ms": 863.1938999751583,
+   "spec_rerank_ms": 1138.3486000122502,
+   "rerank_ms": 190.79719996079803
+  },
+  {
+   "lang": "manglish",
+   "total_ms": 2979.793900041841,
+   "throttled": false,
+   "rewrite_ms": 808.3268000045791,
+   "rewrite_wait_ms": 0.0075999414548277855,
+   "bm25_ms": 6.8799000000581145,
+   "dense_ms": 683.568499982357,
+   "spec_rerank_ms": 1157.2494000429288,
+   "rerank_ms": 1130.7356999022886
+  },
+  {
+   "lang": "ml",
+   "total_ms": 2016.8761999811977,
+   "throttled": false,
+   "rewrite_ms": 746.3027000194415,
+   "rewrite_wait_ms": 0.020099920220673084,
+   "bm25_ms": 3.3792000031098723,
+   "dense_ms": 501.315200002864,
+   "spec_rerank_ms": 1152.342800050974,
+   "rerank_ms": 358.4234999725595
+  },
+  {
+   "lang": "en",
+   "total_ms": 2115.9725999459624,
+   "throttled": false,
+   "rewrite_ms": 656.4888999564573,
+   "rewrite_wait_ms": 0.008500064723193645,
+   "bm25_ms": 4.4293999671936035,
+   "dense_ms": 555.5583998793736,
+   "spec_rerank_ms": 1172.7167000062764,
+   "rerank_ms": 381.9946999428794
+  },
+  {
+   "lang": "manglish",
+   "total_ms": 2076.547999982722,
+   "throttled": false,
+   "rewrite_ms": 796.3199999649078,
+   "rewrite_wait_ms": 0.010599964298307896,
+   "bm25_ms": 8.324200054630637,
+   "dense_ms": 659.6972999395803,
+   "spec_rerank_ms": 1063.3026000577956,
+   "rerank_ms": 343.87799992691725
+  },
+  {
+   "lang": "ml",
+   "total_ms": 2858.111400040798,
+   "throttled": false,
+   "rewrite_ms": 730.9408999281004,
+   "rewrite_wait_ms": 0.009400071576237679,
+   "bm25_ms": 5.490400129929185,
+   "dense_ms": 574.235999956727,
+   "spec_rerank_ms": 1140.5826999107376,
+   "rerank_ms": 1136.5121999988332
+  },
+  {
+   "lang": "en",
+   "total_ms": 2115.066299913451,
+   "throttled": false,
+   "rewrite_ms": 760.182400001213,
+   "rewrite_wait_ms": 0.009400071576237679,
+   "bm25_ms": 7.006199914030731,
+   "dense_ms": 563.8260999694467,
+   "spec_rerank_ms": 1185.515100019984,
+   "rerank_ms": 357.3916000314057
+  },
+  {
+   "lang": "manglish",
+   "total_ms": 2626.174100092612,
+   "throttled": false,
+   "rewrite_ms": 766.8161999899894,
+   "rewrite_wait_ms": 0.008999952115118504,
+   "bm25_ms": 10.319500113837421,
+   "dense_ms": 740.9292000811547,
+   "spec_rerank_ms": 1112.5981999794021,
+   "rerank_ms": 761.0060999868438
+  },
+  {
+   "lang": "ml",
+   "total_ms": 2355.2222000434995,
+   "throttled": false,
+   "rewrite_ms": 758.4855000022799,
+   "rewrite_wait_ms": 0.011399970389902592,
+   "bm25_ms": 7.392000057734549,
+   "dense_ms": 661.4340000087395,
+   "spec_rerank_ms": 1113.6588999070227,
+   "rerank_ms": 571.2612000061199
+  },
+  {
+   "lang": "en",
+   "total_ms": 2099.0940999472514,
+   "throttled": false,
+   "rewrite_ms": 707.873500068672,
+   "rewrite_wait_ms": 0.011100084520876408,
+   "bm25_ms": 6.344099994748831,
+   "dense_ms": 523.9590998971835,
+   "spec_rerank_ms": 1189.1842999029905,
+   "rerank_ms": 378.23709996882826
+  },
+  {
+   "lang": "manglish",
+   "total_ms": 2442.9415999911726,
+   "throttled": false,
+   "rewrite_ms": 826.3883999316022,
+   "rewrite_wait_ms": 0.01079996582120657,
+   "bm25_ms": 7.1304000448435545,
+   "dense_ms": 708.0173998838291,
+   "spec_rerank_ms": 1163.0548000102863,
+   "rerank_ms": 563.2397000445053
+  },
+  {
+   "lang": "ml",
+   "total_ms": 1968.7839999096468,
+   "throttled": false,
+   "rewrite_ms": 881.7413999931887,
+   "rewrite_wait_ms": 0.008300063200294971,
+   "bm25_ms": 8.569600060582161,
+   "dense_ms": 641.7771999258548,
+   "spec_rerank_ms": 1133.5178000153974,
+   "rerank_ms": 183.6995999328792
+  },
+  {
+   "lang": "en",
+   "total_ms": 2484.3999000731856,
+   "throttled": false,
+   "rewrite_ms": 712.6864000456408,
+   "rewrite_wait_ms": 0.028699985705316067,
+   "bm25_ms": 6.1440999852493405,
+   "dense_ms": 561.8094999808818,
+   "spec_rerank_ms": 1159.6506999339908,
+   "rerank_ms": 755.122400005348
+  },
+  {
+   "lang": "manglish",
+   "total_ms": 2294.232500018552,
+   "throttled": false,
+   "rewrite_ms": 819.8582999175414,
+   "rewrite_wait_ms": 0.0076999422162771225,
+   "bm25_ms": 6.205400102771819,
+   "dense_ms": 598.0255999602377,
+   "spec_rerank_ms": 1126.4076000079513,
+   "rerank_ms": 562.0998999802396
+  }
+ ]
+}

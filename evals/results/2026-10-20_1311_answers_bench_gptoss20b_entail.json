@@ -1,0 +1,16 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "run": "evals/results/2026-10-20_1311_answers_bench_gptoss20b.json",
+ "statements": 117,
+ "judge_unsupported": 11,
+ "caught": 8,
+ "false_drops": 9,
+ "faithfulness_micro_before": 0.906,
+ "faithfulness_micro_after": 0.97,
+ "statements_kept": 100,
+ "latency_ms": {
+  "p50": 1113,
+  "p95": 2034,
+  "n": 22
+ }
+}

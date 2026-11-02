@@ -1,0 +1,5238 @@
+{
+ "config": {
+  "name": "ctx_jina8_l256_clearest",
+  "strategy": "section_aware",
+  "mode": "hybrid",
+  "embed_model": "BAAI/bge-m3",
+  "k_retrieve": 20,
+  "k_final": 10,
+  "rrf_k": 60,
+  "bm25_weight": 1.0,
+  "bm25_stem": true,
+  "index_context": true,
+  "rewrite": true,
+  "rewrite_model": "qwen/qwen3.8-27b",
+  "rewrite_weight": 1.0,
+  "overlap_rewrite": true,
+  "rerank_with": "clearest",
+  "rerank": true,
+  "rerank_model": "jinaai/jina-reranker-v2-base-multilingual",
+  "rerank_backend": "onnx",
+  "rerank_onnx_file": "hub:onnx/model_int8.onnx",
+  "rerank_max_length": 256,
+  "rerank_pool": 8,
+  "rerank_provider": null,
+  "rerank_skip_margin": null,
+  "abstain_threshold": null
+ },
+ "summary": {
+  "all": {
+   "n": 126,
+   "hit@1": 0.738,
+   "hit@5": 0.905,
+   "hit@10": 0.944,
+   "mrr@10": 0.811
+  },
+  "en": {
+   "n": 53,
+   "hit@1": 0.755,
+   "hit@5": 0.906,
+   "hit@10": 0.962,
+   "mrr@10": 0.823
+  },
+  "ml": {
+   "n": 46,
+   "hit@1": 0.674,
+   "hit@5": 0.891,
+   "hit@10": 0.913,
+   "mrr@10": 0.765
+  },
+  "manglish": {
+   "n": 27,
+   "hit@1": 0.815,
+   "hit@5": 0.926,
+   "hit@10": 0.963,
+   "mrr@10": 0.865
+  },
+  "heldout": {
+   "n": 20,
+   "hit@1": 0.65,
+   "hit@5": 0.8,
+   "hit@10": 0.85,
+   "mrr@10": 0.71
+  },
+  "latency_ms": {
+   "p50": 853.0,
+   "p95": 1055.4
+  },
+  "timings_ms": {
+   "rewrite_ms": {
+    "p50": 3.0,
+    "p95": 4.4
+   },
+   "rewrite_wait_ms": {
+    "p50": 0.0,
+    "p95": 0.0
+   },
+   "bm25_ms": {
+    "p50": 9.9,
+    "p95": 14.9
+   },
+   "dense_ms": {
+    "p50": 430.2,
+    "p95": 535.6
+   },
+   "spec_rerank_ms": {
+    "p50": 157.8,
+    "p95": 284.8
+   },
+   "rerank_ms": {
+    "p50": 269.0,
+    "p95": 284.2
+   },
+   "total_ms": {
+    "p50": 853.0,
+    "p95": 1055.4
+   }
+  },
+  "rerank_skip_rate": 0.0,
+  "peak_ram_gb": 3.12,
+  "top_score_field": "top_rerank_score",
+  "top_score_median": {
+   "answerable": 0.0063,
+   "no_answer": -1.642
+  }
+ },
+ "questions": [
+  {
+   "id": "q001",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": -0.5752100944519043,
+   "top_rerank_score": -0.5752100944519043,
+   "top": [
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:2",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1"
+   ],
+   "latency_ms": 746.8,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 24.3,
+    "dense_ms": 563.2,
+    "spec_rerank_ms": 158.2,
+    "rerank_ms": 0.0,
+    "total_ms": 746.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q002",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.0580819845199585,
+   "top_rerank_score": 1.0580819845199585,
+   "top": [
+    "pm_kisan--pm-kisan-488a46:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:2",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 870.8,
+   "timings": {
+    "rewrite_ms": 3.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.1,
+    "dense_ms": 407.4,
+    "spec_rerank_ms": 168.0,
+    "rerank_ms": 284.9,
+    "total_ms": 870.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q003",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 7,
+   "top_score": 1.13442862033844,
+   "top_rerank_score": 1.13442862033844,
+   "top": [
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:3",
+    "pm_kisan--revisedfaq-666f07:1",
+    "pm_kisan--revisedfaq-666f07:2",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:5",
+    "pm_kisan--revisedfaq-666f07:1"
+   ],
+   "latency_ms": 564.0,
+   "timings": {
+    "rewrite_ms": 2.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.9,
+    "dense_ms": 396.9,
+    "spec_rerank_ms": 159.2,
+    "rerank_ms": 0.1,
+    "total_ms": 564.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q004",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.2313842475414276,
+   "top_rerank_score": 0.2313842475414276,
+   "top": [
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:3",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:8",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pm_kisan--revisedfaq-666f07:1"
+   ],
+   "latency_ms": 873.1,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.6,
+    "dense_ms": 438.4,
+    "spec_rerank_ms": 139.1,
+    "rerank_ms": 284.0,
+    "total_ms": 873.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q005",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.4500393867492676,
+   "top_rerank_score": 0.4500393867492676,
+   "top": [
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 806.5,
+   "timings": {
+    "rewrite_ms": 4.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.1,
+    "dense_ms": 484.8,
+    "spec_rerank_ms": 156.7,
+    "rerank_ms": 151.8,
+    "total_ms": 806.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q006",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.3367738723754883,
+   "top_rerank_score": 1.3367738723754883,
+   "top": [
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 836.4,
+   "timings": {
+    "rewrite_ms": 3.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.8,
+    "dense_ms": 427.9,
+    "spec_rerank_ms": 128.1,
+    "rerank_ms": 269.3,
+    "total_ms": 836.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q007",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.8143388032913208,
+   "top_rerank_score": -0.8143388032913208,
+   "top": [
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_agri_crop_insurance--natural-calamity-scheme-9e5a13:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1"
+   ],
+   "latency_ms": 855.1,
+   "timings": {
+    "rewrite_ms": 4.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.9,
+    "dense_ms": 406.3,
+    "spec_rerank_ms": 278.9,
+    "rerank_ms": 158.4,
+    "total_ms": 855.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q008",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.6695172786712646,
+   "top_rerank_score": 0.6695172786712646,
+   "top": [
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1"
+   ],
+   "latency_ms": 1021.2,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 14.0,
+    "dense_ms": 558.7,
+    "spec_rerank_ms": 164.9,
+    "rerank_ms": 281.7,
+    "total_ms": 1021.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q009",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.196415901184082,
+   "top_rerank_score": -1.196415901184082,
+   "top": [
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "pmfby--pmfby-04a0dd:1"
+   ],
+   "latency_ms": 880.2,
+   "timings": {
+    "rewrite_ms": 2.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.4,
+    "dense_ms": 427.5,
+    "spec_rerank_ms": 287.0,
+    "rerank_ms": 154.0,
+    "total_ms": 880.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q010",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.4420608282089233,
+   "top_rerank_score": 1.4420608282089233,
+   "top": [
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 783.4,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.0,
+    "dense_ms": 410.2,
+    "spec_rerank_ms": 89.5,
+    "rerank_ms": 273.4,
+    "total_ms": 783.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q011",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.24408389627933502,
+   "top_rerank_score": -0.24408389627933502,
+   "top": [
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1",
+    "kerala_fisheries_welfare--index-5dad45:1",
+    "pmmsy--pmmsy-57d921:1",
+    "kerala_fisheries_welfare--schemes-projects-ef358c:1"
+   ],
+   "latency_ms": 878.0,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.2,
+    "dense_ms": 436.3,
+    "spec_rerank_ms": 155.2,
+    "rerank_ms": 275.7,
+    "total_ms": 878.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q012",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.18363143503665924,
+   "top_rerank_score": -0.18363143503665924,
+   "top": [
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1",
+    "kerala_fisheries_welfare--index-5dad45:1"
+   ],
+   "latency_ms": 1064.4,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.0,
+    "dense_ms": 482.6,
+    "spec_rerank_ms": 283.5,
+    "rerank_ms": 287.2,
+    "total_ms": 1064.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q013",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.312316358089447,
+   "top_rerank_score": -0.312316358089447,
+   "top": [
+    "pmay_g--english-book-final-51e2f6:31",
+    "pmay_g--pmay-g-c98964:1",
+    "pmay_g--english-book-final-51e2f6:17",
+    "pmay_g--english-book-final-51e2f6:16",
+    "pmay_g--english-book-final-51e2f6:35"
+   ],
+   "latency_ms": 867.6,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.5,
+    "dense_ms": 417.6,
+    "spec_rerank_ms": 149.3,
+    "rerank_ms": 290.1,
+    "total_ms": 867.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q014",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.12175500392913818,
+   "top_rerank_score": 0.12175500392913818,
+   "top": [
+    "pmay_g--english-book-final-51e2f6:26",
+    "pmay_g--english-book-final-51e2f6:34",
+    "pmay_g--english-book-final-51e2f6:35",
+    "pmay_g--english-book-final-51e2f6:28",
+    "pmay_g--english-book-final-51e2f6:6"
+   ],
+   "latency_ms": 749.8,
+   "timings": {
+    "rewrite_ms": 3.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.7,
+    "dense_ms": 417.7,
+    "spec_rerank_ms": 162.9,
+    "rerank_ms": 159.3,
+    "total_ms": 749.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q015",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": -0.0207577645778656,
+   "top_rerank_score": -0.0207577645778656,
+   "top": [
+    "pmay_g--english-book-final-51e2f6:34",
+    "pmay_g--pmay-g-c98964:1",
+    "pmay_g--english-book-final-51e2f6:17",
+    "pmay_g--english-book-final-51e2f6:32",
+    "pmay_g--english-book-final-51e2f6:43"
+   ],
+   "latency_ms": 863.3,
+   "timings": {
+    "rewrite_ms": 2.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.9,
+    "dense_ms": 419.3,
+    "spec_rerank_ms": 158.0,
+    "rerank_ms": 274.8,
+    "total_ms": 863.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q016",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.6501703262329102,
+   "top_rerank_score": -0.6501703262329102,
+   "top": [
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:2"
+   ],
+   "latency_ms": 1022.6,
+   "timings": {
+    "rewrite_ms": 4.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.5,
+    "dense_ms": 450.1,
+    "spec_rerank_ms": 286.7,
+    "rerank_ms": 271.6,
+    "total_ms": 1022.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q017",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.9521652460098267,
+   "top_rerank_score": 0.9521652460098267,
+   "top": [
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_g--pmay-g-c98964:1"
+   ],
+   "latency_ms": 875.1,
+   "timings": {
+    "rewrite_ms": 2.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.0,
+    "dense_ms": 413.1,
+    "spec_rerank_ms": 155.4,
+    "rerank_ms": 297.2,
+    "total_ms": 875.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q018",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.3678914308547974,
+   "top_rerank_score": -1.3678914308547974,
+   "top": [
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "pmmvy--pmmvy-268b91:1",
+    "nsap_nfbs--nfbs-1b0f63:1"
+   ],
+   "latency_ms": 1021.7,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.4,
+    "dense_ms": 451.4,
+    "spec_rerank_ms": 275.1,
+    "rerank_ms": 281.7,
+    "total_ms": 1021.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q019",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.11136002093553543,
+   "top_rerank_score": -0.11136002093553543,
+   "top": [
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1"
+   ],
+   "latency_ms": 911.9,
+   "timings": {
+    "rewrite_ms": 1.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.7,
+    "dense_ms": 458.3,
+    "spec_rerank_ms": 160.3,
+    "rerank_ms": 283.3,
+    "total_ms": 911.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q020",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.256263017654419,
+   "top_rerank_score": -1.256263017654419,
+   "top": [
+    "pmmvy--pmmvy-268b91:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "pmmvy--pmmvy-268b91:1",
+    "mgnrega--mgnrega-608fc2:1"
+   ],
+   "latency_ms": 762.5,
+   "timings": {
+    "rewrite_ms": 2.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.4,
+    "dense_ms": 436.4,
+    "spec_rerank_ms": 156.7,
+    "rerank_ms": 154.9,
+    "total_ms": 762.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q021",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.6779733300209045,
+   "top_rerank_score": 0.6779733300209045,
+   "top": [
+    "pmmvy--pmmvy-268b91:1",
+    "pmmvy--pmmvy-268b91:1",
+    "pmmvy--pmmvy-268b91:1",
+    "pmmvy--pmmvy-268b91:1",
+    "pmmvy--pmmvy-268b91:1"
+   ],
+   "latency_ms": 895.8,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.4,
+    "dense_ms": 456.1,
+    "spec_rerank_ms": 155.3,
+    "rerank_ms": 272.7,
+    "total_ms": 895.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q022",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.4421899318695068,
+   "top_rerank_score": -1.4421899318695068,
+   "top": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "kerala_pension_old_age--faqs-70561d:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 709.8,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.8,
+    "dense_ms": 436.1,
+    "spec_rerank_ms": 157.8,
+    "rerank_ms": 103.0,
+    "total_ms": 709.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q023",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.9089751243591309,
+   "top_rerank_score": 1.9089751243591309,
+   "top": [
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "kerala_pension_widow--faqs-948590:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12"
+   ],
+   "latency_ms": 960.1,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.7,
+    "dense_ms": 399.6,
+    "spec_rerank_ms": 283.0,
+    "rerank_ms": 267.4,
+    "total_ms": 960.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q024",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.4949041604995728,
+   "top_rerank_score": 1.4949041604995728,
+   "top": [
+    "nsap_igndps--igndps-f97cb2:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_igndps--igndps-f97cb2:1"
+   ],
+   "latency_ms": 569.0,
+   "timings": {
+    "rewrite_ms": 1.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.0,
+    "dense_ms": 405.5,
+    "spec_rerank_ms": 153.5,
+    "rerank_ms": 0.1,
+    "total_ms": 569.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q025",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": -0.2765520513057709,
+   "top_rerank_score": -0.2765520513057709,
+   "top": [
+    "nsap--nsap-guidelines-oct2014-9deea1:13",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 782.9,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.6,
+    "dense_ms": 446.5,
+    "spec_rerank_ms": 161.3,
+    "rerank_ms": 159.8,
+    "total_ms": 782.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q026",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.6893451809883118,
+   "top_rerank_score": -0.6893451809883118,
+   "top": [
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:13",
+    "nsap_nfbs--nfbs-1b0f63:1"
+   ],
+   "latency_ms": 1055.3,
+   "timings": {
+    "rewrite_ms": 3.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.7,
+    "dense_ms": 471.1,
+    "spec_rerank_ms": 281.9,
+    "rerank_ms": 290.3,
+    "total_ms": 1055.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q027",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.255888819694519,
+   "top_rerank_score": 1.255888819694519,
+   "top": [
+    "nsap--nsap-guidelines-oct2014-9deea1:12",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:11",
+    "nsap--nsap-guidelines-oct2014-9deea1:14",
+    "nsap_nfbs--nfbs-1b0f63:1"
+   ],
+   "latency_ms": 742.3,
+   "timings": {
+    "rewrite_ms": 3.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.9,
+    "dense_ms": 414.7,
+    "spec_rerank_ms": 159.0,
+    "rerank_ms": 157.3,
+    "total_ms": 742.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q028",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.3717297315597534,
+   "top_rerank_score": 0.3717297315597534,
+   "top": [
+    "nsap--nsap-guidelines-oct2014-9deea1:15",
+    "nsap--nsap-guidelines-oct2014-9deea1:16",
+    "nsap--nsap-guidelines-oct2014-9deea1:12",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:18"
+   ],
+   "latency_ms": 588.9,
+   "timings": {
+    "rewrite_ms": 3.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.8,
+    "dense_ms": 420.6,
+    "spec_rerank_ms": 158.3,
+    "rerank_ms": 0.0,
+    "total_ms": 588.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q029",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.9375314712524414,
+   "top_rerank_score": 1.9375314712524414,
+   "top": [
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 836.2,
+   "timings": {
+    "rewrite_ms": 3.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.2,
+    "dense_ms": 395.2,
+    "spec_rerank_ms": 279.7,
+    "rerank_ms": 154.1,
+    "total_ms": 836.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q030",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.23693019151687622,
+   "top_rerank_score": 0.23693019151687622,
+   "top": [
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 685.1,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.7,
+    "dense_ms": 400.6,
+    "spec_rerank_ms": 0.2,
+    "rerank_ms": 275.4,
+    "total_ms": 685.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q031",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.538623571395874,
+   "top_rerank_score": -1.538623571395874,
+   "top": [
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:2",
+    "kerala_obc_girls_special_scholarship--b3a448a7e3abdde6fd612e0ac9a391eb-f66f70:2",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "obc_oec_scholarships--c44bb338b9b84821311c7eb0c71b1b50-dbac8e:2"
+   ],
+   "latency_ms": 788.2,
+   "timings": {
+    "rewrite_ms": 5.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.3,
+    "dense_ms": 463.2,
+    "spec_rerank_ms": 153.9,
+    "rerank_ms": 159.2,
+    "total_ms": 788.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q032",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.3325002193450928,
+   "top_rerank_score": 0.3325002193450928,
+   "top": [
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "kerala_minority_scholarships--chms-dbe7e6:1",
+    "kerala_minority_scholarships--mtskrl-27cf80:1",
+    "kerala_minority_scholarships--chms-dbe7e6:1"
+   ],
+   "latency_ms": 919.0,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.7,
+    "dense_ms": 535.6,
+    "spec_rerank_ms": 85.1,
+    "rerank_ms": 282.8,
+    "total_ms": 919.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q033",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.2802950143814087,
+   "top_rerank_score": -0.2802950143814087,
+   "top": [
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:2",
+    "obc_oec_scholarships--a4c9d0a2e4df570475d8a4c448d1cd28-fe4b92:4",
+    "obc_oec_scholarships--1e3f703c08743afb687bde0ebfc5695a-0691db:3",
+    "obc_oec_scholarships--b1452989d1bacb205915c20bb0f847fd-5c339f:2"
+   ],
+   "latency_ms": 862.8,
+   "timings": {
+    "rewrite_ms": 2.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 14.8,
+    "dense_ms": 443.4,
+    "spec_rerank_ms": 127.1,
+    "rerank_ms": 276.2,
+    "total_ms": 862.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q034",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.3190821409225464,
+   "top_rerank_score": 1.3190821409225464,
+   "top": [
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1"
+   ],
+   "latency_ms": 880.6,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.4,
+    "dense_ms": 434.5,
+    "spec_rerank_ms": 156.9,
+    "rerank_ms": 279.7,
+    "total_ms": 880.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q035",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.4401253461837769,
+   "top_rerank_score": 1.4401253461837769,
+   "top": [
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1"
+   ],
+   "latency_ms": 991.8,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.5,
+    "dense_ms": 439.4,
+    "spec_rerank_ms": 269.3,
+    "rerank_ms": 273.4,
+    "total_ms": 991.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q036",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.3120921850204468,
+   "top_rerank_score": 1.3120921850204468,
+   "top": [
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:2"
+   ],
+   "latency_ms": 1059.3,
+   "timings": {
+    "rewrite_ms": 3.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.1,
+    "dense_ms": 496.7,
+    "spec_rerank_ms": 282.3,
+    "rerank_ms": 270.0,
+    "total_ms": 1059.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q037",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 10,
+   "top_score": -1.820173978805542,
+   "top_rerank_score": -1.820173978805542,
+   "top": [
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pmmy--pmmy-761c21:1",
+    "nsap_nfbs--nfbs-1b0f63:1"
+   ],
+   "latency_ms": 817.4,
+   "timings": {
+    "rewrite_ms": 4.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.6,
+    "dense_ms": 482.0,
+    "spec_rerank_ms": 165.0,
+    "rerank_ms": 156.7,
+    "total_ms": 817.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q038",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.0790231227874756,
+   "top_rerank_score": 1.0790231227874756,
+   "top": [
+    "pmegp--pmegp-7e1c48:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pmegp--pmegp-7e1c48:1",
+    "pmegp--pmegp-7e1c48:1",
+    "pmuy--ujjwala2-70400f:1"
+   ],
+   "latency_ms": 856.6,
+   "timings": {
+    "rewrite_ms": 4.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.2,
+    "dense_ms": 420.7,
+    "spec_rerank_ms": 153.2,
+    "rerank_ms": 272.2,
+    "total_ms": 856.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q039",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.8023029565811157,
+   "top_rerank_score": -0.8023029565811157,
+   "top": [
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pmegp--pmegp-7e1c48:1",
+    "pmegp--pmegp-7e1c48:1"
+   ],
+   "latency_ms": 745.4,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.4,
+    "dense_ms": 457.3,
+    "spec_rerank_ms": 153.9,
+    "rerank_ms": 120.4,
+    "total_ms": 745.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q040",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.8635882139205933,
+   "top_rerank_score": -1.8635882139205933,
+   "top": [
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pmmy--pmmy-761c21:1"
+   ],
+   "latency_ms": 1044.0,
+   "timings": {
+    "rewrite_ms": 2.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.3,
+    "dense_ms": 479.9,
+    "spec_rerank_ms": 278.3,
+    "rerank_ms": 272.4,
+    "total_ms": 1044.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q041",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.6138715744018555,
+   "top_rerank_score": -1.6138715744018555,
+   "top": [
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kcc--kcc-0c0281:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1"
+   ],
+   "latency_ms": 895.4,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.3,
+    "dense_ms": 441.8,
+    "spec_rerank_ms": 156.3,
+    "rerank_ms": 283.9,
+    "total_ms": 895.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q042",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.08170805126428604,
+   "top_rerank_score": -0.08170805126428604,
+   "top": [
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pmmy--pmmy-761c21:1"
+   ],
+   "latency_ms": 861.5,
+   "timings": {
+    "rewrite_ms": 2.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.9,
+    "dense_ms": 407.8,
+    "spec_rerank_ms": 158.5,
+    "rerank_ms": 284.2,
+    "total_ms": 861.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q043",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.8731664419174194,
+   "top_rerank_score": -1.8731664419174194,
+   "top": [
+    "pm_vishwakarma--pmv-378966:1",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:2",
+    "pmegp--pmegp-7e1c48:1",
+    "sc_scholarships--502009-3dcfa5:2",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:2"
+   ],
+   "latency_ms": 1048.0,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.5,
+    "dense_ms": 460.9,
+    "spec_rerank_ms": 288.9,
+    "rerank_ms": 284.6,
+    "total_ms": 1048.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q044",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.8359535932540894,
+   "top_rerank_score": 0.8359535932540894,
+   "top": [
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1"
+   ],
+   "latency_ms": 911.2,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.7,
+    "dense_ms": 468.5,
+    "spec_rerank_ms": 155.6,
+    "rerank_ms": 277.1,
+    "total_ms": 911.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q045",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.7444736957550049,
+   "top_rerank_score": -0.7444736957550049,
+   "top": [
+    "mgnrega--mgnrega-608fc2:1",
+    "mgnrega--mgnrega-608fc2:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:1"
+   ],
+   "latency_ms": 978.5,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.5,
+    "dense_ms": 413.3,
+    "spec_rerank_ms": 276.1,
+    "rerank_ms": 279.3,
+    "total_ms": 978.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q046",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.1350044310092926,
+   "top_rerank_score": 0.1350044310092926,
+   "top": [
+    "mgnrega--mgnrega-608fc2:1",
+    "mgnrega--mgnrega-608fc2:1",
+    "pmay_g--pmay-g-c98964:1",
+    "pmegp--pmegp-7e1c48:1",
+    "pmay_g--pmay-g-c98964:1"
+   ],
+   "latency_ms": 859.3,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.3,
+    "dense_ms": 413.5,
+    "spec_rerank_ms": 159.2,
+    "rerank_ms": 276.0,
+    "total_ms": 859.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q047",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.1851708889007568,
+   "top_rerank_score": -1.1851708889007568,
+   "top": [
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--about-b2e352:1"
+   ],
+   "latency_ms": 677.0,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.0,
+    "dense_ms": 426.0,
+    "spec_rerank_ms": 157.0,
+    "rerank_ms": 81.9,
+    "total_ms": 677.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q048",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.7284390926361084,
+   "top_rerank_score": -0.7284390926361084,
+   "top": [
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--about-b2e352:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--ujjwala2-70400f:1"
+   ],
+   "latency_ms": 1087.4,
+   "timings": {
+    "rewrite_ms": 3.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.4,
+    "dense_ms": 508.3,
+    "spec_rerank_ms": 288.0,
+    "rerank_ms": 276.3,
+    "total_ms": 1087.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q049",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": 0.8966009616851807,
+   "top_rerank_score": 0.8966009616851807,
+   "top": [
+    "pmuy--about-b2e352:1",
+    "pmuy--ujjwala2-70400f:1",
+    "pmmvy--pmmvy-268b91:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1"
+   ],
+   "latency_ms": 843.6,
+   "timings": {
+    "rewrite_ms": 3.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.0,
+    "dense_ms": 455.4,
+    "spec_rerank_ms": 303.9,
+    "rerank_ms": 74.0,
+    "total_ms": 843.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q050",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 4,
+   "top_score": -0.8501905202865601,
+   "top_rerank_score": -0.8501905202865601,
+   "top": [
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "apy--apy-234e9e:1",
+    "kerala_pension_old_age--faqs-948590:1",
+    "kerala_pension_widow--faqs-948590:1",
+    "kerala_pension_unmarried_women--faqs-948590:1"
+   ],
+   "latency_ms": 1063.3,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.6,
+    "dense_ms": 481.7,
+    "spec_rerank_ms": 283.9,
+    "rerank_ms": 282.2,
+    "total_ms": 1063.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q051",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.09997677803039551,
+   "top_rerank_score": 0.09997677803039551,
+   "top": [
+    "kerala_pension_widow--faqs-70561d:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 776.4,
+   "timings": {
+    "rewrite_ms": 2.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.8,
+    "dense_ms": 428.3,
+    "spec_rerank_ms": 150.5,
+    "rerank_ms": 187.5,
+    "total_ms": 776.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q052",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": -0.6577852964401245,
+   "top_rerank_score": -0.6577852964401245,
+   "top": [
+    "nsap_ignwps--ignwps-0932bc:1",
+    "kerala_pension_widow--faqs-948590:1",
+    "kerala_pension_widow--faqs-70561d:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap_ignwps--ignwps-0932bc:1"
+   ],
+   "latency_ms": 708.4,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.8,
+    "dense_ms": 428.6,
+    "spec_rerank_ms": 0.1,
+    "rerank_ms": 269.2,
+    "total_ms": 708.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q053",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.5437508821487427,
+   "top_rerank_score": 1.5437508821487427,
+   "top": [
+    "kerala_pension_widow--faqs-948590:1",
+    "kerala_pension_widow--faqs-70561d:1",
+    "kerala_pension_unmarried_women--faqs-70561d:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_old_age--faqs-948590:1"
+   ],
+   "latency_ms": 696.6,
+   "timings": {
+    "rewrite_ms": 3.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.0,
+    "dense_ms": 416.0,
+    "spec_rerank_ms": 157.2,
+    "rerank_ms": 111.0,
+    "total_ms": 696.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q054",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.20759326219558716,
+   "top_rerank_score": 0.20759326219558716,
+   "top": [
+    "kerala_pension_old_age--faqs-948590:1",
+    "kerala_pension_old_age--faqs-70561d:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 796.3,
+   "timings": {
+    "rewrite_ms": 4.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.2,
+    "dense_ms": 419.7,
+    "spec_rerank_ms": 282.4,
+    "rerank_ms": 84.3,
+    "total_ms": 796.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q055",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 9,
+   "top_score": -1.1503703594207764,
+   "top_rerank_score": -1.1503703594207764,
+   "top": [
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 780.1,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.3,
+    "dense_ms": 500.1,
+    "spec_rerank_ms": 0.1,
+    "rerank_ms": 269.0,
+    "total_ms": 780.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q056",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.769971489906311,
+   "top_rerank_score": -0.769971489906311,
+   "top": [
+    "kerala_pension_old_age--faqs-948590:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kerala_pension_widow--faqs-948590:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_agri_labourers--faqs-948590:1"
+   ],
+   "latency_ms": 863.4,
+   "timings": {
+    "rewrite_ms": 2.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.9,
+    "dense_ms": 430.5,
+    "spec_rerank_ms": 153.4,
+    "rerank_ms": 267.3,
+    "total_ms": 863.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q057",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.8254307508468628,
+   "top_rerank_score": -1.8254307508468628,
+   "top": [
+    "kerala_pension_agri_labourers--faqs-948590:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_welfare_pensions--schemes-54856b:1"
+   ],
+   "latency_ms": 776.8,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.0,
+    "dense_ms": 434.2,
+    "spec_rerank_ms": 274.4,
+    "rerank_ms": 56.0,
+    "total_ms": 776.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q058",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.443642258644104,
+   "top_rerank_score": 1.443642258644104,
+   "top": [
+    "kerala_pension_agri_labourers--faqs-70561d:1",
+    "kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1"
+   ],
+   "latency_ms": 1056.5,
+   "timings": {
+    "rewrite_ms": 3.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.6,
+    "dense_ms": 494.9,
+    "spec_rerank_ms": 272.5,
+    "rerank_ms": 275.0,
+    "total_ms": 1056.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q059",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.9615567922592163,
+   "top_rerank_score": 0.9615567922592163,
+   "top": [
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_unmarried_women--faqs-70561d:1",
+    "kerala_pension_widow--faqs-948590:1",
+    "apy--apy-234e9e:1",
+    "nsap_ignwps--ignwps-0932bc:1"
+   ],
+   "latency_ms": 829.6,
+   "timings": {
+    "rewrite_ms": 3.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.0,
+    "dense_ms": 396.0,
+    "spec_rerank_ms": 270.1,
+    "rerank_ms": 155.4,
+    "total_ms": 829.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q060",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.6170066595077515,
+   "top_rerank_score": 1.6170066595077515,
+   "top": [
+    "kerala_pension_disability--faqs-70561d:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kerala_pension_old_age--faqs-70561d:1",
+    "kerala_pension_unmarried_women--faqs-70561d:1",
+    "kerala_pension_agri_labourers--faqs-70561d:1"
+   ],
+   "latency_ms": 822.5,
+   "timings": {
+    "rewrite_ms": 4.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.8,
+    "dense_ms": 420.7,
+    "spec_rerank_ms": 288.2,
+    "rerank_ms": 103.5,
+    "total_ms": 822.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q061",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": null,
+   "top_score": -0.4037415087223053,
+   "top_rerank_score": -0.4037415087223053,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "apy--apy-234e9e:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:25"
+   ],
+   "latency_ms": 776.5,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.3,
+    "dense_ms": 395.2,
+    "spec_rerank_ms": 91.9,
+    "rerank_ms": 278.9,
+    "total_ms": 776.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q062",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 4,
+   "top_score": -1.3854113817214966,
+   "top_rerank_score": -1.3854113817214966,
+   "top": [
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_unmarried_women--faqs-70561d:1",
+    "apy--apy-234e9e:1",
+    "kerala_welfare_pensions--schemes-54856b:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 750.2,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.7,
+    "dense_ms": 394.1,
+    "spec_rerank_ms": 210.1,
+    "rerank_ms": 137.9,
+    "total_ms": 750.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q063",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": -0.9434736371040344,
+   "top_rerank_score": -0.9434736371040344,
+   "top": [
+    "nsap--nsap-guidelines-oct2014-9deea1:25",
+    "kerala_welfare_pensions--schemes-54856b:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:18",
+    "nsap_igndps--igndps-f97cb2:1",
+    "kerala_pension_old_age--faqs-948590:1"
+   ],
+   "latency_ms": 778.0,
+   "timings": {
+    "rewrite_ms": 4.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.0,
+    "dense_ms": 452.2,
+    "spec_rerank_ms": 43.1,
+    "rerank_ms": 270.3,
+    "total_ms": 778.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q064",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.20563572645187378,
+   "top_rerank_score": 0.20563572645187378,
+   "top": [
+    "kerala_pension_old_age--faqs-948590:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_old_age--faqs-70561d:1",
+    "kerala_pension_agri_labourers--faqs-948590:1",
+    "kerala_welfare_pensions--schemes-54856b:1"
+   ],
+   "latency_ms": 844.6,
+   "timings": {
+    "rewrite_ms": 1.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.1,
+    "dense_ms": 410.5,
+    "spec_rerank_ms": 152.7,
+    "rerank_ms": 271.0,
+    "total_ms": 844.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q065",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 3,
+   "top_score": -1.0477573871612549,
+   "top_rerank_score": -1.0477573871612549,
+   "top": [
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_arogyakiranam--page-id-8713-256ed5:1",
+    "kasp--page-id-1077-3490f3:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_cancer_suraksha--css-62511c:1"
+   ],
+   "latency_ms": 768.5,
+   "timings": {
+    "rewrite_ms": 1.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.8,
+    "dense_ms": 435.5,
+    "spec_rerank_ms": 156.5,
+    "rerank_ms": 163.4,
+    "total_ms": 768.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q066",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.2507011890411377,
+   "top_rerank_score": 0.2507011890411377,
+   "top": [
+    "kasp--page-id-1077-3490f3:1",
+    "kerala_arogyakiranam--page-id-8713-256ed5:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "pmuy--about-b2e352:1"
+   ],
+   "latency_ms": 1003.1,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.1,
+    "bm25_ms": 9.0,
+    "dense_ms": 432.9,
+    "spec_rerank_ms": 280.9,
+    "rerank_ms": 278.9,
+    "total_ms": 1003.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q067",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.24865582585334778,
+   "top_rerank_score": -0.24865582585334778,
+   "top": [
+    "kasp--page-id-1077-3490f3:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_arogyakiranam--page-id-8713-256ed5:1",
+    "kerala_cancer_suraksha--css-62511c:1"
+   ],
+   "latency_ms": 1003.9,
+   "timings": {
+    "rewrite_ms": 3.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.9,
+    "dense_ms": 446.4,
+    "spec_rerank_ms": 272.9,
+    "rerank_ms": 273.0,
+    "total_ms": 1003.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q068",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.0319199562072754,
+   "top_rerank_score": 1.0319199562072754,
+   "top": [
+    "kerala_arogyakiranam--page-id-8713-256ed5:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_sruthitharangam--scis-be274f:1"
+   ],
+   "latency_ms": 711.4,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.4,
+    "dense_ms": 392.9,
+    "spec_rerank_ms": 158.3,
+    "rerank_ms": 151.5,
+    "total_ms": 711.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q069",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": null,
+   "top_score": -0.7520259618759155,
+   "top_rerank_score": -0.7520259618759155,
+   "top": [
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_sruthitharangam--scis-be274f:1"
+   ],
+   "latency_ms": 698.7,
+   "timings": {
+    "rewrite_ms": 4.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.7,
+    "dense_ms": 412.6,
+    "spec_rerank_ms": 276.0,
+    "rerank_ms": 0.1,
+    "total_ms": 698.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q070",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 9,
+   "top_score": 0.3048568665981293,
+   "top_rerank_score": 0.3048568665981293,
+   "top": [
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 844.7,
+   "timings": {
+    "rewrite_ms": 3.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.8,
+    "dense_ms": 400.5,
+    "spec_rerank_ms": 156.9,
+    "rerank_ms": 278.3,
+    "total_ms": 844.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q071",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.5783025026321411,
+   "top_rerank_score": -0.5783025026321411,
+   "top": [
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_sruthitharangam--page-id-8718-4daea8:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 768.6,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.4,
+    "dense_ms": 419.3,
+    "spec_rerank_ms": 154.3,
+    "rerank_ms": 183.3,
+    "total_ms": 768.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q072",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.9530364871025085,
+   "top_rerank_score": -0.9530364871025085,
+   "top": [
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_cancer_suraksha--css-62511c:1"
+   ],
+   "latency_ms": 965.1,
+   "timings": {
+    "rewrite_ms": 3.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 18.9,
+    "dense_ms": 563.5,
+    "spec_rerank_ms": 277.4,
+    "rerank_ms": 103.8,
+    "total_ms": 965.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q073",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.47106045484542847,
+   "top_rerank_score": 0.47106045484542847,
+   "top": [
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1"
+   ],
+   "latency_ms": 834.6,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.9,
+    "dense_ms": 485.5,
+    "spec_rerank_ms": 58.9,
+    "rerank_ms": 274.8,
+    "total_ms": 834.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q074",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 3,
+   "top_score": -1.3333122730255127,
+   "top_rerank_score": -1.3333122730255127,
+   "top": [
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_thalolam--ts-kerala-a6609b:1"
+   ],
+   "latency_ms": 684.0,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.3,
+    "dense_ms": 401.6,
+    "spec_rerank_ms": 270.9,
+    "rerank_ms": 0.1,
+    "total_ms": 684.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q075",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.9039418697357178,
+   "top_rerank_score": 0.9039418697357178,
+   "top": [
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "pmmvy--pmmvy-268b91:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1"
+   ],
+   "latency_ms": 942.7,
+   "timings": {
+    "rewrite_ms": 2.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.6,
+    "dense_ms": 384.4,
+    "spec_rerank_ms": 276.5,
+    "rerank_ms": 271.8,
+    "total_ms": 942.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q076",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.4011332988739014,
+   "top_rerank_score": 1.4011332988739014,
+   "top": [
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1"
+   ],
+   "latency_ms": 533.6,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.3,
+    "dense_ms": 398.6,
+    "spec_rerank_ms": 125.6,
+    "rerank_ms": 0.1,
+    "total_ms": 533.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q077",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.8512275218963623,
+   "top_rerank_score": -0.8512275218963623,
+   "top": [
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "nsap_igndps--igndps-f97cb2:1",
+    "kssm_aswasakiranam--ak-e7b98e:1"
+   ],
+   "latency_ms": 1001.7,
+   "timings": {
+    "rewrite_ms": 3.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.8,
+    "dense_ms": 448.7,
+    "spec_rerank_ms": 275.6,
+    "rerank_ms": 266.6,
+    "total_ms": 1001.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q078",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.0918123722076416,
+   "top_rerank_score": 1.0918123722076416,
+   "top": [
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1"
+   ],
+   "latency_ms": 796.4,
+   "timings": {
+    "rewrite_ms": 3.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.4,
+    "dense_ms": 422.3,
+    "spec_rerank_ms": 281.7,
+    "rerank_ms": 81.5,
+    "total_ms": 796.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q079",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.824420690536499,
+   "top_rerank_score": -0.824420690536499,
+   "top": [
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:13",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1",
+    "kerala_sruthitharangam--scis-be274f:1"
+   ],
+   "latency_ms": 423.4,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.6,
+    "dense_ms": 411.2,
+    "spec_rerank_ms": 0.2,
+    "rerank_ms": 0.1,
+    "total_ms": 423.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q080",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 3,
+   "top_score": -0.9833517074584961,
+   "top_rerank_score": -0.9833517074584961,
+   "top": [
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1"
+   ],
+   "latency_ms": 872.3,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.7,
+    "dense_ms": 431.8,
+    "spec_rerank_ms": 154.1,
+    "rerank_ms": 273.5,
+    "total_ms": 872.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q081",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.0035200119018555,
+   "top_rerank_score": -1.0035200119018555,
+   "top": [
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1"
+   ],
+   "latency_ms": 602.0,
+   "timings": {
+    "rewrite_ms": 2.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.3,
+    "dense_ms": 434.7,
+    "spec_rerank_ms": 154.7,
+    "rerank_ms": 0.1,
+    "total_ms": 602.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q082",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.618943452835083,
+   "top_rerank_score": -0.618943452835083,
+   "top": [
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:2"
+   ],
+   "latency_ms": 882.4,
+   "timings": {
+    "rewrite_ms": 3.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.4,
+    "dense_ms": 426.6,
+    "spec_rerank_ms": 276.5,
+    "rerank_ms": 168.8,
+    "total_ms": 882.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q083",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -2.074528932571411,
+   "top_rerank_score": -2.074528932571411,
+   "top": [
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "kerala_sruthitharangam--scis-be274f:1",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:3"
+   ],
+   "latency_ms": 734.7,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.3,
+    "dense_ms": 418.9,
+    "spec_rerank_ms": 151.0,
+    "rerank_ms": 152.7,
+    "total_ms": 734.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q084",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.9571222066879272,
+   "top_rerank_score": 0.9571222066879272,
+   "top": [
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "sjd_parinayam--maddapp-i-224a77:1"
+   ],
+   "latency_ms": 596.0,
+   "timings": {
+    "rewrite_ms": 3.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.9,
+    "dense_ms": 434.8,
+    "spec_rerank_ms": 0.2,
+    "rerank_ms": 149.8,
+    "total_ms": 596.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q085",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.6942841410636902,
+   "top_rerank_score": 0.6942841410636902,
+   "top": [
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "sjd_parinayam--maddapp-i-224a77:1"
+   ],
+   "latency_ms": 1138.6,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 21.8,
+    "dense_ms": 554.6,
+    "spec_rerank_ms": 278.7,
+    "rerank_ms": 282.3,
+    "total_ms": 1138.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q086",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.7357270121574402,
+   "top_rerank_score": -0.7357270121574402,
+   "top": [
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "kerala_pension_agri_labourers--faqs-948590:1",
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:3",
+    "kerala_welfare_pensions--schemes-54856b:1"
+   ],
+   "latency_ms": 602.5,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.5,
+    "dense_ms": 398.7,
+    "spec_rerank_ms": 110.4,
+    "rerank_ms": 84.6,
+    "total_ms": 602.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q087",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": 0.8980628252029419,
+   "top_rerank_score": 0.8980628252029419,
+   "top": [
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1",
+    "kerala_pension_agri_labourers--faqs-70561d:1",
+    "kcc--kcc-0c0281:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1"
+   ],
+   "latency_ms": 691.7,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.0,
+    "dense_ms": 417.6,
+    "spec_rerank_ms": 102.1,
+    "rerank_ms": 160.6,
+    "total_ms": 691.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q088",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.08467572927474976,
+   "top_rerank_score": 0.08467572927474976,
+   "top": [
+    "kerala_farmers_welfare_fund--registrationinstructions-kfwfb-6fd702:1",
+    "pmfby--pmfby-04a0dd:1",
+    "kcc--kcc-0c0281:1",
+    "pm_kisan--revisedfaq-666f07:5",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1"
+   ],
+   "latency_ms": 914.0,
+   "timings": {
+    "rewrite_ms": 3.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.2,
+    "dense_ms": 531.8,
+    "spec_rerank_ms": 93.6,
+    "rerank_ms": 273.0,
+    "total_ms": 914.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q089",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.2187577486038208,
+   "top_rerank_score": 0.2187577486038208,
+   "top": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_agri_crop_insurance--natural-calamity-scheme-9e5a13:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1"
+   ],
+   "latency_ms": 774.3,
+   "timings": {
+    "rewrite_ms": 1.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.6,
+    "dense_ms": 422.2,
+    "spec_rerank_ms": 217.7,
+    "rerank_ms": 124.5,
+    "total_ms": 774.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q090",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.5269435048103333,
+   "top_rerank_score": 0.5269435048103333,
+   "top": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1"
+   ],
+   "latency_ms": 884.8,
+   "timings": {
+    "rewrite_ms": 6.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.1,
+    "dense_ms": 440.5,
+    "spec_rerank_ms": 274.9,
+    "rerank_ms": 156.5,
+    "total_ms": 884.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q091",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.4163520932197571,
+   "top_rerank_score": 0.4163520932197571,
+   "top": [
+    "kerala_agri_crop_insurance--natural-calamity-scheme-9e5a13:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1"
+   ],
+   "latency_ms": 779.1,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.8,
+    "dense_ms": 457.8,
+    "spec_rerank_ms": 148.9,
+    "rerank_ms": 159.4,
+    "total_ms": 779.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q092",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.2475630044937134,
+   "top_rerank_score": 1.2475630044937134,
+   "top": [
+    "kerala_agri_schemes--schemes-103621:1",
+    "kerala_agri_schemes--schemes-mal-e8d3f1:1",
+    "kerala_agri_crop_insurance--natural-calamity-scheme-9e5a13:1",
+    "kerala_agri_schemes--schemes-103621:1",
+    "kudumbashree--5-396fc7:1"
+   ],
+   "latency_ms": 583.6,
+   "timings": {
+    "rewrite_ms": 3.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.5,
+    "dense_ms": 406.8,
+    "spec_rerank_ms": 0.5,
+    "rerank_ms": 166.5,
+    "total_ms": 583.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q093",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.0219593048095703,
+   "top_rerank_score": 1.0219593048095703,
+   "top": [
+    "kerala_fisheries_welfare--schemes-projects-ef358c:1",
+    "kerala_fisheries_welfare--index-5dad45:1",
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1",
+    "pmmsy--pmmsy-57d921:1"
+   ],
+   "latency_ms": 722.7,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.5,
+    "dense_ms": 434.9,
+    "spec_rerank_ms": 0.2,
+    "rerank_ms": 278.9,
+    "total_ms": 722.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q094",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.7829872369766235,
+   "top_rerank_score": -0.7829872369766235,
+   "top": [
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "nsap_ignwps--ignwps-0932bc:1"
+   ],
+   "latency_ms": 862.5,
+   "timings": {
+    "rewrite_ms": 3.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.4,
+    "dense_ms": 425.6,
+    "spec_rerank_ms": 271.1,
+    "rerank_ms": 153.3,
+    "total_ms": 862.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q095",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.0921248197555542,
+   "top_rerank_score": 1.0921248197555542,
+   "top": [
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kerala_tailoring_workers_welfare--acts-schemes-96b461:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1"
+   ],
+   "latency_ms": 1053.9,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.0,
+    "dense_ms": 503.5,
+    "spec_rerank_ms": 268.2,
+    "rerank_ms": 271.0,
+    "total_ms": 1053.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q096",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.14671869575977325,
+   "top_rerank_score": -0.14671869575977325,
+   "top": [
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1"
+   ],
+   "latency_ms": 833.5,
+   "timings": {
+    "rewrite_ms": 3.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.3,
+    "dense_ms": 448.3,
+    "spec_rerank_ms": 277.1,
+    "rerank_ms": 96.5,
+    "total_ms": 833.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q097",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 9,
+   "top_score": -1.2746213674545288,
+   "top_rerank_score": -1.2746213674545288,
+   "top": [
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pmegp--pmegp-7e1c48:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1"
+   ],
+   "latency_ms": 861.3,
+   "timings": {
+    "rewrite_ms": 5.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.7,
+    "dense_ms": 452.1,
+    "spec_rerank_ms": 156.0,
+    "rerank_ms": 238.3,
+    "total_ms": 861.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q098",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.5801650285720825,
+   "top_rerank_score": -1.5801650285720825,
+   "top": [
+    "life_mission--life-project-5ef49f:1",
+    "pmay_g--english-book-final-51e2f6:25",
+    "pmay_g--pmay-g-c98964:1",
+    "life_mission--ems-housing-project-866ef2:1",
+    "pmay_u--pmay-u-5f7b25:1"
+   ],
+   "latency_ms": 892.2,
+   "timings": {
+    "rewrite_ms": 3.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.6,
+    "dense_ms": 451.8,
+    "spec_rerank_ms": 151.9,
+    "rerank_ms": 275.7,
+    "total_ms": 892.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q099",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.2281606197357178,
+   "top_rerank_score": 1.2281606197357178,
+   "top": [
+    "life_mission--life-project-5ef49f:1",
+    "life_mission--ems-housing-project-866ef2:1",
+    "life_mission--518-9bc49f:1",
+    "life_mission--life-third-phase-c35686:1",
+    "pmay_g--pmay-g-c98964:1"
+   ],
+   "latency_ms": 991.9,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.6,
+    "dense_ms": 433.8,
+    "spec_rerank_ms": 270.5,
+    "rerank_ms": 276.7,
+    "total_ms": 991.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q100",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.24984470009803772,
+   "top_rerank_score": 0.24984470009803772,
+   "top": [
+    "life_mission--ems-housing-project-866ef2:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_nfbs--nfbs-1b0f63:1"
+   ],
+   "latency_ms": 959.1,
+   "timings": {
+    "rewrite_ms": 2.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.8,
+    "dense_ms": 399.6,
+    "spec_rerank_ms": 267.4,
+    "rerank_ms": 282.1,
+    "total_ms": 959.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q101",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.26069551706314087,
+   "top_rerank_score": 0.26069551706314087,
+   "top": [
+    "life_mission--life-project-5ef49f:1",
+    "life_mission--518-9bc49f:1",
+    "life_mission--life-third-phase-c35686:1",
+    "life_mission--ems-housing-project-866ef2:1",
+    "pmay_u--pmay-u-5f7b25:1"
+   ],
+   "latency_ms": 717.3,
+   "timings": {
+    "rewrite_ms": 1.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.0,
+    "dense_ms": 408.1,
+    "spec_rerank_ms": 146.4,
+    "rerank_ms": 151.7,
+    "total_ms": 717.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q102",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.5549309253692627,
+   "top_rerank_score": -1.5549309253692627,
+   "top": [
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:2",
+    "sc_scholarships--2016-06-17-06-37-09-c6484c:1",
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:1",
+    "kerala_obc_girls_special_scholarship--b3a448a7e3abdde6fd612e0ac9a391eb-f66f70:1",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:1"
+   ],
+   "latency_ms": 429.0,
+   "timings": {
+    "rewrite_ms": 2.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.5,
+    "dense_ms": 416.7,
+    "spec_rerank_ms": 0.3,
+    "rerank_ms": 0.1,
+    "total_ms": 429.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q103",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 3,
+   "top_score": 0.13947075605392456,
+   "top_rerank_score": 0.13947075605392456,
+   "top": [
+    "sc_scholarships--traceproject-a568f0:1",
+    "sc_scholarships--traceproject-a568f0:3",
+    "sc_scholarships--unnathi-scholarship-3ea21d:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:1",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:6"
+   ],
+   "latency_ms": 831.4,
+   "timings": {
+    "rewrite_ms": 2.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.5,
+    "dense_ms": 391.3,
+    "spec_rerank_ms": 154.7,
+    "rerank_ms": 277.7,
+    "total_ms": 831.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q104",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.342871755361557,
+   "top_rerank_score": -0.342871755361557,
+   "top": [
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:3",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:7",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:6",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:1"
+   ],
+   "latency_ms": 894.8,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.4,
+    "dense_ms": 501.6,
+    "spec_rerank_ms": 101.8,
+    "rerank_ms": 277.5,
+    "total_ms": 894.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q105",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": 0.13332518935203552,
+   "top_rerank_score": 0.13332518935203552,
+   "top": [
+    "sc_scholarships--lakshya-615625:2",
+    "sc_scholarships--lakshya-615625:1",
+    "sc_scholarships--lakshya-615625:3",
+    "sc_scholarships--lakshya-615625:4",
+    "sc_scholarships--lap-top-order-new-12-c5648c:2"
+   ],
+   "latency_ms": 523.3,
+   "timings": {
+    "rewrite_ms": 2.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 4.4,
+    "dense_ms": 365.0,
+    "spec_rerank_ms": 152.2,
+    "rerank_ms": 0.1,
+    "total_ms": 523.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q106",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.2724151015281677,
+   "top_rerank_score": -0.2724151015281677,
+   "top": [
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:1",
+    "st_scholarships--e793f3e7f25b8e36be8d856bf09e34fa-3709af:2",
+    "sc_scholarships--lap-top-order-new-12-c5648c:1",
+    "sc_scholarships--lap-top-order-new-12-c5648c:2",
+    "sc_scholarships--lap-top-order-new-12-c5648c:1"
+   ],
+   "latency_ms": 819.9,
+   "timings": {
+    "rewrite_ms": 2.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.8,
+    "dense_ms": 389.6,
+    "spec_rerank_ms": 270.4,
+    "rerank_ms": 152.1,
+    "total_ms": 819.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q107",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.5024001598358154,
+   "top_rerank_score": 0.5024001598358154,
+   "top": [
+    "sc_scholarships--mrsadmission-cd28e6:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "obc_oec_scholarships--1e3f703c08743afb687bde0ebfc5695a-0691db:3"
+   ],
+   "latency_ms": 727.7,
+   "timings": {
+    "rewrite_ms": 2.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.8,
+    "dense_ms": 408.7,
+    "spec_rerank_ms": 155.2,
+    "rerank_ms": 153.9,
+    "total_ms": 727.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q108",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 4,
+   "top_score": -1.1038967370986938,
+   "top_rerank_score": -1.1038967370986938,
+   "top": [
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "sc_scholarships--2016-06-27-10-37-10-b7b476:1",
+    "kerala_advocate_grant--7f13ea25ed7d4bb95a6ee0b1557c382d-cff460:3"
+   ],
+   "latency_ms": 688.9,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.9,
+    "dense_ms": 402.0,
+    "spec_rerank_ms": 0.2,
+    "rerank_ms": 274.6,
+    "total_ms": 688.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q109",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": null,
+   "top_score": -0.8705801963806152,
+   "top_rerank_score": -0.8705801963806152,
+   "top": [
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:6",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "sc_scholarships--goakshaya-504527:3",
+    "jsy--jsy1-79905a:1",
+    "sc_scholarships--ceccddf2b8e49fea025ce19655e86834-20908f:4"
+   ],
+   "latency_ms": 829.6,
+   "timings": {
+    "rewrite_ms": 3.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.6,
+    "dense_ms": 401.0,
+    "spec_rerank_ms": 146.0,
+    "rerank_ms": 272.8,
+    "total_ms": 829.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q110",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.4376242756843567,
+   "top_rerank_score": -0.4376242756843567,
+   "top": [
+    "st_scholarships--3-janani-janmaraksha-0-d17ade:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "pmmvy--pmmvy-268b91:1"
+   ],
+   "latency_ms": 858.1,
+   "timings": {
+    "rewrite_ms": 2.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 15.0,
+    "dense_ms": 491.2,
+    "spec_rerank_ms": 67.9,
+    "rerank_ms": 282.6,
+    "total_ms": 858.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q111",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.37566477060317993,
+   "top_rerank_score": -0.37566477060317993,
+   "top": [
+    "st_scholarships--2-inter-cast-marriage-0-fcaba9:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "st_scholarships--2-inter-cast-marriage-0-fcaba9:2",
+    "st_scholarships--4-treatment-0-ab11d8:2",
+    "sjd_parinayam--maddapp-i-224a77:1"
+   ],
+   "latency_ms": 908.1,
+   "timings": {
+    "rewrite_ms": 2.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.7,
+    "dense_ms": 452.8,
+    "spec_rerank_ms": 161.3,
+    "rerank_ms": 279.6,
+    "total_ms": 908.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q112",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": null,
+   "top_score": 1.1975713968276978,
+   "top_rerank_score": 1.1975713968276978,
+   "top": [
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:11",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:5",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:1",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:8",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:2"
+   ],
+   "latency_ms": 723.0,
+   "timings": {
+    "rewrite_ms": 4.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.4,
+    "dense_ms": 445.2,
+    "spec_rerank_ms": 268.1,
+    "rerank_ms": 0.1,
+    "total_ms": 723.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q113",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": null,
+   "top_score": 0.0889439582824707,
+   "top_rerank_score": 0.0889439582824707,
+   "top": [
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:1",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:2",
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:2",
+    "kerala_obc_girls_special_scholarship--b3a448a7e3abdde6fd612e0ac9a391eb-f66f70:2"
+   ],
+   "latency_ms": 516.0,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.3,
+    "dense_ms": 388.9,
+    "spec_rerank_ms": 117.5,
+    "rerank_ms": 0.1,
+    "total_ms": 516.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q114",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": -2.4692766666412354,
+   "top_rerank_score": -2.4692766666412354,
+   "top": [
+    "sc_scholarships--lakshya-615625:3",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "pre_matric_minorities--pmsfsbtnm-d042ce:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:3",
+    "sjd_disability_scholarship--sdas-6a3a34:1"
+   ],
+   "latency_ms": 727.3,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.3,
+    "dense_ms": 419.3,
+    "spec_rerank_ms": 156.3,
+    "rerank_ms": 138.4,
+    "total_ms": 727.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q115",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.4597673416137695,
+   "top_rerank_score": 1.4597673416137695,
+   "top": [
+    "obc_oec_scholarships--45241434689234814487bbb91f0d787c-fd5f56:1",
+    "obc_oec_scholarships--a0b77c26ce26536a5338e55ca12edfd6-af181c:1",
+    "obc_oec_scholarships--f59aba44a607c1de32ef3c3f4a35d309-de0705:1",
+    "obc_oec_scholarships--32706ab4b4816187c27cc8fff2e2a9da-a9fb5a:1",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:6"
+   ],
+   "latency_ms": 606.5,
+   "timings": {
+    "rewrite_ms": 3.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.1,
+    "dense_ms": 441.1,
+    "spec_rerank_ms": 0.2,
+    "rerank_ms": 154.9,
+    "total_ms": 606.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q116",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": null,
+   "top_score": -0.5211831331253052,
+   "top_rerank_score": -0.5211831331253052,
+   "top": [
+    "obc_oec_scholarships--a0b77c26ce26536a5338e55ca12edfd6-af181c:7",
+    "obc_oec_scholarships--b1452989d1bacb205915c20bb0f847fd-5c339f:7",
+    "sc_scholarships--502009-3dcfa5:7",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "obc_oec_scholarships--b1452989d1bacb205915c20bb0f847fd-5c339f:2"
+   ],
+   "latency_ms": 1055.3,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.5,
+    "dense_ms": 498.9,
+    "spec_rerank_ms": 269.0,
+    "rerank_ms": 272.7,
+    "total_ms": 1055.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q117",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": -0.8659888505935669,
+   "top_rerank_score": -0.8659888505935669,
+   "top": [
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:9",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:1",
+    "kerala_obc_girls_special_scholarship--b3a448a7e3abdde6fd612e0ac9a391eb-f66f70:1",
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:1",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:2"
+   ],
+   "latency_ms": 791.0,
+   "timings": {
+    "rewrite_ms": 2.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.3,
+    "dense_ms": 461.2,
+    "spec_rerank_ms": 159.4,
+    "rerank_ms": 158.0,
+    "total_ms": 791.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q118",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": 0.6995301842689514,
+   "top_rerank_score": 0.6995301842689514,
+   "top": [
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:16",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:17"
+   ],
+   "latency_ms": 853.0,
+   "timings": {
+    "rewrite_ms": 4.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.3,
+    "dense_ms": 413.0,
+    "spec_rerank_ms": 155.8,
+    "rerank_ms": 271.6,
+    "total_ms": 853.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q119",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 0.8787096738815308,
+   "top_rerank_score": 0.8787096738815308,
+   "top": [
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:2",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:2",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:2",
+    "sc_scholarships--lakshya-615625:3",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:1"
+   ],
+   "latency_ms": 591.5,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.8,
+    "dense_ms": 428.4,
+    "spec_rerank_ms": 0.2,
+    "rerank_ms": 152.9,
+    "total_ms": 591.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q120",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 4,
+   "top_score": 0.0332770049571991,
+   "top_rerank_score": 0.0332770049571991,
+   "top": [
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:21",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:22",
+    "kerala_eep--ceccdb87abb9537c7277a3722e4a880b-eb1fff:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:2",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:1"
+   ],
+   "latency_ms": 883.9,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 14.5,
+    "dense_ms": 487.9,
+    "spec_rerank_ms": 104.1,
+    "rerank_ms": 276.1,
+    "total_ms": 883.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q121",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.029668420553207397,
+   "top_rerank_score": -0.029668420553207397,
+   "top": [
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:1",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:1",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:2",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:1",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:2"
+   ],
+   "latency_ms": 877.5,
+   "timings": {
+    "rewrite_ms": 3.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.6,
+    "dense_ms": 445.3,
+    "spec_rerank_ms": 269.6,
+    "rerank_ms": 151.6,
+    "total_ms": 877.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q122",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "main",
+   "rank": 2,
+   "top_score": 0.6381151080131531,
+   "top_rerank_score": 0.6381151080131531,
+   "top": [
+    "kerala_overseas_scholarship_obc--6414a810f9b0865071c5a1f46aac408b-c6f238:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:2",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:16",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:4"
+   ],
+   "latency_ms": 970.6,
+   "timings": {
+    "rewrite_ms": 3.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.9,
+    "dense_ms": 417.3,
+    "spec_rerank_ms": 267.6,
+    "rerank_ms": 272.5,
+    "total_ms": 970.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q123",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 4,
+   "top_score": 1.5946356058120728,
+   "top_rerank_score": 1.5946356058120728,
+   "top": [
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:5",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:2",
+    "kerala_overseas_scholarship_obc--6414a810f9b0865071c5a1f46aac408b-c6f238:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:6"
+   ],
+   "latency_ms": 895.9,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.7,
+    "dense_ms": 445.1,
+    "spec_rerank_ms": 158.8,
+    "rerank_ms": 279.0,
+    "total_ms": 895.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q124",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -1.9971261024475098,
+   "top_rerank_score": -1.9971261024475098,
+   "top": [
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1"
+   ],
+   "latency_ms": 883.5,
+   "timings": {
+    "rewrite_ms": 2.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.7,
+    "dense_ms": 447.4,
+    "spec_rerank_ms": 153.9,
+    "rerank_ms": 269.3,
+    "total_ms": 883.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q125",
+   "lang": "en",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": -0.4657754600048065,
+   "top_rerank_score": -0.4657754600048065,
+   "top": [
+    "kerala_minority_scholarships--chms-dbe7e6:1",
+    "kerala_minority_scholarships--chms-dbe7e6:1",
+    "kerala_minority_scholarships--chms-dbe7e6:1",
+    "kerala_minority_scholarships--mtskrl-27cf80:1",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:2"
+   ],
+   "latency_ms": 610.0,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.7,
+    "dense_ms": 446.3,
+    "spec_rerank_ms": 150.8,
+    "rerank_ms": 0.1,
+    "total_ms": 610.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "q126",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "main",
+   "rank": 1,
+   "top_score": 1.2521015405654907,
+   "top_rerank_score": 1.2521015405654907,
+   "top": [
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1"
+   ],
+   "latency_ms": 1055.4,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.5,
+    "dense_ms": 489.7,
+    "spec_rerank_ms": 284.9,
+    "rerank_ms": 269.1,
+    "total_ms": 1055.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n001",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.1378731727600098,
+   "top_rerank_score": -1.1378731727600098,
+   "top": [
+    "pm_vishwakarma--pmv-378966:1",
+    "pmmvy--pmmvy-268b91:1",
+    "pmegp--pmegp-7e1c48:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "pmay_u--pmay-u-5f7b25:1"
+   ],
+   "latency_ms": 600.3,
+   "timings": {
+    "rewrite_ms": 2.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.6,
+    "dense_ms": 440.8,
+    "spec_rerank_ms": 0.2,
+    "rerank_ms": 151.6,
+    "total_ms": 600.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n002",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.029695987701416,
+   "top_rerank_score": -2.029695987701416,
+   "top": [
+    "pm_kisan--pm-kisan-488a46:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_igndps--igndps-f97cb2:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignwps--ignwps-0932bc:1"
+   ],
+   "latency_ms": 653.6,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.0,
+    "dense_ms": 394.7,
+    "spec_rerank_ms": 152.0,
+    "rerank_ms": 97.2,
+    "total_ms": 653.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n003",
+   "lang": "ml",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.241333246231079,
+   "top_rerank_score": -2.241333246231079,
+   "top": [
+    "kerala_eep--bcdir4982022-a1-3fdf9f:7",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:11",
+    "pm_kisan--pm-kisan-488a46:1"
+   ],
+   "latency_ms": 629.8,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.4,
+    "dense_ms": 378.6,
+    "spec_rerank_ms": 152.1,
+    "rerank_ms": 90.2,
+    "total_ms": 629.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n004",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -0.8215903639793396,
+   "top_rerank_score": -0.8215903639793396,
+   "top": [
+    "pmay_g--pmay-g-c98964:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pmmy--pmmy-761c21:1",
+    "pmmy--pmmy-761c21:1",
+    "kerala_agri_schemes--schemes-103621:1"
+   ],
+   "latency_ms": 1002.8,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.2,
+    "dense_ms": 435.7,
+    "spec_rerank_ms": 284.8,
+    "rerank_ms": 273.8,
+    "total_ms": 1002.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n005",
+   "lang": "manglish",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.074639320373535,
+   "top_rerank_score": -2.074639320373535,
+   "top": [
+    "pmegp--pmegp-7e1c48:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:5",
+    "obc_oec_scholarships--oecp-mea-5b6755:1",
+    "pm_yasasvi_prematric--pmyasasvipmsobcebcdnts-f39ee2:1"
+   ],
+   "latency_ms": 837.7,
+   "timings": {
+    "rewrite_ms": 2.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.6,
+    "dense_ms": 426.2,
+    "spec_rerank_ms": 125.7,
+    "rerank_ms": 274.5,
+    "total_ms": 837.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n006",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -0.03362306207418442,
+   "top_rerank_score": -0.03362306207418442,
+   "top": [
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "kerala_advocate_grant--ag-f0f51d:1",
+    "sc_scholarships--traceproject-a568f0:1",
+    "kerala_advocate_grant--ag-f0f51d:1"
+   ],
+   "latency_ms": 946.9,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.0,
+    "dense_ms": 392.1,
+    "spec_rerank_ms": 271.1,
+    "rerank_ms": 275.5,
+    "total_ms": 946.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n007",
+   "lang": "ml",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.2199634313583374,
+   "top_rerank_score": -1.2199634313583374,
+   "top": [
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:9",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:4",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:3",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:3",
+    "sc_scholarships--lakshya-615625:4"
+   ],
+   "latency_ms": 826.3,
+   "timings": {
+    "rewrite_ms": 3.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 5.9,
+    "dense_ms": 386.7,
+    "spec_rerank_ms": 276.3,
+    "rerank_ms": 155.8,
+    "total_ms": 826.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n008",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.1911540031433105,
+   "top_rerank_score": -2.1911540031433105,
+   "top": [
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:5",
+    "apy--apy-234e9e:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "pmuy--ujjwala2-70400f:1",
+    "pmuy--about-b2e352:1"
+   ],
+   "latency_ms": 822.0,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.5,
+    "dense_ms": 404.9,
+    "spec_rerank_ms": 277.4,
+    "rerank_ms": 130.5,
+    "total_ms": 822.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n009",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -0.9949914216995239,
+   "top_rerank_score": -0.9949914216995239,
+   "top": [
+    "pmmvy--pmmvy-268b91:1",
+    "jsy--jsy1-79905a:1",
+    "jsy--jsy1-79905a:1",
+    "pmmvy--pmmvy-268b91:1",
+    "pmay_g--pmay-g-c98964:1"
+   ],
+   "latency_ms": 879.2,
+   "timings": {
+    "rewrite_ms": 4.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.5,
+    "dense_ms": 428.1,
+    "spec_rerank_ms": 286.6,
+    "rerank_ms": 154.6,
+    "total_ms": 879.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n010",
+   "lang": "manglish",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.5086922645568848,
+   "top_rerank_score": -2.5086922645568848,
+   "top": [
+    "sc_scholarships--goakshaya-504527:3",
+    "pmmy--pmmy-761c21:1",
+    "sc_scholarships--goakshaya-504527:2",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:2",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1"
+   ],
+   "latency_ms": 1014.7,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.2,
+    "dense_ms": 453.0,
+    "spec_rerank_ms": 281.2,
+    "rerank_ms": 267.2,
+    "total_ms": 1014.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n011",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.28092885017395,
+   "top_rerank_score": -2.28092885017395,
+   "top": [
+    "pm_kisan--revisedfaq-666f07:8",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:4",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:5",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:4",
+    "nsap_igndps--igndps-f97cb2:1"
+   ],
+   "latency_ms": 547.6,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.0,
+    "dense_ms": 386.3,
+    "spec_rerank_ms": 153.0,
+    "rerank_ms": 0.1,
+    "total_ms": 547.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n012",
+   "lang": "ml",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.2538673877716064,
+   "top_rerank_score": -2.2538673877716064,
+   "top": [
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:1",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:1",
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:2",
+    "sc_scholarships--lakshya-615625:4",
+    "sc_scholarships--lap-top-order-new-12-c5648c:1"
+   ],
+   "latency_ms": 789.0,
+   "timings": {
+    "rewrite_ms": 3.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.4,
+    "dense_ms": 352.5,
+    "spec_rerank_ms": 153.1,
+    "rerank_ms": 275.7,
+    "total_ms": 789.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n013",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.3803892135620117,
+   "top_rerank_score": -1.3803892135620117,
+   "top": [
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pmay_g--pmay-g-c98964:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "kerala_agri_schemes--schemes-103621:1"
+   ],
+   "latency_ms": 845.2,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 8.8,
+    "dense_ms": 403.5,
+    "spec_rerank_ms": 154.7,
+    "rerank_ms": 277.0,
+    "total_ms": 845.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n014",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.4416613578796387,
+   "top_rerank_score": -1.4416613578796387,
+   "top": [
+    "pm_kisan--revisedpm-kisanoperationalguidelines-eng-2b8f7b:11",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pmfby--pmfby-04a0dd:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 859.0,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.7,
+    "dense_ms": 430.2,
+    "spec_rerank_ms": 268.2,
+    "rerank_ms": 152.6,
+    "total_ms": 859.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n015",
+   "lang": "manglish",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.4370672702789307,
+   "top_rerank_score": -1.4370672702789307,
+   "top": [
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "kssm_snehasanthwanam--skerala-b2b6bb:1",
+    "kerala_sruthitharangam--scis-be274f:1"
+   ],
+   "latency_ms": 934.9,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.6,
+    "dense_ms": 443.4,
+    "spec_rerank_ms": 193.6,
+    "rerank_ms": 285.8,
+    "total_ms": 934.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n016",
+   "lang": "ml",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -0.7641474604606628,
+   "top_rerank_score": -0.7641474604606628,
+   "top": [
+    "kcc--kcc-0c0281:1",
+    "kcc--kcc-0c0281:1",
+    "sc_scholarships--aab67494a9a85ace892a8b5d79f29dd6-b30b7b:9",
+    "kerala_tailoring_workers_welfare--benefits-b26c03:1",
+    "kcc--kcc-0c0281:1"
+   ],
+   "latency_ms": 609.5,
+   "timings": {
+    "rewrite_ms": 3.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.9,
+    "dense_ms": 399.1,
+    "spec_rerank_ms": 114.0,
+    "rerank_ms": 88.3,
+    "total_ms": 609.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n017",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.6102793216705322,
+   "top_rerank_score": -2.6102793216705322,
+   "top": [
+    "kcc--kcc-0c0281:1",
+    "pm_svanidhi--pm-svanidhi-69af5e:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "kerala_minority_women_selfemployment--seloanwomen-c53988:1",
+    "pmmy--pmmy-761c21:1"
+   ],
+   "latency_ms": 828.0,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.9,
+    "dense_ms": 395.5,
+    "spec_rerank_ms": 276.4,
+    "rerank_ms": 147.9,
+    "total_ms": 828.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n018",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.0197057723999023,
+   "top_rerank_score": -2.0197057723999023,
+   "top": [
+    "mgnrega--mgnrega-608fc2:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "pm_vishwakarma--pmv-378966:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "pmegp--pmegp-7e1c48:1"
+   ],
+   "latency_ms": 857.0,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.2,
+    "dense_ms": 422.1,
+    "spec_rerank_ms": 153.4,
+    "rerank_ms": 269.7,
+    "total_ms": 857.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n019",
+   "lang": "manglish",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.0298144817352295,
+   "top_rerank_score": -2.0298144817352295,
+   "top": [
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:12",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_igndps--igndps-f97cb2:1"
+   ],
+   "latency_ms": 845.6,
+   "timings": {
+    "rewrite_ms": 3.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.0,
+    "dense_ms": 427.7,
+    "spec_rerank_ms": 132.2,
+    "rerank_ms": 275.5,
+    "total_ms": 845.6
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n020",
+   "lang": "ml",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.7931660413742065,
+   "top_rerank_score": -1.7931660413742065,
+   "top": [
+    "kssm_aswasakiranam--ak-e7b98e:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "pmfby--pmfby-04a0dd:1",
+    "pmfby--pmfby-04a0dd:1"
+   ],
+   "latency_ms": 920.5,
+   "timings": {
+    "rewrite_ms": 2.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 5.5,
+    "dense_ms": 370.9,
+    "spec_rerank_ms": 266.0,
+    "rerank_ms": 276.5,
+    "total_ms": 920.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n021",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.3540912866592407,
+   "top_rerank_score": -1.3540912866592407,
+   "top": [
+    "sc_scholarships--lakshya-615625:1",
+    "kerala_cancer_suraksha--css-62511c:1",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "kssm_thalolam--ts-kerala-a6609b:1",
+    "kssm_snehapoorvam--ss-kerala-f8b7f6:1"
+   ],
+   "latency_ms": 805.7,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.3,
+    "dense_ms": 416.6,
+    "spec_rerank_ms": 155.1,
+    "rerank_ms": 225.4,
+    "total_ms": 805.7
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n022",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.1004191637039185,
+   "top_rerank_score": -1.1004191637039185,
+   "top": [
+    "sc_scholarships--lakshya-615625:4",
+    "sc_scholarships--lakshya-615625:1",
+    "sc_scholarships--traceproject-a568f0:3",
+    "obc_oec_scholarships--32706ab4b4816187c27cc8fff2e2a9da-a9fb5a:1",
+    "obc_oec_scholarships--a0b77c26ce26536a5338e55ca12edfd6-af181c:7"
+   ],
+   "latency_ms": 857.2,
+   "timings": {
+    "rewrite_ms": 5.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.6,
+    "dense_ms": 415.5,
+    "spec_rerank_ms": 279.5,
+    "rerank_ms": 154.2,
+    "total_ms": 857.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n023",
+   "lang": "manglish",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -2.0397980213165283,
+   "top_rerank_score": -2.0397980213165283,
+   "top": [
+    "pm_vishwakarma--pmv-378966:1",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:3",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:2",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:2",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:11"
+   ],
+   "latency_ms": 907.0,
+   "timings": {
+    "rewrite_ms": 3.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.9,
+    "dense_ms": 469.0,
+    "spec_rerank_ms": 148.4,
+    "rerank_ms": 275.0,
+    "total_ms": 907.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n024",
+   "lang": "ml",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.6419835090637207,
+   "top_rerank_score": -1.6419835090637207,
+   "top": [
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:6",
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:6",
+    "kerala_obc_girls_special_scholarship--b3a448a7e3abdde6fd612e0ac9a391eb-f66f70:6",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:7",
+    "obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2:19"
+   ],
+   "latency_ms": 835.0,
+   "timings": {
+    "rewrite_ms": 2.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 5.8,
+    "dense_ms": 404.5,
+    "spec_rerank_ms": 270.7,
+    "rerank_ms": 152.7,
+    "total_ms": 835.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "n025",
+   "lang": "en",
+   "type": "no_answer",
+   "split": "main",
+   "rank": null,
+   "top_score": -1.398855209350586,
+   "top_rerank_score": -1.398855209350586,
+   "top": [
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:2",
+    "kerala_eep--ceccdb87abb9537c7277a3722e4a880b-eb1fff:1",
+    "kerala_sruthitharangam--page-id-8718-4daea8:1",
+    "kerala_overseas_scholarship_obc--overseas-notification-26-27-b40bea:15",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:22"
+   ],
+   "latency_ms": 864.5,
+   "timings": {
+    "rewrite_ms": 2.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.9,
+    "dense_ms": 421.3,
+    "spec_rerank_ms": 155.1,
+    "rerank_ms": 275.7,
+    "total_ms": 864.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h001",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.2687661647796631,
+   "top_rerank_score": -0.2687661647796631,
+   "top": [
+    "kerala_eep--10bd0a1089690a213810f75fc0149bb0-fff0e3:9",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:10",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:1",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:4",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:3"
+   ],
+   "latency_ms": 969.4,
+   "timings": {
+    "rewrite_ms": 3.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 6.7,
+    "dense_ms": 417.9,
+    "spec_rerank_ms": 273.2,
+    "rerank_ms": 270.2,
+    "total_ms": 969.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h002",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": 0.4671982526779175,
+   "top_rerank_score": 0.4671982526779175,
+   "top": [
+    "kerala_obc_girls_special_scholarship--5feee394ade51f51720ddb27a266a50e-492ef7:6",
+    "kerala_obc_girls_special_scholarship--1b3a6ba1aca338f112eb1447a078f96d-fd7046:6",
+    "kerala_obc_girls_special_scholarship--b3a448a7e3abdde6fd612e0ac9a391eb-f66f70:6",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:7",
+    "kerala_obc_girls_special_scholarship--specialobcgirlsnotification-cb34ef:5"
+   ],
+   "latency_ms": 1032.2,
+   "timings": {
+    "rewrite_ms": 2.9,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 14.0,
+    "dense_ms": 582.3,
+    "spec_rerank_ms": 281.2,
+    "rerank_ms": 153.1,
+    "total_ms": 1032.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h003",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": null,
+   "top_score": -0.1322973668575287,
+   "top_rerank_score": -0.1322973668575287,
+   "top": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_igndps--igndps-f97cb2:1",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:3",
+    "kerala_eep--974baae8688e4a87f0c2585d517fbe9a-74a4fa:3",
+    "pmmy--pmmy-761c21:1"
+   ],
+   "latency_ms": 897.0,
+   "timings": {
+    "rewrite_ms": 4.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.4,
+    "dense_ms": 461.5,
+    "spec_rerank_ms": 150.3,
+    "rerank_ms": 271.5,
+    "total_ms": 897.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h004",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": null,
+   "top_score": -1.1981768608093262,
+   "top_rerank_score": -1.1981768608093262,
+   "top": [
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "scholarship_disabilities--post-dis-9c5dfa:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "obc_oec_scholarships--adeaef4a8e3bfded17e941ffe02458c4-45c9e2:6",
+    "obc_oec_scholarships--c44bb338b9b84821311c7eb0c71b1b50-dbac8e:5"
+   ],
+   "latency_ms": 871.3,
+   "timings": {
+    "rewrite_ms": 2.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.7,
+    "dense_ms": 500.2,
+    "spec_rerank_ms": 87.1,
+    "rerank_ms": 269.2,
+    "total_ms": 871.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h005",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 3,
+   "top_score": 0.9980171918869019,
+   "top_rerank_score": 0.9980171918869019,
+   "top": [
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--pmuy-6c9914:1",
+    "pmuy--ujjwala2-70400f:1",
+    "pmuy--about-b2e352:1",
+    "pmuy--pmuy-6c9914:1"
+   ],
+   "latency_ms": 945.0,
+   "timings": {
+    "rewrite_ms": 3.2,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 17.2,
+    "dense_ms": 501.5,
+    "spec_rerank_ms": 154.2,
+    "rerank_ms": 270.8,
+    "total_ms": 945.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h006",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.9848508238792419,
+   "top_rerank_score": -0.9848508238792419,
+   "top": [
+    "kerala_pension_unmarried_women--faqs-70561d:1",
+    "kerala_pension_unmarried_women--faqs-948590:1",
+    "kerala_pension_widow--faqs-70561d:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "kerala_pension_old_age--faqs-70561d:1"
+   ],
+   "latency_ms": 963.3,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 14.4,
+    "dense_ms": 481.1,
+    "spec_rerank_ms": 243.8,
+    "rerank_ms": 222.5,
+    "total_ms": 963.3
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h009",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.10914559662342072,
+   "top_rerank_score": -0.10914559662342072,
+   "top": [
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_g--english-book-final-51e2f6:32",
+    "pmay_g--english-book-final-51e2f6:31"
+   ],
+   "latency_ms": 1073.1,
+   "timings": {
+    "rewrite_ms": 2.7,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 14.9,
+    "dense_ms": 502.4,
+    "spec_rerank_ms": 270.6,
+    "rerank_ms": 284.0,
+    "total_ms": 1073.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h010",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": null,
+   "top_score": -1.3780100345611572,
+   "top_rerank_score": -1.3780100345611572,
+   "top": [
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "nsap_igndps--igndps-f97cb2:1",
+    "pmmvy--pmmvy-268b91:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 916.4,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 15.2,
+    "dense_ms": 478.0,
+    "spec_rerank_ms": 146.3,
+    "rerank_ms": 275.7,
+    "total_ms": 916.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h013",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": 1.3075261116027832,
+   "top_rerank_score": 1.3075261116027832,
+   "top": [
+    "mgnrega--mgnrega-608fc2:1",
+    "pmfby--pmfby-04a0dd:1",
+    "mgnrega--mgnrega-608fc2:1",
+    "jsy--jsy1-79905a:1",
+    "nsap_nfbs--nfbs-1b0f63:1"
+   ],
+   "latency_ms": 780.1,
+   "timings": {
+    "rewrite_ms": 1.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.9,
+    "dense_ms": 400.8,
+    "spec_rerank_ms": 213.6,
+    "rerank_ms": 154.6,
+    "total_ms": 780.1
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h014",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.01806516945362091,
+   "top_rerank_score": -0.01806516945362091,
+   "top": [
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap_nfbs--nfbs-1b0f63:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:13",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 864.5,
+   "timings": {
+    "rewrite_ms": 2.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 12.0,
+    "dense_ms": 416.0,
+    "spec_rerank_ms": 153.3,
+    "rerank_ms": 281.4,
+    "total_ms": 864.5
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h015",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.48598363995552063,
+   "top_rerank_score": -0.48598363995552063,
+   "top": [
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--madawp-ii-6b2a94:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "sjd_parinayam--maddapp-i-224a77:1",
+    "nsap_nfbs--nfbs-1b0f63:1"
+   ],
+   "latency_ms": 835.8,
+   "timings": {
+    "rewrite_ms": 2.8,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 13.2,
+    "dense_ms": 443.0,
+    "spec_rerank_ms": 277.7,
+    "rerank_ms": 100.7,
+    "total_ms": 835.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h017",
+   "lang": "en",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 4,
+   "top_score": -0.10296664386987686,
+   "top_rerank_score": -0.10296664386987686,
+   "top": [
+    "nsap_igndps--igndps-f97cb2:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "kerala_welfare_pensions--schemes-54856b:1",
+    "apy--apy-234e9e:1"
+   ],
+   "latency_ms": 596.2,
+   "timings": {
+    "rewrite_ms": 4.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 11.0,
+    "dense_ms": 429.2,
+    "spec_rerank_ms": 154.8,
+    "rerank_ms": 0.1,
+    "total_ms": 596.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h018",
+   "lang": "en",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.47224974632263184,
+   "top_rerank_score": -0.47224974632263184,
+   "top": [
+    "life_mission--ems-housing-project-866ef2:1",
+    "pmay_g--english-book-final-51e2f6:6",
+    "pmay_g--english-book-final-51e2f6:16",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmay_u--pmay-u-5f7b25:1"
+   ],
+   "latency_ms": 861.2,
+   "timings": {
+    "rewrite_ms": 4.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 7.9,
+    "dense_ms": 419.2,
+    "spec_rerank_ms": 270.3,
+    "rerank_ms": 162.7,
+    "total_ms": 861.2
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h019",
+   "lang": "en",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.840959906578064,
+   "top_rerank_score": -0.840959906578064,
+   "top": [
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "kerala_agri_crop_insurance--crop-insurance-schemes-a4bb5c:1",
+    "pm_kisan--pm-kisan-488a46:1",
+    "kerala_farmers_welfare_fund--karshakapension-e99e34:1"
+   ],
+   "latency_ms": 674.4,
+   "timings": {
+    "rewrite_ms": 3.6,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 14.4,
+    "dense_ms": 453.5,
+    "spec_rerank_ms": 154.6,
+    "rerank_ms": 50.5,
+    "total_ms": 674.4
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h020",
+   "lang": "en",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -1.0880868434906006,
+   "top_rerank_score": -1.0880868434906006,
+   "top": [
+    "kerala_advocate_grant--7f13ea25ed7d4bb95a6ee0b1557c382d-cff460:2",
+    "st_scholarships--unnathi-overseas-scholarship-3376d9:8",
+    "sjd_assistive_devices--spaddap-c1206b:1",
+    "kerala_welfare_pensions--schemes-54856b:1",
+    "nsap--nsap-guidelines-oct2014-9deea1:18"
+   ],
+   "latency_ms": 968.8,
+   "timings": {
+    "rewrite_ms": 2.5,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.2,
+    "dense_ms": 392.4,
+    "spec_rerank_ms": 275.2,
+    "rerank_ms": 289.5,
+    "total_ms": 968.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "en",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h021",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 9,
+   "top_score": -1.4425288438796997,
+   "top_rerank_score": -1.4425288438796997,
+   "top": [
+    "obc_oec_scholarships--32706ab4b4816187c27cc8fff2e2a9da-a9fb5a:1",
+    "kerala_eep--ddf0ce20b64d1d3c765295c753723c11-c0cc1f:5",
+    "kerala_eep--bcdir4982022-a1-3fdf9f:2",
+    "pmmvy--pmmvy-268b91:1",
+    "kerala_eep--d9a8193968014bdbdeed87f9a0a481f2-a976bb:5"
+   ],
+   "latency_ms": 924.9,
+   "timings": {
+    "rewrite_ms": 2.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 9.1,
+    "dense_ms": 483.2,
+    "spec_rerank_ms": 156.9,
+    "rerank_ms": 274.3,
+    "total_ms": 924.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h022",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.204772487282753,
+   "top_rerank_score": -0.204772487282753,
+   "top": [
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1",
+    "pm_kmy--pmkmdy-44b6ea:1"
+   ],
+   "latency_ms": 1025.8,
+   "timings": {
+    "rewrite_ms": 3.3,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 21.4,
+    "dense_ms": 569.3,
+    "spec_rerank_ms": 158.6,
+    "rerank_ms": 275.0,
+    "total_ms": 1025.8
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h025",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": -0.7801497578620911,
+   "top_rerank_score": -0.7801497578620911,
+   "top": [
+    "kerala_pension_widow--faqs-70561d:1",
+    "nsap_ignwps--ignwps-0932bc:1",
+    "kerala_viswakarma_pension--vps-0d17cc:1",
+    "nsap_ignoaps--nsap-ignoaps-9c99d4:1",
+    "kerala_pension_unmarried_women--faqs-70561d:1"
+   ],
+   "latency_ms": 1021.0,
+   "timings": {
+    "rewrite_ms": 2.0,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 10.5,
+    "dense_ms": 462.2,
+    "spec_rerank_ms": 280.7,
+    "rerank_ms": 266.2,
+    "total_ms": 1021.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h026",
+   "lang": "manglish",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 1,
+   "top_score": 0.9505590200424194,
+   "top_rerank_score": 0.9505590200424194,
+   "top": [
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "sjd_disability_scholarship--sdas-6a3a34:1",
+    "scholarship_disabilities--pre-dis-57bf8a:1",
+    "sjd_assistive_devices--spaddap-c1206b:1"
+   ],
+   "latency_ms": 833.0,
+   "timings": {
+    "rewrite_ms": 3.1,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 14.2,
+    "dense_ms": 541.6,
+    "spec_rerank_ms": 0.1,
+    "rerank_ms": 275.9,
+    "total_ms": 833.0
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "manglish",
+   "reranked": true,
+   "rerank_skipped": false
+  },
+  {
+   "id": "h028",
+   "lang": "ml",
+   "type": "answerable",
+   "split": "heldout",
+   "rank": 2,
+   "top_score": -2.4377641677856445,
+   "top_rerank_score": -2.4377641677856445,
+   "top": [
+    "pmuy--pmuy-6c9914:1",
+    "pmay_g--english-book-final-51e2f6:27",
+    "pmay_g--english-book-final-51e2f6:28",
+    "pmay_u--pmay-u-5f7b25:1",
+    "pmuy--pmuy-6c9914:1"
+   ],
+   "latency_ms": 1057.9,
+   "timings": {
+    "rewrite_ms": 1.4,
+    "rewrite_wait_ms": 0.0,
+    "bm25_ms": 15.7,
+    "dense_ms": 538.0,
+    "spec_rerank_ms": 232.0,
+    "rerank_ms": 270.8,
+    "total_ms": 1057.9
+   },
+   "rewrite_cached": true,
+   "rewrite_lang": "ml",
+   "reranked": true,
+   "rerank_skipped": false
+  }
+ ]
+}
